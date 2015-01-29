@@ -16,13 +16,6 @@
             </nav>
         </div>
     </div>
-	<!-- <nav class="uk-navbar">
-
-
-        <?php 
-        wp_nav_menu(array('container' => '', 'theme_location' => 'primary',  'items_wrap'      => '<ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon"  data-uk-nav="{multiple:true}">%3$s</ul>')); 
-?>
-    </nav> -->
 
 	    
 </div>
