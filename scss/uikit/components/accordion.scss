@@ -1,0 +1,71 @@
+// Name:            Accordion
+// Description:     Defines styles for the accodion
+//
+// Component:       `uk-accodion`
+//
+// Sub-objects:     `uk-accodion-title`
+//                  `uk-accodion-content`
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+$accordion-title-margin-bottom:                  15px !default;
+$accordion-title-padding-vertical:               5px !default;
+$accordion-title-padding-horizontal:             15px !default;
+$accordion-title-font-size:                      18;
+$accordion-title-line-height:                    1.2;
+$accordion-title-background:                     #eee !default;
+
+$accordion-content-padding-horizontal:           $accordion-title-padding-horizontal !default;
+$accordion-content-padding-bottom:               $accordion-title-padding-horizontal !default;
+
+
+/* ========================================================================
+   Component: Accordion
+ ========================================================================== */
+
+.uk-accordion {
+}
+
+/* Sub-object: `uk-accordion-title`
+ ========================================================================== */
+
+.uk-accordion-title {
+    margin-top: 0;
+    margin-bottom: $accordion-title-margin-bottom;
+    padding: $accordion-title-padding-vertical $accordion-title-padding-horizontal;
+    background: $accordion-title-background;
+    @include font-size($accordion-title-font-size);
+    line-height: $accordion-title-line-height;
+    cursor: pointer;
+}
+
+
+/* Sub-object: `uk-accordion-content`
+ ========================================================================== */
+
+.uk-accordion-content {
+    padding: 0 $accordion-content-padding-horizontal $accordion-content-padding-bottom $accordion-content-padding-horizontal;
+}
+
+/*
+ * Micro clearfix to make panels more robust
+ */
+
+.uk-accordion-content:before,
+.uk-accordion-content:after {
+    content: "";
+    display: table;
+}
+
+.uk-accordion-content:after { clear: both; }
+
+/*
+ * Remove margin from the last-child
+ */
+
+ .uk-accordion-content > :last-child { margin-bottom: 0; }
+
