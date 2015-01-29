@@ -1,6 +1,12 @@
 # KatThemeBase
 Naked WP theme with uikit 2.16.2 and Starkers Masters
 
+Possibility to use timthumb for image treatment
+
+Optional file to create widgets
+
+Better with wp-types and views.
+
 ## Base functions:
 
 ### In external/custom.php
@@ -23,12 +29,6 @@ Naked WP theme with uikit 2.16.2 and Starkers Masters
 ### In js/site.js
 - Dropdown menu (might be to remove)
 - Smartresize (you can change the mobile limit size)
-
-### Possibility to use timthumb for image treatment
-
-Optional file to create widgets
-
-Better with wp-types and views.
 
 ## Improvements in UIKit:
 
