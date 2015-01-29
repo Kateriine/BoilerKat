@@ -1,5 +1,5 @@
 # KatThemeBase
-Naked WP theme with uikit and Starkers Masters
+Naked WP theme with uikit 2.16.2 and Starkers Masters
 
 ## Base functions:
 
@@ -33,4 +33,11 @@ Better with wp-types and views.
 ## Improvements in UIKit:
 
 - Replacement of font-sizes in px/rem instead of px
+- mixin .btn to manage buttons in scss
+- offcanvas revamped
+- Some additions in grid.scss 
 
+## To improve:
+
+- Grunt management of js (add or delete some (un)necessary files)
+- According to this, adapt function starkers_script_enqueuer() in functions.php
