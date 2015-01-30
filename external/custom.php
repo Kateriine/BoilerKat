@@ -46,36 +46,37 @@ function custom_image_setup () {
     add_filter( 'image_size_names_choose', 'insert_custom_image_sizes' );
 }
 
-function katFeatImg($w, $h, $quality, $id, $size){
+
+function katFeatImg($w = 100, $h = 100, $quality = 100, $id = null, $size = null){
   global $post;
   global $WP_Views;
   global $_wp_additional_image_sizes;
 
+  if(!$quality) $quality = 100;
+
+  $id = ($id) ? $id : $post->ID;
+  $thumb_id = get_post_thumbnail_id($post->id);
+  $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+
   $reqSize = 'full';
   if($size){
-    $w = $_wp_additional_image_sizes[$size]['width'];
-    $h = $_wp_additional_image_sizes[$size]['height'];
     $reqSize = $size;
 
   }
-  else if($w != 0){
+    $output=get_post_thumbnail_id($id) . $reqSize;
+
+  if ( has_post_thumbnail($id)) {
+      $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), $reqSize);
+  }
+  
+  if($w != 0){
     $w = $w;
     $h = $h;
 
   }
   else{
-    $w = 100;
-    $h = 100;
-  }
-  if(!$quality) $quality = 100;
-
-  $id = ($id) ? $id : $post->ID;
-  $thumb_id = get_post_thumbnail_id($post->id);
-  
-  $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-
-  if ( has_post_thumbnail($id)) {
-      $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), $reqSize);
+    $w = $image_url[1];
+    $h = $image_url[2];
   }
 
   $timthumb_script = get_template_directory_uri() . '/external/timthumb.php?src=';
@@ -86,36 +87,36 @@ function katFeatImg($w, $h, $quality, $id, $size){
   return $output;
 }
 
-function greyscale($w, $h, $quality, $size, $id){
+function greyscale($w = 100, $h = 100, $quality = 100, $size = null, $id = null){
   global $post;
   global $WP_Views;
   global $_wp_additional_image_sizes;
 
+
+  if(!$quality) $quality = 100;
+
+  $id = ($id) ? $id : $post->ID;
+  $thumb_id = get_post_thumbnail_id($post->id);
+  $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+
   $reqSize = 'full';
   if($size){
-    $w = $_wp_additional_image_sizes[$size]['width'];
-    $h = $_wp_additional_image_sizes[$size]['height'];
     $reqSize = $size;
 
   }
-  else if($w != 0){
+
+  if ( has_post_thumbnail($id)) {
+      $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), $reqSize);
+  }
+  
+  if($w != 0){
     $w = $w;
     $h = $h;
 
   }
   else{
-    $w = 100;
-    $h = 100;
-  }
-  if(!$quality) $quality = 100;
-
-  $id = ($id) ? $id : $post->ID;
-  $thumb_id = get_post_thumbnail_id($post->id);
-  
-  $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-
-  if ( has_post_thumbnail($id)) {
-      $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), $reqSize);
+    $w = $image_url[1];
+    $h = $image_url[2];
   }
 
   $timthumb_script = get_template_directory_uri() . '/external/timthumb.php?src=';
@@ -135,26 +136,29 @@ function katCustomImg($field, $w, $h, $quality, $size){
 
   global $_wp_additional_image_sizes;
 
+  if(!$quality) $quality = 100;
+
+  $id = ($id) ? $id : $post->ID;
+
+  $reqSize = 'full';
   if($size){
-    $w = $_wp_additional_image_sizes[$size]['width'];
-    $h = $_wp_additional_image_sizes[$size]['height'];
+    $reqSize = $size;
 
   }
-  else if($w != 0){
+
+  
+  $imgURL = types_render_field($field, array('output' => 'raw'));
+  
+  if($w != 0){
     $w = $w;
     $h = $h;
 
   }
   else{
-    $w = 100;
-    $h = 100;
+    $w = $image_url[1];
+    $h = $image_url[2];
   }
 
-  if(!$quality) $quality = 100;
-
-  $id = ($id) ? $id : $post->ID;
-
-  $imgURL = types_render_field($field, array('output' => 'raw'));
   
   $theID = get_attachment_id_from_src($imgURL);
 
