@@ -83,17 +83,27 @@ function url_pic_head($id) {
     }
 }
 
-// Get the page number into wp_pagenavi
-// function pagenavi_paged($query) {
-//     $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-//     $query->query_vars['paged'] = $paged;
-//     return $query;
-// }
 // // Add a custom wp_pagenavi shortcode
 // function wpv_pagenavi($args, $content) {
-//     global $WP_Views;
-//     wp_pagenavi( array('query' => $WP_Views->post_query) );
-//}
+//  global $WP_Views;
+//  //print_r($WP_Views->post_query);
+//  return wp_pagenavi( array('echo' => false, 'query' => $WP_Views->post_query));
+
+
+
+// }
+
+// add_filter('wpv_view_settings', 'ek_my_vs', 99, 2);
+ 
+// function ek_my_vs($settings, $id) {
+//     //if ( $id = 89 ) { // change XXX to the View ID being used in the page on the homepage
+//         global $wp_query;
+//         $my_query_vars = $wp_query->query_vars;
+//         $paged = isset( $my_query_vars['page'] )  ? $my_query_vars['page'] : 1;
+//         $settings['paged'] = $paged;
+//     //}
+//     return $settings;
+// }
 
 /* To count posts in wp-views */
 function incrementor() {

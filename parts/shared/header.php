@@ -3,7 +3,7 @@
 	<div class="uk-navbar-brand"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></div>
 	<?php bloginfo( 'description' ); ?>
     <div class="uk-float-right">
-        <button class="uk-button-offcanvas uk-hidden-large" data-uk-offcanvas="{target:'#offcanvas-1'}">
+        <button class="uk-button-offcanvas uk-visible-small" data-uk-offcanvas="{target:'#offcanvas-1'}">
             <span></span>
             <span></span>
             <span></span>
