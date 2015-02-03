@@ -316,54 +316,35 @@ function my_excerpt($length = 55) {
 }
 
 
-
-/* Add current menu item class to a post2post element in nav menu and its parent : please change post type */
 function add_menu_parent_class( $items ) {
-    // global $wp_query;
+    global $wp_query;
 
-    // $post = $wp_query->get_queried_object();
-    // // $sol_id = wpcf_pr_post_get_belongs(get_the_ID(), 'solution');
+    $post = $wp_query->get_queried_object();
+    $parents = array();
+    foreach ( $items as $item ) {
 
-    // // $sol_data = get_post($sol_id, ARRAY_A);
-    // // $sol_slug = $sol_data['post_name'];
-    // $parents = array();
-    // foreach ( $items as $item ) {
-    //   //print_r($item);
-    //   //echo $sol_id.'. ' .$item->post_excerpt .':'. $sol_slug.'<br/>';
-    //   //if (!empty($sol_id)) {
+      /***** UIKIT ****/
+      foreach ( $item->classes as $class ) {
+        if($class=='menu-item-has-children'){
+          $item->classes[] = 'uk-parent';
+        }
+      }
 
-    //   /***** UIKIT ****/
-    //   foreach ( $item->classes as $class ) {
-    //     if($class=='menu-item-has-children'){
-    //       $item->classes[] = 'uk-parent';
-    //     }
-    //   }
+    }
 
-    //     // if (strtolower($item->post_name) == $sol_slug) {
-    //     //   $item->classes[] = 'current-menu-item';
-    //     //   $itemParent = $item->menu_item_parent;
-    //     // }
-    //   //}
-    // }
+    return $items;
+}
 
-    // foreach ( $items as $item ) {
-    //     if ( $item->ID ==  $itemParent ) {
-    //         $item->classes[] = 'current-page-ancestor';
-    //     }
-    // }
 
-    // return $items;
+class Ui_Nav_Menu extends Walker_Nav_Menu {
+  function start_lvl( &$output, $depth = 0, $args = array() ) {
+    $indent = str_repeat("\t", $depth);
+    $output .= "\n$indent<ul class=\"uk-nav-sub\">\n";
+  }
 }
 
 
 //add_filter('wp_nav_menu_objects', 'add_class_to_menu', 10, 2 );
 add_filter( 'wp_nav_menu_objects', 'add_menu_parent_class' );
-
-
-function your_callback() {
-    global $post;
-// Code here
-}
-add_action( 'draft_to_publish', 'your_callback' );
 
 ?>

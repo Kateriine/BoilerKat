@@ -11,7 +11,7 @@
         <div id="offcanvas-1" class="uk-offcanvas">
             <nav class="uk-offcanvas-bar">
                 <?php 
-                wp_nav_menu(array('container' => '', 'theme_location' => 'primary',  'items_wrap'      => '<ul class="uk-navbar uk-navbar-nav uk-nav-offcanvas">%3$s</ul>')); 
+                wp_nav_menu(array('container' => '', 'theme_location' => 'primary',  'items_wrap'      => '<ul class="uk-nav uk-navbar uk-navbar-nav uk-nav-parent-icon uk-nav-offcanvas"  data-uk-nav="{multiple:true}">%3$s</ul>', 'walker' => new Ui_Nav_Menu())); 
                ?>
             </nav>
         </div>
