@@ -316,6 +316,7 @@ function my_excerpt($length = 55) {
 }
 
 
+//Add uikit dropdown nav class 
 function add_menu_parent_class( $items ) {
     global $wp_query;
 
@@ -336,6 +337,7 @@ function add_menu_parent_class( $items ) {
 }
 
 
+//Add uikit submenu class 
 class Ui_Nav_Menu extends Walker_Nav_Menu {
   function start_lvl( &$output, $depth = 0, $args = array() ) {
     $indent = str_repeat("\t", $depth);
@@ -343,8 +345,22 @@ class Ui_Nav_Menu extends Walker_Nav_Menu {
   }
 }
 
+//custom language menu with WPML: uncomment if necessary
+// function icl_lang(){
+//   $languages = icl_get_languages('skip_missing=0');
+//   echo '<div id="lang_sel"><ul>';
+//   foreach($languages as $l){
+//     if($l['active']) {
+//         echo '<li><a href="#" class="icl_lang_sel_current uk-button uk-button-round">'.$l['language_code'].'</a></li>';
+        
 
-//add_filter('wp_nav_menu_objects', 'add_class_to_menu', 10, 2 );
-add_filter( 'wp_nav_menu_objects', 'add_menu_parent_class' );
+//         foreach($languages as $l2){
+//             if(!$l2['active']) echo '<li class="icl-'.$l2['language_code'].'"><a rel="alternate" hreflang="'.$l2['language_code'].'"  href="'.$l2['url'].'" class="icl_lang_sel_native  uk-button uk-button-round">'.$l2['language_code'].'</a></li>';
+//         }
+      
+//     }
+//   }
+//   echo '</ul></div>';  
+// }
 
 ?>

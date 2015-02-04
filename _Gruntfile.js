@@ -11,13 +11,50 @@ module.exports = function(grunt) {
         tasks: ['sass:dev', 'autoprefixer:dev']
       },
       concat: {
-        files: ['js/**/*.js', '!js/build/main.min.js'],
+        files: ['js/modernizr.custom.15226.js', 'js/uikit.js', 'js/components/form-select.js', 'js/site.js'],
         tasks: 'concat'
       },
       imagemin: {
         files: ['images/**/*.jpg', 'images/**/*.png'],
         tasks: 'imagemin'
       }
+    },
+
+    svgstore: {
+      options: {
+        prefix : 'chicon-', // This will prefix each ID
+        includedemo: true,
+        svg: { // will be added as attributes to the resulting SVG
+          //class : 'hide svg-icons'
+          version : '1.1',
+          xmlns : 'http://www.w3.org/2000/svg',
+          'xmlns:xlink' : 'http://www.w3.org/1999/xlink',
+          'xml:space' : 'preserve'
+        }
+      },
+      default : {
+        files: {
+          'images/icons.svg': ['images/iconsmin/*.svg'],
+        },
+      }
+    },
+    svgmin: {
+        options: {
+            plugins: [
+                {
+                    removeViewBox: false
+                }, {
+                    removeUselessStrokeAndFill: false
+                }
+            ]
+        },
+        dist: {
+            expand: true,
+            cwd: 'images/icons',
+            src: ['*.svg'],
+            dest: 'images/iconsmin',
+            ext: '.svg'
+        }
     },
     // 3. Our multiple taks: scss, concat, autoprefixer, etc.
     sass: {
@@ -41,7 +78,7 @@ module.exports = function(grunt) {
     },
     concat: {
       dev: {
-        src: ['js/**/*.js', '!js/build/main.min.js'],
+        src: ['js/modernizr.custom.15226.js', 'js/uikit.js', 'js/components/grid.js', 'js/components/form-select.js', 'js/site.js'],
         dest: 'js/build/main.min.js'
       }
     },
@@ -99,6 +136,8 @@ module.exports = function(grunt) {
 
   // 4. Where we tell Grunt to load all the tasks.
   require('load-grunt-tasks')(grunt);
+
+  grunt.registerTask('svg', ['svgmin:dist', 'svgstore:default']);
 
   // 5. Where we tell Grunt what to do when we type "grunt xxx" into the terminal.
 
