@@ -19,6 +19,45 @@ add_action( 'after_setup_theme', 'custom_image_setup' );
 /* Base functions */
 /******************/
 
+/*
+Sécurité:
+ Activer les liens RSS automatiques (feed_links & feed_links_extra)
+ */
+function seomix_theme_rss()  {
+  add_theme_support( 'automatic-feed-links' );}
+add_action( 'after_setup_theme', 'seomix_theme_rss' );
+
+
+/*
+ Désactiver les flux RSS secondaires (les commentaires de chaque article)
+ */
+remove_action('wp_head', 'feed_links_extra', 3);
+
+
+/*
+ Désactiver le flux RSS des articles et celui des commentaires
+ */
+remove_action('wp_head', 'feed_links', 2);
+
+
+/*
+ Réactiver le flux RSS principal
+ * © Daniel Roch
+ */
+function seomix_feed_link( $args = array() ) {
+  $defaults = array(
+    /* translators: Separator between blog name and feed type in feed links */
+    'separator' => _x('»', 'feed link'),
+    /* translators: 1: blog title, 2: separator (raquo) */
+    'feedtitle' => __('%1$s %2$s Feed'),
+    /* translators: %s: blog title, 2: separator (raquo) */
+    'comstitle' => __('%1$s %2$s Comments Feed'),
+  );
+  $args = wp_parse_args( $args, $defaults );
+  echo '<link rel="alternate" type="application/rss+xml" title="' . esc_attr(sprintf( $args['feedtitle'], get_bloginfo('name'), $args['separator'] )) . '" href="' . home_url() . "/feed/\" />\n";
+}
+add_action('wp_head', 'seomix_feed_link');
+
 // Add new image sizes
 function insert_custom_image_sizes( $image_sizes ) {
   // get the custom image sizes

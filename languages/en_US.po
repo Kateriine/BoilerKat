@@ -1,0 +1,285 @@
+# Copyright (C) 2012 the WordPress team
+# This file is distributed under the GNU General Public License.
+msgid ""
+msgstr ""
+"Project-Id-Version: Sat\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/twentyeleven\n"
+"POT-Creation-Date: 2015-03-02 18:13+0100\n"
+"PO-Revision-Date: 2015-03-02 18:13+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SearchPath-0: ../.\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPathExcluded-0: .././node_modules\n"
+
+#: .././external/custom.php:52
+#, php-format
+msgid "%1$s %2$s Feed"
+msgstr ""
+
+#: .././external/custom.php:54
+#, php-format
+msgid "%1$s %2$s Comments Feed"
+msgstr ""
+
+#: .././searchform.php:4 .././searchform.php:6
+msgid "Search for:"
+msgstr "Search for:"
+
+#~ msgid "Search"
+#~ msgstr "Search"
+
+#~ msgid "News"
+#~ msgstr "News"
+
+#~ msgid "Read more"
+#~ msgstr "Read more"
+
+#~ msgid "Lost?"
+#~ msgstr "Lost?"
+
+#~ msgid "It seems that the page you requested doesn't exist...?"
+#~ msgstr "Il semble que la page que vous recherchez n'existe pas"
+
+#~ msgid "Try a search on our site"
+#~ msgstr "Try a search on our site"
+
+#, fuzzy
+#~ msgid "Case studies"
+#~ msgstr "Case Studies"
+
+#~ msgid "The associates"
+#~ msgstr "The associates"
+
+#~ msgid "What's new"
+#~ msgstr "What’s new"
+
+#~ msgid "Next show"
+#~ msgstr "Next show"
+
+#~ msgid "Latest news"
+#~ msgstr "Latest news"
+
+#~ msgid "More news"
+#~ msgstr "More news"
+
+#~ msgid "Search results"
+#~ msgstr "Search results"
+
+#~ msgid "Back to map"
+#~ msgstr "Back to map"
+
+#~ msgid "All cases"
+#~ msgstr "All cases"
+
+#~ msgid "Benefits"
+#~ msgstr "Benefits"
+
+#~ msgid "Request information"
+#~ msgstr "Request information"
+
+#~ msgid "Examples of applications"
+#~ msgstr "Examples of applications"
+
+#~ msgid "Other Case Studies"
+#~ msgstr "Other Case Studies"
+
+#~ msgid "They trust us"
+#~ msgstr "They trust us"
+
+#~ msgid "Case Studies"
+#~ msgstr "Case Studies"
+
+#~ msgid "Image for case studies list"
+#~ msgstr "Image for case studies list"
+
+#~ msgid "Home"
+#~ msgstr "Home"
+
+#~ msgid "Internet access in"
+#~ msgstr "Internet access in"
+
+#~ msgid "All news"
+#~ msgstr "All news"
+
+#~ msgid "Headlines"
+#~ msgstr "Headlines"
+
+#~ msgid "Next trade show"
+#~ msgstr "Next trade show"
+
+#~ msgid "Case study"
+#~ msgstr "Case study"
+
+#~ msgid "Subscribe"
+#~ msgstr "Subscribe"
+
+#~ msgid "All events"
+#~ msgstr "All events"
+
+#~ msgid "Quick navigation"
+#~ msgstr "Quick navigation"
+
+#~ msgid "All our internet job positions"
+#~ msgstr "All our internet job positions"
+
+#~ msgid "Those pages could interest you"
+#~ msgstr "Those pages could interest you"
+
+#~ msgid "See our network map"
+#~ msgstr "See our network map"
+
+#~ msgid "Our next trade show"
+#~ msgstr "Our next trade show"
+
+#~ msgid "All our events for internet access in Africa"
+#~ msgstr "All our events for internet access in Africa"
+
+#~ msgid "Home sidebar"
+#~ msgstr "Home sidebar"
+
+#~ msgid "Appears in home sidebar of the site."
+#~ msgstr "Appears in home sidebar of the site."
+
+#~ msgid "Inner sidebar"
+#~ msgstr "Inner sidebar"
+
+#~ msgid "Appears in other sidebars of the site."
+#~ msgstr "Appears in other sidebars of the site."
+
+#~ msgid "Quick Navigation sidebar"
+#~ msgstr "Quick Navigation sidebar"
+
+#~ msgid "Quick navigation."
+#~ msgstr "Quick navigation."
+
+#~ msgid "Widgets on cases single page"
+#~ msgstr "Widgets on cases single page"
+
+#~ msgid "Sidebar for single country page"
+#~ msgstr "Sidebar for single country page"
+
+#~ msgid "Widget on country single page (Bottom of the text)"
+#~ msgstr "Widget on country single page (Bottom of the text)"
+
+#~ msgid "Widget on solution single page"
+#~ msgstr "Widget on solution single page"
+
+#~ msgid "Footer widgets"
+#~ msgstr "Footer widgets"
+
+#~ msgid "Appears in footer."
+#~ msgstr "Appears in footer."
+
+#~ msgid "Header mobile widgets"
+#~ msgstr "Header mobile widgets"
+
+#~ msgid "Appears in mobile header."
+#~ msgstr "Appears in mobile header."
+
+#~ msgid "Footer mobile widgets"
+#~ msgstr "Footer mobile widgets"
+
+#~ msgid "Appears in mobile footer."
+#~ msgstr "Appears in mobile footer."
+
+#~ msgid "Add a \"Discover our network\" block"
+#~ msgstr "Add a \"Discover our network\" block"
+
+#~ msgid "Discover our network"
+#~ msgstr "Discover our network"
+
+#~ msgid "Availability"
+#~ msgstr "Availability"
+
+#~ msgid "countries<br /> are already covered!"
+#~ msgstr "countries<br /> are already covered!"
+
+#~ msgid "Add a contact & social block"
+#~ msgstr "Add a contact & social block"
+
+#~ msgid "Follow us"
+#~ msgstr "Follow us"
+
+#~ msgid "Contact us"
+#~ msgstr "Contact us"
+
+#~ msgid "or"
+#~ msgstr "or"
+
+#~ msgid "Our services"
+#~ msgstr "Our services"
+
+#~ msgid "Login"
+#~ msgstr "Login"
+
+#~ msgid "languages"
+#~ msgstr "languages"
+
+#~ msgid "our-network"
+#~ msgstr "our-network"
+
+#~ msgid "Request your quote"
+#~ msgstr "Request your quote"
+
+#~ msgid "Customer login"
+#~ msgstr "Customer login"
+
+#~ msgid "Essayez une recherche sur notre site"
+#~ msgstr "Try to search on our site"
+
+#~ msgid "Produits"
+#~ msgstr "Products"
+
+#~ msgid "Catégories"
+#~ msgstr "Categories"
+
+#~ msgid "Presse"
+#~ msgstr "Press"
+
+#~ msgid "Abonnez-vous à notre newsletter"
+#~ msgstr "Register to our newsletter"
+
+#~ msgid "Choisissez une langue"
+#~ msgstr "Choose a language"
+
+#~ msgid "Français"
+#~ msgstr "French"
+
+#~ msgid "Néerlandais"
+#~ msgstr "Dutch"
+
+#~ msgid "Anglais"
+#~ msgstr "English"
+
+#~ msgid "S'abonner"
+#~ msgstr "Subscribe"
+
+#~ msgid "De nombreuses entreprises font déjà confiance à Vivio"
+#~ msgstr "Many entreprises already trust Vivio"
+
+#~ msgid "/equipes"
+#~ msgstr "/teams-2/?lang=en"
+
+#~ msgid "Equipes"
+#~ msgstr "Teams"
+
+#~ msgid "Tous les produits"
+#~ msgstr "All products"
+
+#~ msgid "Tout afficher"
+#~ msgstr "Show all"
+
+#~ msgid "Vous désirez être tenu au courant des dernières actualités concernant ViVio?"
+#~ msgstr "You want to be kept abreast of the latest news about ViVio?"
+
+#~ msgid "Abonnez-vous"
+#~ msgstr "Subscribe"
