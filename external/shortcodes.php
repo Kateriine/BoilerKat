@@ -9,16 +9,15 @@ add_action( 'init', 'wpk_register_shortcodes');
 /**************/
 function wpk_register_shortcodes(){
     add_shortcode('slug', 'wpv_post_slug');
-    add_shortcode('url-pic-square', 'url_pic_square');
-    add_shortcode('url-pic-rect', 'url_pic_rect');
-    add_shortcode('url-pic-square-mini', 'url_pic_square_mini');
-    add_shortcode('url-pic-head', 'url_pic_head');
+    //Resized images shortcodes example:
+    // add_shortcode('url-pic-square', 'url_pic_square');
     add_shortcode('post-intro-excerpt', 'post_intro_excerpt');
     add_shortcode('incrementor', 'incrementor');
     add_shortcode('site-url', 'site_url');      
     add_shortcode('img-alt', 'featImg_alt');      
     add_shortcode('hide-email', 'hide_email_shortcode');  
     add_shortcode('theme-url', 'get_template_directory_uri');
+    add_shortcode( 'pic', 'kat_img_resize' );
     //add_shortcode('wpv-pagination', 'wpv_pagenavi');
 }
 function hide_email_shortcode($atts){
@@ -41,56 +40,23 @@ function  wpv_post_slug(){
     return $post->post_name;
 }
 
-/* Resized images shortcodes */
+/* Resized images shortcodes example: */
+// function url_pic_square($id) {
+//     global $post;
+//     $id = ($id) ? $id : $post->ID;
 
-function url_pic_square($id) {
-    global $post;
-    $id = ($id) ? $id : $post->ID;
+//     if ( has_post_thumbnail($id)) {
+//         $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'square');
+//         return $image_url[0]; 
+//     }
+// }
 
-    if ( has_post_thumbnail($id)) {
-        $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'square');
-        return $image_url[0]; 
-    }
-}
-
-function url_pic_rect($id) {
-    global $post;
-    $id = ($id) ? $id : $post->ID;
-
-    if ( has_post_thumbnail($id)) {
-        $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'rectangle');
-        return $image_url[0]; 
-    }
-}
-
-function url_pic_square_mini($id) {
-    global $post;
-    $id = ($id) ? $id : $post->ID;
-
-    if ( has_post_thumbnail($id)) {
-        $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'small-square');
-        return $image_url[0]; 
-    }
-}
-
-function url_pic_head($id) {
-    global $post;
-    $id = ($id) ? $id : $post->ID;
-
-    if ( has_post_thumbnail($id)) {
-        $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'header-image');
-        return $image_url[0]; 
-    }
-}
 
 // // Add a custom wp_pagenavi shortcode
 // function wpv_pagenavi($args, $content) {
 //  global $WP_Views;
 //  //print_r($WP_Views->post_query);
 //  return wp_pagenavi( array('echo' => false, 'query' => $WP_Views->post_query));
-
-
-
 // }
 
 // add_filter('wpv_view_settings', 'ek_my_vs', 99, 2);
@@ -105,6 +71,7 @@ function url_pic_head($id) {
 //     return $settings;
 // }
 
+
 /* To count posts in wp-views */
 function incrementor() {
         static $i = 1;
@@ -112,13 +79,13 @@ function incrementor() {
     }
 
 /* Add custom filters to wp-views */
-
 function filter_shortcode($evaluate)
 {
     global $post;
     global $WP_Views;
 
     $img = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'thumb');
+    //examples:
     // $pageBtn = types_render_field("solution-button-text");
     // $startShow = types_render_field("show-start-date");
     // $endShow = types_render_field("show-end-date");

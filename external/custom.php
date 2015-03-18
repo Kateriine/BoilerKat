@@ -8,6 +8,11 @@ function theme_setup() {
 
   add_theme_support('post-thumbnails');
   add_filter( 'wp_nav_menu_objects', 'add_menu_parent_class' );
+  /*
+  Sécurité:
+   Activer les liens RSS automatiques (feed_links & feed_links_extra)
+   */
+  add_theme_support( 'automatic-feed-links' );}
 
 }
 add_action( 'after_setup_theme', 'theme_setup' );
@@ -18,15 +23,6 @@ add_action( 'after_setup_theme', 'custom_image_setup' );
 /******************/
 /* Base functions */
 /******************/
-
-/*
-Sécurité:
- Activer les liens RSS automatiques (feed_links & feed_links_extra)
- */
-function seomix_theme_rss()  {
-  add_theme_support( 'automatic-feed-links' );}
-add_action( 'after_setup_theme', 'seomix_theme_rss' );
-
 
 /*
  Désactiver les flux RSS secondaires (les commentaires de chaque article)
@@ -78,138 +74,102 @@ function insert_custom_image_sizes( $image_sizes ) {
 /* Change and add image sizes as desired :) */
 
 function custom_image_setup () {
-    add_image_size( 'square', 600, 600, true );
-    add_image_size( 'rectangle', 640, 480, false );
-    add_image_size( 'small-square', 200, 200, true );
-    add_image_size( 'header-image', 2500, 400, true );
-    add_filter( 'image_size_names_choose', 'insert_custom_image_sizes' );
+  //example:
+    // add_image_size( 'square', 600, 600, true );
+    // add_filter( 'image_size_names_choose', 'insert_custom_image_sizes' );
+}
+
+/**
+* Image shortcode callback
+*
+* Enables the [pic] shortcode, pseudo-TimThumb but creates resized and cropped image files safely
+* from existing media library entries. Usage: 
+* [pic src="http://example.org/wp-content/uploads/2012/03/image.png" width="100" height="100"]
+*
+*/
+function kat_img_resize( $atts ) {
+   extract( shortcode_atts( array(
+       'src' => '',
+       'width' => '',
+       'height' => '',
+   ), $atts ) );
+
+   global $wpdb;
+
+   // Sanitize
+   $height = absint( $height );
+   $width = absint( $width );
+   $src = esc_url( strtolower( $src ) );
+   $needs_resize = true;
+
+   $upload_dir = wp_upload_dir();
+   $base_url = strtolower( $upload_dir['baseurl'] );
+
+   // Let's see if the image belongs to our uploads directory.
+   if ( substr( $src, 0, strlen( $base_url ) ) != $base_url ) {
+       return "Error: external images are not supported.";
+   }
+
+   // Look the file up in the database.
+   $file = str_replace( trailingslashit( $base_url ), '', $src );
+   $attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = '_wp_attachment_metadata' AND meta_value LIKE %s LIMIT 1;", '%"' . like_escape( $file ) . '"%' ) );
+
+   // If an attachment record was not found.
+   if ( ! $attachment_id ) {
+       return "Error: attachment not found.";
+   }
+   // Look through the attachment meta data for an image that fits our size.
+   $meta = wp_get_attachment_metadata( $attachment_id );
+       $srcArr = explode('.', $src);
+       $name = $srcArr[0] . '-' . $width . 'x' .$height . '.' . $srcArr[1];
+
+
+   foreach( $meta['sizes'] as $key => $size ) {
+       if ( $size['width'] == $width && $size['height'] == $height ) {
+
+           $src = str_replace( basename( $src ), $size['file'], $src );
+           $needs_resize = false;
+           break;
+       }
+       //$siz = 'resized-'.$width .'x' . $height;
+       // if($name == $size['file']){
+       //     $needs_resize = false;
+       //     break;
+       // }
+   }
+
+   //Miracle solution: if width x height size doesn't exist for this media, we create it :)
+   $siz = 'resized-'.$width .'x' . $height;
+   if( $meta['sizes'][$siz]['file'] != '' ){
+       $needs_resize = false;
+   }
+   else{
+       $needs_resize = true;
+   }
+
+   // If an image of such size was not found, we can create one.
+   if ( $needs_resize ) {
+       $attached_file = get_attached_file( $attachment_id );
+       $resized = image_make_intermediate_size( $attached_file, $width, $height, true );
+       if ( ! is_wp_error( $resized ) ) {
+
+           // Let metadata know about our new size.
+           $key = sprintf( 'resized-%dx%d', $width, $height );
+           $meta['sizes'][$key] = $resized;
+           $src = str_replace( basename( $src ), $resized['file'], $src );
+           wp_update_attachment_metadata( $attachment_id, $meta );
+
+           // Record in backup sizes so everything's cleaned up when attachment is deleted.
+           $backup_sizes = get_post_meta( $attachment_id, '_wp_attachment_backup_sizes', true );
+           if ( ! is_array( $backup_sizes ) ) $backup_sizes = array();
+           $backup_sizes[$key] = $resized;
+           update_post_meta( $attachment_id, '_wp_attachment_backup_sizes', $backup_sizes );
+       }
+   }
+   return esc_url( $src );
 }
 
 
-function katFeatImg($w = 100, $h = 100, $quality = 100, $id = null, $size = null){
-  global $post;
-  global $WP_Views;
-  global $_wp_additional_image_sizes;
-
-  if(!$quality) $quality = 100;
-
-  $id = ($id) ? $id : $post->ID;
-  $thumb_id = get_post_thumbnail_id($post->id);
-  $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-
-  $reqSize = 'full';
-  if($size){
-    $reqSize = $size;
-
-  }
-    $output=get_post_thumbnail_id($id) . $reqSize;
-
-  if ( has_post_thumbnail($id)) {
-      $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), $reqSize);
-  }
-  
-  if($w != 0){
-    $w = $w;
-    $h = $h;
-
-  }
-  else{
-    $w = $image_url[1];
-    $h = $image_url[2];
-  }
-
-  $timthumb_script = get_template_directory_uri() . '/external/timthumb.php?src=';
-  $timthumb_params = '&amp;q=' . $quality . '&amp;w=' . $w . '&amp;h=' . $h;
-
-  $output = '<img title="'. $alt .'" src="'.$timthumb_script . $image_url[0] . $timthumb_params.'" alt="'.$alt.'"/>';
-
-  return $output;
-}
-
-function greyscale($w = 100, $h = 100, $quality = 100, $size = null, $id = null){
-  global $post;
-  global $WP_Views;
-  global $_wp_additional_image_sizes;
-
-
-  if(!$quality) $quality = 100;
-
-  $id = ($id) ? $id : $post->ID;
-  $thumb_id = get_post_thumbnail_id($post->id);
-  $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-
-  $reqSize = 'full';
-  if($size){
-    $reqSize = $size;
-
-  }
-
-  if ( has_post_thumbnail($id)) {
-      $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), $reqSize);
-  }
-  
-  if($w != 0){
-    $w = $w;
-    $h = $h;
-
-  }
-  else{
-    $w = $image_url[1];
-    $h = $image_url[2];
-  }
-
-  $timthumb_script = get_template_directory_uri() . '/external/timthumb.php?src=';
-  $timthumb_params = '&amp;q=' . $quality . '&amp;w=' . $w . '&amp;h=' . $h .'&amp;f=2';
-
-  $output = '<img title="'. $alt .'" src="'.$timthumb_script . $image_url[0] . $timthumb_params.'" alt="'.$alt.'"/>';
-
-  return $output;
-}
-
-/* Custom field image with custom width and height
-
-If you prefer to use it with a custom image size, just put ($field, 0,0,$quality, 'custom-size') */
-function katCustomImg($field, $w, $h, $quality, $size){
-  global $post;
-  global $WP_Views;
-
-  global $_wp_additional_image_sizes;
-
-  if(!$quality) $quality = 100;
-
-  $id = ($id) ? $id : $post->ID;
-
-  $reqSize = 'full';
-  if($size){
-    $reqSize = $size;
-
-  }
-
-  
-  $imgURL = types_render_field($field, array('output' => 'raw'));
-  
-  if($w != 0){
-    $w = $w;
-    $h = $h;
-
-  }
-  else{
-    $w = $image_url[1];
-    $h = $image_url[2];
-  }
-
-  
-  $theID = get_attachment_id_from_src($imgURL);
-
-  $alt_text = get_post_meta($theID, '_wp_attachment_image_alt', true);
- 
-  $timthumb_script = get_template_directory_uri() . '/external/timthumb.php?src=';
-  $timthumb_params = '&amp;q=' . $quality . '&amp;w=' . $w . '&amp;h=' . $h;
-
-  $output = '<img title="' . $alt_text . '" src="'.$timthumb_script . $imgURL. $timthumb_params.'" alt="' . $alt_text . '"/>';
-
-  return $output;
-}
 
 function get_attachment_id_from_src ($image_src) {
 
@@ -220,42 +180,6 @@ function get_attachment_id_from_src ($image_src) {
 
   }
 
-    // excerpt
-
-function post_intro_excerpt($atts){
-    extract(
-        shortcode_atts( array('length' => 0), $atts )
-    );
-    global $post;
-    if(types_render_field('post-intro')!=''){
-      $text = types_render_field('post-intro');
-    }
-
-    else{
-      $text = get_the_content();
-    }
-
-    if ( '' != $text ) {
-        $text = strip_shortcodes( $text );
-        $text = apply_filters('the_content', $text);
-        $text = str_replace(']]>', ']]>', $text);
-        if ($length > 0) {
-            $excerpt_length = $length;
-        } else {
-            $excerpt_length = apply_filters('excerpt_length', 10);
-        }
-        $all = strlen($text);
-
-        $text = wp_strip_all_tags( $text, true );
-        $text = mb_substr( $text, 0, $excerpt_length );
-        // remove part of an entity at the end
-        $text = preg_replace( '/&[^;\s]{0,6}$/', '', $text );
-        
-        if($all > $excerpt_length)
-          $text .=  '...';
-    }
-    return apply_filters('the_excerpt', $text);
-}
 
 /* function to encrypt inline email */
 
