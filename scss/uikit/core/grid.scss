@@ -149,20 +149,20 @@ $grid-divider-border-width:                      1px !default;
  */
 
 /* Large screen and bigger */
-@media (min-width: $breakpoint-xlarge) {
 
-    /* Horizontal gutter */
-    .uk-grid:not(.uk-grid-preserve) { margin-left: -$grid-gutter-large-horizontal; }
-    .uk-grid:not(.uk-grid-preserve) > * { padding-left: $grid-gutter-large-horizontal; }
 
-    /* Vertical gutter */
-    .uk-grid:not(.uk-grid-preserve) + .uk-grid { margin-top: $grid-gutter-large-vertical; }
-    .uk-grid:not(.uk-grid-preserve) > .uk-grid-margin { margin-top: $grid-gutter-large-vertical; }
+/* Horizontal gutter */
+.uk-grid.uk-grid-large:not(.uk-grid-preserve) { margin-left: -$grid-gutter-large-horizontal; }
+.uk-grid.uk-grid-large:not(.uk-grid-preserve) > * { padding-left: $grid-gutter-large-horizontal; }
 
-    /* Vertical gutter for panels */
-    .uk-grid:not(.uk-grid-preserve) > * > .uk-panel + .uk-panel { margin-top: $grid-gutter-large-vertical; }
+/* Vertical gutter */
+.uk-grid.uk-grid-large:not(.uk-grid-preserve) + .uk-grid { margin-top: $grid-gutter-large-vertical; }
+.uk-grid.uk-grid-large:not(.uk-grid-preserve) > .uk-grid-margin { margin-top: $grid-gutter-large-vertical; }
 
-}
+/* Vertical gutter for panels */
+.uk-grid.uk-grid-large:not(.uk-grid-preserve) > * > .uk-panel + .uk-panel { margin-top: $grid-gutter-large-vertical; }
+
+
 
 /*
  * Small gutter
@@ -220,28 +220,23 @@ $grid-divider-border-width:                      1px !default;
 
 }
 
-/* Large screen and bigger */
-@media (min-width: $breakpoint-xlarge) {
+/*
+ * Large gutter
+ */
 
-    /*
-     * Large gutter
-     */
+.uk-grid-large.uk-grid-divider:not(.uk-grid-preserve):not(:empty) {
+    margin-left: -$grid-gutter-large-horizontal;
+    margin-right: -$grid-gutter-large-horizontal;
+}
 
-    .uk-grid-divider:not(.uk-grid-preserve):not(:empty) {
-        margin-left: -$grid-gutter-large-horizontal;
-        margin-right: -$grid-gutter-large-horizontal;
-    }
+.uk-grid-large.uk-grid-divider:not(.uk-grid-preserve) > * {
+    padding-left: $grid-gutter-large-horizontal;
+    padding-right: $grid-gutter-large-horizontal;
+}
 
-    .uk-grid-divider:not(.uk-grid-preserve) > * {
-        padding-left: $grid-gutter-large-horizontal;
-        padding-right: $grid-gutter-large-horizontal;
-    }
-
-    .uk-grid-divider:not(.uk-grid-preserve):empty {
-        margin-top: $grid-gutter-large-vertical;
-        margin-bottom: $grid-gutter-large-vertical;
-    }
-
+.uk-grid-large.uk-grid-divider:not(.uk-grid-preserve):empty {
+    margin-top: $grid-gutter-large-vertical;
+    margin-bottom: $grid-gutter-large-vertical;
 }
 
 /*
