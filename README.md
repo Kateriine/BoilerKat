@@ -15,6 +15,7 @@ Better with wp-types and views.
 - Custom excerpt with length
 - Encrypted email
 - Add current page class to menu in almost every case
+- Real resize images on the fly (just provide src, width and height)
 
 ### In external/shortcodes.php (mainly used in wp-views)
 - Slug 
@@ -27,8 +28,8 @@ Better with wp-types and views.
 - Main sidebar
 
 ### In js/site.js
-- Dropdown menu (might be to remove)
 - Smartresize (you can change the mobile limit size)
+- Responsive pics management (drupal way): change src according to screen size (to be implemented in theme)
 
 ## Improvements in UIKit:
 

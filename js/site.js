@@ -1,15 +1,5 @@
 jQuery(document).ready(function($) {
 
-	//var 
-  // navEvent = false,
-  //   $navbar = $('.navbar'),
-  //   $nav = $navbar.find('.uk-navbar-nav'),
-  //   $toggleNav = $navbar.find('.uk-navbar-toggle'),
-  //   menuEvent = false,
-  //   menuOpen = false,
-  //   $submenu = $('.uk-navbar-nav').find('.sub-menu'),
-  //   $susmenu = $submenu.parent(),
-
   $respImg = $('.resp-image');
   $respImgBg = $('.resp-img-bg');
 
@@ -19,72 +9,10 @@ jQuery(document).ready(function($) {
         document.documentElement.className+=' ie';     
     }
 
-    /* Menu */
-
-    // function downEl(){
-    //     menuOpen = !menuOpen?  true : false;
-    //     $(this).find('.sub-menu').slideDown();
-    // }
-
-    // function upEl(e){
-    //   var $sus = $(this);
-    //   if(menuOpen){ 
-    //     setTimeout(function(){
-    //       menuOpen = false;
-    //       $sus.find('.sub-menu').slideUp();
-    //     }, 1000);
-    //   }
-    // }
-
-
-    // function fToggleNav(e){
-    //     e.preventDefault();
-    //     $navbar.toggleClass('open');
-    // }
-
     resizeSite();
 
     function resizeSite(){
             
-      /* Dropdown: please change mobile width if needed */
-      // if($(window).width()>959){
-      //     if(menuEvent === false){
-      //         $susmenu.on('mouseenter', downEl);
-      //         $susmenu.on('mouseleave', upEl);
-      //         $submenu.css('display', 'none');
-      //         $nav.removeClass('open');
-
-      //         menuEvent = true;
-      //     }
-      //     if(navEvent === true){
-      //       $toggleNav.on('click', fToggleNav); 
-      //       navEvent = false;
-      //     }
-
-      //    /* IE8 keeps mobile layout*/
-      //   if($('.ie8').length!==0){
-      //     $toggleNav.on('click', fToggleNav);
-      //     $susmenu.off('mouseenter', downEl);
-      //     $susmenu.off('mouseleave', upEl);
-      //     $submenu.css('display', 'block');
-      //     menuEvent = false;
-      //     navEvent = true;
-      //   }
-      // }
-      // else{
-      //   if(menuEvent === true){
-      //     $susmenu.off('mouseenter', downEl);
-      //     $susmenu.off('mouseleave', upEl);
-      //     $submenu.css('display', 'block');
-          
-      //     menuEvent = false;
-      //   }
-      //   if(navEvent === false){
-      //     $toggleNav.on('click', fToggleNav);
-      //     navEvent = true;
-      //   }
-      // }
-
        /* SRCs */
       if($(window).width()>1024){
           $respImgBg.each(function(){
