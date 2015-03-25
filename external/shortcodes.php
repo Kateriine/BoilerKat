@@ -19,7 +19,7 @@ function wpk_register_shortcodes(){
     add_shortcode('gallery', 'gallery_img');   
     add_shortcode('hide-email', 'hide_email_shortcode');  
     add_shortcode('theme-url', 'get_template_directory_uri');
-    add_shortcode( 'pic', 'kat_img_resize' );
+    add_shortcode('pic', 'kat_img_resize' );
     add_shortcode('icon', 'chicon');
     //add_shortcode('wpv-pagination', 'wpv_pagenavi');
 }
