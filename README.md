@@ -75,4 +75,3 @@ Fancybox, social sharing, slick, langs, pagenavi to uncomment in style.scss if n
 - Dynamic customisation of widgets
 - Gulp support
 - Video js support
-- According to this, adapt function starkers_script_enqueuer() in functions.php
