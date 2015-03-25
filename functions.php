@@ -63,7 +63,7 @@
 		wp_register_script( 'modernizr', get_template_directory_uri().'/js/modernizr.custom.15226.js');
 
 		
-		wp_register_script( 'uikit', get_template_directory_uri().'/js/uikit.js', array( 'jquery' ) );
+		wp_register_script( 'main', get_template_directory_uri().'/js/build/main.min.js', array( 'jquery' ) );
 		// wp_register_script( 'accordion', get_template_directory_uri().'/js/components/accordion.js', array( 'jquery' ) );
 		// wp_register_script( 'autocomplete', get_template_directory_uri().'/js/components/autocomplete.js', array( 'jquery' ) );
 		// wp_register_script( 'cover', get_template_directory_uri().'/js/components/cover.js', array( 'jquery' ) );
@@ -83,7 +83,6 @@
 		// wp_register_script( 'sticky', get_template_directory_uri().'/js/components/sticky.js', array( 'jquery' ) );
 		// wp_register_script( 'timepicker', get_template_directory_uri().'/js/components/timepicker.js', array( 'jquery' ) );
 		// wp_register_script( 'upload', get_template_directory_uri().'/js/components/upload.js', array( 'jquery' ) );
-		wp_register_script( 'site', get_template_directory_uri().'/js/site.js', array( 'jquery' ) );
 
 		
 		wp_enqueue_script('modernizr');
@@ -105,8 +104,7 @@
 		// wp_enqueue_script( 'sticky' );
 		// wp_enqueue_script( 'timepicker' );
 		// wp_enqueue_script( 'upload' );
-		wp_enqueue_script( 'uikit' );
-		wp_enqueue_script( 'site' );
+		wp_enqueue_script( 'main' );
 
 		wp_register_style( 'screen', get_stylesheet_directory_uri().'/css/style.css', '', '', 'screen' );
         wp_enqueue_style( 'screen' );
