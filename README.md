@@ -1,4 +1,4 @@
-# KatThemeBase
+# KatThemeBase V3.5
 Naked WP theme with uikit 2.16.2 and Starkers Masters
 
 Optional file to create widgets
