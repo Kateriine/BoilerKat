@@ -22,11 +22,14 @@ Optional functions to uncomment:
 ### In external/shortcodes.php (mainly used in wp-views)
 - Shortcode for icon svgs
 - Antispam email shortcodes
-- Create images on the fly 
-- Theme directory
-- Increment in views
-- Custom image sizes urls
+- Shortcode to create images on the fly
+- Alt image shortcode
+- Theme directory shortcode
+- Increment in views shortcode
 - Main site url
+- Add custom conditions in views
+- Custom image sizes urls shortcode(to uncomment)
+- wp-pagenavi shortcode support in views (to uncomment)
 
 ### In external/sidebars.php
 - Main sidebar
