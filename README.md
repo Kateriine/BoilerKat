@@ -30,6 +30,8 @@ Optional functions to uncomment:
 - Add custom conditions in views
 - Custom image sizes urls shortcode(to uncomment)
 - wp-pagenavi shortcode support in views (to uncomment) (Works with some scss files listed below)
+- custom gallery shortcode
+- custom video gallery
 
 ### In external/sidebars.php
 - Main sidebar
