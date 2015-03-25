@@ -8,7 +8,6 @@ add_filter('wpv-extra-condition-filters', 'filter_shortcode');
 /* Shortcodes */
 /**************/
 function wpk_register_shortcodes(){
-    add_shortcode('slug', 'wpv_post_slug');
     //Resized images shortcodes example:
     // add_shortcode('url-pic-square', 'url_pic_square');
     add_shortcode('post-intro-excerpt', 'post_intro_excerpt');
@@ -31,25 +30,98 @@ function chicon($atts){
               <use xlink:href="' .get_stylesheet_directory_uri() . '/images/icons.svg#chicon-'.$icon.'" />
             </svg>';
 }
-function hide_email_shortcode($atts){
-    extract(
-        shortcode_atts( array('email' => ''), $atts )
-    );
-    return hide_email($email);
-}
-function featImg_alt($id){
-    global $post;
-    global $WP_Views;
-    $id = ($id) ? $id : $post->ID;
-    $thumb_id = get_post_thumbnail_id($post->id);
-    $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-    if(count($alt)) echo $alt;
+
+/**
+* Image shortcode callback
+*
+* Enables the [pic] shortcode, pseudo-TimThumb but creates resized and cropped image files safely
+* from existing media library entries. Usage: 
+* [pic src="http://example.org/wp-content/uploads/2012/03/image.png" width="100" height="100"]
+*
+*/
+
+function kat_img_resize( $atts ) {
+   extract( shortcode_atts( array(
+       'src' => '',
+       'width' => '',
+       'height' => '',
+   ), $atts ) );
+
+   global $wpdb;
+
+   // Sanitize
+   $height = absint( $height );
+   $width = absint( $width );
+   $src = esc_url( strtolower( $src ) );
+   $needs_resize = true;
+
+   $upload_dir = wp_upload_dir();
+   $base_url = strtolower( $upload_dir['baseurl'] );
+
+   // Let's see if the image belongs to our uploads directory.
+   if ( substr( $src, 0, strlen( $base_url ) ) != $base_url ) {
+       return "Error: external images are not supported.";
+   }
+
+   // Look the file up in the database.
+   $file = str_replace( trailingslashit( $base_url ), '', $src );
+   $attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = '_wp_attachment_metadata' AND meta_value LIKE %s LIMIT 1;", '%"' . like_escape( $file ) . '"%' ) );
+
+   // If an attachment record was not found.
+   if ( ! $attachment_id ) {
+       return "Error: attachment not found.";
+   }
+   // Look through the attachment meta data for an image that fits our size.
+   $meta = wp_get_attachment_metadata( $attachment_id );
+       $srcArr = explode('.', $src);
+       $name = $srcArr[0] . '-' . $width . 'x' .$height . '.' . $srcArr[1];
+
+
+   foreach( $meta['sizes'] as $key => $size ) {
+       if ( $size['width'] == $width && $size['height'] == $height ) {
+
+           $src = str_replace( basename( $src ), $size['file'], $src );
+           $needs_resize = false;
+           break;
+       }
+       //$siz = 'resized-'.$width .'x' . $height;
+       // if($name == $size['file']){
+       //     $needs_resize = false;
+       //     break;
+       // }
+   }
+
+   //Miracle solution: if width x height size doesn't exist for this media, we create it :)
+   $siz = 'resized-'.$width .'x' . $height;
+   if( $meta['sizes'][$siz]['file'] != '' ){
+       $needs_resize = false;
+   }
+   else{
+       $needs_resize = true;
+   }
+
+   // If an image of such size was not found, we can create one.
+   if ( $needs_resize ) {
+       $attached_file = get_attached_file( $attachment_id );
+       $resized = image_make_intermediate_size( $attached_file, $width, $height, true );
+       if ( ! is_wp_error( $resized ) ) {
+
+           // Let metadata know about our new size.
+           $key = sprintf( 'resized-%dx%d', $width, $height );
+           $meta['sizes'][$key] = $resized;
+           $src = str_replace( basename( $src ), $resized['file'], $src );
+           wp_update_attachment_metadata( $attachment_id, $meta );
+
+           // Record in backup sizes so everything's cleaned up when attachment is deleted.
+           $backup_sizes = get_post_meta( $attachment_id, '_wp_attachment_backup_sizes', true );
+           if ( ! is_array( $backup_sizes ) ) $backup_sizes = array();
+           $backup_sizes[$key] = $resized;
+           update_post_meta( $attachment_id, '_wp_attachment_backup_sizes', $backup_sizes );
+       }
+   }
+   return esc_url( $src );
 }
 
-function  wpv_post_slug(){
-    global $post;
-    return $post->post_name;
-}
 
 /* Resized images shortcodes example: */
 // function url_pic_square($id) {
@@ -62,26 +134,21 @@ function  wpv_post_slug(){
 //     }
 // }
 
+function featImg_alt($id){
+    global $post;
+    global $WP_Views;
+    $id = ($id) ? $id : $post->ID;
+    $thumb_id = get_post_thumbnail_id($post->id);
+    $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+    if(count($alt)) echo $alt;
+}
 
-// // Add a custom wp_pagenavi shortcode
-// function wpv_pagenavi($args, $content) {
-//  global $WP_Views;
-//  //print_r($WP_Views->post_query);
-//  return wp_pagenavi( array('echo' => false, 'query' => $WP_Views->post_query));
-// }
-
-// add_filter('wpv_view_settings', 'ek_my_vs', 99, 2);
- 
-// function ek_my_vs($settings, $id) {
-//     //if ( $id = 89 ) { // change XXX to the View ID being used in the page on the homepage
-//         global $wp_query;
-//         $my_query_vars = $wp_query->query_vars;
-//         $paged = isset( $my_query_vars['page'] )  ? $my_query_vars['page'] : 1;
-//         $settings['paged'] = $paged;
-//     //}
-//     return $settings;
-// }
-
+function hide_email_shortcode($atts){
+    extract(
+        shortcode_atts( array('email' => ''), $atts )
+    );
+    return hide_email($email);
+}
 
 /* To count posts in wp-views */
 function incrementor() {
@@ -124,5 +191,25 @@ function filter_shortcode($evaluate)
         break;
     }
 } 
+
+
+// // Add a custom wp_pagenavi shortcode
+// function wpv_pagenavi($args, $content) {
+//  global $WP_Views;
+//  //print_r($WP_Views->post_query);
+//  return wp_pagenavi( array('echo' => false, 'query' => $WP_Views->post_query));
+// }
+
+// add_filter('wpv_view_settings', 'ek_my_vs', 99, 2);
+ 
+// function ek_my_vs($settings, $id) {
+//     //if ( $id = 89 ) { // change XXX to the View ID being used in the page on the homepage
+//         global $wp_query;
+//         $my_query_vars = $wp_query->query_vars;
+//         $paged = isset( $my_query_vars['page'] )  ? $my_query_vars['page'] : 1;
+//         $settings['paged'] = $paged;
+//     //}
+//     return $settings;
+// }
 
 	?>

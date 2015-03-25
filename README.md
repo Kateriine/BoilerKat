@@ -1,8 +1,6 @@
 # KatThemeBase
 Naked WP theme with uikit 2.16.2 and Starkers Masters
 
-Possibility to use timthumb for image treatment
-
 Optional file to create widgets
 
 Better with wp-types and views.
@@ -16,9 +14,15 @@ Better with wp-types and views.
 - Encrypted email
 - Add current page class to menu in almost every case
 - Real resize images on the fly (just provide src, width and height)
+Optional functions to uncomment:
+- WPML custom language menu
+- Custom map with pronamic
+- Post 2 post connections
 
 ### In external/shortcodes.php (mainly used in wp-views)
-- Slug 
+- Shortcode for icon svgs
+- Antispam email shortcodes
+- Create images on the fly 
 - Theme directory
 - Increment in views
 - Custom image sizes urls
@@ -26,6 +30,13 @@ Better with wp-types and views.
 
 ### In external/sidebars.php
 - Main sidebar
+
+### In external/gforms.php
+(First of all, uncomment "require_once( 'external/gforms.php' );" in functions.php)
+
+- tabindex regulation when multiple forms on same page
+- populate a simple value in an input
+- populate multiple values in a select input
 
 ### In js/site.js
 - Smartresize (you can change the mobile limit size)
@@ -35,7 +46,7 @@ Better with wp-types and views.
 
 - Replacement of font-sizes in px/rem instead of px
 - mixin .btn to manage buttons in scss
-- offcanvas revamped
+- offcanvas revamped (mobile offcanvas to desktop sidebar)
 - Some additions in grid.scss 
 
 ## To improve:

@@ -29,7 +29,6 @@ add_action( 'after_setup_theme', 'custom_image_setup' );
  */
 remove_action('wp_head', 'feed_links_extra', 3);
 
-
 /*
  Désactiver le flux RSS des articles et celui des commentaires
  */
@@ -78,98 +77,6 @@ function custom_image_setup () {
     // add_image_size( 'square', 600, 600, true );
     // add_filter( 'image_size_names_choose', 'insert_custom_image_sizes' );
 }
-
-/**
-* Image shortcode callback
-*
-* Enables the [pic] shortcode, pseudo-TimThumb but creates resized and cropped image files safely
-* from existing media library entries. Usage: 
-* [pic src="http://example.org/wp-content/uploads/2012/03/image.png" width="100" height="100"]
-*
-*/
-function kat_img_resize( $atts ) {
-   extract( shortcode_atts( array(
-       'src' => '',
-       'width' => '',
-       'height' => '',
-   ), $atts ) );
-
-   global $wpdb;
-
-   // Sanitize
-   $height = absint( $height );
-   $width = absint( $width );
-   $src = esc_url( strtolower( $src ) );
-   $needs_resize = true;
-
-   $upload_dir = wp_upload_dir();
-   $base_url = strtolower( $upload_dir['baseurl'] );
-
-   // Let's see if the image belongs to our uploads directory.
-   if ( substr( $src, 0, strlen( $base_url ) ) != $base_url ) {
-       return "Error: external images are not supported.";
-   }
-
-   // Look the file up in the database.
-   $file = str_replace( trailingslashit( $base_url ), '', $src );
-   $attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = '_wp_attachment_metadata' AND meta_value LIKE %s LIMIT 1;", '%"' . like_escape( $file ) . '"%' ) );
-
-   // If an attachment record was not found.
-   if ( ! $attachment_id ) {
-       return "Error: attachment not found.";
-   }
-   // Look through the attachment meta data for an image that fits our size.
-   $meta = wp_get_attachment_metadata( $attachment_id );
-       $srcArr = explode('.', $src);
-       $name = $srcArr[0] . '-' . $width . 'x' .$height . '.' . $srcArr[1];
-
-
-   foreach( $meta['sizes'] as $key => $size ) {
-       if ( $size['width'] == $width && $size['height'] == $height ) {
-
-           $src = str_replace( basename( $src ), $size['file'], $src );
-           $needs_resize = false;
-           break;
-       }
-       //$siz = 'resized-'.$width .'x' . $height;
-       // if($name == $size['file']){
-       //     $needs_resize = false;
-       //     break;
-       // }
-   }
-
-   //Miracle solution: if width x height size doesn't exist for this media, we create it :)
-   $siz = 'resized-'.$width .'x' . $height;
-   if( $meta['sizes'][$siz]['file'] != '' ){
-       $needs_resize = false;
-   }
-   else{
-       $needs_resize = true;
-   }
-
-   // If an image of such size was not found, we can create one.
-   if ( $needs_resize ) {
-       $attached_file = get_attached_file( $attachment_id );
-       $resized = image_make_intermediate_size( $attached_file, $width, $height, true );
-       if ( ! is_wp_error( $resized ) ) {
-
-           // Let metadata know about our new size.
-           $key = sprintf( 'resized-%dx%d', $width, $height );
-           $meta['sizes'][$key] = $resized;
-           $src = str_replace( basename( $src ), $resized['file'], $src );
-           wp_update_attachment_metadata( $attachment_id, $meta );
-
-           // Record in backup sizes so everything's cleaned up when attachment is deleted.
-           $backup_sizes = get_post_meta( $attachment_id, '_wp_attachment_backup_sizes', true );
-           if ( ! is_array( $backup_sizes ) ) $backup_sizes = array();
-           $backup_sizes[$key] = $resized;
-           update_post_meta( $attachment_id, '_wp_attachment_backup_sizes', $backup_sizes );
-       }
-   }
-   return esc_url( $src );
-}
-
-
 
 function get_attachment_id_from_src ($image_src) {
 
@@ -228,77 +135,6 @@ function hide_email_w_icon($email)
   return '<span id="'.$id.'"></span>'.$script;
 
 }
-
-class Excerpt {
-
-  // Default length (by WordPress)
-  public static $length = 55;
-
-  // So you can call: my_excerpt('short');
-  public static $types = array(
-      'short' => 25,
-      'regular' => 55,
-      'long' => 100
-    );
-
-  /**
-   * Sets the length for the excerpt,
-   * then it adds the WP filter
-   * And automatically calls the_excerpt();
-   *
-   * @param string $new_length 
-   * @return void
-   * @author Baylor Rae'
-   */
-  public static function length($new_length = 55) {
-    Excerpt::$length = $new_length;
-
-    add_filter('excerpt_length', 'Excerpt::new_length');
-
-    Excerpt::output();
-  }
-
-  // Tells WP the new length
-  public static function new_length() {
-    if( isset(Excerpt::$types[Excerpt::$length]) )
-      return Excerpt::$types[Excerpt::$length];
-    else
-      return Excerpt::$length;
-  }
-
-  // Echoes out the excerpt
-  public static function output() {
-    the_excerpt();
-  }
-
-}
-
-// An alias to the class
-function my_excerpt($length = 55) {
-  Excerpt::length($length);
-}
-
-
-//Add uikit dropdown nav class 
-function add_menu_parent_class( $items ) {
-    global $wp_query;
-
-    $post = $wp_query->get_queried_object();
-    $parents = array();
-    foreach ( $items as $item ) {
-
-      /***** UIKIT ****/
-      foreach ( $item->classes as $class ) {
-        if($class=='menu-item-has-children'){
-          $item->classes[] = 'uk-parent';
-        }
-      }
-
-    }
-
-    return $items;
-}
-
 //add some icon stuff
 function icon($icon){
   return '<svg class="chicon">
@@ -314,22 +150,54 @@ class Ui_Nav_Menu extends Walker_Nav_Menu {
   }
 }
 
-//custom language menu with WPML: uncomment if necessary
+//custom language menu with WPML plugin: uncomment if necessary
+
 // function icl_lang(){
 //   $languages = icl_get_languages('skip_missing=0');
-//   echo '<div id="lang_sel"><ul>';
+//   echo '<ul id="lang_custom">';
 //   foreach($languages as $l){
 //     if($l['active']) {
-//         echo '<li><a href="#" class="icl_lang_sel_current uk-button uk-button-round">'.$l['language_code'].'</a></li>';
-        
+//         echo '<li data-uk-dropdown="{mode:\'click\'}"><a href="#" class="icl_lang_sel_current">'.$l['language_code'].'</a><ul class="uk-dropdown">';
 
 //         foreach($languages as $l2){
-//             if(!$l2['active']) echo '<li class="icl-'.$l2['language_code'].'"><a rel="alternate" hreflang="'.$l2['language_code'].'"  href="'.$l2['url'].'" class="icl_lang_sel_native  uk-button uk-button-round">'.$l2['language_code'].'</a></li>';
+//             if(!$l2['active']) echo '<li class="icl-'.$l2['language_code'].'"><a rel="alternate" hreflang="'.$l2['language_code'].'"  href="'.$l2['url'].'" class="icl_lang_sel_native">'.$l2['language_code'].'</a></li>';
 //         }
-      
+//       echo '</ul></li>';
 //     }
 //   }
-//   echo '</ul></div>';  
+//   echo '</ul>';  
+// }
+
+//Map (to use with pronamic plugin)
+// function  custom_map(){
+//   global $post;
+//    if ( function_exists( 'pronamic_google_maps' ) ) {
+//       pronamic_google_maps( array(
+//           'width'  => '100%',
+//           'height' => '100%',
+//           'map_options' => array(
+//             'scrollwheel' => false
+//           ),
+//           'marker_options' => array(
+//                 'icon' => get_stylesheet_directory_uri() . '/images/markerIcon.svg'
+//             ) 
+//       ) );
+//   }
+// }
+
+// post 2 post connection example
+// add_action('init', 'connectPosts');
+// function connectPosts(){
+//   /* Fields for homepage only*/
+//   p2p_register_connection_type( 
+//     array(
+//       'name' => 'post_to_page',
+//       'from' => 'post',      
+//       'to' => 'page',
+//       'sortable' => 'any',
+//       'reciprocal' => 'true'
+//     ) 
+//   );
 // }
 
 ?>
