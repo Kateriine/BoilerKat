@@ -15,7 +15,7 @@ Better with wp-types and views.
 - Add current page class to menu in almost every case
 - Real resize images on the fly (just provide src, width and height)
 Optional functions to uncomment:
-- WPML custom language menu
+- WPML custom language menu (Works with some scss files listed below)
 - Custom map with pronamic
 - Post 2 post connections
 
@@ -29,10 +29,16 @@ Optional functions to uncomment:
 - Main site url
 - Add custom conditions in views
 - Custom image sizes urls shortcode(to uncomment)
-- wp-pagenavi shortcode support in views (to uncomment)
+- wp-pagenavi shortcode support in views (to uncomment) (Works with some scss files listed below)
 
 ### In external/sidebars.php
 - Main sidebar
+
+### In external/social.php
+(First of all, uncomment "require_once( 'external/social.php' );" in functions.php)
+(Works with some scss files listed below)
+- Social share buttons
+- Social stats buttons
 
 ### In external/gforms.php
 (First of all, uncomment "require_once( 'external/gforms.php' );" in functions.php)
@@ -41,9 +47,16 @@ Optional functions to uncomment:
 - populate a simple value in an input
 - populate multiple values in a select input
 
+## JS
+Fancybox, slick: to add to grunt concat
+(Works with some scss files listed below)
+
 ### In js/site.js
 - Smartresize (you can change the mobile limit size)
 - Responsive pics management (drupal way): change src according to screen size (to be implemented in theme)
+
+##SCSS:
+Fancybox, social sharing, slick, langs, pagenavi to uncomment in style.scss if needed.
 
 ## Improvements in UIKit:
 
