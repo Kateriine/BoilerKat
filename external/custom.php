@@ -299,6 +299,12 @@ function add_menu_parent_class( $items ) {
     return $items;
 }
 
+//add some icon stuff
+function icon($icon){
+  return '<svg class="chicon">
+            <use xlink:href="' .get_stylesheet_directory_uri() . '/images/icons.svg#chicon-'.$icon.'" />
+          </svg>';
+}
 
 //Add uikit submenu class 
 class Ui_Nav_Menu extends Walker_Nav_Menu {

@@ -1,7 +1,7 @@
 <?php
 add_action( 'init', 'wpk_register_shortcodes');
 
-    add_filter('wpv-extra-condition-filters', 'filter_shortcode');
+add_filter('wpv-extra-condition-filters', 'filter_shortcode');
 
 
 /**************/
@@ -18,7 +18,18 @@ function wpk_register_shortcodes(){
     add_shortcode('hide-email', 'hide_email_shortcode');  
     add_shortcode('theme-url', 'get_template_directory_uri');
     add_shortcode( 'pic', 'kat_img_resize' );
+    add_shortcode('icon', 'chicon');
     //add_shortcode('wpv-pagination', 'wpv_pagenavi');
+}
+
+//add some icon stuff
+function chicon($atts){
+    extract(
+        shortcode_atts( array('icon' => ''), $atts )
+    );
+    return '<svg class="chicon">
+              <use xlink:href="' .get_stylesheet_directory_uri() . '/images/icons.svg#chicon-'.$icon.'" />
+            </svg>';
 }
 function hide_email_shortcode($atts){
     extract(
