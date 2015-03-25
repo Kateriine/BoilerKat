@@ -52,7 +52,11 @@ Optional functions to uncomment:
 - offcanvas revamped (mobile offcanvas to desktop sidebar)
 - Some additions in grid.scss 
 
+## Notes:
+- Works well with Grunt and svgstore (file has been prepared)
+
 ## To improve:
 
 - Grunt management of js (add or delete some (un)necessary files)
+- Gulp support
 - According to this, adapt function starkers_script_enqueuer() in functions.php
