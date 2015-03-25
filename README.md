@@ -9,8 +9,6 @@ Better with <a href="http://wp-types.com/" target="_blank">wp-types and views</a
 
 ### In external/custom.php
 - Custom image sizes (you can change the sizes, add more)
-- Custom intro field excerpt
-- Custom excerpt with length
 - Encrypted email
 - Add current page class to menu in almost every case
 - Real resize images on the fly (just provide src, width and height)
