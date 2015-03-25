@@ -1,4 +1,5 @@
 <?php
+remove_shortcode('gallery', 'gallery_shortcode');
 add_action( 'init', 'wpk_register_shortcodes');
 
 add_filter('wpv-extra-condition-filters', 'filter_shortcode');
@@ -10,10 +11,12 @@ add_filter('wpv-extra-condition-filters', 'filter_shortcode');
 function wpk_register_shortcodes(){
     //Resized images shortcodes example:
     // add_shortcode('url-pic-square', 'url_pic_square');
+    // add_shortcode('gallery-video', 'gallery_video'); 
     add_shortcode('post-intro-excerpt', 'post_intro_excerpt');
     add_shortcode('incrementor', 'incrementor');
     add_shortcode('site-url', 'site_url');      
-    add_shortcode('img-alt', 'featImg_alt');      
+    add_shortcode('img-alt', 'featImg_alt');  
+    add_shortcode('gallery', 'gallery_img');   
     add_shortcode('hide-email', 'hide_email_shortcode');  
     add_shortcode('theme-url', 'get_template_directory_uri');
     add_shortcode( 'pic', 'kat_img_resize' );
@@ -152,9 +155,111 @@ function hide_email_shortcode($atts){
 
 /* To count posts in wp-views */
 function incrementor() {
-        static $i = 1;
-        return $i ++;
+    static $i = 1;
+    return $i ++;
+}
+
+// Gallery shortcode
+
+function gallery_img($attr) {
+    global $post, $wp_locale;
+
+
+    static $instance = 0;
+    $instance++;
+
+    if ( ! empty( $attr['ids'] ) ) {
+        // 'ids' is explicitly ordered, unless you specify otherwise.
+        if ( empty( $attr['orderby'] ) )
+            $attr['orderby'] = 'post__in';
+        $attr['include'] = $attr['ids'];
     }
+
+    // We're trusting author input, so let's at least make sure it looks like a valid orderby statement
+    if ( isset( $attr['orderby'] ) ) {
+        $attr['orderby'] = sanitize_sql_orderby( $attr['orderby'] );
+        if ( !$attr['orderby'] )
+            unset( $attr['orderby'] );
+    }
+
+    extract(shortcode_atts(array(
+        'order'      => 'ASC',
+        'orderby'    => 'menu_order ID',
+        'id'         => $post->ID,
+        'itemtag'    => 'dl',
+        'icontag'    => 'dt',
+        'captiontag' => 'dd',
+        'columns'    => 3,
+        'size'       => 'thumbnail',
+        'include'    => '',
+        'exclude'    => ''
+    ), $attr));
+
+    $id = intval($id);
+    if ( 'RAND' == $order )
+        $orderby = 'none';
+
+    if ( !empty($include) ) {
+        $_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+
+        $attachments = array();
+        foreach ( $_attachments as $key => $val ) {
+            $attachments[$val->ID] = $_attachments[$key];
+        }
+    } elseif ( !empty($exclude) ) {
+        $attachments = get_children( array('post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+    } else {
+        $attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+    }
+
+    if ( empty($attachments) )
+        return '';
+
+
+    $output= '<div class="gallery"><div class="uk-grid">';
+
+    $i = 0;
+    foreach ( $attachments as $id => $attachment ) {
+        setup_postdata($post); 
+           
+        $large = wp_get_attachment_image_src( $attachment->ID , 'large' );
+        $th = wp_get_attachment_image_src( $attachment->ID ,  'square' );
+        $output .= '<div class="uk-width-small-1-2 uk-width-medium-1-4">';
+        $output .= '<figure  class="figure"><a href="';
+        $output .= $large[0];
+        $output .= '"  class="fancybox clearfix" data-fancybox-group="gallery"><img src="' . $th[0] . '" alt="';
+        $output.= apply_filters( 'the_title' , $post->post_title );
+        $output.= '"></a></figure></div>';
+    }
+    $output .= '</div></div>';
+    return $output;
+}
+
+// function gallery_video($attr) {
+//     global $post, $wp_locale;
+
+//     $argsV = array( 'post_type' => 'attachment', 'numberposts' => -1, 'post_status' => null, 'post_mime_type'  => 'video/mp4', 'post_parent' => $post->ID, 'order' => 'ASC' );
+    
+//     $vids = get_posts($argsV);
+//     $output= '<div class="gallery"><div class="uk-grid">';
+  
+//     if ($vids) {
+    
+//         foreach( $vids as $vid ) : setup_postdata($post); 
+//         $output.= '<div class="uk-width-medium-1-2">';
+//         $output.= '<div class="video-wrapper ratio-16-9">';
+//         $output.= '<div class="video-container">';
+//         $output.= '<video id="example_video_' . $vid->ID . '" class="video-js vjs-default-skin" controls preload="none" poster="" data-setup="{}">';
+//         $output.= '<source src="';
+//         $output .= wp_get_attachment_url( $vid->ID );
+//         $output.= '" type="video/mp4" />';
+//         $output.= '</video></div></div></div>';
+//         endforeach;
+//     }
+//     $output.= '</div></div><div class="clearfix"></div>';
+
+//     return $output;
+// }
 
 /* Add custom filters to wp-views */
 function filter_shortcode($evaluate)

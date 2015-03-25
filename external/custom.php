@@ -150,6 +150,8 @@ class Ui_Nav_Menu extends Walker_Nav_Menu {
   }
 }
 
+
+
 //custom language menu with WPML plugin: uncomment if necessary
 
 // function icl_lang(){

@@ -95,7 +95,7 @@
 #fancybox-loading div {
     width: 24px;
     height: 24px;
-    background: rgba(0,0,0,.75) url(images/fancybox_loading.gif) center center no-repeat;
+    background: rgba(0,0,0,.75) url(../images/fancybox_loading.gif) center center no-repeat;
     background-size:contain;
 }
 
@@ -116,7 +116,7 @@
     border: 0;
     -webkit-appearance: none;
     
-    background: $blue;
+    background: $primaryColor;
     display: block;
     transition: opacity .2s ease-in;
 
@@ -145,7 +145,7 @@
     height: 100%;
     cursor: pointer;
     text-decoration: none;
-    background: transparent url(images/blank.gif); /* helps IE */
+    background: transparent url(../images/blank.gif); /* helps IE */
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     z-index: 8040;
 }
@@ -157,7 +157,7 @@
 
     &:before {
         content: "\e600";
-        font-family: 'icomoon';
+        font-family: 'chicon';
         line-height: 1;
         color: #FFF;
         opacity: 0.75;
@@ -183,7 +183,7 @@
     transition: opacity .2s ease-in;
     &:before {
         content: "\e601";
-        font-family: 'icomoon';
+        font-family: 'chicon';
         line-height: 1;
         color: #FFF;
         opacity: 0.75;
@@ -332,7 +332,7 @@
        only screen and (min-device-pixel-ratio: 1.5){
 
     #fancybox-loading div {
-        background-image: url(images/fancybox_loading@2x.gif);
+        background-image: url(../images/fancybox_loading@2x.gif);
         background-size: 24px 24px; /*The size of the normal image, half the size of the hi-res image*/
     }
 }
