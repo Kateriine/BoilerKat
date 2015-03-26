@@ -12,8 +12,7 @@ function theme_setup() {
   Sécurité:
    Activer les liens RSS automatiques (feed_links & feed_links_extra)
    */
-  add_theme_support( 'automatic-feed-links' );}
-
+  add_theme_support( 'automatic-feed-links' );
 }
 add_action( 'after_setup_theme', 'theme_setup' );
 add_action( 'after_setup_theme', 'custom_image_setup' );
@@ -150,7 +149,25 @@ class Ui_Nav_Menu extends Walker_Nav_Menu {
   }
 }
 
+//Add uikit dropdown nav class 
+function add_menu_parent_class( $items ) {
+    global $wp_query;
 
+    $post = $wp_query->get_queried_object();
+    $parents = array();
+    foreach ( $items as $item ) {
+
+      /***** UIKIT ****/
+      foreach ( $item->classes as $class ) {
+        if($class=='menu-item-has-children'){
+          $item->classes[] = 'uk-parent';
+        }
+      }
+
+    }
+
+    return $items;
+}
 
 //custom language menu with WPML plugin: uncomment if necessary
 
