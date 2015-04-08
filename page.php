@@ -15,12 +15,12 @@
  */
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
-<div class="uk-container uk-container-center margin-bottom-desktop">
+<div class="uk-container uk-container-center">
 <main role="main">
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <article class="uk-article">
         <header>
-            <h2 class="uk-article-title"><?php the_title(); ?></h2>
+            <h1 class="uk-article-title"><?php the_title(); ?></h1>
         </header>
         <?php the_content(); ?>
     </article>

@@ -32,12 +32,12 @@ $alert-background:                               #ebf7fd !default;
 $alert-color:                                    #2d7091 !default;
 
 $alert-success-background:                       #f2fae3 !default;
-$alert-success-color:                            #659f13 !default;
+$alert-success-color:                            $green !default;
 
-$alert-warning-background:                       #fffceb !default;
+$alert-warning-background:                       $orange !default;
 $alert-warning-color:                            #e28327 !default;
 
-$alert-danger-background:                        #fff1f0 !default;
+$alert-danger-background:                       $red !default;
 $alert-danger-color:                             #d85030 !default;
 
 $alert-large-padding:                            20px !default;

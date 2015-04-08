@@ -10,9 +10,9 @@
  */
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
-<div class="uk-container uk-container-center margin-bottom-desktop">
+<div class="uk-container uk-container-center">
     <?php if ( have_posts() ): ?>
-    <h2>Search Results for '<?php echo get_search_query(); ?>'</h2> 
+    <h1>Search Results for '<?php echo get_search_query(); ?>'</h1> 
     <div class="uk-grid" data-uk-grid-margin>
 
     <?php while ( have_posts() ) : the_post(); ?>
@@ -30,7 +30,7 @@
     <?php endwhile; ?>
     </div>
     <?php else: ?>
-    <h2>No results found for '<?php echo get_search_query(); ?>'</h2>
+    <h1>No results found for '<?php echo get_search_query(); ?>'</h1>
     <?php endif; ?>
 </main>
 </div>

@@ -12,7 +12,7 @@
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
 <main role="main">
     <header>
-        <h2>Page not found</h2>
+        <h1>Page not found</h1>
     </header>
     <?php get_search_form(); ?>
 </main>

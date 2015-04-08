@@ -20,7 +20,7 @@ $form-advanced-checked-color:                  #00a8e6 !default;
 $form-advanced-radio-size:                     8px !default;
 
 $form-advanced-checkbox-icon:                  "\f00c" !default;
-$form-advanced-checkbox-font-size:             12;
+$form-advanced-checkbox-font-size:             12px !default;
 
 $form-advanced-disabled-border:                #ddd !default;
 $form-advanced-disabled-color:                 #aaa !default;
@@ -85,7 +85,7 @@ $form-advanced-disabled-color:                 #aaa !default;
 .uk-form input[type=checkbox]:checked:before {
     content: $form-advanced-checkbox-icon;
     font-family: FontAwesome;
-    @include font-size($form-advanced-checkbox-font-size);
+    font-size: $form-advanced-checkbox-font-size;
     -webkit-font-smoothing: antialiased;
     text-align: center;
     line-height: $form-advanced-size - (2 * $form-advanced-border-width);

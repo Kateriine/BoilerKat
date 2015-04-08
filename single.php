@@ -16,7 +16,7 @@
 
     <article class="uk-article">
         <header class="uk-article-title">
-           <h2><?php the_title(); ?></h2>
+           <h1><?php the_title(); ?></h1>
         </header>
          <div class="uk-article-meta">
             <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date(); ?> <?php the_time(); ?></time> <?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?>

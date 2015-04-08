@@ -36,94 +36,18 @@ function chicon($atts){
 
 /**
 * Image shortcode callback
-*
-* Enables the [pic] shortcode, pseudo-TimThumb but creates resized and cropped image files safely
-* from existing media library entries. Usage: 
+* Enables the [pic] shortcode, pseudo-TimThumb but creates resized and cropped image files safely from existing media library entries. Usage: 
 * [pic src="http://example.org/wp-content/uploads/2012/03/image.png" width="100" height="100"]
-*
 */
-
-function kat_img_resize( $atts ) {
-   extract( shortcode_atts( array(
+function pic($atts){
+     extract( shortcode_atts( array(
        'src' => '',
        'width' => '',
        'height' => '',
    ), $atts ) );
-
-   global $wpdb;
-
-   // Sanitize
-   $height = absint( $height );
-   $width = absint( $width );
-   $src = esc_url( strtolower( $src ) );
-   $needs_resize = true;
-
-   $upload_dir = wp_upload_dir();
-   $base_url = strtolower( $upload_dir['baseurl'] );
-
-   // Let's see if the image belongs to our uploads directory.
-   if ( substr( $src, 0, strlen( $base_url ) ) != $base_url ) {
-       return "Error: external images are not supported.";
-   }
-
-   // Look the file up in the database.
-   $file = str_replace( trailingslashit( $base_url ), '', $src );
-   $attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = '_wp_attachment_metadata' AND meta_value LIKE %s LIMIT 1;", '%"' . like_escape( $file ) . '"%' ) );
-
-   // If an attachment record was not found.
-   if ( ! $attachment_id ) {
-       return "Error: attachment not found.";
-   }
-   // Look through the attachment meta data for an image that fits our size.
-   $meta = wp_get_attachment_metadata( $attachment_id );
-       $srcArr = explode('.', $src);
-       $name = $srcArr[0] . '-' . $width . 'x' .$height . '.' . $srcArr[1];
-
-
-   foreach( $meta['sizes'] as $key => $size ) {
-       if ( $size['width'] == $width && $size['height'] == $height ) {
-
-           $src = str_replace( basename( $src ), $size['file'], $src );
-           $needs_resize = false;
-           break;
-       }
-       //$siz = 'resized-'.$width .'x' . $height;
-       // if($name == $size['file']){
-       //     $needs_resize = false;
-       //     break;
-       // }
-   }
-
-   //Miracle solution: if width x height size doesn't exist for this media, we create it :)
-   $siz = 'resized-'.$width .'x' . $height;
-   if( $meta['sizes'][$siz]['file'] != '' ){
-       $needs_resize = false;
-   }
-   else{
-       $needs_resize = true;
-   }
-
-   // If an image of such size was not found, we can create one.
-   if ( $needs_resize ) {
-       $attached_file = get_attached_file( $attachment_id );
-       $resized = image_make_intermediate_size( $attached_file, $width, $height, true );
-       if ( ! is_wp_error( $resized ) ) {
-
-           // Let metadata know about our new size.
-           $key = sprintf( 'resized-%dx%d', $width, $height );
-           $meta['sizes'][$key] = $resized;
-           $src = str_replace( basename( $src ), $resized['file'], $src );
-           wp_update_attachment_metadata( $attachment_id, $meta );
-
-           // Record in backup sizes so everything's cleaned up when attachment is deleted.
-           $backup_sizes = get_post_meta( $attachment_id, '_wp_attachment_backup_sizes', true );
-           if ( ! is_array( $backup_sizes ) ) $backup_sizes = array();
-           $backup_sizes[$key] = $resized;
-           update_post_meta( $attachment_id, '_wp_attachment_backup_sizes', $backup_sizes );
-       }
-   }
-   return esc_url( $src );
+  return kat_img_resize( $src, $width, $height );
 }
+
 
 
 /* Resized images shortcodes example: */
@@ -137,11 +61,12 @@ function kat_img_resize( $atts ) {
 //     }
 // }
 
+//Get alt attribute of featured image
 function featImg_alt($id){
     global $post;
     global $WP_Views;
     $id = ($id) ? $id : $post->ID;
-    $thumb_id = get_post_thumbnail_id($post->id);
+    $thumb_id = get_post_thumbnail_id($post->ID);
     $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
     if(count($alt)) echo $alt;
 }

@@ -19,7 +19,7 @@
 //
 // Markup:
 //
-// <!-- uk-search addon -->
+// <!-- uk-search -->
 // <form class="uk-search" data-uk-search>
 //     <input class="uk-search-field" type="search" placeholder="">
 // </form>
@@ -41,7 +41,7 @@ $search-color:                                   #444 !default;
 $search-placeholder-color:                       #999 !default;
 
 $search-icon:                                    "\f002" !default;
-$search-icon-size:                               14;
+$search-icon-size:                               14px !default;
 $search-icon-color:                              rgba(0,0,0,0.2) !default;
 
 // Dropdown modifier
@@ -102,7 +102,7 @@ $offcanvas-search-icon-color:                    #777 !default;
     line-height: $search-height;
     text-align: center;
     font-family: FontAwesome;
-    @include font-size($search-icon-size);
+    font-size: $search-icon-size;
     color: $search-icon-color;
 }
 

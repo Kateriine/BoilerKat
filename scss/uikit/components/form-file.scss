@@ -7,7 +7,7 @@
 //
 // Markup:
 //
-// <!-- uk-form-file addon -->
+// <!-- uk-form-file -->
 // <div class="uk-form-file">
 //     <button class="uk-button"></button>
 //     <input type="file">
@@ -51,5 +51,5 @@
     /* 1 */
     left: 0;
     /* 2 */
-    @include font-size(500);
+    font-size: 500px;
 }

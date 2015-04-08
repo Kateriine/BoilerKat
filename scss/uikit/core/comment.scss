@@ -37,12 +37,12 @@ $comment-avatar-margin-right:                    15px !default;
 
 $comment-title-margin-top:                       5px !default;
 $comment-title-font-size:                        16;
-$comment-title-line-height:                      22px !default;
+$comment-title-line-height:                      1.2;
 
 $comment-meta-margin-top:                        2px !default;
 $comment-meta-color:                             #999 !default;
 $comment-meta-font-size:                         11;
-$comment-meta-line-height:                       16px !default;
+$comment-meta-line-height:                       1.3;
 
 $comment-list-margin-top:                        15px !default;
 $comment-list-padding-left:                      100px !default;
@@ -52,8 +52,6 @@ $comment-list-padding-left:                      100px !default;
    Component: Comment
  ========================================================================== */
 
-.uk-comment {
-}
 
 
 /* Sub-object `uk-comment-header`
@@ -106,12 +104,6 @@ $comment-list-padding-left:                      100px !default;
 }
 
 
-/* Sub-object `uk-comment-body`
- ========================================================================== */
-
-.uk-comment-body {
-}
-
 /*
  * Remove margin from the last-child
  */
@@ -140,11 +132,4 @@ $comment-list-padding-left:                      100px !default;
 
     .uk-comment-list .uk-comment + ul { padding-left: $comment-list-padding-left; }
 
-}
-
-
-/* Modifier `uk-comment-primary`
- ========================================================================== */
-
-.uk-comment-primary {
 }

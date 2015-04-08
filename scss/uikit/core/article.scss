@@ -95,7 +95,7 @@ $article-divider-border:                         #ddd !default;
  ========================================================================== */
 
 .uk-article-meta {
-    @include font-size($article-meta-font-size);
+    font-size: $article-meta-font-size;
     line-height: $article-meta-line-height;
     color: $article-meta-color;
 }

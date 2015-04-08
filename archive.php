@@ -15,19 +15,21 @@
  */
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
-<div class="uk-container uk-container-center margin-bottom-desktop">
+<div class="uk-container uk-container-center">
 <main role="main">
     <?php if ( have_posts() ): ?>
     <header>
         <?php if ( is_day() ) : ?>
-        <h2>Archive: <?php echo  get_the_date( 'D M Y' ); ?></h2>                           
+        <h1>Archive: <?php echo  get_the_date( 'D M Y' ); ?></h1>                           
         <?php elseif ( is_month() ) : ?>
-        <h2>Archive: <?php echo  get_the_date( 'M Y' ); ?></h2> 
+        <h1>Archive: <?php echo  get_the_date( 'M Y' ); ?></h1> 
         <?php elseif ( is_year() ) : ?>
-        <h2>Archive: <?php echo  get_the_date( 'Y' ); ?></h2>                               
+        <h1>Archive: <?php echo  get_the_date( 'Y' ); ?></h1>                               
+        <?php elseif ( is_tax() ) : ?>
+        <h1><?php echo  single_cat_title(  ); ?></h1>                               
         <?php else : ?>
-        <h2>Archive</h2>    
-        <?php endif; ?>
+        <h1>Archive</h1>    
+        <?php endif; ?>    
     </header>
 
    <div class="uk-grid" data-uk-grid-margin>
@@ -35,7 +37,7 @@
         <div class="uk-width-medium-1-3">
             <article class="uk-article">
                 <header>
-                     <h3 class="uk-article-title"><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+                     <h2 class="uk-article-title"><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
                  </header>
                 <div class="uk-article-meta">
                      <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date(); ?> <?php the_time(); ?></time> <?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?>
@@ -46,7 +48,7 @@
     <?php endwhile; ?>
     </div>
     <?php else: ?>
-    <h2>No posts to display</h2>    
+    <h1>No posts to display</h1>    
     <?php endif; ?>
 </main>
 </div>

@@ -33,7 +33,7 @@ $progress-margin-vertical:                       15px !default;
 $progress-background:                            #eee !default;
 
 $progress-bar-background:                        #00a8e6 !default;
-$progress-bar-font-size:                         12;
+$progress-bar-font-size:                         12 !default;
 $progress-bar-color:                             #fff !default;
 
 $progress-bar-success-background:                #8cc14c !default;
@@ -60,6 +60,7 @@ $progress-bar-danger-background:                 #da314b !default;
     overflow: hidden;
     /* 2 */
     line-height: $progress-height;
+    @include hook-progress();
 }
 
 /*

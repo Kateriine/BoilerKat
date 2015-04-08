@@ -20,26 +20,30 @@ add_action( 'after_setup_theme', 'custom_image_setup' );
 
 
 
+/******************************************************/
+/******************* Base functions *******************/
+/******************************************************/
+
 /******************/
-/* Base functions */
+/* RSS */
 /******************/
 
 /*
- Désactiver les flux RSS secondaires (les commentaires de chaque article)
+ Deactivate secondary RSS (comments, etc)
  */
 remove_action('wp_head', 'feed_links_extra', 3);
 
 /*
- Désactiver le flux RSS des articles et celui des commentaires
+ Deactivate Articles RSS and comments RSS (comments, etc)
  */
 remove_action('wp_head', 'feed_links', 2);
 
 
 /*
- Réactiver le flux RSS principal
+ Reactivate main RSS
  * © Daniel Roch
  */
-function seomix_feed_link( $args = array() ) {
+function kat_feed_link( $args = array() ) {
   $defaults = array(
     /* translators: Separator between blog name and feed type in feed links */
     'separator' => _x('»', 'feed link'),
@@ -51,9 +55,23 @@ function seomix_feed_link( $args = array() ) {
   $args = wp_parse_args( $args, $defaults );
   echo '<link rel="alternate" type="application/rss+xml" title="' . esc_attr(sprintf( $args['feedtitle'], get_bloginfo('name'), $args['separator'] )) . '" href="' . home_url() . "/feed/\" />\n";
 }
-add_action('wp_head', 'seomix_feed_link');
+add_action('wp_head', 'kat_feed_link');
 
-// Add new image sizes
+
+/******************/
+/* Image treatment */
+/******************/
+
+/* Change and add image sizes as desired :) */
+
+function custom_image_setup () {
+  //example:
+    // add_image_size( 'square', 600, 600, true );
+    // add_filter( 'image_size_names_choose', 'insert_custom_image_sizes' );
+}
+
+
+// Add new image sizes to menus in media library
 function insert_custom_image_sizes( $image_sizes ) {
   // get the custom image sizes
   global $_wp_additional_image_sizes;
@@ -70,42 +88,116 @@ function insert_custom_image_sizes( $image_sizes ) {
   return $image_sizes;
 }
 
-/* Change and add image sizes as desired :) */
-
-function custom_image_setup () {
-  //example:
-    // add_image_size( 'square', 600, 600, true );
-    // add_filter( 'image_size_names_choose', 'insert_custom_image_sizes' );
-}
 
 function get_attachment_id_from_src ($image_src) {
-
     global $wpdb;
     $query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$image_src'";
     $id = $wpdb->get_var($query);
     return $id;
 
-  }
+}
+
+//creates resized and cropped image files safely from existing media library entries. 
+function kat_img_resize( $src, $width, $height ) {
 
 
+   global $wpdb;
+
+   // Sanitize
+   $height = absint( $height );
+   $width = absint( $width );
+   $src = esc_url( strtolower( $src ) );
+   $needs_resize = true;
+
+   $upload_dir = wp_upload_dir();
+   $base_url = strtolower( $upload_dir['baseurl'] );
+
+   // Let's see if the image belongs to our uploads directory.
+   if ( substr( $src, 0, strlen( $base_url ) ) != $base_url ) {
+       return "Error: external images are not supported.";
+   }
+
+   // Look the file up in the database.
+   $file = str_replace( trailingslashit( $base_url ), '', $src );
+   $attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = '_wp_attachment_metadata' AND meta_value LIKE %s LIMIT 1;", '%"' . like_escape( $file ) . '"%' ) );
+
+   // If an attachment record was not found.
+   if ( ! $attachment_id ) {
+       return "Error: attachment not found.";
+   }
+   // Look through the attachment meta data for an image that fits our size.
+   $meta = wp_get_attachment_metadata( $attachment_id );
+       $srcArr = explode('.', $src);
+       $name = $srcArr[0] . '-' . $width . 'x' .$height . '.' . $srcArr[1];
+
+
+   foreach( $meta['sizes'] as $key => $size ) {
+       if ( $size['width'] == $width && $size['height'] == $height ) {
+
+           $src = str_replace( basename( $src ), $size['file'], $src );
+           $needs_resize = false;
+           break;
+       }
+       //$siz = 'resized-'.$width .'x' . $height;
+       // if($name == $size['file']){
+       //     $needs_resize = false;
+       //     break;
+       // }
+   }
+
+   //Miracle solution: if width x height size doesn't exist for this media, we create it :)
+   $siz = 'resized-'.$width .'x' . $height;
+   if( $meta['sizes'][$siz]['file'] != '' ){
+       $needs_resize = false;
+   }
+   else{
+       $needs_resize = true;
+   }
+
+   // If an image of such size was not found, we can create one.
+   if ( $needs_resize ) {
+       $attached_file = get_attached_file( $attachment_id );
+       $resized = image_make_intermediate_size( $attached_file, $width, $height, true );
+       if ( ! is_wp_error( $resized ) ) {
+
+           // Let metadata know about our new size.
+           $key = sprintf( 'resized-%dx%d', $width, $height );
+           $meta['sizes'][$key] = $resized;
+           $src = str_replace( basename( $src ), $resized['file'], $src );
+           wp_update_attachment_metadata( $attachment_id, $meta );
+
+           // Record in backup sizes so everything's cleaned up when attachment is deleted.
+           $backup_sizes = get_post_meta( $attachment_id, '_wp_attachment_backup_sizes', true );
+           if ( ! is_array( $backup_sizes ) ) $backup_sizes = array();
+           $backup_sizes[$key] = $resized;
+           update_post_meta( $attachment_id, '_wp_attachment_backup_sizes', $backup_sizes );
+       }
+   }
+   return esc_url( $src );
+}
+
+//add some icon stuff
+function icon($icon){
+  return '<svg class="chicon">
+            <use xlink:href="' .get_stylesheet_directory_uri() . '/images/icons.svg#chicon-'.$icon.'" />
+          </svg>';
+}
+
+/******************/
+/* Email treatment */
+/******************/
 /* function to encrypt inline email */
 
-function hide_email($email)
-
-{ $character_set = '+-.0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz';
-
+function hide_email($email) { 
+  $character_set = '+-.0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz';
   $key = str_shuffle($character_set); $cipher_text = ''; $id = 'e'.rand(1,999999999);
 
   for ($i=0;$i<strlen($email);$i+=1) $cipher_text.= $key[strpos($character_set,$email[$i])];
 
   $script = 'var a="'.$key.'";var b=a.split("").sort().join("");var c="'.$cipher_text.'";var d="";';
-
   $script.= 'for(var e=0;e<c.length;e++)d+=b.charAt(a.indexOf(c.charAt(e)));';
-
   $script.= 'document.getElementById("'.$id.'").innerHTML="<a href=\\"mailto:"+d+"\\">"+d+"</a>"';
-
   $script = "eval(\"".str_replace(array("\\",'"'),array("\\\\",'\"'), $script)."\")"; 
-
   $script = '<script type="text/javascript">/*<![CDATA[*/'.$script.'/*]]>*/</script>';
 
   return '<span id="'.$id.'"></span>'.$script;
@@ -114,34 +206,25 @@ function hide_email($email)
 
 /* function to encrypt inline email displayed with an icon */
 
-function hide_email_w_icon($email)
-
-{ $character_set = '+-.0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz';
-
+function hide_email_w_icon($email) { 
+  $character_set = '+-.0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz';
   $key = str_shuffle($character_set); $cipher_text = ''; $id = 'e'.rand(1,999999999);
 
   for ($i=0;$i<strlen($email);$i+=1) $cipher_text.= $key[strpos($character_set,$email[$i])];
 
   $script = 'var a="'.$key.'";var b=a.split("").sort().join("");var c="'.$cipher_text.'";var d="";';
-
   $script.= 'for(var e=0;e<c.length;e++)d+=b.charAt(a.indexOf(c.charAt(e)));';
-
   $script.= 'document.getElementById("'.$id.'").innerHTML="<a href=\\"mailto:"+d+"\\" class=\\"social\\"><i class=\\"icon icon-envelope\\"></i></a>"';
-
   $script = "eval(\"".str_replace(array("\\",'"'),array("\\\\",'\"'), $script)."\")"; 
-
   $script = '<script type="text/javascript">/*<![CDATA[*/'.$script.'/*]]>*/</script>';
 
   return '<span id="'.$id.'"></span>'.$script;
 
 }
-//add some icon stuff
-function icon($icon){
-  return '<svg class="chicon">
-            <use xlink:href="' .get_stylesheet_directory_uri() . '/images/icons.svg#chicon-'.$icon.'" />
-          </svg>';
-}
 
+/******************/
+/* UIKIT adaptations */
+/******************/
 //Add uikit submenu class 
 class Ui_Nav_Menu extends Walker_Nav_Menu {
   function start_lvl( &$output, $depth = 0, $args = array() ) {
@@ -150,8 +233,9 @@ class Ui_Nav_Menu extends Walker_Nav_Menu {
   }
 }
 
-
-
+/******************/
+/* Multilanguage */
+/******************/
 //custom language menu with WPML plugin: uncomment if necessary
 
 // function icl_lang(){
@@ -170,6 +254,9 @@ class Ui_Nav_Menu extends Walker_Nav_Menu {
 //   echo '</ul>';  
 // }
 
+/******************/
+/* MAP */
+/******************/
 //Map (to use with pronamic plugin)
 // function  custom_map(){
 //   global $post;
@@ -187,6 +274,9 @@ class Ui_Nav_Menu extends Walker_Nav_Menu {
 //   }
 // }
 
+/******************/
+/* Post2Post */
+/******************/
 // post 2 post connection example
 // add_action('init', 'connectPosts');
 // function connectPosts(){

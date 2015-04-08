@@ -15,7 +15,7 @@
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
 
-<div class="uk-container uk-container-center margin-bottom-desktop">
+<div class="uk-container uk-container-center">
 <main role="main">
     <?php if ( have_posts() ): ?>
     <h1>Latest Posts</h1>   
@@ -36,7 +36,7 @@
     <?php endwhile; ?>
     </div>
     <?php else: ?>
-    <h2>No posts to display</h2>
+    <h1>No posts to display</h1>
     <?php endif; ?>
 </main>
 </div>

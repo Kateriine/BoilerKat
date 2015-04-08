@@ -577,7 +577,7 @@ select.uk-form-width-mini { width: ($form-mini-width + 25px); }
  * 1. Make form element clickable through icon
  */
 
-.uk-form-icon > [class*='uk-icon-'], .uk-form-icon > .chicon {
+.uk-form-icon > [class*='uk-icon-'] {
     position: absolute;
     top: 50%;
     width: $form-icon-width;
@@ -597,4 +597,3 @@ select.uk-form-width-mini { width: ($form-mini-width + 25px); }
 
 .uk-form-icon-flip > [class*='uk-icon-'] { right: 0; }
 .uk-form-icon-flip > input { padding-right: $form-icon-width !important; }
-

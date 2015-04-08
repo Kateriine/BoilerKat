@@ -13,11 +13,11 @@
 //
 // Markup:
 //
-// <!-- uk-slidenav addon -->
+// <!-- uk-slidenav -->
 // <a href="" class="uk-slidenav uk-slidenav-previous"></a>
 // <a href="" class="uk-slidenav uk-slidenav-next"></a>
 //
-// <!-- uk-slidenav-position addon -->
+// <!-- uk-slidenav-position -->
 // <div class="uk-slidenav-position">
 //     <img src="" alt="">
 //     <a href="" class="uk-slidenav uk-slidenav-previous"></a>
@@ -33,7 +33,7 @@
 $slidenav-width:                                 60px !default;
 $slidenav-height:                                $slidenav-width !default;
 $slidenav-color:                                 rgba(50,50,50,0.4) !default;
-$slidenav-font-size:                             60;
+$slidenav-font-size:                             60 !default;
 $slidenav-line-height:                           $slidenav-height !default;
 $slidenav-previous-icon:                         "\f104" !default;
 $slidenav-next-icon:                             "\f105" !default;

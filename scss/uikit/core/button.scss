@@ -67,9 +67,9 @@ $button-hover-color:                             #444 !default;
 $button-active-background:                       #ddd !default;
 $button-active-color:                            #444 !default;
 
-$button-primary-background:                      #00a8e6 !default;
+$button-primary-background:                      $primary-color !default;
 $button-primary-color:                           #fff !default;
-$button-primary-hover-background:                #35b3ee !default;
+$button-primary-hover-background:                lighten($primary-color, 10%) !default;
 $button-primary-hover-color:                     #fff !default;
 $button-primary-active-background:               #0091ca !default;
 $button-primary-active-color:                    #fff !default;
@@ -134,7 +134,8 @@ $button-link-disabled-color:                     #999 !default;
     /* 4 */
     overflow: visible;
     /* 5 */
-    font-family: $serif;
+    font: inherit;
+    color: $button-color;
     /* 6 */
     text-transform: none;
     /* 7 */
@@ -142,6 +143,7 @@ $button-link-disabled-color:                     #999 !default;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 $button-padding-horizontal;
+    background: $button-background;
     vertical-align: middle;
     /* 8 */
     line-height: $button-line-height;
@@ -175,6 +177,7 @@ $button-link-disabled-color:                     #999 !default;
     text-decoration: none;
 }
 
+
 /* Color modifiers
  ========================================================================== */
 
@@ -201,7 +204,6 @@ $button-link-disabled-color:                     #999 !default;
 .uk-button-danger {
     @include btn($button-danger-color, $button-danger-background);
 }
-
 
 /* Disabled state
  * Overrides also the color modifiers
@@ -244,8 +246,19 @@ $button-link-disabled-color:                     #999 !default;
 /* Focus */
 .uk-button-link:focus { outline: 1px dotted; }
 
+
 /* Size modifiers
  ========================================================================== */
+
+.uk-button-mini {
+    min-height: $button-mini-height;
+    padding: 0 $button-mini-padding-horizontal;
+    line-height: $button-mini-line-height;
+    @include font-size($button-mini-font-size);
+    &.btn-round{
+        border-radius: $button-mini-height;        
+    }
+}
 
 .uk-button-small {
     min-height: $button-small-height;
@@ -266,7 +279,6 @@ $button-link-disabled-color:                     #999 !default;
         border-radius: $button-large-height;            
     }
 }
-
 
 
 /* Sub-object `uk-button-group`

@@ -49,13 +49,6 @@ $htmleditor-fullscreen-content-top:              $htmleditor-navbar-nav-height !
 $htmleditor-fullscreen-icon-resize:              "\f066" !default;
 
 
-/* ========================================================================
-   Component: HTML editor
- ========================================================================== */
-
-.uk-htmleditor {
-}
-
 
 /* Sub-object `uk-htmleditor-navbar`
  ========================================================================== */
@@ -105,7 +98,7 @@ $htmleditor-fullscreen-icon-resize:              "\f066" !default;
     line-height: $htmleditor-navbar-nav-line-height;
     /* 2 */
     color: $htmleditor-navbar-nav-color;
-    @include font-size(11px);
+    font-size: 11px;
     cursor: pointer;
 }
 

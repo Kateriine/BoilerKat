@@ -126,7 +126,7 @@ $datepicker-table-muted-color:                   #999 !default;
 .uk-datepicker-table th,
 .uk-datepicker-table td { padding: 2px; }
 
-.uk-datepicker-table th { @include font-size(12); }
+.uk-datepicker-table th { font-size: 12px; }
 
 /*
  * Item

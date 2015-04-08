@@ -19,7 +19,7 @@ $table-padding-vertical:                         8px !default;
 $table-padding-horizontal:                       8px !default;
 
 $table-caption-color:                            #999 !default;
-$table-caption-font-size:                        12;
+$table-caption-font-size:                        12px !default;
 
 $table-striped-background:                       #f5f5f5 !default;
 
@@ -40,7 +40,7 @@ $table-hover-background:                         #EEE !default;
  */
 
 .uk-table {
-	/* 1 */
+    /* 1 */
     border-collapse: collapse;
     border-spacing: 0;
     /* 2 */
@@ -75,7 +75,7 @@ $table-hover-background:                         #EEE !default;
 
 .uk-table caption,
 .uk-table tfoot {
-    @include font-size($table-caption-font-size);
+    font-size: $table-caption-font-size;
     font-style: italic;
 }
 

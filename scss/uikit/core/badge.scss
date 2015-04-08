@@ -15,7 +15,7 @@
 
 $badge-background:                               #00a8e6 !default;
 $badge-padding-horizontal:                       5px !default;
-$badge-font-size:                                10;
+$badge-font-size:                                10px !default;
 $badge-font-weight:                              bold !default;
 $badge-line-height:                              14px !default;
 $badge-color:                                    #fff !default;
@@ -38,7 +38,7 @@ $badge-danger-background:                        #da314b !default;
     display: inline-block;
     padding: 0 $badge-padding-horizontal;
     background: $badge-background;
-    @include font-size($badge-font-size);
+    font-size: $badge-font-size;
     font-weight: $badge-font-weight;
     line-height: $badge-line-height;
     color: $badge-color;

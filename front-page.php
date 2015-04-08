@@ -15,25 +15,13 @@
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
 
-<div class="uk-container uk-container-center margin-bottom-desktop">
+<div class="uk-container uk-container-center">
     <div class="uk-grid">
         <div class="uk-width-medium-2-3">
             <main role="main">
                 <?php if ( have_posts() ): ?>
                     <?php while ( have_posts() ) : the_post(); ?>
-                        <?php 
                         
-                            /* Custom field image with custom width and height
-
-                            If you prefer to use it with a registered custom image size, just add ($w,$h,$quality, $field, 'custom-size') */
-                            echo katCustomImg('header-image',500, 400, 60);
-                            echo katCustomImg('header-image', 0, 0, 60, 'Header image'); 
-                        ?>
-                        <?php 
-                            //Image from featured image
-                            echo katFeatImg( 250, 200, 60 ); 
-                            echo greyscale(0,0,60, 'Header image');
-                        ?>
                         <?php the_content(); ?>
                     <?php endwhile; ?>
                 <?php endif; ?>

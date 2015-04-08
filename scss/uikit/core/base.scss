@@ -73,7 +73,7 @@ $base-pre-font-size:                             12;
 $base-pre-line-height:                           1.4;
 $base-pre-font-family:                           $base-code-font-family !default;
 
-$base-selection-background:                      #39f !default;
+$base-selection-background:                      $base-link-color !default;
 $base-selection-color:                           #fff !default;
 
 
@@ -90,11 +90,20 @@ $base-selection-color:                           #fff !default;
 html { font-size: 62.5%; }
 *{box-sizing:border-box;}
 
+
+html {
+    /* 2 */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    /* 3 */
+}
+
 /*
  * Removes default margin.
  */
 
-body { margin: 0;
+body { 
+    margin: 0; 
     background: $base-body-background;
     font-family:  $base-body-font-family;
     @include font-size($base-body-font-size);
@@ -129,7 +138,6 @@ a,
     color: $base-link-color;
     text-decoration: $base-link-text-decoration;
     cursor: pointer;
-    transition: all .2s ease-in;
 }
 
 a:hover,
@@ -164,7 +172,7 @@ strong { font-weight: bold; }
 :not(pre) > kbd,
 :not(pre) > samp {
     /* 1 */
-    @include font-size($base-code-font-size);
+    font-size: $base-code-font-size;
     /* 2 */
     font-family: $base-code-font-family;
     /* 3 */
@@ -172,11 +180,6 @@ strong { font-weight: bold; }
     white-space: nowrap;
 }
 
-/*
- * Emphasize
- */
-
-em { color: $base-em-color; }
 
 /*
  * Insert
