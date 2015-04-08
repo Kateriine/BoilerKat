@@ -1,5 +1,5 @@
 # KatThemeBase V3.5
-Naked WP theme with uikit 2.16.2 and Starkers Masters
+Naked WP theme with uikit 2.18 and Starkers Masters
 
 Optional file to create widgets
 
@@ -49,6 +49,7 @@ Optional functions to uncomment:
 
 ## JS
 Fancybox, slick: to add to grunt concat if needed
+Slick slider (idem)
 (Works with some scss files listed below)
 
 ### In js/site.js

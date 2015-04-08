@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         tasks: ['sass:dev', 'autoprefixer:dev']
       },
       concat: {
-        files: ['js/modernizr.custom.15226.js', 'js/uikit.js', 'js/components/form-select.js', 'js/site.js'],
+        files: ['js/uikit.js', 'js/components/form-select.js', 'js/site.js'],
         tasks: 'concat'
       },
       imagemin: {
@@ -78,7 +78,7 @@ module.exports = function(grunt) {
     },
     concat: {
       dev: {
-        src: ['js/modernizr.custom.15226.js', 'js/uikit.js', 'js/components/grid.js', 'js/components/form-select.js', 'js/site.js'],
+        src: ['js/uikit.js', 'js/components/form-select.js', 'js/site.js'],
         dest: 'js/build/main.min.js'
       }
     },
@@ -144,5 +144,5 @@ module.exports = function(grunt) {
   // Using the 'grunt dev' command will autoprefix, compile scss, concatenate and activate the watch task
   grunt.registerTask('dev', ['sass:dev', 'autoprefixer:dev', 'concat', 'watch']);
   // Using the 'grunt prod' command will autoprefix, compile scss and compress the outputted CSS, concatenate JS, compress it, and compress images
-  grunt.registerTask('prod', ['sass:dist','concat', 'uglify', 'imagemin']);
+  grunt.registerTask('prod', ['sass:dist', 'autoprefixer:dev', 'concat', 'uglify', 'imagemin']);
 };
