@@ -3,6 +3,10 @@ jQuery(document).ready(function($) {
   $respImg = $('.resp-image');
   $respImgBg = $('.resp-img-bg');
 
+  if($('.video-js').length !=0){
+    videojs.options.flash.swf = "video-js.swf";
+  }
+
     /* Hack IE10 */
     if (Function('/*@cc_on return document.documentMode===10@*/')()){
         document.documentElement.className+=' ie10';

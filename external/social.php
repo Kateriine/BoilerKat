@@ -73,7 +73,7 @@ function single_share($desk){
 function share(){
     global $post;
     $json = @file_get_contents('https://api.facebook.com/method/links.getStats?urls='.get_permalink() . '&format=json');
-    $counts = json_decode($json, true);
+    $counts = @json_decode($json, true);
     $shareCount = $counts[0]["share_count"];
     $commentCount = $counts[0]["comment_count"];
     $likeCount = $counts[0]["like_count"];

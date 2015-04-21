@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     watch = require('gulp-watch');
 //JS
-var js = ['js/uikit.js', 'js/components/form-select.js', 'js/site.js'],
+var js = ['js/uikit.js', 'js/components/form-select.js', 'js/videojs/video.js', 'js/site.js'],
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify');
 
@@ -26,14 +26,14 @@ var imagemin = require('gulp-imagemin'),
 //JS
 gulp.task('concat', function() {
   return gulp.src(js)
-    .pipe(concat('main.js'))
+    .pipe(concat('main.min.js'))
     .pipe(gulp.dest('js/build/'));
 });
 
 gulp.task('compress', function() {
-  return gulp.src('js/build/main.js')
+  return gulp.src(js)
+    .pipe(concat('main.min.js'))
     .pipe(uglify())
-    .pipe(rename('main.min.js'))
     .pipe(gulp.dest('js/build/'));
 });
 

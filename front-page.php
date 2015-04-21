@@ -25,7 +25,19 @@
                         <?php the_content(); ?>
                     <?php endwhile; ?>
                 <?php endif; ?>
-                <?php 
+                <div class="flex-video widescreen">
+                    <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="100%" height="100%"
+      poster="http://video-js.zencoder.com/oceans-clip.png"
+      data-setup="{}">
+                        <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+                        <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+                        <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+                        <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+                        <track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+                        <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+                    </video>
+                </div>
+                    <?php 
                 //  define('MY_PLUGIN_PATH', plugin_dir_path(__FILE__));
                 //echo  plugin_dir_path(__FILE__);
                 echo display_map();
