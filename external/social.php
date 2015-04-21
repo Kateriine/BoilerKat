@@ -10,11 +10,12 @@ function single_share($desk){
     // $tCount = $data['Twitter'];
     // $gCount = $data['GooglePlusOne'];
     // $lCount = $data['LinkedIn'];
-  $jsonFb = file_get_contents('https://api.facebook.com/method/links.getStats?urls='.urlencode(get_permalink()) . '&format=json');
+  $jsonFb = @file_get_contents('https://api.facebook.com/method/links.getStats?urls='.urlencode(get_permalink()) . '&format=json');
+
   $counts = json_decode($jsonFb, true);
   $fbCount = $counts[0]["share_count"];
 
-  $jsonTwitter = file_get_contents('http://cdn.api.twitter.com/1/urls/count.json?url='.urlencode(get_permalink()));
+  $jsonTwitter = @file_get_contents('http://cdn.api.twitter.com/1/urls/count.json?url='.urlencode(get_permalink()));
   $counts2 = json_decode($jsonTwitter, true);
   $tCount = $counts2["count"];
 
@@ -71,7 +72,7 @@ function single_share($desk){
 
 function share(){
     global $post;
-    $json = file_get_contents('https://api.facebook.com/method/links.getStats?urls='.get_permalink() . '&format=json');
+    $json = @file_get_contents('https://api.facebook.com/method/links.getStats?urls='.get_permalink() . '&format=json');
     $counts = json_decode($json, true);
     $shareCount = $counts[0]["share_count"];
     $commentCount = $counts[0]["comment_count"];

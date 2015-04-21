@@ -25,7 +25,14 @@
                         <?php the_content(); ?>
                     <?php endwhile; ?>
                 <?php endif; ?>
-               
+                <?php 
+                //  define('MY_PLUGIN_PATH', plugin_dir_path(__FILE__));
+                //echo  plugin_dir_path(__FILE__);
+                echo display_map();
+        
+                    //Kat_Contact_Plugin::display_map();
+
+              ?>
             </main>
         </div>
         <div class="uk-width-medium-1-3 sidebar">

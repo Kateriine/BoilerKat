@@ -14,7 +14,7 @@
 <main role="main">
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-    <article class="uk-article">
+    <article class="uk-article uk-article-divider">
         <header class="uk-article-title">
            <h1><?php the_title(); ?></h1>
         </header>
@@ -30,7 +30,7 @@
             <?php endif; ?>
         </footer>
     </article>
-    <section>
+    <section class="uk-comment">
     <?php comments_template( '', true ); ?>
     </section>
     <?php endwhile; ?>

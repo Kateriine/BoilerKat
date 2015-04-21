@@ -19,8 +19,8 @@
 	require_once( 'external/shortcodes.php' );
 	require_once( 'external/sidebars.php' );
 	require_once( 'external/widgets.php' );
-	//require_once( 'external/gforms.php' );
-	//require_once( 'external/social.php' );
+	require_once( 'external/gforms.php' );
+	require_once( 'external/social.php' );
 	require_once( 'external/custom.php' );
 
 	

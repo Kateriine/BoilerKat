@@ -11,7 +11,10 @@
 
 // Variables
 // ========================================================================
-
+@mixin font-size($sizeValue) {
+  font-size: $sizeValue + px;
+  font-size: ($sizeValue / 10) + rem;
+}
 $accordion-title-margin-bottom:                  15px !default;
 $accordion-title-padding-vertical:               5px !default;
 $accordion-title-padding-horizontal:             15px !default;

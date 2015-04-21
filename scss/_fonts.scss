@@ -1,53 +1,4 @@
-//Exemple
-
-
-//.font-face('Proxima Nova', 'ProximaNova-Bold', 'ProximaNova-Bold.svg#d1e00a8fb1fd9b428ab6b90409479fde', normal, 700);
-
-//OU
-
-
-// @font-face {
-//     font-family: 'ProximaNova';
-//         src: url('../fonts/ProximaNova-RegWeb.eot');
-//         src: url('../fonts/ProximaNova-RegWeb.eot?#iefix') format('eot'),
-//         url('../fonts/ProximaNova-RegWeb.woff') format('woff'),
-//         url('../fonts/ProximaNova-RegWeb.ttf') format('truetype'),
-//         url('../fonts/ProximaNova-RegWeb.svg') format('svg');
-//         font-weight: normal;
-//         font-style: normal;
-//     }
-////Optimisation chrome
-//     @media screen and (-webkit-min-device-pixel-ratio:0) {
-//         @font-face {
-//             font-family: 'ProximaNova';
-//             src: url('../fonts/ProximaNova-RegWeb.svg') format('svg');
-//             font-weight: normal;
-//             font-style: normal;
-
-//         }
-// }
-
-// @font-face {
-//     font-family: 'ProximaNova';
-//         src: url('../fonts/ProximaNova-BoldWeb.eot');
-//         src: url('../fonts/ProximaNova-BoldWeb.eot?#iefix') format('eot'),
-//         url('../fonts/ProximaNova-BoldWeb.woff') format('woff'),
-//         url('../fonts/ProximaNova-BoldWeb.ttf') format('truetype'),
-//         url('../fonts/ProximaNova-BoldWeb.svg') format('svg');
-//          font-weight: bold;
-//     }
-
-//     @media screen and (-webkit-min-device-pixel-ratio:0) {
-//         @font-face {
-//             font-family: 'ProximaNova';
-//             src: url('../fonts/ProximaNova-BoldWeb.svg') format('svg');
-//             font-weight: bold;
-//         }
-// }
-
 .chicon {
-    width: 1em;
-    height: 1em;
     line-height: 1;
     vertical-align: middle;
     font-style: normal;
@@ -57,4 +8,8 @@
     text-decoration: none;
     text-transform: none;
     -moz-osx-font-smoothing: grayscale;
+}
+.chicon svg {
+    width: 1em;
+    height: 1em;
 }

@@ -8,7 +8,38 @@ jQuery(document).ready(function($) {
         document.documentElement.className+=' ie10';
         document.documentElement.className+=' ie';     
     }
+    // //Show/hide Offcanvas button effect
 
+    // $('.uk-button-offcanvas').on('click', function(){ 
+    //   $(this).toggleClass('checked');
+    // })
+
+    //Table responsive
+    if($('.table-responsive').length !==0 ){ 
+      var $tCont = $('.table-responsive'),
+            $table = $tCont.find('table'),
+            $fixedColumn;
+        //Make a clone of our table
+
+      $table.each(function(){
+          var $t = $(this); 
+          $t.attr({'style': '', 'width': '', 'height': ''}).addClass('uk-table');  
+          $t.find('tr:first-child > td').wrapInner("<div class='td-title'></div>")  
+          var w = $t.find('tbody > tr:last-child').find('td:first-child').outerWidth();
+             
+            $fixedColumn = $t.clone().insertBefore($t).addClass('fixed-column');
+
+            //Remove everything except for first column
+            $fixedColumn.find('th:not(:first-child),td:not(:first-child)').remove();
+
+            //Match the height of the rows to that of the original table's
+            $fixedColumn.find('tr').each(function (i, elem) {
+                $(this).find('th, td').outerHeight($t.find('tr:eq(' + i + ')').find('th, td').outerHeight());
+                $(this).find('th, td').innerWidth(w);
+            }); 
+
+       });
+    }
     resizeSite();
 
     function resizeSite(){

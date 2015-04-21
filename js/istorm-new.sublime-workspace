@@ -1,0 +1,4366 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"js",
+				"jsonFb"
+			],
+			[
+				"ba",
+				"background-repeat"
+			],
+			[
+				"s",
+				"skyline-v1.png	w:2400 h:846"
+			],
+			[
+				"im",
+				"images/"
+			],
+			[
+				"font-s",
+				"font-style"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"paddi",
+				"padding-right"
+			],
+			[
+				"has_po",
+				"has_post_thumbnail"
+			],
+			[
+				"wp_lis",
+				"wp_list_categories"
+			],
+			[
+				"the_thumbnail",
+				"the_post_thumbnail"
+			],
+			[
+				"no",
+				"nowrap"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"bl",
+				"block"
+			],
+			[
+				"bla",
+				"black-sixty.png	w:1 h:1"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"min-",
+				"min-height"
+			],
+			[
+				"set",
+				"setTimeout"
+			],
+			[
+				"hei",
+				"height"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"in",
+				"inline"
+			],
+			[
+				"ter",
+				"text-decoration"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"table-",
+				"table-cell"
+			],
+			[
+				"border-bo",
+				"border-bottom"
+			],
+			[
+				"border-b",
+				"border-bottom"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"h",
+				"hidden"
+			],
+			[
+				"vide",
+				"videoId"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"border-co",
+				"border-color"
+			],
+			[
+				"border-c",
+				"border-color"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"border-left",
+				"border-left"
+			],
+			[
+				"backgroun",
+				"background-position"
+			],
+			[
+				"fall",
+				"fallback"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"gray",
+				"grayLighter"
+			],
+			[
+				"v",
+				"visible"
+			],
+			[
+				"ce",
+				"center"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"lin",
+				"linkColor"
+			],
+			[
+				"mag",
+				"margin-bottom"
+			],
+			[
+				"rgb",
+				"rgba()"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"line",
+				"line-height"
+			],
+			[
+				"position",
+				"positionEl"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"flo",
+				"float"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"bo",
+				"bottom"
+			],
+			[
+				"cur",
+				"cursor"
+			],
+			[
+				"mou",
+				"mouseenter"
+			],
+			[
+				"bor",
+				"border-top"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"ab",
+				"absolute"
+			],
+			[
+				"z-",
+				"z-index"
+			],
+			[
+				"border-s",
+				"border-style"
+			],
+			[
+				"slider",
+				"sliderMini"
+			],
+			[
+				"und",
+				"background"
+			],
+			[
+				"arr",
+				"arrPosts"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"height",
+				"outerHeight"
+			],
+			[
+				"ov",
+				"overflow"
+			],
+			[
+				"rep",
+				"repeat-x"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/style.css",
+			"settings":
+			{
+				"buffer_size": 96191,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n// Function to output pagination\n\n\n?>",
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/includes/theme-functions.php",
+			"file_size": 43,
+			"file_write_time": 1428941035000000,
+			"settings":
+			{
+				"buffer_size": 43,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/includes/featured-jobs.php",
+			"settings":
+			{
+				"buffer_size": 3097,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/sftp-config.json",
+			"settings":
+			{
+				"buffer_size": 1376,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/index.php",
+			"settings":
+			{
+				"buffer_size": 1735,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/header.php",
+			"settings":
+			{
+				"buffer_size": 1687,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/loop-job.php",
+			"settings":
+			{
+				"buffer_size": 2015,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/header-search.php",
+			"settings":
+			{
+				"buffer_size": 2014,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/footer.php",
+			"settings":
+			{
+				"buffer_size": 447,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/index.php",
+			"settings":
+			{
+				"buffer_size": 2006,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/wrapper.php",
+			"settings":
+			{
+				"buffer_size": 4997,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/css/style.css",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-friend.php",
+			"settings":
+			{
+				"buffer_size": 996,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/includes/featured-jobs.php",
+			"settings":
+			{
+				"buffer_size": 3103,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/includes/theme-functions.php",
+			"settings":
+			{
+				"buffer_size": 34224,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/taxonomy-job.php",
+			"settings":
+			{
+				"buffer_size": 1564,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/functions.php",
+			"settings":
+			{
+				"buffer_size": 1104,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-candidates.php",
+			"settings":
+			{
+				"buffer_size": 1008,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/taxonomy-job.php",
+			"settings":
+			{
+				"buffer_size": 1565,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-jobs-by-date.php",
+			"settings":
+			{
+				"buffer_size": 2137,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-career.php",
+			"settings":
+			{
+				"buffer_size": 964,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/page.php",
+			"settings":
+			{
+				"buffer_size": 1016,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/single-job_listing.php",
+			"settings":
+			{
+				"buffer_size": 4990,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/single.php",
+			"settings":
+			{
+				"buffer_size": 2589,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-login.php",
+			"settings":
+			{
+				"buffer_size": 1766,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-profile.php",
+			"settings":
+			{
+				"buffer_size": 6880,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-password-recovery.php",
+			"settings":
+			{
+				"buffer_size": 1236,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-password-reset.php",
+			"settings":
+			{
+				"buffer_size": 1985,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-purchase-pack.php",
+			"settings":
+			{
+				"buffer_size": 1444,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-purchase-resume-subscription.php",
+			"settings":
+			{
+				"buffer_size": 1473,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-contact.php",
+			"settings":
+			{
+				"buffer_size": 890,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-submit.php",
+			"settings":
+			{
+				"buffer_size": 2355,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-terms-conditions.php",
+			"settings":
+			{
+				"buffer_size": 459,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/search.php",
+			"settings":
+			{
+				"buffer_size": 1411,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/wrapper.php",
+			"settings":
+			{
+				"buffer_size": 5204,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-about.php",
+			"settings":
+			{
+				"buffer_size": 1000,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n    // Empty search fixes\n    if ( ! empty($_GET['resume_search']) ) {\n        if ( ! empty( $_GET['s'] ) && ! empty( $_GET['location'] ) ) : get_template_part('search-resume'); return; endif;\n        wp_safe_redirect(get_post_type_archive_link('resume'));\n        exit;\n    }\n    if ( ! empty( $_GET['s'] ) || ! empty( $_GET['location'] ) ) : get_template_part('search'); return; endif;\n?>\n\n<?php get_header('search'); ?>\n<?php do_action('jobs_will_display'); ?>\n\n<?php\nglobal $featured_job_cat_id;\n\nif ( get_query_var('paged') )\n    $paged = get_query_var('paged');\nelseif ( get_query_var('page') )\n    $paged = get_query_var('page');\nelse\n    $paged = 1;\n\nglobal $app_abbr, $header_search, $wp_query, $query_string; $header_search = true;\n            //Filtre supprimé de la homepage et ajouté à featured-jobs.php pour qu'il fonctionne sur les jobs featured\n            $args = jr_filter_form();\n            query_posts($args);\n\n// include the featured jobs\n//if (is_front_page() && $paged==1 && $featured_job_cat_id) get_template_part('includes/featured-jobs');\n?>\n    \n\n<div id=\"mainContent\" class=\"<?php global $header_search; if (!$header_search) echo 'nosearch'; ?>\">\n\n\n    <?php //do_action('before_front_page_jobs'); ?>\n        <div class=\"section\" id=\"homepage-header\">\n\n        <!--h2 class=\"pagetitle\">\n\n            <small class=\"rss\"><a href=\"<?php echo add_query_arg('post_type', 'job_listing', get_bloginfo('rss2_url')); ?>\"><img src=\"<?php bloginfo('template_url'); ?>/images/feed.png\" title=\"<?php _e('Latest Jobs RSS Feed','appthemes'); ?>\" alt=\"<?php _e('Latest Jobs RSS Feed','appthemes'); ?>\" /></a></small>\n\n            <?php _e('Latest Jobs','appthemes'); ?> <?php if ($paged>1) { ?>(page <?php echo $paged; ?>)<?php } ?>\n\n            <?php if (isset($_GET['action']) && $_GET['action'] == 'Filter') { ?>\n                <small> &mdash; <a href=\"<?php echo jr_get_current_url(); ?>\"><?php _e('Remove Filters','appthemes'); ?></a></small>\n            <?php } ?>\n\n        </h2-->\n        <?php\n            \n        ?>\n\n        \n        <?php appthemes_load_template( 'loop-job.php' ); ?>\n\n        <?php jr_paging(); ?>\n        \n        <?php wp_reset_query(); ?>\n\n        <div class=\"clear\"></div>\n\n    </div><!-- end section -->\n    \n    <?php //do_action('after_front_page_jobs'); ?>\n\n    <div class=\"clear\"></div>\n\n</div><!-- end main content -->\n\n<?php if (get_option('jr_show_sidebar')!=='no') get_sidebar(); ?>\n\n\n<?php get_footer(); ?>",
+			"settings":
+			{
+				"buffer_size": 2469,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/single-job_listing.php",
+			"settings":
+			{
+				"buffer_size": 4859,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-companies.php",
+			"settings":
+			{
+				"buffer_size": 1174,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"p",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"sass",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 507.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/single-resume.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/search-resume.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/header-resume-search.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-blog.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/archive-resume.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/archive-job_listing.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/loop-resume.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/loop-job.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/taxonomy-job_tag.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/taxonomy-job_salary.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/taxonomy-job_cat.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/functions.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/sidebar-sjob.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/sidebar-job.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jobroller/includes/admin/admin-values.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/header.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/single-job_listing.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/sidebar.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jobroller/includes/theme-header.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/includes/theme-header.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jobroller/includes/theme-functions.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/includes/theme-functions",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/sidebar-blog.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/sidebar-page.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/sidebar-user.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jobroller/includes/theme-sidebars.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/includes/theme-sidebars.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jobroller/wrapper.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jobroller/style.css",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/css/style.css",
+		"/Users/spade/work/istorm-new/wp-content/themes/jobroller/footer.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jobroller/sidebar.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jobroller/framework/kernel/hooks.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/header-search.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/index.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-candidates.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-companies.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-dashboard.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-contact.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jobroller/functions.php",
+		"/Users/spade/work/istorm/wp-content/themes/jobroller-1.5.1/footer.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jobroller/header-search.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jobroller/framework/includes/wrapping.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jobroller/loop-job.php",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr-child/style.css",
+		"/Users/spade/work/istorm-new/sftp-config.json",
+		"/Users/spade/work/istorm-new/wp-content/themes/jbr/style.css",
+		"/Users/spade/work/katThemeTest/wp-content/themes/KatThemeBase/scss/_companymap.scss",
+		"/Users/spade/work/katThemeTest/wp-content/plugins/katContact/README.md",
+		"/Users/spade/work/KatThemeBase/parts/shared/header.php",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/utility.scss",
+		"/Users/spade/work/KatThemeBase/scss/_utilities.scss",
+		"/Users/spade/work/KatThemeBase/README.md",
+		"/Users/spade/work/KatThemeBase/external/shortcodes.php",
+		"/Users/spade/work/KatThemeBase/page.php",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/form-password.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/nestable.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/notify.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/placeholder.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/progress.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/search.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/slidenav.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/slideshow.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/sortable.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/sticky.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/tooltip.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/upload.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/htmleditor.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/form-select.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/accordion.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/autocomplete.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/datepicker.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/dotnav.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/form-advanced.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/components/form-file.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/core/variables.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/variables.scss",
+		"/Users/spade/work/KatThemeBase/scss/_variables.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/core/utility.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/thumbnail.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/core/thumbnail.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/core/text.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/text.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/core/table.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/table.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/core/tab.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/tab.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/core/switcher.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/switcher.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/core/subnav.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/progress.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/subnav.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/uikit.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/thumbnav.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/list.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/form.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/icon.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/core/print.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/badge.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/button.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/alert.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/overlay.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/animation.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/modal.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/core/flex.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/flex.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/print.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/pagination.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/core/thumbnav.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/core/panel.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/panel.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/core/pagination.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/uikit.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/core/overlay.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/core/offcanvas.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/offcanvas.scss",
+		"/Users/spade/work/KatThemeBase/scss/_mixins.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/uikit-mixins.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/core/navbar.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/navbar.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/nav.scss",
+		"/Users/spade/Downloads/bower-uikit-master/scss/core/nav.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/base.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/breadcrumb.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/grid.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/article.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/comment.scss",
+		"/Users/spade/work/KatThemeBase/scss/uikit/core/cover.scss"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			"/Users/spade/work/istorm-new/wp-content/themes/jbr-child",
+			"/Users/spade/work/istorm-new/wp-content/themes/jobroller",
+			"/Users/spade/work/istorm-new/wp-content/themes/jbr-child",
+			"/Users/spade/work/istorm-new/wp-content/themes/jobroller",
+			"/Users/spade/work/istorm-new/wp-content/themes/jbr-child",
+			"/Users/spade/work/istorm-new/wp-content/themes/jobroller",
+			"/Users/spade/work/istorm-new/wp-content/themes/jbr-child",
+			"/Users/spade/work/istorm-new/wp-content/themes/jobroller",
+			"/Users/spade/work/katThemeTest/wp-content/themes/KatThemeBase",
+			"/Users/spade/work/KatThemeBase/scss",
+			"/Users/spade/work/KatThemeBase/scss/uikit/components",
+			"/Users/spade/work/KatThemeBase",
+			"/Users/spade/work/KatThemeBase/js",
+			"/Users/spade/work/KatThemeBase/scss",
+			"/Users/spade/work/permesso/wp-content/plugins/image-text-widget",
+			"/Users/spade/work/permesso/wp-content/themes/permessoKat/scss",
+			"/Users/spade/work/permesso/wp-content/themes/permessoKat",
+			"/Users/spade/Dropbox/Spade/4-Tools/1-CMS/WP/themes/katThemeBase/scss/uikit",
+			"/Users/spade/Dropbox/Spade/4-Tools/1-CMS/WP/themes/katThemeBase/scss",
+			"/Users/spade/Dropbox/Spade/4-Tools/1-CMS/WP/themes/katThemeBase/less",
+			"/Users/spade/work/cathoutils/wp-content/themes/cathoutils",
+			"/Users/spade/work/cathoutils/wp-content/themes/cathoutils/less",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/less",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/external",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/less",
+			"/Users/spade/work/satadslspade/wp-content/plugins/gravityforms",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/less",
+			"/Users/spade/work/satadslspade/wp-content/plugins",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/less",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/js",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/less",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/js",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/less",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/js",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/less",
+			"/Users/spade/work/satadslspade/wp-content/themes",
+			"/Users/spade/work/satadslspade/wp-content/plugins",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/less",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/js",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/js",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/js",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/less",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/external",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/less",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/less",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/js",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl/js/lib",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl",
+			"/Users/spade/work/satadslspade/wp-content/plugins/interactive-world-maps",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl",
+			"/Users/spade/work/satadslspade/wp-content/plugins/interactive-world-maps",
+			"/Users/spade/work/satadslspade/wp-content/themes/satadsl",
+			"/Users/spade/work/medipedia/sites/all/themes/bmed",
+			"/Users/spade/work/medipedia/sites",
+			"/Users/spade/work/medipedia/sites/all/themes/bmed",
+			"/Users/spade/work/medipedia",
+			"/Users/spade/work/medipedia/sites/all/modules/contrib/service_links",
+			"/Users/spade/work/medipedia/sites/all/themes/bmed",
+			"/Users/spade/work/medipedia",
+			"/Users/spade/work/medipedia/sites/all/themes",
+			"/Users/spade/work/medipedia/sites/all/themes/bmed/less",
+			"/Users/spade/work/medipedia",
+			"/Users/spade/work/medipedia/sites/all/themes/bootstrap",
+			"/Users/spade/work/medipedia/sites/all/themes/bmed/bootstrap",
+			"/Users/spade/work/medipedia",
+			"/Users/spade/work/medipedia/sites/all/themes/bmed/less",
+			"/Users/spade/Dropbox/Spade/2-Clients/Vivio/03-Vivio.be/integration/wp-content/themes/starkers-master",
+			"/Users/spade/Dropbox/Spade/2-Clients/Vivio/03-Vivio.be/integration/wp-content/themes/starkers-master/scss",
+			"/Users/spade/Dropbox/Spade/2-Clients/Vivio/03-Vivio.be/integration/wp-content",
+			"/Users/spade/Dropbox/Spade/2-Clients/Vivio/03-Vivio.be/integration/wp-content/themes/starkers-master",
+			"/Users/spade/Dropbox/Spade/2-Clients/Vivio/03-Vivio.be/integration/wp-content/plugins/sitepress-multilingual-cms",
+			"/Users/spade/Dropbox/Spade/2-Clients/Vivio/03-Vivio.be/integration/wp-content/plugins/wpml-translation-management",
+			"/Users/spade/Dropbox/Spade/2-Clients/Vivio/03-Vivio.be/integration/wp-content/themes/starkers-master",
+			"/Users/spade/work/3C/wp-content/themes/3C",
+			"/Users/spade/work/3C/wp-content/themes/3C-tt-child",
+			"/Users/spade/work/3C/wp-content/themes/3C",
+			"/Users/spade/work/3C/wp-content/themes/twentyten",
+			"/Users/spade/work/3C/wp-content/themes/3C-tt-child",
+			"/Users/spade/work/3C/wp-content/themes/3C",
+			"/Users/spade/work/3C/wp-content/themes",
+			"/Users/spade/work/3C/wp-content/themes/3C",
+			"/Users/spade/work/3C/wp-content/themes",
+			"/Users/spade/work/3C/wp-content/themes/3C-tt-child",
+			"/Users/spade/work/3C/wp-content/themes",
+			"/Users/spade/Dropbox/Spade/2-Clients/CCStrategies/04 - Abbaye de Rochefort/tridaine-be-integration/wp-content/themes/tridaine",
+			"/Users/spade/Dropbox/Spade/2-Clients/Vivio/03-Vivio.be/integration/wp-content/themes/timber-starter-theme/scss",
+			"/Users/spade/Dropbox/Spade/2-Clients/Vivio/03-Vivio.be/integration/wp-content/themes/twentytwelve",
+			"/Users/spade/Dropbox/Spade/2-Clients/Vivio/03-Vivio.be/integration/wp-content/themes/twentyeleven",
+			"/Users/spade/Dropbox/Spade/2-Clients/Vivio/03-Vivio.be/integration/wp-content/themes/timber-starter-theme/scss",
+			"/Users/spade/Dropbox/Spade/2-Clients/Vivio/03-Vivio.be/integration/wp-content/themes/twentyeleven",
+			"/Users/spade/Dropbox/Spade/2-Clients/Vivio/03-Vivio.be/integration/wp-content/plugins/timber-master",
+			"/Users/spade/Dropbox/Spade/2-Clients/Belgian Brewers/01-website/integration/dev/squelettes",
+			"/Users/spade/Dropbox/Spade/2-Clients/ELC/01-Webphase 1/integration",
+			"/Users/spade/Dropbox/Spade/2-Clients/ELC/01-Webphase 1/integration/templates",
+			"/Users/spade/Dropbox/Spade/2-Clients/ELC/01-Webphase 1/integration/public/themes/profile_themes/elc_members",
+			"/Users/spade/Dropbox/Spade/2-Clients/ELC/01-Webphase 1/integration",
+			"/Users/spade/Dropbox/Spade/2-Clients/ELC/01-Webphase 1/integration/public/themes/profile_themes/elc_members",
+			"/Users/spade/Dropbox/Spade/2-Clients/ELC/01-Webphase 1/integration",
+			"/Users/spade/Dropbox/Spade/2-Clients/ELC/01-Webphase 1/integration/public/themes/profile_themes/elc_members",
+			"/Users/spade/Dropbox/Spade/2-Clients/ELC/01-Webphase 1/integration",
+			"/Users/spade/Dropbox/Spade/2-Clients/ELC/01-Webphase 1/integration/public/themes/profile_themes/elc_members",
+			"/Users/spade/Dropbox/Spade/2-Clients/ELC/01-Webphase 1/integration",
+			"/Users/spade/Dropbox/Spade/2-Clients/ELC/01-Webphase 1/integration/templates/default_site",
+			"/Users/spade/Dropbox/Spade/2-Clients/ELC/01-Webphase 1/integration/public/assets/css",
+			"/Users/spade/Dropbox/Spade/2-Clients/ELC/01-Webphase 1/integration/templates/default_site/member-area.group",
+			"/Users/spade/Dropbox/Spade/2-Clients/ELC/01-Webphase 1/integration/public",
+			"/Users/spade/Dropbox/Spade/2-Clients/ELC/01-Webphase 1/integration/public/themes/profile_themes/elc_members",
+			"/Users/spade/Dropbox/Spade/2-Clients/FOREM/01-2013 Formation/annee des competences integration",
+			"/Users/spade/work/fooddrinkeurope/_www",
+			"/Users/spade/work/fooddrinkeurope/_www/templates",
+			"/Users/spade/Dropbox/Spade/2-Clients/PointBen/integration/prod/ventes/less",
+			"/Users/spade/Dropbox/Spade/2-Clients/GratGrat/01-Communik'IT/integration/wp-content/themes/themeajax/js",
+			"/Users/spade/Dropbox/Spade/2-Clients/GratGrat/01-Communik'IT/integration/wp-content/plugins/ajax-contact-form",
+			"/Users/spade/Dropbox/Spade/2-Clients/GratGrat/01-Communik'IT/integration/wp-content/themes/themeajax",
+			"/Users/spade/Dropbox/Spade/2-Clients/GratGrat/01-Communik'IT/integration/wp-content/plugins/sitepress-multilingual-cms",
+			"/Users/spade/Dropbox/Spade/2-Clients/GratGrat/01-Communik'IT/integration/wp-content/plugins",
+			"/Users/spade/Dropbox/Spade/2-Clients/GratGrat/01-Communik'IT/integration/wp-content/plugins/wpml-translation-management",
+			"/Users/spade/Dropbox/Spade/2-Clients/GratGrat/01-Communik'IT/integration/wp-content/plugins",
+			"/Users/spade/Dropbox/Spade/2-Clients/GratGrat/01-Communik'IT/integration/wp-content/plugins/wpml-translation-management"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".section_content",
+			"ul.widgets",
+			"ul.lang li a",
+			"<div class=\"top\">",
+			"jr_filter_form",
+			"do_action('before_jobs_taxonomy', $tax->taxonomy, $tax->slug);",
+			"jr_filter_fo",
+			"filter",
+			"filter-form",
+			"<form class=\"filte",
+			"<ol class=\"jobs\">",
+			"\"paging",
+			"<small class=\"rss\"",
+			"<div id=\"content\">",
+			"jr_paging",
+			"#top",
+			"class=\"filter\"",
+			"\"filter\"",
+			".button",
+			"stLight.option",
+			"harethis.com",
+			"new sharethis.widgets.hoverbuttons(options)",
+			"buttons.js",
+			"http://w.sharethis.com/button/buttons.js",
+			"sharethis",
+			"c=\"http://w.sharethis.com/button/buttons.js\"></script",
+			"mainNav",
+			"appthemes_before_sidebar_widgets",
+			"sharethis",
+			"modal-form-wrapper",
+			"custom.js",
+			"widget-submit",
+			"before_sidebar_widget",
+			"appthemes_before_sidebar_widgets",
+			"require( dirname(__FILE__) . '/includes/theme-sidebars.php' );",
+			"register_sidebar",
+			"sidebar_footer",
+			"Ihrss",
+			"<html",
+			"Hello,</span></br>We ",
+			"mainContent",
+			"        <?php appthemes_load_template( 'loop-job.php' ); ?>\n.top-bar",
+			"top-bar",
+			".top-bar",
+			"placeholder=\"<?php _e('A",
+			"placeholder=\"",
+			"placeholder=\"All Jobs",
+			"before_front_page_jobs",
+			"app_template_path",
+			"header_search",
+			"<div id=\"content\">",
+			"header-search",
+			"<dd class=\"type\">",
+			"../images",
+			"helve",
+			"<div id=\"header\">",
+			"box-shad",
+			"#header",
+			".home #header",
+			"styles/",
+			"/style.css",
+			"add_menu_parent_class",
+			"oldibo",
+			"myData",
+			"offcan",
+			"site.js",
+			"uk-invisible",
+			"uk-vis",
+			"visibili",
+			"-font-si",
+			"handle-font-",
+			"@include font-",
+			"hook",
+			"$overlay-area-content-font-size",
+			"v-header-font-si",
+			"-subtitle-font-siz",
+			"hook",
+			"hook-base-",
+			"font-",
+			"badge-notification-font-s",
+			"$article-lead-font-size",
+			"api",
+			"pagena",
+			"timthum",
+			"observe",
+			"id-gutter-large-horizonta",
+			"two",
+			"fill",
+			"form-icon-wi",
+			".uk-nav-offcanvas > li > a",
+			"global",
+			"$image ",
+			"size",
+			"itw_image_sizes",
+			"$image ",
+			"$image",
+			"timthumb_script",
+			"image-text-widget-image",
+			"uk-text-middle",
+			"padding-verti",
+			"<h3 id",
+			"Pictures",
+			"Buttons",
+			"print",
+			"<h3 class=\"tm-article-subtitle\">Markup</h3>",
+			"<h3 class=\"tm-article-subtitle\">Example</h3>",
+			"10.",
+			"ility-margin-large",
+			"1200",
+			"uk-panel-box",
+			"utility-border-round",
+			"uk-border-rounded",
+			"uk-panel-box-bordered",
+			"uk-panel-box",
+			"uk-text-center-small",
+			"uk-pagination",
+			"lists",
+			"uk-text-success",
+			"alerts",
+			"blockquote",
+			"icon",
+			"label",
+			".uk-tabl",
+			"form-danger-border",
+			"uk-form-danger",
+			"select",
+			"+ px",
+			".uk-form-icon"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"images",
+			"<h4 class=\"tm-article-subtitle\">Markup</h4>",
+			"<h4 class=\"tm-article-subtitle\">Example</h4>",
+			"uk-panel-box uk-panel-bordered",
+			"uk-panel-bordered",
+			"uk-panel-box uk-panel-box-bordered",
+			"/label",
+			"label class=\"uk-form-label\"",
+			"uk-width-1-1",
+			"<p><a class=\"uk-button",
+			"",
+			"button-large",
+			"button-small",
+			"button-mini",
+			"uk-text-center",
+			"padding-verti",
+			"uk-button",
+			"uk-container uk-container-center",
+			"uk-container",
+			"uk-width-medium-1-3",
+			"uk-grid",
+			"uk-width-medium-2-3",
+			"components/",
+			"@include font-size(",
+			".font-size(",
+			"images/",
+			"	&:",
+			"-",
+			"/js/lib",
+			"",
+			", ",
+			"009ee0",
+			"009ee0\n",
+			"\n",
+			"i-pink",
+			"&lt;",
+			"&gt;",
+			"&lt;",
+			"",
+			"73px",
+			" @custom-tablet",
+			"@mini",
+			"../fonts",
+			"",
+			"children",
+			"wp-content/themes/",
+			"two-on-tab",
+			"<li>",
+			"http://vivio.spade.be/wp-content/themes/timber-starter-theme/images/clients/",
+			"/ima",
+			" }",
+			"    \n",
+			"li",
+			"$columnGutter",
+			"$rowWidth",
+			"$columnGutter",
+			"=inclure/",
+			"$",
+			"$p",
+			"$b",
+			"$he",
+			"$generalMargin",
+			"http://www.koch-mehrin.de/PIE.htc",
+			"behavior: url(http://www.koch-mehrin.de/PIE.htc);",
+			"$",
+			"",
+			"\n	",
+			"$",
+			"	",
+			"  ",
+			"$",
+			"	",
+			"",
+			"\"",
+			"1f4863",
+			"www.anneedescompetences.be",
+			"http://skm.spade.be/PIE.htc",
+			"www",
+			"www.skm.spade.be/PIE.htc",
+			"url('http://adc.spade.be/PIE.htc');",
+			"sprintf(__('%s à %s.', 'roots'), get_the_date(), get_the_time()); ?>",
+			"			$",
+			"@red",
+			":after",
+			":befo",
+			":active",
+			":hover",
+			"instruction",
+			"strong",
+			"<div class=\"meta\">\n    <?php if ($post->post_type=='post'||$post->post_type=='breves'){ ?>\n        Catégories: <?php the_category(', ');?><br />\n        <?php get_template_part('templates/entry-meta'); ?>\n    <?php } \n    else if ($post->post_type=='formation'){ ?>\n\n          <strong>Première session:</strong> <?php echo do_shortcode('[types field=\"formation-date-debut\" style=\"text\" format=\"j F Y\"][/types]');?><br />\n          <strong>Lieu:</strong> <?php echo do_shortcode('[types field=\"formation-lieu-dit\" raw=\"true\"][/types]'); \n            if(do_shortcode('[types field=\"formation-lieu-dit\" raw=\"true\"][/types]')!='') echo ', ';\n             echo do_shortcode('[types field=\"formation-ville\" raw=\"true\"][/types]');\n            \n          ?> \n    \n    <?php } ?>\n  </div>",
+			"arrDate",
+			"\">';\n",
+			"<div class=\"row-fluid\">",
+			"rgba(29, 36, 39, .82)",
+			"eight",
+			"\"",
+			"href=”<?php echo get_template_directory_uri() ?>/",
+			""
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 32,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/style.css",
+					"settings":
+					{
+						"buffer_size": 96191,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								53821,
+								53821
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 41911.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/includes/theme-functions.php",
+					"settings":
+					{
+						"buffer_size": 43,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								39,
+								39
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/includes/featured-jobs.php",
+					"settings":
+					{
+						"buffer_size": 3097,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								60,
+								60
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/spade/work/istorm-new/sftp-config.json",
+					"settings":
+					{
+						"buffer_size": 1376,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								251,
+								251
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/index.php",
+					"settings":
+					{
+						"buffer_size": 1735,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								607,
+								607
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/header.php",
+					"settings":
+					{
+						"buffer_size": 1687,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1007,
+								1007
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/loop-job.php",
+					"settings":
+					{
+						"buffer_size": 2015,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								190,
+								190
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/header-search.php",
+					"settings":
+					{
+						"buffer_size": 2014,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								2014
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/footer.php",
+					"settings":
+					{
+						"buffer_size": 447,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								230,
+								230
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/index.php",
+					"settings":
+					{
+						"buffer_size": 2006,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1683,
+								1671
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/wrapper.php",
+					"settings":
+					{
+						"buffer_size": 4997,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2045,
+								2045
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/css/style.css",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-friend.php",
+					"settings":
+					{
+						"buffer_size": 996,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								966,
+								966
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/includes/featured-jobs.php",
+					"settings":
+					{
+						"buffer_size": 3103,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								3103
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 837.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/includes/theme-functions.php",
+					"settings":
+					{
+						"buffer_size": 34224,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9962,
+								9962
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4047.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/taxonomy-job.php",
+					"settings":
+					{
+						"buffer_size": 1564,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1224,
+								1190
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/functions.php",
+					"settings":
+					{
+						"buffer_size": 1104,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1072,
+								1072
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-candidates.php",
+					"settings":
+					{
+						"buffer_size": 1008,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								978,
+								978
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/taxonomy-job.php",
+					"settings":
+					{
+						"buffer_size": 1565,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1564,
+								1564
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-jobs-by-date.php",
+					"settings":
+					{
+						"buffer_size": 2137,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1946,
+								1946
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 866.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-career.php",
+					"settings":
+					{
+						"buffer_size": 964,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								199,
+								169
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/page.php",
+					"settings":
+					{
+						"buffer_size": 1016,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								737,
+								737
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/single-job_listing.php",
+					"settings":
+					{
+						"buffer_size": 4990,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/single.php",
+					"settings":
+					{
+						"buffer_size": 2589,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1138,
+								1114
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 323.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-login.php",
+					"settings":
+					{
+						"buffer_size": 1766,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1765,
+								1765
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-profile.php",
+					"settings":
+					{
+						"buffer_size": 6880,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6879,
+								6879
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2620.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 26,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-password-recovery.php",
+					"settings":
+					{
+						"buffer_size": 1236,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1235,
+								1235
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 27,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-password-reset.php",
+					"settings":
+					{
+						"buffer_size": 1985,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1984,
+								1984
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 28,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-purchase-pack.php",
+					"settings":
+					{
+						"buffer_size": 1444,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1443,
+								1443
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 29,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-purchase-resume-subscription.php",
+					"settings":
+					{
+						"buffer_size": 1473,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1472,
+								1472
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 30,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-contact.php",
+					"settings":
+					{
+						"buffer_size": 890,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								867,
+								867
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 31,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-submit.php",
+					"settings":
+					{
+						"buffer_size": 2355,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2354,
+								2354
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1145.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 32,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-terms-conditions.php",
+					"settings":
+					{
+						"buffer_size": 459,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								458,
+								458
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 33,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/search.php",
+					"settings":
+					{
+						"buffer_size": 1411,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								341,
+								341
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 34,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/wrapper.php",
+					"settings":
+					{
+						"buffer_size": 5204,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3117,
+								3117
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 625.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 35,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-about.php",
+					"settings":
+					{
+						"buffer_size": 1000,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								970,
+								970
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 36,
+					"settings":
+					{
+						"buffer_size": 2469,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1090,
+								1101
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 37,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jobroller/single-job_listing.php",
+					"settings":
+					{
+						"buffer_size": 4859,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4606,
+								4606
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1576.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 38,
+					"file": "/Users/spade/work/istorm-new/wp-content/themes/jbr-child/tpl-companies.php",
+					"settings":
+					{
+						"buffer_size": 1174,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1149,
+								1064
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.568368535548,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 112.0
+	},
+	"output.find_results":
+	{
+		"height": 333.0
+	},
+	"output.sftp":
+	{
+		"height": 264.0
+	},
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"annee des competences integration/wp-content/themes/adc/assets/js/main.js"
+			],
+			[
+				"ye",
+				"styles/compass_twitter_bootstrap/_type.scss"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 526.0,
+	"status_bar_visible": true
+}

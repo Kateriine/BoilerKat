@@ -127,11 +127,9 @@
     }
 
     &:hover,
-    &:focus { // 1
+    &:focus { 
         opacity: 1;
-        /* 2 */
         outline: none;
-        /* 3 */
         color: inherit;
         text-decoration: none;
         cursor: pointer;

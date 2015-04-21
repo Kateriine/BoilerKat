@@ -1,6 +1,6 @@
 <?php
 remove_shortcode('gallery', 'gallery_shortcode');
-add_action( 'init', 'wpk_register_shortcodes');
+add_action( 'init', 'register_shortcodes');
 
 add_filter('wpv-extra-condition-filters', 'filter_shortcode');
 
@@ -8,7 +8,7 @@ add_filter('wpv-extra-condition-filters', 'filter_shortcode');
 /**************/
 /* Shortcodes */
 /**************/
-function wpk_register_shortcodes(){
+function register_shortcodes(){
     //Resized images shortcodes example:
     // add_shortcode('url-pic-square', 'url_pic_square');
     // add_shortcode('gallery-video', 'gallery_video'); 

@@ -170,23 +170,42 @@ $offcanvas-panel-title-color:                    $offcanvas-panel-link-color !de
 .uk-offcanvas .uk-panel a:not([class]):hover { color: $offcanvas-panel-link-hover-color; }
 
 .uk-button-offcanvas{
+    @extend .uk-clearfix;
+    display: block;
     border:none;
     background: $black;
-    width:70px;
+    width:76px;
     margin:0;
+    z-index: 500;
     padding:28px 22px 29px 22px;
     &:focus{outline:medium none;}
     &.uk-hidden-large{
         display:inline-block !important;
         @media(min-width:$breakpoint-medium){display:none!important;}
     }
-    span{
-        display: block;
-        width:27px;
-        height:1px;
-        margin:5px 0;
-        background: $white;
-        &:first-child, &:last-child{margin:0}
-        &:last-child{width:16px;}
+    position: relative;
+    transition: all 233ms cubic-bezier(0.5, 0, 0, 1);
+
+    .line {
+      display: block;
+      width: 32px;
+      height: 3px;
+      margin: 0 0 12px;
+      background-color: rgba(255,255,255,.8);
+      transform: translate3d(0, 0, 0);
+      transition: all 333ms cubic-bezier(0.5, 0, 0, 1);
+       &:last-child{ margin-bottom: 0; }
+    }
+
+    &.checked {
+        .line.first {
+          transform: rotate(-135deg) translateY(-10.5px) translateX(-10.5px);
+        }
+        .line.second{
+          opacity: 0;
+        }
+        .line.third {
+          transform: rotate(135deg) translateY(10.5px) translateX(-10.5px);
+        }
     }
 }

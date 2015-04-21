@@ -18,3 +18,12 @@
 .bypostauthor{
     
 }
+
+.uk-offcanvas-page{
+    #wpadminbar{
+        margin-top:-46px;
+        @media (min-width: 600px){
+            margin-top:0;
+        }
+    }
+}
