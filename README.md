@@ -1,4 +1,4 @@
-# KatThemeBase V3.5
+# KatThemeBase V3.6.0
 Naked WP theme with uikit 2.18 and Starkers Masters
 
 Optional file to create widgets
@@ -50,6 +50,7 @@ Optional functions to uncomment:
 ## JS
 Fancybox, slick: to add to grunt concat if needed
 Slick slider (idem)
+Video JS
 (Works with some scss files listed below)
 
 ### In js/site.js
@@ -57,7 +58,7 @@ Slick slider (idem)
 - Responsive pics management (drupal way): change src according to screen size (to be implemented in theme)
 
 ##SCSS:
-Fancybox, social sharing, slick, langs, pagenavi to uncomment in style.scss if needed.
+Fancybox, social sharing, slick, Video JS, langs, pagenavi to uncomment in style.scss if needed.
 
 ## Improvements in UIKit:
 
@@ -67,10 +68,25 @@ Fancybox, social sharing, slick, langs, pagenavi to uncomment in style.scss if n
 - Some additions in grid.scss 
 
 ## Notes:
-- Works well with Grunt and svgstore (file has been prepared)
+- Works well with Grunt and Gulp (file has been prepared)
+
+## Gulp Support
+
+sudo npm install --save-dev gulp
+sudo npm install --save-dev gulp-util
+sudo npm install --save-dev gulp-watch
+sudo npm install --save-dev gulp-concat
+sudo npm install --save-dev gulp-uglify
+sudo npm install --save-dev gulp-autoprefixer
+sudo npm install --save-dev gulp-sass
+sudo npm install --save-dev gulp-rename
+sudo npm install --save-dev gulp-cheerio
+sudo npm install --save-dev gulp-svgstore
+sudo npm install --save-dev gulp-svgmin
+sudo npm install --save-dev gulp-imagemin
+sudo npm install --save-dev imagemin-pngquant
+sudo npm install --save-dev gulp-cache
 
 ## To improve:
 
 - Dynamic customisation of widgets
-- Gulp support
-- Video js support

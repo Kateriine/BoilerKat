@@ -21,7 +21,10 @@ var imagemin = require('gulp-imagemin'),
     cache = require('gulp-cache'),
     pngquant = require('imagemin-pngquant');
 
-
+function handleError(err) {
+  console.log(err.toString());
+  this.emit('end');
+}
 
 //JS
 gulp.task('concat', function() {
@@ -43,6 +46,7 @@ gulp.task('compress', function() {
 gulp.task('scssExpanded', function () {
     return gulp.src('scss/style.scss')
         .pipe(scss({ outputStyle: 'expanded',sourceComments: 'normal' }))
+        .on('error',handleError )
         .pipe(autoprefixer('last 2 version', 'ie 9'))
         .pipe(gulp.dest('css/'));
 });
@@ -50,6 +54,7 @@ gulp.task('scssExpanded', function () {
 gulp.task('scssCompressed', function () {
     return gulp.src('scss/style.scss')
         .pipe(scss({ outputStyle: 'compressed' }))
+        .on('error', handleError)
         .pipe(autoprefixer('last 2 version', 'ie 9'))
         .pipe(gulp.dest('css/'));
 });
@@ -112,6 +117,8 @@ gulp.task('watchdev', function() {
    // Watch image files
   gulp.watch('images/**/*', ['imagemin']);
 });
+
+
 
 gulp.task('watchprod', function() {
    // Watch .js files

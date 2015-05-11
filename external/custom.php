@@ -97,8 +97,13 @@ function get_attachment_id_from_src ($image_src) {
 }
 
 //creates resized and cropped image files safely from existing media library entries. 
-function kat_img_resize( $src, $width, $height ) {
-
+function kat_img_resize( $atts ) {
+   extract( shortcode_atts( array(
+       'src' => '',
+       'width' => '',
+       'height' => '',
+       'crop' => 1
+   ), $atts ) );
 
    global $wpdb;
 
@@ -107,7 +112,9 @@ function kat_img_resize( $src, $width, $height ) {
    $width = absint( $width );
    $src = esc_url( strtolower( $src ) );
    $needs_resize = true;
-
+   if ( $crop === 'false' ) $crop = false;
+   if ( $crop === 'true' ) $crop = true;
+   $crop = (bool) $crop;
    $upload_dir = wp_upload_dir();
    $base_url = strtolower( $upload_dir['baseurl'] );
 
@@ -127,11 +134,13 @@ function kat_img_resize( $src, $width, $height ) {
    // Look through the attachment meta data for an image that fits our size.
    $meta = wp_get_attachment_metadata( $attachment_id );
        $srcArr = explode('.', $src);
-       $name = $srcArr[0] . '-' . $width . 'x' .$height . '.' . $srcArr[1];
+       if($crop==true) $c = 'crop';
+       else $c = "nocrop";
+       //$name = $srcArr[0] . '-'.$c.'-' . $width . 'x' .$height . '.' . $srcArr[1];
 
 
    foreach( $meta['sizes'] as $key => $size ) {
-       if ( $size['width'] == $width && $size['height'] == $height ) {
+       if ( $size['width'] == $width || $size['height'] == $height ) {
 
            $src = str_replace( basename( $src ), $size['file'], $src );
            $needs_resize = false;
@@ -143,9 +152,8 @@ function kat_img_resize( $src, $width, $height ) {
        //     break;
        // }
    }
-
-   //Miracle solution: if width x height size doesn't exist for this media, we create it :)
-   $siz = 'resized-'.$width .'x' . $height;
+   //Miracle solution: if $c-resized-widthxheight size doesn't exist for this media, we create it :)
+   $siz = $c .'-resized-'.$width .'x' . $height;
    if( $meta['sizes'][$siz]['file'] != '' ){
        $needs_resize = false;
    }
@@ -156,11 +164,12 @@ function kat_img_resize( $src, $width, $height ) {
    // If an image of such size was not found, we can create one.
    if ( $needs_resize ) {
        $attached_file = get_attached_file( $attachment_id );
-       $resized = image_make_intermediate_size( $attached_file, $width, $height, true );
+       $resized = image_make_intermediate_size( $attached_file, $width, $height, $crop );
        if ( ! is_wp_error( $resized ) ) {
 
            // Let metadata know about our new size.
-           $key = sprintf( 'resized-%dx%d', $width, $height );
+           $key = $c.'-resized-'.$width.'x'.$height;
+           echo $key;
            $meta['sizes'][$key] = $resized;
            $src = str_replace( basename( $src ), $resized['file'], $src );
            wp_update_attachment_metadata( $attachment_id, $meta );
