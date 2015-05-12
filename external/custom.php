@@ -169,7 +169,6 @@ function kat_img_resize( $atts ) {
 
            // Let metadata know about our new size.
            $key = $c.'-resized-'.$width.'x'.$height;
-           echo $key;
            $meta['sizes'][$key] = $resized;
            $src = str_replace( basename( $src ), $resized['file'], $src );
            wp_update_attachment_metadata( $attachment_id, $meta );
