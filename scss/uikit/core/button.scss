@@ -50,16 +50,16 @@ $button-mini-line-height:                        20px !default;
 $button-small-line-height:                       25px !default;
 $button-large-line-height:                       40px !default;
 
-$button-mini-font-size:                          11;
-$button-small-font-size:                         12;
-$button-large-font-size:                         16;
+$button-mini-font-size:                          11 !default;
+$button-small-font-size:                         12 !default;
+$button-large-font-size:                         16 !default;
 
 $button-padding-horizontal:                      12px !default;
 $button-mini-padding-horizontal:                 6px !default;
 $button-small-padding-horizontal:                10px !default;
 $button-large-padding-horizontal:                15px !default;
 
-$button-font-size:                               16;
+$button-font-size:                               14 !default;
 $button-background:                              #eee !default;
 $button-color:                                   #444 !default;
 $button-hover-background:                        #f5f5f5 !default;
@@ -67,9 +67,9 @@ $button-hover-color:                             #444 !default;
 $button-active-background:                       #ddd !default;
 $button-active-color:                            #444 !default;
 
-$button-primary-background:                      $primary-color !default;
+$button-primary-background:                      #00a8e6 !default;
 $button-primary-color:                           #fff !default;
-$button-primary-hover-background:                lighten($primary-color, 10%) !default;
+$button-primary-hover-background:                #35b3ee !default;
 $button-primary-hover-color:                     #fff !default;
 $button-primary-active-background:               #0091ca !default;
 $button-primary-active-color:                    #fff !default;
@@ -156,7 +156,7 @@ $button-link-disabled-color:                     #999 !default;
     text-align: center;
     @include btn($button-color, $button-background);
     &.uk-button-round{
-        border-radius: $button-height;            
+        border-radius: $button-height;
     }
 }
 
@@ -171,11 +171,11 @@ $button-link-disabled-color:                     #999 !default;
 
 .uk-button:hover,
 .uk-button:focus { // 1
-    /* 2 */
     outline: none;
     /* 3 */
     text-decoration: none;
 }
+
 
 
 /* Color modifiers
@@ -205,6 +205,7 @@ $button-link-disabled-color:                     #999 !default;
     @include btn($button-danger-color, $button-danger-background);
 }
 
+
 /* Disabled state
  * Overrides also the color modifiers
  ========================================================================== */
@@ -213,6 +214,7 @@ $button-link-disabled-color:                     #999 !default;
 .uk-button:disabled {
     background-color: $button-disabled-background;
     color: $button-disabled-color;
+    @include hook-button-disable();
 }
 
 
@@ -256,7 +258,7 @@ $button-link-disabled-color:                     #999 !default;
     line-height: $button-mini-line-height;
     @include font-size($button-mini-font-size);
     &.btn-round{
-        border-radius: $button-mini-height;        
+        border-radius: $button-mini-height;
     }
 }
 
@@ -266,7 +268,7 @@ $button-link-disabled-color:                     #999 !default;
     line-height: $button-small-line-height;
     @include font-size($button-small-font-size);
     &.btn-round{
-        border-radius: $button-small-height;        
+        border-radius: $button-small-height;
     }
 }
 
@@ -276,9 +278,10 @@ $button-link-disabled-color:                     #999 !default;
     line-height: $button-large-line-height;
     @include font-size($button-large-font-size);
     &.btn-round{
-        border-radius: $button-large-height;            
+        border-radius: $button-large-height;
     }
 }
+
 
 
 /* Sub-object `uk-button-group`
@@ -325,3 +328,26 @@ $button-link-disabled-color:                     #999 !default;
     /* 2 */
     position: relative;
 }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-button-misc();
+
+// @mixin hook-button(){}
+// @mixin hook-button-hover(){}
+// @mixin hook-button-active(){}
+// @mixin hook-button-primary(){}
+// @mixin hook-button-primary-hover(){}
+// @mixin hook-button-primary-active(){}
+// @mixin hook-button-success(){}
+// @mixin hook-button-success-hover(){}
+// @mixin hook-button-success-active(){}
+// @mixin hook-button-danger(){}
+// @mixin hook-button-danger-hover(){}
+// @mixin hook-button-danger-active(){}
+// @mixin hook-button-disable(){}
+// @mixin hook-button-link(){}
+// @mixin hook-button-large(){}
+// @mixin hook-button-misc(){}

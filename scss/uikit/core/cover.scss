@@ -60,3 +60,11 @@
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
 }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-cover-misc();
+
+// @mixin hook-cover-misc(){}

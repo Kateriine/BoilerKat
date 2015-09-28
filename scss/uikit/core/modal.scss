@@ -65,6 +65,7 @@ $modal-caption-color:                            #fff !default;
  * 4. Mask the background page
  * 5. Fade-in transition
  * 6. Deactivate browser history navigation in IE11
+ * 7. force hardware acceleration to prevent browser rendering hiccups
  */
 
 .uk-modal {
@@ -88,6 +89,10 @@ $modal-caption-color:                            #fff !default;
     transition: opacity 0.15s linear;
     /* 6 */
     touch-action: cross-slide-y pinch-zoom double-tap-zoom;
+    /* 7 */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    @include hook-modal();
 }
 
 /*
@@ -118,7 +123,6 @@ $modal-caption-color:                            #fff !default;
     /* 1 */
     position: relative;
     /* 2 */
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: $modal-dialog-margin-vertical auto;
     padding: $modal-dialog-padding;
@@ -133,6 +137,7 @@ $modal-caption-color:                            #fff !default;
     transform: translateY(-100px);
     -webkit-transition: opacity 0.3s linear, -webkit-transform 0.3s ease-out;
     transition: opacity 0.3s linear, transform 0.3s ease-out;
+    @include hook-modal-dialog();
 }
 
 /* Phone landscape and smaller */
@@ -179,7 +184,7 @@ $modal-caption-color:                            #fff !default;
  * Remove margin from adjacent element
  */
 
- .uk-modal-dialog > .uk-close:first-child + *:not([class*='uk-modal-']) { margin-top: 0; }
+ .uk-modal-dialog > .uk-close:first-child + :not([class*='uk-modal-']) { margin-top: 0; }
 
 
 /* Modifier: `uk-modal-dialog-lightbox`
@@ -188,9 +193,9 @@ $modal-caption-color:                            #fff !default;
 .uk-modal-dialog-lightbox {
     margin: 15px auto;
     padding: 0;
-    min-height: 200px;
     max-width: 95%;
     max-width: unquote("calc(100% - 30px)");
+    @include hook-modal-dialog-lightbox();
 }
 
 /*
@@ -239,10 +244,12 @@ $modal-caption-color:                            #fff !default;
 
 .uk-modal-header {
     margin-bottom: $modal-header-margin-bottom;
+    @include hook-modal-header();
 }
 
 .uk-modal-footer {
     margin-top: $modal-footer-margin-top;
+    @include hook-modal-footer();
 }
 
 /*
@@ -267,6 +274,7 @@ $modal-caption-color:                            #fff !default;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    @include hook-modal-caption();
 }
 
 
@@ -281,6 +289,7 @@ $modal-caption-color:                            #fff !default;
     transform: translate(-50%,-50%);
     font-size: 25px;
     color: #ddd;
+    @include hook-modal-spinner();
 }
 
 .uk-modal-spinner:after {
@@ -289,3 +298,18 @@ $modal-caption-color:                            #fff !default;
     -webkit-animation: uk-rotate 2s infinite linear;
     animation: uk-rotate 2s infinite linear;
 }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-modal-misc();
+
+// @mixin hook-modal(){}
+// @mixin hook-modal-dialog(){}
+// @mixin hook-modal-dialog-lightbox(){}
+// @mixin hook-modal-header(){}
+// @mixin hook-modal-footer(){}
+// @mixin hook-modal-caption(){}
+// @mixin hook-modal-spinner(){}
+// @mixin hook-modal-misc(){}

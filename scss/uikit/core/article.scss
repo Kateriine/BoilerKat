@@ -28,18 +28,18 @@
 
 $article-margin-top:                             25px !default;
 
-$article-title-font-size:                        36;
-$article-title-line-height:                      1.2;
+$article-title-font-size:                        36px !default;
+$article-title-line-height:                      42px !default;
 $article-title-font-weight:                      normal !default;
 $article-title-text-transform:                   none !default;
 
-$article-meta-font-size:                         12;
-$article-meta-line-height:                       1.4;
+$article-meta-font-size:                         12px !default;
+$article-meta-line-height:                       18px !default;
 $article-meta-color:                             #999 !default;
 
 $article-lead-color:                             #444 !default;
-$article-lead-font-size:                         18;
-$article-lead-line-height:                       1.4;
+$article-lead-font-size:                         18px !default;
+$article-lead-line-height:                       24px !default;
 $article-lead-font-weight:                       normal !default;
 
 $article-divider-margin:                         25px !default;
@@ -79,10 +79,11 @@ $article-divider-border:                         #ddd !default;
  ========================================================================== */
 
 .uk-article-title {
-    @include font-size($article-title-font-size);
+    font-size: $article-title-font-size;
     line-height: $article-title-line-height;
     font-weight: $article-title-font-weight;
     text-transform: $article-title-text-transform;
+    @include hook-article-title();
 }
 
 .uk-article-title a {
@@ -98,6 +99,7 @@ $article-divider-border:                         #ddd !default;
     font-size: $article-meta-font-size;
     line-height: $article-meta-line-height;
     color: $article-meta-color;
+    @include hook-article-meta();
 }
 
 
@@ -106,9 +108,10 @@ $article-divider-border:                         #ddd !default;
 
 .uk-article-lead {
     color: $article-lead-color;
-    @include font-size($article-lead-font-size);
+    font-size: $article-lead-font-size;
     line-height: $article-lead-line-height;
     font-weight: $article-lead-font-weight;
+    @include hook-article-lead();
 }
 
 
@@ -118,6 +121,19 @@ $article-divider-border:                         #ddd !default;
 .uk-article-divider {
     margin-bottom: $article-divider-margin;
     border-color: $article-divider-border;
+    @include hook-article-divider();
 }
 
 * + .uk-article-divider { margin-top: $article-divider-margin; }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-article-misc();
+
+// @mixin hook-article-title(){}
+// @mixin hook-article-meta(){}
+// @mixin hook-article-lead(){}
+// @mixin hook-article-divider(){}
+// @mixin hook-article-misc(){}

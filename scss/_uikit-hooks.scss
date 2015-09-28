@@ -1,0 +1,786 @@
+
+// Alerts
+// ========================================================================
+
+@mixin hook-alert(){}
+@mixin hook-alert-success(){}
+@mixin hook-alert-warning(){}
+@mixin hook-alert-danger(){}
+@mixin hook-alert-misc(){}
+
+// animation
+// ========================================================================
+
+@mixin hook-animation-misc(){}
+
+// Articles
+// ========================================================================
+
+@mixin hook-article-title(){
+  @include font-size($article-title-font-size);
+}
+@mixin hook-article-meta(){
+  @include font-size($article-meta-font-size);
+}
+@mixin hook-article-lead(){
+  @include font-size($article-lead-font-size);
+}
+@mixin hook-article-divider(){}
+@mixin hook-article-misc(){}
+
+
+// Badge
+// ========================================================================
+
+@mixin hook-badge(){
+  @include font-size($badge-font-size);
+}
+@mixin hook-badge-success(){}
+@mixin hook-badge-warning(){}
+@mixin hook-badge-danger(){}
+@mixin hook-badge-misc(){}
+
+// Base
+// ========================================================================
+
+@mixin hook-base-body(){
+  font-size: 62.5%;
+  font-family: $base-body-font-family;
+  line-height: 1.4;
+}
+@mixin hook-base-code(){}
+@mixin hook-base-h1(){
+  @include font-size($base-h1-font-size);
+  a {
+    color: inherit;
+  }
+}
+@mixin hook-base-h2(){
+  @include font-size($base-h2-font-size);
+  a {
+    color: inherit;
+  }
+}
+@mixin hook-base-h3(){
+  @include font-size($base-h3-font-size);
+  a {
+    color: inherit;
+  }
+}
+@mixin hook-base-h4(){
+  @include font-size($base-h4-font-size);
+  a {
+    color: inherit;
+  }
+}
+@mixin hook-base-h5(){
+  @include font-size($base-h5-font-size);
+  a {
+    color: inherit;
+  }
+}
+@mixin hook-base-h6(){
+  @include font-size($base-h6-font-size);
+  a {
+    color: inherit;
+  }
+}
+@mixin hook-base-pre(){}
+@mixin hook-base-misc(){
+  * {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  body {
+    @include font-size($base-body-font-size);
+  }
+
+  blockquote {@include font-size($base-blockquote-font-size);}
+}
+
+
+// Block
+// ========================================================================
+
+@mixin hook-block(){}
+@mixin hook-block-default(){}
+@mixin hook-block-muted(){}
+@mixin hook-block-secondary(){}
+@mixin hook-block-primary(){}
+@mixin hook-block-misc(){}
+
+// Breadcrumb
+// ========================================================================
+
+@mixin hook-breadcrumb(){
+  @include font-size($breadcrumb-font-size);
+}
+@mixin hook-breadcrumb-divider(){}
+@mixin hook-breadcrumb-misc(){}
+
+
+// Button
+// =======================================================================
+
+
+//NE PAS OUBLIER DE CHANGER LE FICHIER "BUTTONS"
+
+@mixin hook-button-disable(){
+}
+@mixin hook-button-misc(){
+}
+
+// Close
+// ========================================================================
+
+@mixin hook-close(){}
+@mixin hook-close-alt(){}
+@mixin hook-close-misc(){}
+
+
+// Comment
+// ========================================================================
+
+@mixin hook-comment(){}
+@mixin hook-comment-header(){}
+@mixin hook-comment-avatar(){}
+@mixin hook-comment-title(){
+  @include font-size($comment-title-font-size);
+}
+@mixin hook-comment-meta(){
+  @include font-size($comment-meta-font-size);
+}
+@mixin hook-comment-body(){}
+@mixin hook-comment-primary(){}
+@mixin hook-comment-misc(){}
+
+
+// Contrast
+// ========================================================================
+
+@mixin hook-contrast-base-code(){}
+
+@mixin hook-contrast-nav-side(){}
+@mixin hook-contrast-nav-side-hover(){}
+@mixin hook-contrast-nav-side-active(){}
+@mixin hook-contrast-nav-side-header(){}
+@mixin hook-contrast-nav-side-divider(){}
+
+@mixin hook-contrast-subnav(){}
+@mixin hook-contrast-subnav-hover(){}
+@mixin hook-contrast-subnav-active(){}
+@mixin hook-contrast-subnav-line-divider(){}
+@mixin hook-contrast-subnav-pill-hover(){}
+@mixin hook-contrast-subnav-pill-active(){}
+
+@mixin hook-contrast-list-line(){}
+
+@mixin hook-contrast-form(){}
+@mixin hook-contrast-form-focus(){}
+
+@mixin hook-contrast-button(){}
+@mixin hook-contrast-button-hover(){}
+@mixin hook-contrast-button-active(){}
+@mixin hook-contrast-button-primary(){}
+@mixin hook-contrast-button-primary-hover(){}
+@mixin hook-contrast-button-primary-active(){}
+
+@mixin hook-contrast-icon-hover(){}
+@mixin hook-contrast-icon-hover-hover(){}
+@mixin hook-contrast-icon-button(){}
+@mixin hook-contrast-icon-button-hover(){}
+@mixin hook-contrast-icon-button-active(){}
+
+@mixin hook-contrast-misc(){}
+
+
+// Cover
+// ========================================================================
+
+@mixin hook-cover-misc(){}
+
+
+// Description-list
+// ========================================================================
+
+@mixin hook-description-list-misc(){}
+
+
+// Dropdown
+// ========================================================================
+
+
+@mixin hook-dropdown(){
+  @include font-size($dropdown-font-size);
+}
+@mixin hook-dropdown-navbar(){}
+@mixin hook-dropdown-misc(){}
+
+
+// Flex
+// ========================================================================
+
+@mixin hook-flex-misc(){}
+
+
+// Form
+// ========================================================================
+
+@mixin hook-form(){
+  -webkit-appearance:none;
+}
+@mixin hook-form-focus(){}
+@mixin hook-form-disabled(){}
+@mixin hook-form-legend(){
+  @include font-size($form-legend-font-size);
+}
+@mixin hook-form-danger(){}
+@mixin hook-form-success(){}
+@mixin hook-form-blank(){}
+@mixin hook-form-blank-focus(){}
+@mixin hook-form-stacked-label(){}
+@mixin hook-form-horizontal-label(){}
+@mixin hook-form-misc(){}
+
+
+// Grid
+// ========================================================================
+
+@mixin hook-grid-misc(){
+
+
+      /* Horizontal */
+  .uk-grid-large { margin-left: -$grid-gutter-large-horizontal; }
+  .uk-grid-large > * { padding-left: $grid-gutter-large-horizontal; }
+
+  /* Vertical */
+  .uk-grid-large + .uk-grid-large,
+  .uk-grid-large-margin,
+  .uk-grid-large > * > .uk-panel + .uk-panel { margin-top: $grid-gutter-large-vertical; }
+  .uk-grid-collapse + .uk-grid-collapse {
+    margin-top:0;
+  }
+
+  @media (min-width: $breakpoint-xlarge) {
+
+      /* Horizontal */
+      .uk-grid { margin-left: -$grid-gutter-horizontal; }
+      .uk-grid > * { padding-left: $grid-gutter-horizontal; }
+      .uk-grid-large > * { padding-left: $grid-gutter-large-horizontal; }
+
+      /* Vertical */
+      .uk-grid + .uk-grid,
+      .uk-grid-margin,
+      .uk-grid > * > .uk-panel + .uk-panel { margin-top: $grid-gutter-vertical; }
+
+      .uk-grid-collapse { margin-left: 0; }
+      .uk-grid-collapse > * { padding-left: 0; }
+
+      .uk-grid-collapse + .uk-grid-collapse {
+        margin-top:0;
+      }
+
+      /* Vertical */
+      // .uk-grid-collapse + .uk-grid-collapse,
+      // .uk-grid-collapse > .uk-grid-margin,
+      // .uk-grid-collapse > * > .uk-panel + .uk-panel { margin-top: 0; }
+
+  }
+}
+
+
+// Icons
+// ========================================================================
+
+@mixin hook-icon-hover(){}
+@mixin hook-icon-hover-hover(){}
+@mixin hook-icon-button(){}
+@mixin hook-icon-button-hover(){}
+@mixin hook-icon-button-active(){}
+@mixin hook-icon-misc(){}
+
+
+// List-misc
+// ========================================================================
+
+@mixin hook-list-line(){}
+@mixin hook-list-striped(){}
+@mixin hook-list-misc(){}
+
+
+// Modal
+// ========================================================================
+
+@mixin hook-modal(){}
+@mixin hook-modal-dialog(){}
+@mixin hook-modal-dialog-lightbox(){}
+@mixin hook-modal-header(){}
+@mixin hook-modal-footer(){}
+@mixin hook-modal-caption(){}
+@mixin hook-modal-spinner(){}
+@mixin hook-modal-misc(){}
+
+// Nav
+// ========================================================================
+
+@mixin hook-nav-header(){
+  @include font-size($nav-header-font-size);
+}
+@mixin hook-nav-divider(){}
+@mixin hook-nav-sub(){}
+@mixin hook-nav-parent-icon(){}
+
+@mixin hook-nav-side(){}
+@mixin hook-nav-side-hover(){}
+@mixin hook-nav-side-active(){}
+@mixin hook-nav-side-header(){}
+@mixin hook-nav-side-divider(){}
+
+@mixin hook-nav-dropdown(){}
+@mixin hook-nav-dropdown-hover(){}
+@mixin hook-nav-dropdown-header(){}
+@mixin hook-nav-dropdown-divider(){}
+
+@mixin hook-nav-navbar(){}
+@mixin hook-nav-navbar-hover(){}
+@mixin hook-nav-navbar-header(){}
+@mixin hook-nav-navbar-divider(){}
+
+@mixin hook-nav-offcanvas(){}
+@mixin hook-nav-offcanvas-hover(){}
+@mixin hook-nav-offcanvas-active(){}
+@mixin hook-nav-offcanvas-header(){}
+@mixin hook-nav-offcanvas-divider(){}
+
+@mixin hook-nav-misc(){}
+
+// Navbar
+// ========================================================================
+
+@mixin hook-navbar(){}
+@mixin hook-navbar-nav(){
+  @include font-size($navbar-nav-font-size);
+}
+@mixin hook-navbar-nav-hover(){}
+@mixin hook-navbar-nav-onclick(){}
+@mixin hook-navbar-nav-active(){}
+@mixin hook-navbar-content(){}
+@mixin hook-navbar-misc(){}
+
+// Offcanvas
+// ========================================================================
+
+@mixin hook-offcanvas(){
+  @media(min-width:$breakpoint-medium){
+      display: block;
+      position: inherit;
+      background: none;
+      .uk-navbar > li:first-child > a{padding-left: 0}
+  }
+}
+@mixin hook-offcanvas-bar(){
+  @media(min-width:$breakpoint-medium){
+      position: inherit;
+      top: auto;
+      bottom: auto;left: auto;
+      -webkit-transform: translateX(0%);
+      transform: translateX(0%);
+      width: auto;
+      background: transparent;
+      overflow-y: inherit;
+  }
+}
+@mixin hook-offcanvas-panel(){}
+@mixin hook-offcanvas-misc(){
+  .uk-button-offcanvas{
+    @extend .uk-clearfix;
+    display: block;
+    border:none;
+    background: $black;
+    width:76px;
+    margin:0;
+    z-index: 500;
+    padding:28px 22px 29px 22px;
+    &:focus{outline:medium none;}
+    &.uk-hidden-large{
+        display:inline-block !important;
+        @media(min-width:$breakpoint-medium){display:none!important;}
+    }
+    position: relative;
+    transition: all 233ms cubic-bezier(0.5, 0, 0, 1);
+
+    .line {
+      display: block;
+      width: 32px;
+      height: 3px;
+      margin: 0 0 12px;
+      background-color: rgba(255,255,255,.8);
+      transform: translate3d(0, 0, 0);
+      transition: all 333ms cubic-bezier(0.5, 0, 0, 1);
+       &:last-child{ margin-bottom: 0; }
+    }
+  }
+}
+
+.uk-offcanvas-page .uk-button-offcanvas {
+  .line.first {
+    transform: rotate(-135deg) translateY(-7.5px) translateX(-8.5px);
+  }
+  .line.second{
+    opacity: 0;
+  }
+  .line.third {
+    transform: rotate(135deg) translateY(7.5px) translateX(-8.5px);
+  }
+}
+
+
+// Overlay
+// ========================================================================
+
+@mixin hook-overlay-panel(){}
+@mixin hook-overlay-background(){}
+@mixin hook-overlay-image(){}
+@mixin hook-overlay-icon(){}
+@mixin hook-overlay-misc(){}
+
+// DEPRECATED
+@mixin hook-overlay-area(){}
+@mixin hook-overlay-area-icon(){}
+@mixin hook-overlay-area-content(){}
+@mixin hook-overlay-caption(){}
+
+// Pagination
+// ========================================================================
+
+@mixin hook-pagination-item(){}
+@mixin hook-pagination-link(){}
+@mixin hook-pagination-link-hover(){}
+@mixin hook-pagination-link-active(){}
+@mixin hook-pagination-active(){}
+@mixin hook-pagination-disabled(){}
+@mixin hook-pagination-misc(){}
+
+
+// Panels
+// ========================================================================
+
+@mixin hook-panel-title(){
+  @include font-size($panel-title-font-size);
+}
+@mixin hook-panel-badge(){}
+@mixin hook-panel-box(){}
+@mixin hook-panel-box-hover(){}
+@mixin hook-panel-box-primary(){}
+@mixin hook-panel-box-primary-hover(){}
+@mixin hook-panel-box-secondary(){}
+@mixin hook-panel-box-secondary-hover(){}
+@mixin hook-panel-hover(){}
+@mixin hook-panel-hover-hover(){}
+@mixin hook-panel-header(){}
+@mixin hook-panel-misc(){}
+
+// Print
+// ========================================================================
+
+@mixin hook-print(){}
+
+
+// Subnav
+// ========================================================================
+
+@mixin hook-subnav(){}
+@mixin hook-subnav-hover(){}
+@mixin hook-subnav-active(){}
+@mixin hook-subnav-line-divider(){}
+@mixin hook-subnav-pill(){}
+@mixin hook-subnav-pill-hover(){}
+@mixin hook-subnav-pill-active(){}
+@mixin hook-subnav-disabled(){}
+@mixin hook-subnav-misc(){}
+
+// Switcher
+// ========================================================================
+
+@mixin hook-switcher-misc(){}
+
+// Tab
+// ========================================================================
+
+@mixin hook-tab(){}
+@mixin hook-tab-hover(){}
+@mixin hook-tab-active(){}
+@mixin hook-tab-disabled(){}
+@mixin hook-tab-misc(){}
+
+// Table
+// ========================================================================
+
+@mixin hook-table(){}
+@mixin hook-table-active(){}
+@mixin hook-table-striped(){}
+@mixin hook-table-condensed(){}
+@mixin hook-table-hover(){}
+@mixin hook-table-misc(){}
+
+// Text
+// ========================================================================
+
+@mixin hook-text-misc(){
+  .uk-text-small {
+    @include font-size($text-small-font-size);
+  }
+
+  .uk-text-large {
+    @include font-size($text-large-font-size);
+  }
+}
+
+
+// Thumbnail
+// ========================================================================
+
+@mixin hook-thumbnail(){}
+@mixin hook-thumbnail-hover(){}
+@mixin hook-thumbnail-caption(){}
+@mixin hook-thumbnail-misc(){}
+
+// Thumbnav
+// ========================================================================
+
+@mixin hook-thumbnav(){}
+@mixin hook-thumbnav-misc(){}
+
+
+// Utility
+// ========================================================================
+
+@mixin hook-container(){
+  padding: 0 10px;
+  &.uk-container-small {
+      padding: 0 $utility-container-padding-horizontal;
+      max-width: 768px;
+  }
+  @media (min-width: $breakpoint-xlarge) {
+    padding: 0 $utility-container-padding-horizontal;
+    max-width: $utility-container-max-width;
+    &.uk-container-large {
+        max-width: $utility-container-large-max-width;
+        padding: 0 $utility-container-large-padding-horizontal;
+    }
+  }
+}
+@mixin hook-scrollable-box(){}
+@mixin hook-utility-misc(){}
+
+
+//==============================
+// Components
+//==============================
+
+// Accordion
+// ========================================================================
+
+// @mixin hook-accordion(){}
+// @mixin hook-accordion-title(){
+//   @include font-size($accordion-title-font-size);
+// }
+// @mixin hook-accordion-content(){}
+// @mixin hook-accordion-misc(){}
+
+
+// Autocomplete
+// ========================================================================
+
+// @mixin hook-nav-autocomplete(){}
+// @mixin hook-nav-autocomplete-active(){}
+// @mixin hook-nav-autocomplete-header(){}
+// @mixin hook-nav-autocomplete-divider(){}
+
+// @mixin hook-autocomplete-misc(){}
+
+// Datepicker
+// ========================================================================
+
+// @mixin hook-datepicker-nav(){}
+// @mixin hook-datepicker-nav-item(){}
+// @mixin hook-datepicker-table-item(){}
+// @mixin hook-datepicker-table-item-hover(){}
+// @mixin hook-datepicker-table-item-onclick(){}
+// @mixin hook-datepicker-table-item-active(){}
+// @mixin hook-datepicker-misc(){}
+
+
+// dotnav
+// ========================================================================
+
+// @mixin hook-dotnav-item(){}
+// @mixin hook-dotnav-item-hover(){}
+// @mixin hook-dotnav-item-onclick(){}
+// @mixin hook-dotnav-item-active(){}
+// @mixin hook-dotnav-contrast-item(){}
+// @mixin hook-dotnav-contrast-item-hover(){}
+// @mixin hook-dotnav-contrast-item-onclick(){}
+// @mixin hook-dotnav-contrast-item-active(){}
+// @mixin hook-dotnav-misc(){}
+
+// form-advanced
+// ========================================================================
+
+// @mixin hook-form-advanced(){}
+// @mixin hook-form-advanced-checked(){}
+// @mixin hook-form-advanced-radio(){}
+// @mixin hook-form-advanced-checkbox(){}
+// @mixin hook-form-advanced-disabled(){}
+// @mixin hook-form-advanced-misc(){}
+
+// Form-file
+// ========================================================================
+
+// @mixin hook-form-file-misc(){}
+
+
+// form-password
+// ========================================================================
+
+// @mixin hook-form-password-misc(){}
+
+
+// form-select
+// ========================================================================
+
+// @mixin hook-form-select-misc(){}
+
+
+// htmleditor
+// ========================================================================
+
+// @mixin hook-htmleditor(){}
+// @mixin hook-htmleditor-navbar(){}
+// @mixin hook-htmleditor-navbar-nav(){}
+// @mixin hook-htmleditor-navbar-nav-hover(){}
+// @mixin hook-htmleditor-navbar-nav-onclick(){}
+// @mixin hook-htmleditor-navbar-nav-active(){}
+// @mixin hook-htmleditor-content(){}
+// @mixin hook-htmleditor-misc(){}
+
+
+// nestable
+// ========================================================================
+
+// @mixin hook-nestable(){}
+// @mixin hook-nestable-item(){}
+// @mixin hook-nestable-dragged(){}
+// @mixin hook-nestable-placeholder(){}
+// @mixin hook-nestable-empty(){}
+// @mixin hook-nestable-handle(){}
+// @mixin hook-nestable-toggle(){}
+// @mixin hook-nestable-panel(){}
+// @mixin hook-nestable-misc(){}
+
+
+// notify
+// ========================================================================
+
+// @mixin hook-notify(){}
+// @mixin hook-notify-message(){
+//  @include font-size($notify-message-font-size);
+//}
+// @mixin hook-notify-message-primary(){}
+// @mixin hook-notify-message-success(){}
+// @mixin hook-notify-message-warning(){}
+// @mixin hook-notify-message-danger(){}
+// @mixin hook-notify-misc(){}
+
+// placeholder
+// ========================================================================
+
+// @mixin hook-placeholder(){}
+// @mixin hook-placeholder-large(){}
+// @mixin hook-placeholder-misc(){}
+
+
+// progress
+// ========================================================================
+
+// @mixin hook-progress(){}
+// @mixin hook-progress-bar(){
+//  @include font-size($progress-bar-font-size);
+//}
+// @mixin hook-progress-mini(){}
+// @mixin hook-progress-small(){}
+// @mixin hook-progress-bar-success(){}
+// @mixin hook-progress-bar-warning(){}
+// @mixin hook-progress-bar-danger(){}
+// @mixin hook-progress-misc(){}
+
+
+// search
+// ========================================================================
+
+// @mixin hook-search(){}
+// @mixin hook-search-icon(){
+//  @include font-size($search-icon-size);
+//}
+// @mixin hook-search-field(){}
+// @mixin hook-search-field-focus(){}
+
+// @mixin hook-dropdown-search(){}
+// @mixin hook-nav-search(){}
+// @mixin hook-nav-search-active(){}
+// @mixin hook-nav-search-header(){}
+// @mixin hook-nav-search-divider(){}
+// @mixin hook-offcanvas-search-field(){}
+
+// @mixin hook-search-misc(){}
+
+// slidenav
+// ========================================================================
+
+// @mixin hook-slidenav(){
+//  @include font-size($slidenav-font-size);
+//}
+// @mixin hook-slidenav-hover(){}
+// @mixin hook-slidenav-active(){}
+// @mixin hook-slidenav-contrast(){}
+// @mixin hook-slidenav-contrast-hover(){}
+// @mixin hook-slidenav-contrast-active(){}
+// @mixin hook-slidenav-misc(){}
+
+// slider
+// ========================================================================
+
+// @mixin hook-slider-misc(){}
+
+// slideshow
+// ========================================================================
+
+// @mixin hook-slideshow-misc(){}
+
+// sortable
+// ========================================================================
+
+// @mixin hook-sortable(){}
+// @mixin hook-sortable-dragged(){}
+// @mixin hook-sortable-placeholder(){}
+// @mixin hook-sortable-empty(){}
+// @mixin hook-sortable-misc(){}
+
+// sticky
+// ========================================================================
+
+// @mixin hook-sticky-misc(){}
+
+// tooltip
+// ========================================================================
+
+// @mixin hook-tooltip(){
+//  @include font-size($tooltip-font-size);
+//}
+// @mixin hook-tooltip-misc(){}
+
+// upload
+// ========================================================================
+
+// @mixin hook-upload-misc(){}

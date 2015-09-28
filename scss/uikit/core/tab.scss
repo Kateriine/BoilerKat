@@ -88,6 +88,7 @@ $tab-disabled-color:                             #999 !default;
     border-bottom-width: 0;
     color: $tab-color;
     text-decoration: none;
+    @include hook-tab();
 }
 
 .uk-tab > li:nth-child(n+2) > a { margin-left: $tab-margin-horizontal; }
@@ -107,6 +108,7 @@ $tab-disabled-color:                             #999 !default;
     color: $tab-hover-color;
     /* 2 */
     outline: none;
+    @include hook-tab-hover();
 }
 
 .uk-tab > li:not(.uk-active) > a:hover,
@@ -122,12 +124,14 @@ $tab-disabled-color:                             #999 !default;
     border-bottom-color: transparent;
     background: $tab-active-background;
     color: $tab-active-color;
+    @include hook-tab-active();
 }
 
 /* Disabled */
 .uk-tab > li.uk-disabled > a {
     color: $tab-disabled-color;
     cursor: text;
+    @include hook-tab-disabled();
 }
 
 .uk-tab > li.uk-disabled > a:hover,
@@ -350,3 +354,15 @@ $tab-disabled-color:                             #999 !default;
     .uk-tab-right > li.uk-active > a { border-left-color: transparent; }
 
 }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-tab-misc();
+
+// @mixin hook-tab(){}
+// @mixin hook-tab-hover(){}
+// @mixin hook-tab-active(){}
+// @mixin hook-tab-disabled(){}
+// @mixin hook-tab-misc(){}

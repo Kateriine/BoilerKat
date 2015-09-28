@@ -1,4 +1,3 @@
-//uikit 2.18
 // LESS related
 @import "core/variables.scss";
 
@@ -8,6 +7,7 @@
 // Layout
 @import "core/grid.scss";
 @import "core/panel.scss";
+@import "core/block.scss";
 @import "core/article.scss";
 @import "core/comment.scss";
 @import "core/cover.scss";
@@ -17,7 +17,7 @@
 @import "core/navbar.scss";
 @import "core/subnav.scss";
 @import "core/breadcrumb.scss";
-//@import "core/pagination.scss";
+@import "core/pagination.scss";
 @import "core/tab.scss";
 @import "core/thumbnav.scss";
 
@@ -47,4 +47,5 @@
 @import "core/text.scss";
 @import "core/utility.scss";
 @import "core/flex.scss";
+@import "core/contrast.scss";
 @import "core/print.scss";

@@ -22,7 +22,7 @@ $badge-color:                                    #fff !default;
 $badge-text-transform:                           none !default;
 $badge-hover-color:                              #fff !default;
 
-$badge-notification-font-size:                   12;
+$badge-notification-font-size:                   12px !default;
 $badge-notification-line-height:                 18px !default;
 
 $badge-success-background:                       #8cc14c !default;
@@ -45,6 +45,7 @@ $badge-danger-background:                        #da314b !default;
     text-align: center;
     vertical-align: middle;
     text-transform: $badge-text-transform;
+    @include hook-badge();
 }
 
 /*
@@ -58,11 +59,10 @@ a.uk-badge:hover { color: $badge-hover-color; }
  ========================================================================== */
 
 .uk-badge-notification {
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     min-width: $badge-notification-line-height;
     border-radius: 500px;
-    @include font-size($badge-notification-font-size);
+    font-size: $badge-notification-font-size;
     line-height: $badge-notification-line-height;
 }
 
@@ -76,6 +76,7 @@ a.uk-badge:hover { color: $badge-hover-color; }
 
 .uk-badge-success {
     background-color: $badge-success-background;
+    @include hook-badge-success();
 }
 
 /*
@@ -84,6 +85,7 @@ a.uk-badge:hover { color: $badge-hover-color; }
 
 .uk-badge-warning {
     background-color: $badge-warning-background;
+    @include hook-badge-warning();
 }
 
 /*
@@ -92,4 +94,17 @@ a.uk-badge:hover { color: $badge-hover-color; }
 
 .uk-badge-danger {
     background-color: $badge-danger-background;
+    @include hook-badge-danger();
 }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-badge-misc();
+
+// @mixin hook-badge(){}
+// @mixin hook-badge-success(){}
+// @mixin hook-badge-warning(){}
+// @mixin hook-badge-danger(){}
+// @mixin hook-badge-misc(){}

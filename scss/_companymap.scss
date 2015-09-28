@@ -1,7 +1,7 @@
 #map{
   height:450px;
-  @media(min-width:768px){    
-    height:600px;
+  @media(min-width:768px){
+  height:600px;
   }
 }
 .infoBox{
@@ -13,14 +13,27 @@
   max-width: 300px;
   white-space: nowrap;
   h6{
-    margin:0; float: left; margin-right:10px;max-width:280px
+  margin:0; float: left; margin-right:10px;max-width:280px
   }
 }
 .infoBox h6{
-  color:#fff;margin:0 10px 5px 0; float: left; margin-right:10px;max-width:280px;
-  }
-.infoBox .chicon-close{cursor: pointer;content:'&times';float:right;}
-.gmapLink{float:right;width:24px; height:24px}
+  color: #fff;
+  margin:0 10px 5px 0;
+  float: left;
+  margin-right: 10px;
+  max-width: 280px;
+}
+
+.infoBox .chicon-close{
+  cursor: pointer;
+  content:'&times';
+  float: right;
+}
+.gmapLink{
+  float: right;
+  width: 24px;
+  height:24px
+}
 
 img[src*="maps.gstatic.com"], /* 1 */
 img[src*="googleapis.com"] { max-width: none; }

@@ -24,3 +24,11 @@ $uk-upload-dragover-box-shadow-blur:             20px !default;
  */
 
 .uk-dragover { box-shadow: 0 0 $uk-upload-dragover-box-shadow-blur $uk-upload-dragover-box-shadow; }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-upload-misc();
+
+// @mixin hook-upload-misc(){}

@@ -64,15 +64,15 @@ $form-gutter:                                    15px !default;
 
 $form-legend-border:                             #ddd !default;
 $form-legend-border-width:                       1px !default;
-$form-legend-font-size:                          18;
+$form-legend-font-size:                          18px !default;
 $form-legend-line-height:                        30px !default;
 
 $form-small-height:                              25px !default;
 $form-large-height:                              40px !default;
 $form-small-padding:                             3px 3px !default;
 $form-large-padding:                             8px 6px !default;
-$form-small-font-size:                           12;
-$form-large-font-size:                           16;
+$form-small-font-size:                           12px !default;
+$form-large-font-size:                           16px !default;
 
 $form-danger-border:                             #dc8d99 !default;
 $form-danger-background:                         #fff7f8 !default;
@@ -104,7 +104,7 @@ $form-horizontal-controls-margin-left:           215px !default;
 $form-horizontal-controls-text-padding-top:      5px !default;
 
 $form-icon-width:                                30px !default;
-$form-icon-font-size:                            14;
+$form-icon-font-size:                            14px !default;
 $form-icon-color:                                #999 !default;
 
 
@@ -127,7 +127,6 @@ $form-icon-color:                                #999 !default;
 .uk-form select,
 .uk-form textarea {
     /* 1 */
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     /* 2 */
     margin: 0;
@@ -300,6 +299,7 @@ $form-icon-color:                                #999 !default;
     color: $form-color;
     -webkit-transition: all linear 0.2s;
     transition: all linear 0.2s;
+    @include hook-form();
 
     // Focus state
     &:focus {
@@ -307,6 +307,7 @@ $form-icon-color:                                #999 !default;
         outline: 0;
         background: $form-focus-background;
         color: $form-focus-color;
+        @include hook-form-focus();
     }
 
     // Disabled state
@@ -314,6 +315,7 @@ $form-icon-color:                                #999 !default;
         border-color: $form-disabled-border;
         background-color: $form-disabled-background;
         color: $form-disabled-color;
+        @include hook-form-disabled();
     }
 }
 
@@ -349,8 +351,9 @@ $form-icon-color:                                #999 !default;
     /* 4 */
     padding-bottom: $form-gutter;
     /* 5 */
-    @include font-size($form-legend-font-size);
+    font-size: $form-legend-font-size;
     line-height: $form-legend-line-height;
+    @include hook-form-legend();
 }
 
 /*
@@ -376,7 +379,7 @@ input[type].uk-form-small,
 input:not([type]).uk-form-small {
     height: $form-small-height;
     padding: $form-small-padding;
-    @include font-size($form-small-font-size);
+    font-size: $form-small-font-size;
 }
 
 select.uk-form-large,
@@ -385,7 +388,7 @@ input[type].uk-form-large,
 input:not([type]).uk-form-large  {
     height: $form-large-height;
     padding: $form-large-padding;
-    @include font-size($form-large-font-size);
+    font-size: $form-large-font-size;
 }
 
 
@@ -410,6 +413,7 @@ input:not([type]).uk-form-large  {
     border-color: $form-danger-border !important;
     background: $form-danger-background !important;
     color: $form-danger-color !important;
+    @include hook-form-danger();
 }
 
 /*
@@ -420,6 +424,7 @@ input:not([type]).uk-form-large  {
     border-color: $form-success-border !important;
     background: $form-success-background !important;
     color: $form-success-color !important;
+    @include hook-form-success();
 }
 
 
@@ -435,10 +440,12 @@ input:not([type]).uk-form-large  {
     border-color: transparent !important;
     border-style: $form-blank-border-style !important;
     background: none !important;
+    @include hook-form-blank();
 }
 
 .uk-form-blank:focus {
     border-color: $form-blank-border !important;
+    @include hook-form-blank-focus();
 }
 
 
@@ -519,6 +526,7 @@ select.uk-form-width-mini { width: ($form-mini-width + 25px); }
     display: block;
     margin-bottom: $form-stacked-margin-bottom;
     font-weight: $form-stacked-font-weight;
+    @include hook-form-stacked-label();
 }
 
 
@@ -534,6 +542,7 @@ select.uk-form-width-mini { width: ($form-mini-width + 25px); }
         display: block;
         margin-bottom: $form-stacked-margin-bottom;
         font-weight: $form-stacked-font-weight;
+        @include hook-form-stacked-label();
     }
 
 }
@@ -545,6 +554,7 @@ select.uk-form-width-mini { width: ($form-mini-width + 25px); }
         width: $form-horizontal-label-width;
         margin-top: $form-horizontal-label-margin-top;
         float: left;
+        @include hook-form-horizontal-label();
     }
 
     .uk-form-horizontal .uk-form-controls { margin-left: $form-horizontal-controls-margin-left; }
@@ -581,8 +591,8 @@ select.uk-form-width-mini { width: ($form-mini-width + 25px); }
     position: absolute;
     top: 50%;
     width: $form-icon-width;
-    margin-top: round($form-icon-font-size / -2);
-    @include font-size($form-icon-font-size);
+    margin-top: round(($form-height - $form-icon-font-size) / -2);
+    font-size: $form-icon-font-size;
     color: $form-icon-color;
     text-align: center;
     /* 1 */
@@ -597,3 +607,21 @@ select.uk-form-width-mini { width: ($form-mini-width + 25px); }
 
 .uk-form-icon-flip > [class*='uk-icon-'] { right: 0; }
 .uk-form-icon-flip > input { padding-right: $form-icon-width !important; }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-form-misc();
+
+// @mixin hook-form(){}
+// @mixin hook-form-focus(){}
+// @mixin hook-form-disabled(){}
+// @mixin hook-form-legend(){}
+// @mixin hook-form-danger(){}
+// @mixin hook-form-success(){}
+// @mixin hook-form-blank(){}
+// @mixin hook-form-blank-focus(){}
+// @mixin hook-form-stacked-label(){}
+// @mixin hook-form-horizontal-label(){}
+// @mixin hook-form-misc(){}

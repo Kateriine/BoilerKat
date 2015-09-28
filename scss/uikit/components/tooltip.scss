@@ -26,7 +26,7 @@ $tooltip-background:                             #333 !default;
 $tooltip-triangle-size:                          5px !default;
 
 $tooltip-color:                                  rgba(255,255,255,0.7) !default;
-$tooltip-font-size:                              12 !default;
+$tooltip-font-size:                              12px !default;
 $tooltip-line-height:                            18px !default;
 
 $tooltip-offset-horizontal:                      10px !default;
@@ -50,16 +50,15 @@ $tooltip-offset-horizontal:                      10px !default;
     position: absolute;
     z-index: $tooltip-z-index;
     /* 3 */
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     max-width: $tooltip-max-width;
     padding: $tooltip-padding-vertical $tooltip-padding-horizontal;
     /* 4 */
     background: $tooltip-background;
     color: $tooltip-color;
-    @include font-size($tooltip-font-size);
+    font-size: $tooltip-font-size;
     line-height: $tooltip-line-height;
-    text-align: center;
+    @include hook-tooltip();
 }
 
 
@@ -167,3 +166,12 @@ $tooltip-offset-horizontal:                      10px !default;
     border-bottom-color: transparent;
     border-right-color: $tooltip-background;
 }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-tooltip-misc();
+
+// @mixin hook-tooltip(){}
+// @mixin hook-tooltip-misc(){}

@@ -107,6 +107,7 @@ $subnav-disabled-color:                          #999 !default;
 .uk-subnav > * > * {
     display: inline-block;
     color: $subnav-color;
+    @include hook-subnav();
 }
 
 /*
@@ -114,10 +115,11 @@ $subnav-disabled-color:                          #999 !default;
  * 1. Apply hover style also to focus state
  */
 
-.uk-subnav > * > *:hover,
-.uk-subnav > * > *:focus { // 1
+.uk-subnav > * > :hover,
+.uk-subnav > * > :focus { // 1
     color: $subnav-hover-color;
     text-decoration: $subnav-hover-text-decoration;
+    @include hook-subnav-hover();
 }
 
 /*
@@ -126,6 +128,7 @@ $subnav-disabled-color:                          #999 !default;
 
 .uk-subnav > .uk-active > * {
     color: $subnav-active-color;
+    @include hook-subnav-active();
 }
 
 
@@ -142,6 +145,7 @@ $subnav-disabled-color:                          #999 !default;
 .uk-subnav-line > :nth-child(n+2):before {
     margin-right: $subnav-margin-horizontal;
     border-left: $subnav-line-border-width solid $subnav-line-border;
+    @include hook-subnav-line-divider();
 }
 
 
@@ -150,6 +154,7 @@ $subnav-disabled-color:                          #999 !default;
 
 .uk-subnav-pill > * > * {
     padding: $subnav-pill-padding-vertical $subnav-pill-padding-horizontal;
+    @include hook-subnav-pill();
 }
 
 /*
@@ -158,13 +163,14 @@ $subnav-disabled-color:                          #999 !default;
  * 2. Remove default focus style
  */
 
-.uk-subnav-pill > * > *:hover,
-.uk-subnav-pill > * > *:focus { // 1
+.uk-subnav-pill > * > :hover,
+.uk-subnav-pill > * > :focus { // 1
     background: $subnav-pill-hover-background;
     color: $subnav-pill-hover-color;
     text-decoration: none;
     /* 2 */
     outline: none;
+    @include hook-subnav-pill-hover();
 }
 
 /*
@@ -175,6 +181,7 @@ $subnav-disabled-color:                          #999 !default;
 .uk-subnav-pill > .uk-active > * {
     background: $subnav-pill-active-background;
     color: $subnav-pill-active-color;
+    @include hook-subnav-pill-active();
 }
 
 
@@ -186,4 +193,21 @@ $subnav-disabled-color:                          #999 !default;
     color: $subnav-disabled-color;
     text-decoration: none;
     cursor: text;
+    @include hook-subnav-disabled();
 }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-subnav-misc();
+
+// @mixin hook-subnav(){}
+// @mixin hook-subnav-hover(){}
+// @mixin hook-subnav-active(){}
+// @mixin hook-subnav-line-divider(){}
+// @mixin hook-subnav-pill(){}
+// @mixin hook-subnav-pill-hover(){}
+// @mixin hook-subnav-pill-active(){}
+// @mixin hook-subnav-disabled(){}
+// @mixin hook-subnav-misc(){}

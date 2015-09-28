@@ -3,11 +3,11 @@
 //
 // Component:       `uk-sortable`
 //
-// Sub-objects:     `uk-sortable-moving`
+// Sub-objects:     `uk-sortable-handle`
+//                  `uk-sortable-moving`
 //
 // Modifier:        `uk-sortable-dragged`
 //                  `uk-sortable-placeholder`
-//                  `uk-sortable-over`
 //
 // Markup:
 //
@@ -27,7 +27,7 @@ $sortable-dragged-z-index:                       1050 !default;
 
 $sortable-placeholder-opacity:                   0 !default;
 
-$sortable-over-opacity:                          0.3 !default;
+$sortable-empty-height:                          30px !default;
 
 
 /* ========================================================================
@@ -36,32 +36,28 @@ $sortable-over-opacity:                          0.3 !default;
 
 .uk-sortable {
     position: relative;
+    @include hook-sortable();
 }
 
 /*
- * 1. Makes text unselectable
- * 2. Deactivate browser touch actions in IE11
+ * Deactivate browser touch actions in IE11
  */
 
-.uk-sortable > * {
-    /* 1 */
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    /* 2 */
-    touch-action: none;
-}
+.uk-sortable > * { touch-action: none; }
 
 /*
- * Prevents images and links from being dragged (default browser behavior)
+ * Disables the default callout shown when you touch and hold a touch target
  * Currently only works in Webkit
  */
 
-.uk-sortable > * * {
-    -webkit-user-drag: none;
-    user-drag: none;
-}
+.uk-sortable a,
+.uk-sortable img { -webkit-touch-callout: none; }
+
+/*
+ * Remove margin from the last-child
+ */
+
+.uk-sortable > :last-child { margin-bottom: 0; }
 
 
 /* Sub-modifier `uk-sortable-dragged`
@@ -71,6 +67,7 @@ $sortable-over-opacity:                          0.3 !default;
     position: absolute;
     z-index: $sortable-dragged-z-index;
     pointer-events: none;
+    @include hook-sortable-dragged();
 }
 
 
@@ -79,16 +76,31 @@ $sortable-over-opacity:                          0.3 !default;
 
 .uk-sortable-placeholder {
     opacity: $sortable-placeholder-opacity;
+    @include hook-sortable-placeholder();
 }
 
 
-/* Sub-modifier `uk-sortable-over`
- * Only if `warp:true`
+/* Empty List
  ========================================================================== */
 
-.uk-sortable-over {
-    opacity: $sortable-over-opacity;
+.uk-sortable-empty {
+    min-height: $sortable-empty-height;
+    @include hook-sortable-empty();
 }
+
+
+/* Sub-object `uk-sortable-handle`
+ ========================================================================== */
+
+/*
+ * Deactivate browser touch actions in IE11
+ */
+
+.uk-sortable-handle { touch-action: none; }
+
+/* Hover */
+.uk-sortable-handle:hover { cursor: move; }
+
 
 /* Sub-object `uk-sortable-moving`
  ========================================================================== */
@@ -96,3 +108,15 @@ $sortable-over-opacity:                          0.3 !default;
 .uk-sortable-moving,
 /* Needed if moving over links or buttons */
 .uk-sortable-moving * { cursor: move; }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-sortable-misc();
+
+// @mixin hook-sortable(){}
+// @mixin hook-sortable-dragged(){}
+// @mixin hook-sortable-placeholder(){}
+// @mixin hook-sortable-empty(){}
+// @mixin hook-sortable-misc(){}

@@ -49,12 +49,21 @@ $htmleditor-fullscreen-content-top:              $htmleditor-navbar-nav-height !
 $htmleditor-fullscreen-icon-resize:              "\f066" !default;
 
 
+/* ========================================================================
+   Component: HTML editor
+ ========================================================================== */
+
+.uk-htmleditor {
+    @include hook-htmleditor();
+}
+
 
 /* Sub-object `uk-htmleditor-navbar`
  ========================================================================== */
 
 .uk-htmleditor-navbar {
     background: $htmleditor-navbar-background;
+    @include hook-htmleditor-navbar();
 }
 
 /*
@@ -89,7 +98,6 @@ $htmleditor-fullscreen-icon-resize:              "\f066" !default;
 
 .uk-htmleditor-navbar-nav > li > a {
     display: block;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     text-decoration: none;
     /* 1 */
@@ -100,6 +108,7 @@ $htmleditor-fullscreen-icon-resize:              "\f066" !default;
     color: $htmleditor-navbar-nav-color;
     font-size: 11px;
     cursor: pointer;
+    @include hook-htmleditor-navbar-nav();
 }
 
 /*
@@ -113,18 +122,21 @@ $htmleditor-fullscreen-icon-resize:              "\f066" !default;
     background-color: $htmleditor-navbar-nav-hover-background;
     color: $htmleditor-navbar-nav-hover-color;
     outline: none; /* 2 */
+    @include hook-htmleditor-navbar-nav-hover();
 }
 
 /* OnClick */
 .uk-htmleditor-navbar-nav > li > a:active {
     background-color: $htmleditor-navbar-nav-onclick-background;
     color: $htmleditor-navbar-nav-onclick-color;
+    @include hook-htmleditor-navbar-nav-onclick();
 }
 
 /* Active */
 .uk-htmleditor-navbar-nav > li.uk-active > a {
     background-color: $htmleditor-navbar-nav-active-background;
     color: $htmleditor-navbar-nav-active-color;
+    @include hook-htmleditor-navbar-nav-active();
 }
 
 
@@ -149,6 +161,7 @@ $htmleditor-fullscreen-icon-resize:              "\f066" !default;
     border-right: 1px solid $htmleditor-content-border;
     border-bottom: 1px solid $htmleditor-content-border;
     background: $htmleditor-content-background;
+    @include hook-htmleditor-content();
 }
 
 /*
@@ -192,10 +205,7 @@ $htmleditor-fullscreen-icon-resize:              "\f066" !default;
  ========================================================================== */
 
 .uk-htmleditor-code,
-.uk-htmleditor-preview {
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
+.uk-htmleditor-preview { box-sizing: border-box; }
 
 .uk-htmleditor-preview {
     padding: $htmleditor-content-padding;
@@ -240,6 +250,20 @@ $htmleditor-fullscreen-icon-resize:              "\f066" !default;
 
 .uk-htmleditor .CodeMirror {
     padding: 10px;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-htmleditor-misc();
+
+// @mixin hook-htmleditor(){}
+// @mixin hook-htmleditor-navbar(){}
+// @mixin hook-htmleditor-navbar-nav(){}
+// @mixin hook-htmleditor-navbar-nav-hover(){}
+// @mixin hook-htmleditor-navbar-nav-onclick(){}
+// @mixin hook-htmleditor-navbar-nav-active(){}
+// @mixin hook-htmleditor-content(){}
+// @mixin hook-htmleditor-misc(){}

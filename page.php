@@ -9,25 +9,25 @@
  *
  * Please see /external/starkers-utilities.php for info on Starkers_Utilities::get_template_parts()
  *
- * @package     WordPress
+ * @package   WordPress
  * @subpackage  Starkers
- * @since       Starkers 4.0
+ * @since     Starkers 4.0
  */
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
 <div class="uk-container uk-container-center">
-<main role="main">
+  <main role="main">
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <article class="uk-article">
-        <header>
-            <h1 class="uk-article-title"><?php the_title(); ?></h1>
-        </header>
-        <?php the_content(); ?>
+      <header>
+        <h1 class="uk-article-title"><?php the_title(); ?></h1>
+      </header>
+      <?php the_content(); ?>
     </article>
     <section>
-        <?php comments_template( '', true ); ?>
+      <?php comments_template( '', true ); ?>
     </section>
     <?php endwhile; ?>
-</main>
+  </main>
 </div>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer' ) ); ?>

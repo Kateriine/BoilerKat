@@ -1,30 +1,38 @@
 {
-  "name": "Site",
-  "description": "Packages required for Gruntfile.js for Site",
+  "name": "adam",
+  "version": "1.0.0",
+  "description": "Adam WordPress Theme by Spade",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git@gitlab.spade.be:spade-be/adam.git"
   },
-  "version": "0.1.0",
+  "keywords": [
+    "adam",
+    "theme",
+    "wordpress",
+    "wp"
+  ],
+  "author": "Spade",
+  "license": "MIT",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-autoprefixer": "^2.2.0",
-    "grunt-contrib-concat": "^0.5.0",
-    "grunt-contrib-imagemin": "^0.6.1",
-    "grunt-contrib-sass": "^0.8.1",
-    "grunt-contrib-uglify": "^0.7.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "load-grunt-tasks": "^3.0.0",
-    "grunt-svgmin": "^2.0.1",
-    "grunt-svgstore": "^0.5.0",
-    "gulp": "^3.8.11",
-    "gulp-autoprefixer": "^2.1.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.0",
+    "gulp-cache": "^0.2.9",
+    "gulp-cheerio": "^0.6.2",
+    "gulp-concat": "^2.5.2",
     "gulp-imagemin": "^2.2.1",
-    "gulp-cache": "^0.2.8",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.1",
+    "gulp-svgmin": "^1.1.2",
+    "gulp-svgstore": "^5.0.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.5",
     "gulp-watch": "^4.2.4",
-    "gulp-util": "^3.0.4"
-  },
-  "dependencies": {
-    "imagemin-pngquant": "^4.0.0"
+    "imagemin-pngquant": "^4.1.0",
+    "node-notifier": "^4.2.1",
+    "spawn-sync": "^1.0.11"
   }
 }

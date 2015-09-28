@@ -90,6 +90,7 @@ $thumbnav-active-opacity:                        1 !default;
 .uk-thumbnav > * > * {
     display: block;
     background: $thumbnav-background;
+    @include hook-thumbnav();
 }
 
 .uk-thumbnav > * > * > img {
@@ -102,11 +103,20 @@ $thumbnav-active-opacity:                        1 !default;
  * Hover
  */
 
-.uk-thumbnav > * > *:hover > img,
-.uk-thumbnav > * > *:focus > img { opacity: $thumbnav-hover-opacity; }
+.uk-thumbnav > * > :hover > img,
+.uk-thumbnav > * > :focus > img { opacity: $thumbnav-hover-opacity; }
 
 /*
  * Active
  */
 
 .uk-thumbnav > .uk-active > * > img { opacity: $thumbnav-active-opacity; }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-thumbnav-misc();
+
+// @mixin hook-thumbnav(){}
+// @mixin hook-thumbnav-misc(){}

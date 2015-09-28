@@ -65,13 +65,13 @@ $close-alt-background:                           #eee !default;
     background: transparent;
     /* 8 */
     display: inline-block;
-    -moz-box-sizing: content-box;
     box-sizing: content-box;
     width: $close-size;
     line-height: $close-size;
     text-align: center;
     vertical-align: middle;
     opacity: 0.3;
+    @include hook-close();
 }
 
 /* Icon */
@@ -108,6 +108,7 @@ $close-alt-background:                           #eee !default;
     border-radius: 50%;
     background: $close-alt-background;
     opacity: 1;
+    @include hook-close-alt();
 }
 
 /* Hover */
@@ -119,3 +120,13 @@ $close-alt-background:                           #eee !default;
 
 .uk-close-alt:hover:after,
 .uk-close-alt:focus:after { opacity: 0.8; }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-close-misc();
+
+// @mixin hook-close(){}
+// @mixin hook-close-alt(){}
+// @mixin hook-close-misc(){}

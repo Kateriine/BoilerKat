@@ -75,6 +75,7 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
 .uk-navbar {
     background: $navbar-background;
     color: $navbar-color;
+    @include hook-navbar();
 }
 
 /*
@@ -117,7 +118,6 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
 
 .uk-navbar-nav > li > a {
     display: block;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     text-decoration: none;
     /* 1 */
@@ -129,6 +129,7 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
     font-size: $navbar-nav-font-size;
     font-family: $navbar-nav-font-family;
     font-weight: $navbar-nav-font-weight;
+    @include hook-navbar-nav();
 }
 
 /* Appear not as link */
@@ -148,18 +149,21 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
     color: $navbar-nav-hover-color;
     /* 3 */
     outline: none;
+    @include hook-navbar-nav-hover();
 }
 
 /* OnClick */
 .uk-navbar-nav > li > a:active {
     background-color: $navbar-nav-onclick-background;
     color: $navbar-nav-onclick-color;
+    @include hook-navbar-nav-onclick();
 }
 
 /* Active */
 .uk-navbar-nav > li.uk-active > a {
     background-color: $navbar-nav-active-background;
     color: $navbar-nav-active-color;
+    @include hook-navbar-nav-active();
 }
 
 
@@ -185,12 +189,12 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
 .uk-navbar-content,
 .uk-navbar-brand,
 .uk-navbar-toggle {
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
     height: $navbar-nav-height;
     padding: 0 $navbar-nav-padding-horizontal;
     float: left;
+    @include hook-navbar-content();
 }
 
 /*
@@ -305,3 +309,17 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
  ========================================================================== */
 
 .uk-navbar-flip { float: right; }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-navbar-misc();
+
+// @mixin hook-navbar(){}
+// @mixin hook-navbar-nav(){}
+// @mixin hook-navbar-nav-hover(){}
+// @mixin hook-navbar-nav-onclick(){}
+// @mixin hook-navbar-nav-active(){}
+// @mixin hook-navbar-content(){}
+// @mixin hook-navbar-misc(){}

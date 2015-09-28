@@ -32,12 +32,12 @@ $alert-background:                               #ebf7fd !default;
 $alert-color:                                    #2d7091 !default;
 
 $alert-success-background:                       #f2fae3 !default;
-$alert-success-color:                            $green !default;
+$alert-success-color:                            #659f13 !default;
 
-$alert-warning-background:                       $orange !default;
+$alert-warning-background:                       #fffceb !default;
 $alert-warning-color:                            #e28327 !default;
 
-$alert-danger-background:                       $red !default;
+$alert-danger-background:                        #fff1f0 !default;
 $alert-danger-color:                             #d85030 !default;
 
 $alert-large-padding:                            20px !default;
@@ -52,6 +52,7 @@ $alert-large-padding:                            20px !default;
     padding: $alert-padding;
     background: $alert-background;
     color: $alert-color;
+    @include hook-alert();
 }
 
 /*
@@ -96,6 +97,7 @@ $alert-large-padding:                            20px !default;
 .uk-alert-success {
     background: $alert-success-background;
     color: $alert-success-color;
+    @include hook-alert-success();
 }
 
 
@@ -105,6 +107,7 @@ $alert-large-padding:                            20px !default;
 .uk-alert-warning {
     background: $alert-warning-background;
     color: $alert-warning-color;
+    @include hook-alert-warning();
 }
 
 
@@ -114,6 +117,7 @@ $alert-large-padding:                            20px !default;
 .uk-alert-danger {
     background: $alert-danger-background;
     color: $alert-danger-color;
+    @include hook-alert-danger();
 }
 
 
@@ -123,3 +127,15 @@ $alert-large-padding:                            20px !default;
 .uk-alert-large { padding: $alert-large-padding; }
 
 .uk-alert-large > .uk-close:first-child { margin: -10px -10px 0 0; }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-alert-misc();
+
+// @mixin hook-alert(){}
+// @mixin hook-alert-success(){}
+// @mixin hook-alert-warning(){}
+// @mixin hook-alert-danger(){}
+// @mixin hook-alert-misc(){}

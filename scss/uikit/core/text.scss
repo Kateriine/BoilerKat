@@ -9,9 +9,9 @@
 // Variables
 // ========================================================================
 
-$text-small-font-size:                           11;
+$text-small-font-size:                           11px !default;
 $text-small-line-height:                         16px !default;
-$text-large-font-size:                           18;
+$text-large-font-size:                           18px !default;
 $text-large-line-height:                         24px !default;
 $text-large-font-weight:                         normal !default;
 
@@ -31,12 +31,12 @@ $text-contrast-color:                            #fff !default;
  ========================================================================== */
 
 .uk-text-small {
-    @include font-size($text-small-font-size);
+    font-size: $text-small-font-size;
     line-height: $text-small-line-height;
 }
 
 .uk-text-large {
-    @include font-size($text-large-font-size);
+    font-size: $text-large-font-size;
     line-height: $text-large-line-height;
     font-weight: $text-large-font-weight;
 }
@@ -118,3 +118,11 @@ $text-contrast-color:                            #fff !default;
     -moz-hyphens: auto;
     hyphens: auto;
 }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-text-misc();
+
+// @mixin hook-text-misc(){}

@@ -71,6 +71,7 @@ $list-space-margin-top:                          10px !default;
     margin-top: $list-line-margin-top;
     padding-top: $list-line-margin-top;
     border-top: $list-line-border-width solid $list-line-border;
+    @include hook-list-line();
 }
 
 
@@ -79,6 +80,7 @@ $list-space-margin-top:                          10px !default;
 
 .uk-list-striped > li {
     padding: $list-striped-padding-vertical $list-striped-padding-horizontal;
+    @include hook-list-striped();
 }
 
 .uk-list-striped > li:nth-of-type(odd) { background: $list-striped-background; }
@@ -88,3 +90,13 @@ $list-space-margin-top:                          10px !default;
  ========================================================================== */
 
 .uk-list-space > li:nth-child(n+2) { margin-top: $list-space-margin-top; }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-list-misc();
+
+// @mixin hook-list-line(){}
+// @mixin hook-list-striped(){}
+// @mixin hook-list-misc(){}

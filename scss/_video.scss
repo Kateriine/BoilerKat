@@ -152,7 +152,7 @@ The default control bar that is a container for most of the controls.
   display: none;
   position: absolute;
   /* Place control bar at the bottom of the player box/video.
-     If you want more margin below the control bar, add more height. *///
+   If you want more margin below the control bar, add more height. *///
   bottom: 0;
   /* Use left/right to stretch to 100% width of player div *///
   left: 0;
@@ -321,15 +321,15 @@ The default control bar that is a container for most of the controls.
   width: 100%;
 
   background: $slider-bar-color
-    url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC')
-    -50% 0 repeat;
+  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC')
+  -50% 0 repeat;
 }
 .vjs-default-skin .vjs-volume-bar .vjs-volume-handle {
   width: 0.5em;
   height: 0.5em;
   /* Assumes volume starts at 1.0. If you change the size of the
-     handle relative to the volume bar, you'll need to update this value
-     too. */
+   handle relative to the volume bar, you'll need to update this value
+   too. */
   left: 4.5em;
 }
 
@@ -343,10 +343,10 @@ The default control bar that is a container for most of the controls.
 }
 
 /* The volume menu button is like menu buttons (captions/subtitles) but works
-    a little differently. It needs to be possible to tab to the volume slider
-    without hitting space bar on the menu button. To do this we're not using
-    display:none to hide the slider menu by default, and instead setting the
-    width and height to zero. */
+  a little differently. It needs to be possible to tab to the volume slider
+  without hitting space bar on the menu button. To do this we're not using
+  display:none to hide the slider menu by default, and instead setting the
+  width and height to zero. */
 .vjs-default-skin .vjs-volume-menu-button .vjs-menu {
   display: block;
   width: 0;
@@ -388,13 +388,13 @@ The default control bar that is a container for most of the controls.
 }
 
 /* On hover, make the progress bar grow to something that's more clickable.
-    This simply changes the overall font for the progress bar, and this
-    updates both the em-based widths and heights, as wells as the icon font */
+  This simply changes the overall font for the progress bar, and this
+  updates both the em-based widths and heights, as wells as the icon font */
 .vjs-default-skin:hover .vjs-progress-control {
   font-size: .9em;
 
   /* Even though we're not changing the top/height, we need to include them in
-      the transition so they're handled correctly. */
+    the transition so they're handled correctly. */
   transition: all 0.2s;
 }
 
@@ -421,16 +421,16 @@ The default control bar that is a container for most of the controls.
 
 .vjs-default-skin .vjs-play-progress {
   /*
-    Using a data URI to create the white diagonal lines with a transparent
-      background. Surprisingly works in IE8.
-      Created using http://www.patternify.com
-    Changing the first color value will change the bar color.
-    Also using a paralax effect to make the lines move backwards.
-      The -50% left position makes that happen.
+  Using a data URI to create the white diagonal lines with a transparent
+    background. Surprisingly works in IE8.
+    Created using http://www.patternify.com
+  Changing the first color value will change the bar color.
+  Also using a paralax effect to make the lines move backwards.
+    The -50% left position makes that happen.
   */
   background: $slider-bar-color
-    url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC')
-    -50% 0 repeat;
+  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAP0lEQVQIHWWMAQoAIAgDR/QJ/Ub//04+w7ZICBwcOg5FZi5iBB82AGzixEglJrd4TVK5XUJpskSTEvpdFzX9AB2pGziSQcvAAAAAAElFTkSuQmCC')
+  -50% 0 repeat;
 }
 .vjs-default-skin .vjs-load-progress {
   background: rgb(100, 100, 100) /* IE8- Fallback */;
@@ -545,7 +545,7 @@ easily in the skin designer. http://designer.videojs.com/
   display: none;
 }
 /* Hide on mobile devices. Remove when we stop using native controls
-    by default on mobile  */
+  by default on mobile  */
 .vjs-default-skin.vjs-using-native-controls .vjs-big-play-button {
   display: none;
 }
@@ -566,7 +566,7 @@ easily in the skin designer. http://designer.videojs.com/
   content: $play-icon;
   font-family: VideoJS;
   /* In order to center the play icon vertically we need to set the line height
-     to the same as the button height */
+   to the same as the button height */
   line-height: $big-play-height;
   text-shadow: 0.05em 0.05em 0.1em #000;
   text-align: center /* Needed for IE8 */;
@@ -604,7 +604,7 @@ easily in the skin designer. http://designer.videojs.com/
   font-size: 4em;
   color: #666666;
   /* In order to center the play icon vertically we need to set the line height
-     to the same as the button height */
+   to the same as the button height */
   line-height: 1;
   text-shadow: 0.05em 0.05em 0.1em #000;
   text-align: center /* Needed for IE8 */;
@@ -827,7 +827,7 @@ control positioning and full window mode. **
   position: relative;
   padding: 0;
   /* Start with 10px for base font size so other dimensions can be em based and
-     easily calculable. */
+   easily calculable. */
   font-size: $base-font-size;
   /* Allow poster to be vertically aligned. */
   vertical-align: middle;
@@ -840,13 +840,13 @@ control positioning and full window mode. **
   font-family: Arial, sans-serif;
 
   /* Turn off user selection (text highlighting) by default.
-     The majority of player components will not be text blocks.
-     Text areas will need to turn user selection back on. */
+   The majority of player components will not be text blocks.
+   Text areas will need to turn user selection back on. */
   user-select: none;
 }
 
 /* Playback technology elements expand to the width/height of the containing div
-    <video> or <object> */
+  <video> or <object> */
 .video-js .vjs-tech {
   position: absolute;
   top: 0;
@@ -921,7 +921,7 @@ body.vjs-full-window {
 }
 
 /* Hide the poster when controls are disabled because it's clickable
-    and the native poster can take over */
+  and the native poster can take over */
 .video-js.vjs-controls-disabled .vjs-poster {
   display: none;
 }
@@ -1028,9 +1028,9 @@ body.vjs-full-window {
 }
 
 /*  In IE8 w/ no JavaScript (no HTML5 shim), the video tag doesn't register.
-    The .video-js classname on the video tag also isn't considered.
-    This optional paragraph inside the video tag can provide a message to users
-    about what's required to play video. */
+  The .video-js classname on the video tag also isn't considered.
+  This optional paragraph inside the video tag can provide a message to users
+  about what's required to play video. */
 .vjs-no-js {
   padding: 2em;
   color: #ccc;
@@ -1068,7 +1068,7 @@ body.vjs-full-window {
 .flex-video iframe {
   height: 100% !important;
   z-index: 1;
-}        
+}
 
 .vjs-spinner {
   display: none !important;
@@ -1077,11 +1077,11 @@ body.vjs-full-window {
 img.vjs-poster {
   height: 100% !important;
   width: 100% !important;
-}   
+}
 
 .video-wrapper{
-  video{    
-    border-radius: 6px;
+  video{
+  border-radius: 6px;
   }
   margin-bottom: 14px;
 }
@@ -1101,21 +1101,21 @@ img.vjs-poster {
   overflow: hidden;
   padding-bottom: 67.5%;
   padding-top: 1.5625rem;
-  position: relative; 
+  position: relative;
   .video-js{
-    position: absolute !important;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: 1;
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
   }
 }
 .flex-video.widescreen {
-  padding-bottom: 56.34%; 
+  padding-bottom: 56.34%;
 }
 .flex-video.vimeo {
-  padding-top: 0; 
+  padding-top: 0;
 }
 .flex-video iframe,
 .flex-video object,
@@ -1125,5 +1125,5 @@ img.vjs-poster {
   position: absolute;
   top: 0;
   width: 100%;
-  left: 0; 
+  left: 0;
 }

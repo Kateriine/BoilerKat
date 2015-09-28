@@ -12,11 +12,11 @@
 // ========================================================================
 
 $base-body-background:                           #fff !default;
-$base-body-font-family:                          $sans-serif;
+$base-body-font-family:                          "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $base-body-font-weight:                          normal !default;
-$base-body-font-size:                            16;
-$base-body-line-height:                          1.4;
-$base-body-color:                                $black;
+$base-body-font-size:                            14px !default;
+$base-body-line-height:                          20px !default;
+$base-body-color:                                #444 !default;
 
 $base-link-color:                                #07D !default;
 $base-link-text-decoration:                      none !default;
@@ -33,25 +33,25 @@ $base-mark-background:                           #ffa !default;
 $base-mark-color:                                #444 !default;
 $base-quote-font-style:                          italic !default;
 
-$base-margin-vertical:                           $gutter;
+$base-margin-vertical:                           15px !default;
 
-$base-heading-font-family:                       $serif;
+$base-heading-font-family:                       "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $base-heading-font-weight:                       normal !default;
 $base-heading-color:                             #444 !default;
 $base-heading-text-transform:                    none !default;
-$base-heading-margin-top:                        $gutter;
-$base-h1-font-size:                              36;
-$base-h1-line-height:                            1.2;
-$base-h2-font-size:                              24;
-$base-h2-line-height:                            1.2;
-$base-h3-font-size:                              22;
-$base-h3-line-height:                            1.2;
-$base-h4-font-size:                              20;
-$base-h4-line-height:                            1.2;
-$base-h5-font-size:                              18;
-$base-h5-line-height:                            1.2;
-$base-h6-font-size:                              16;
-$base-h6-line-height:                            1.2;
+$base-heading-margin-top:                        25px !default;
+$base-h1-font-size:                              36px !default;
+$base-h1-line-height:                            42px !default;
+$base-h2-font-size:                              24px !default;
+$base-h2-line-height:                            30px !default;
+$base-h3-font-size:                              18px !default;
+$base-h3-line-height:                            24px !default;
+$base-h4-font-size:                              16px !default;
+$base-h4-line-height:                            22px !default;
+$base-h5-font-size:                              14px !default;
+$base-h5-line-height:                            20px !default;
+$base-h6-font-size:                              12px !default;
+$base-h6-line-height:                            18px !default;
 
 $base-list-padding-left:                         30px !default;
 
@@ -59,21 +59,21 @@ $base-hr-margin-vertical:                        $base-margin-vertical !default;
 $base-hr-border:                                 #ddd !default;
 $base-hr-border-width:                           1px !default;
 
-$base-blockquote-padding-left:                   $gutter;
+$base-blockquote-padding-left:                   15px !default;
 $base-blockquote-border:                         #ddd !default;
 $base-blockquote-border-width:                   5px !default;
-$base-blockquote-font-size:                      16;
-$base-blockquote-line-height:                    1.4;
+$base-blockquote-font-size:                      16px !default;
+$base-blockquote-line-height:                    22px !default;
 $base-blockquote-font-style:                     italic !default;
 
 $base-pre-padding:                               10px !default;
 $base-pre-background:                            #f5f5f5 !default;
 $base-pre-color:                                 #444 !default;
-$base-pre-font-size:                             12;
-$base-pre-line-height:                           1.4;
+$base-pre-font-size:                             12px !default;
+$base-pre-line-height:                           18px !default;
 $base-pre-font-family:                           $base-code-font-family !default;
 
-$base-selection-background:                      $base-link-color !default;
+$base-selection-background:                      #39f !default;
 $base-selection-color:                           #fff !default;
 
 
@@ -87,30 +87,23 @@ $base-selection-color:                           #fff !default;
  * 3. Style
  */
 
-html { font-size: 62.5%; }
-*{box-sizing:border-box;}
-
-
 html {
+    /* 1 */
+    font: $base-body-font-weight $base-body-font-size unquote("/") $base-body-line-height $base-body-font-family;
     /* 2 */
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     /* 3 */
+    background: $base-body-background;
+    color: $base-body-color;
+    @include hook-base-body();
 }
 
 /*
  * Removes default margin.
  */
 
-body { 
-    margin: 0; 
-    background: $base-body-background;
-    font-family:  $base-body-font-family;
-    @include font-size($base-body-font-size);
-    font-weight:  $base-body-font-weight;
-    line-height: $base-body-line-height;
-    color: $base-body-color;
-}
+body { margin: 0; }
 
 
 /* Links
@@ -178,8 +171,14 @@ strong { font-weight: bold; }
     /* 3 */
     color: $base-code-color;
     white-space: nowrap;
+    @include hook-base-code();
 }
 
+/*
+ * Emphasize
+ */
+
+em { color: $base-em-color; }
 
 /*
  * Insert
@@ -244,7 +243,6 @@ img {
     max-width: 100%;
     height: auto;
     /* 2 */
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     /* 3 */
     border: 0;
@@ -288,12 +286,7 @@ blockquote,
 pre,
 address,
 fieldset,
-figure { 
-    margin: 0 0 $base-margin-vertical 0; 
-    &:last-child{
-        margin-bottom: 0
-    }
-}
+figure { margin: 0 0 $base-margin-vertical 0; }
 
 * + p,
 * + ul,
@@ -333,33 +326,39 @@ h1, h2, h3, h4, h5, h6 {
  */
 
 h1, .uk-h1 {
-    @include font-size($base-h1-font-size);
+    font-size: $base-h1-font-size;
     line-height: $base-h1-line-height;
+    @include hook-base-h1();
 }
 
 h2, .uk-h2 {
-    @include font-size($base-h2-font-size);
+    font-size: $base-h2-font-size;
     line-height: $base-h2-line-height;
+    @include hook-base-h2();
 }
 
 h3, .uk-h3 {
-    @include font-size($base-h3-font-size);
+    font-size: $base-h3-font-size;
     line-height: $base-h3-line-height;
+    @include hook-base-h3();
 }
 
 h4, .uk-h4 {
-    @include font-size($base-h4-font-size);
+    font-size: $base-h4-font-size;
     line-height: $base-h4-line-height;
+    @include hook-base-h4();
 }
 
 h5, .uk-h5 {
-    @include font-size($base-h5-font-size);
+    font-size: $base-h5-font-size;
     line-height: $base-h5-line-height;
+    @include hook-base-h5();
 }
 
 h6, .uk-h6 {
-    @include font-size($base-h6-font-size);
+    font-size: $base-h6-font-size;
     line-height: $base-h6-line-height;
+    @include hook-base-h6();
 }
 
 
@@ -396,7 +395,6 @@ dd { margin-left: 0; }
 
 hr {
     /* 1 */
-    -moz-box-sizing: content-box;
     box-sizing: content-box;
     height: 0;
     /* 2 */
@@ -418,7 +416,7 @@ address { font-style: normal; }
 blockquote {
     padding-left: $base-blockquote-padding-left;
     border-left: $base-blockquote-border-width solid $base-blockquote-border;
-    @include font-size($base-blockquote-font-size);
+    font-size: $base-blockquote-font-size;
     line-height: $base-blockquote-line-height;
     font-style: $base-blockquote-font-style;
 }
@@ -440,10 +438,11 @@ pre {
     tab-size: 4;
     /* 1 */
     overflow: auto;
+    @include hook-base-pre();
 }
 
 
-/* Selection pseudo-element 
+/* Selection pseudo-element
  ========================================================================== */
 
 ::-moz-selection {
@@ -513,3 +512,20 @@ iframe { border: 0; }
         width: device-width;
     }
 }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-base-misc();
+
+// @mixin hook-base-body(){}
+// @mixin hook-base-code(){}
+// @mixin hook-base-h1(){}
+// @mixin hook-base-h2(){}
+// @mixin hook-base-h3(){}
+// @mixin hook-base-h4(){}
+// @mixin hook-base-h5(){}
+// @mixin hook-base-h6(){}
+// @mixin hook-base-pre(){}
+// @mixin hook-base-misc(){}

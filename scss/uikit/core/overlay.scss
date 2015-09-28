@@ -9,6 +9,7 @@
 //                  `uk-overlay-icon`
 //
 // Modifier:        `uk-overlay-background`
+//                  `uk-overlay-image`
 //                  `uk-overlay-top`
 //                  `uk-overlay-bottom`
 //                  `uk-overlay-left`
@@ -37,10 +38,10 @@
 // Markup:
 //
 // <!-- uk-overlay -->
-// <a class="uk-overlay" href="">
+// <figure class="uk-overlay" href="">
 //     <img src="" alt="">
-//     <div class="uk-overlay-panel"></div>
-// </a>
+//     <figcaption class="uk-overlay-panel"></figcaption>
+// </figure>
 //
 // ========================================================================
 
@@ -78,7 +79,7 @@ $overlay-area-icon:                              "\f002" !default;
 $overlay-area-icon-size:                         50px !default;
 $overlay-area-icon-color:                        #fff !default;
 
-$overlay-area-content-font-size:                 16;
+$overlay-area-content-font-size:                 1rem !default;
 $overlay-area-content-padding-horizontal:        15px !default;
 $overlay-area-content-color:                     #fff !default;
 $overlay-area-content-link-color:                inherit !default;
@@ -147,6 +148,7 @@ $overlay-caption-color:                          #fff !default;
     /* 2 */
     padding: $overlay-panel-padding;
     color: $overlay-panel-color;
+    @include hook-overlay-panel();
 }
 
 /*
@@ -188,6 +190,20 @@ $overlay-caption-color:                          #fff !default;
 
 .uk-overlay-background {
     background: $overlay-panel-background;
+    @include hook-overlay-background();
+}
+
+
+/* Modifier `uk-overlay-image`
+ ========================================================================== */
+
+/*
+ * Reset panel
+ */
+
+.uk-overlay-image {
+    padding: 0;
+    @include hook-overlay-image();
 }
 
 
@@ -220,6 +236,7 @@ $overlay-caption-color:                          #fff !default;
     font-family: FontAwesome;
     text-align: center;
     color: $overlay-icon-color;
+    @include hook-overlay-icon();
 }
 
 
@@ -359,6 +376,7 @@ $overlay-caption-color:                          #fff !default;
     -webkit-transition: opacity 0.15s linear;
     transition: opacity 0.15s linear;
     -webkit-transform: translate3d(0,0,0);
+    @include hook-overlay-area();
 }
 
 /*
@@ -390,6 +408,7 @@ $overlay-caption-color:                          #fff !default;
     font-family: FontAwesome;
     text-align: center;
     color: $overlay-area-icon-color;
+    @include hook-overlay-area-icon();
 }
 
 
@@ -425,17 +444,17 @@ $overlay-caption-color:                          #fff !default;
 .uk-overlay-area-content {
     /* 1 */
     display: inline-block;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
     vertical-align: middle;
     /* 2 */
-    @include font-size($overlay-area-content-font-size);
+    font-size: $overlay-area-content-font-size;
     /* 3 */
     text-align: center;
     /* 4 */
     padding: 0 $overlay-area-content-padding-horizontal;
     color: $overlay-area-content-color;
+    @include hook-overlay-area-content();
 }
 
 /*
@@ -477,6 +496,7 @@ $overlay-caption-color:                          #fff !default;
     -webkit-transition: opacity 0.15s linear;
     transition: opacity 0.15s linear;
     -webkit-transform: translate3d(0,0,0);
+    @include hook-overlay-caption();
 }
 
 /*
@@ -489,3 +509,21 @@ $overlay-caption-color:                          #fff !default;
 .uk-overlay.uk-hover .uk-overlay-caption, // 1
 .uk-overlay-toggle:hover .uk-overlay-caption, // 2
 .uk-overlay-toggle.uk-hover .uk-overlay-caption { opacity: 1; }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-overlay-misc();
+
+// @mixin hook-overlay-panel(){}
+// @mixin hook-overlay-background(){}
+// @mixin hook-overlay-image(){}
+// @mixin hook-overlay-icon(){}
+// @mixin hook-overlay-misc(){}
+
+// DEPRECATED
+// @mixin hook-overlay-area(){}
+// @mixin hook-overlay-area-icon(){}
+// @mixin hook-overlay-area-content(){}
+// @mixin hook-overlay-caption(){}

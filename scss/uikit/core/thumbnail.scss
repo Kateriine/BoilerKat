@@ -59,7 +59,6 @@ $thumbnail-large-width:                          400px !default;
     /* 2 */
     max-width: 100%;
     /* 3 */
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     /* 3 */
     margin: 0;
@@ -67,6 +66,7 @@ $thumbnail-large-width:                          400px !default;
     padding: $thumbnail-padding;
     border: $thumbnail-border-width solid $thumbnail-border;
     background: $thumbnail-background;
+    @include hook-thumbnail();
 }
 
 /*
@@ -84,6 +84,7 @@ a.uk-thumbnail:focus { // 1
     text-decoration: none;
     /* 3 */
     outline: none;
+    @include hook-thumbnail-hover();
 }
 
 
@@ -94,6 +95,7 @@ a.uk-thumbnail:focus { // 1
     padding-top: $thumbnail-caption-padding;
     text-align: center;
     color: $thumbnail-caption-color;
+    @include hook-thumbnail-caption();
 }
 
 
@@ -107,3 +109,14 @@ a.uk-thumbnail:focus { // 1
 
 .uk-thumbnail-expand,
 .uk-thumbnail-expand > img { width: 100%; }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-thumbnail-misc();
+
+// @mixin hook-thumbnail(){}
+// @mixin hook-thumbnail-hover(){}
+// @mixin hook-thumbnail-caption(){}
+// @mixin hook-thumbnail-misc(){}

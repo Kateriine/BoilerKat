@@ -36,6 +36,25 @@
   &:active{
     background: darken($bg, 8%);
   }
+}
 
-
+@mixin smart {
+  @media (min-width: #{$breakpoint-small}) {
+    @content;
+  }
+}
+@mixin ipad {
+  @media (min-width: #{$breakpoint-medium}) {
+    @content;
+  }
+}
+@mixin desk {
+  @media (min-width: #{$breakpoint-large}) {
+    @content;
+  }
+}
+@mixin bigdesk {
+  @media (min-width: #{$breakpoint-xlarge}) {
+    @content;
+  }
 }

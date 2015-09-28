@@ -54,6 +54,7 @@ $nav-autocomplete-divider-border-width:          1px !default;
 
 .uk-nav-autocomplete > li > a {
     color: $nav-autocomplete-color;
+    @include hook-nav-autocomplete();
 }
 
 /*
@@ -66,6 +67,7 @@ $nav-autocomplete-divider-border-width:          1px !default;
     color: $nav-autocomplete-active-color;
     /* 1 */
     outline: none;
+    @include hook-nav-autocomplete-active();
 }
 
 /*
@@ -74,6 +76,7 @@ $nav-autocomplete-divider-border-width:          1px !default;
 
 .uk-nav-autocomplete .uk-nav-header {
     color: $nav-autocomplete-header-color;
+    @include hook-nav-autocomplete-header();
 }
 
 /*
@@ -82,4 +85,18 @@ $nav-autocomplete-divider-border-width:          1px !default;
 
 .uk-nav-autocomplete .uk-nav-divider {
     border-top: $nav-autocomplete-divider-border-width solid $nav-autocomplete-divider-border;
+    @include hook-nav-autocomplete-divider();
 }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-autocomplete-misc();
+
+// @mixin hook-nav-autocomplete(){}
+// @mixin hook-nav-autocomplete-active(){}
+// @mixin hook-nav-autocomplete-header(){}
+// @mixin hook-nav-autocomplete-divider(){}
+
+// @mixin hook-autocomplete-misc(){}

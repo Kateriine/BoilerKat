@@ -20,7 +20,7 @@
 // Variables
 // ========================================================================
 
-$breadcrumb-font-size:                           16;
+$breadcrumb-font-size:                           1rem !default;
 
 $breadcrumb-divider:                             "/" !default;
 $breadcrumb-divider-margin:                      8px !default;
@@ -42,6 +42,7 @@ $breadcrumb-disabled-color:                      #999 !default;
     list-style: none;
     /* 2 */
     font-size: 0.001px;
+    @include hook-breadcrumb();
 }
 
 
@@ -53,7 +54,7 @@ $breadcrumb-disabled-color:                      #999 !default;
  */
 
 .uk-breadcrumb > li {
-    @include font-size($breadcrumb-font-size);
+    font-size: $breadcrumb-font-size;
     vertical-align: top;
 }
 
@@ -65,6 +66,7 @@ $breadcrumb-disabled-color:                      #999 !default;
     content: $breadcrumb-divider;
     display: inline-block;
     margin: 0 $breadcrumb-divider-margin;
+    @include hook-breadcrumb-divider();
 }
 
 /*
@@ -74,3 +76,11 @@ $breadcrumb-disabled-color:                      #999 !default;
 .uk-breadcrumb > li:not(.uk-active) > span { color: $breadcrumb-disabled-color; }
 
 
+// Hooks
+// ========================================================================
+
+@include hook-breadcrumb-misc();
+
+// @mixin hook-breadcrumb(){}
+// @mixin hook-breadcrumb-divider(){}
+// @mixin hook-breadcrumb-misc(){}

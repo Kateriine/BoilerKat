@@ -1,25 +1,32 @@
 // Name:            Accordion
-// Description:     Defines styles for the accodion
+// Description:     Defines styles for the accordion
 //
-// Component:       `uk-accodion`
+// Component:       `uk-accordion`
 //
-// Sub-objects:     `uk-accodion-title`
-//                  `uk-accodion-content`
+// Sub-objects:     `uk-accordion-title`
+//                  `uk-accordion-content`
+//
+// Markup:
+//
+// <!-- uk-accordion -->
+// <div class="uk-accordion" data-uk-accordion>
+//     <h3 class="uk-accordion-title"></h3>
+//     <div class="uk-accordion-content">
+//         <p></p>
+//     </div>
+// </div>
 //
 // ========================================================================
 
 
 // Variables
 // ========================================================================
-@mixin font-size($sizeValue) {
-  font-size: $sizeValue + px;
-  font-size: ($sizeValue / 10) + rem;
-}
+
 $accordion-title-margin-bottom:                  15px !default;
 $accordion-title-padding-vertical:               5px !default;
 $accordion-title-padding-horizontal:             15px !default;
-$accordion-title-font-size:                      18 !default;
-$accordion-title-line-height:                    1.3 !default;
+$accordion-title-font-size:                      18px !default;
+$accordion-title-line-height:                    24px !default;
 $accordion-title-background:                     #eee !default;
 
 $accordion-content-padding-horizontal:           $accordion-title-padding-horizontal !default;
@@ -30,6 +37,10 @@ $accordion-content-padding-bottom:               $accordion-title-padding-horizo
    Component: Accordion
  ========================================================================== */
 
+.uk-accordion {
+    @include hook-accordion();
+}
+
 /* Sub-object: `uk-accordion-title`
  ========================================================================== */
 
@@ -38,9 +49,10 @@ $accordion-content-padding-bottom:               $accordion-title-padding-horizo
     margin-bottom: $accordion-title-margin-bottom;
     padding: $accordion-title-padding-vertical $accordion-title-padding-horizontal;
     background: $accordion-title-background;
-    @include font-size($accordion-title-font-size);
+    font-size: $accordion-title-font-size;
     line-height: $accordion-title-line-height;
     cursor: pointer;
+    @include hook-accordion-title();
 }
 
 
@@ -49,6 +61,7 @@ $accordion-content-padding-bottom:               $accordion-title-padding-horizo
 
 .uk-accordion-content {
     padding: 0 $accordion-content-padding-horizontal $accordion-content-padding-bottom $accordion-content-padding-horizontal;
+    @include hook-accordion-content();
 }
 
 /*
@@ -68,3 +81,14 @@ $accordion-content-padding-bottom:               $accordion-title-padding-horizo
  */
 
  .uk-accordion-content > :last-child { margin-bottom: 0; }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-accordion-misc();
+
+// @mixin hook-accordion(){}
+// @mixin hook-accordion-title(){}
+// @mixin hook-accordion-content(){}
+// @mixin hook-accordion-misc(){}

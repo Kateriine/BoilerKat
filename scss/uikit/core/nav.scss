@@ -42,7 +42,7 @@ $nav-padding-horizontal:                         15px !default;
 
 $nav-header-padding-vertical:                    $nav-padding-vertical !default;
 $nav-header-padding-horizontal:                  $nav-padding-horizontal !default;
-$nav-header-font-size:                           12;
+$nav-header-font-size:                           12px !default;
 $nav-header-font-weight:                         bold !default;
 $nav-header-text-transform:                      uppercase !default;
 $nav-header-margin-top:                          15px !default;
@@ -50,7 +50,7 @@ $nav-header-margin-top:                          15px !default;
 $nav-divider-margin-vertical:                    9px !default;
 $nav-divider-margin-horizontal:                  $nav-padding-horizontal !default;
 
-$nav-subtitle-font-size:                         12;
+$nav-subtitle-font-size:                         12px !default;
 $nav-subtitle-line-height:                       18px !default;
 
 $nav-nested-padding-left:                        15px !default;
@@ -143,7 +143,7 @@ $nav-offcanvas-nested-hover-color:               #fff !default;
  */
 
 .uk-nav li > a > div {
-    @include font-size($nav-subtitle-font-size);
+    font-size: $nav-subtitle-font-size;
     line-height: $nav-subtitle-line-height;
 }
 
@@ -155,7 +155,8 @@ $nav-offcanvas-nested-hover-color:               #fff !default;
     padding: $nav-header-padding-vertical $nav-header-padding-horizontal;
     text-transform: $nav-header-text-transform;
     font-weight: $nav-header-font-weight;
-    @include font-size($nav-header-font-size);
+    font-size: $nav-header-font-size;
+    @include hook-nav-header();
 }
 
 .uk-nav-header:not(:first-child) { margin-top: $nav-header-margin-top; }
@@ -166,6 +167,7 @@ $nav-offcanvas-nested-hover-color:               #fff !default;
 
 .uk-nav-divider {
     margin: $nav-divider-margin-vertical $nav-divider-margin-horizontal;
+    @include hook-nav-divider();
 }
 
 
@@ -178,6 +180,7 @@ $nav-offcanvas-nested-hover-color:               #fff !default;
 
 ul.uk-nav-sub {
     padding: $nav-sub-padding-vertical 0 $nav-sub-padding-vertical $nav-sub-padding-left;
+    @include hook-nav-sub();
 }
 
 
@@ -191,6 +194,7 @@ ul.uk-nav-sub {
     float: right;
     font-family: FontAwesome;
     text-align: center;
+    @include hook-nav-parent-icon();
 }
 
 .uk-nav-parent-icon > .uk-parent.uk-open > a:after { content: $nav-parent-open-icon; }
@@ -205,6 +209,7 @@ ul.uk-nav-sub {
 
 .uk-nav-side > li > a {
     color: $nav-side-color;
+    @include hook-nav-side();
 }
 
 /*
@@ -219,12 +224,14 @@ ul.uk-nav-sub {
     color: $nav-side-hover-color;
     /* 2 */
     outline: none;
+    @include hook-nav-side-hover();
 }
 
 /* Active */
 .uk-nav-side > li.uk-active > a {
     background: $nav-side-active-background;
     color: $nav-side-active-color;
+    @include hook-nav-side-active();
 }
 
 /*
@@ -233,6 +240,7 @@ ul.uk-nav-sub {
 
 .uk-nav-side .uk-nav-header {
     color: $nav-side-header-color;
+    @include hook-nav-side-header();
 }
 
 /*
@@ -241,6 +249,7 @@ ul.uk-nav-sub {
 
 .uk-nav-side .uk-nav-divider {
     border-top: $nav-side-divider-border-width solid $nav-side-divider-border;
+    @include hook-nav-side-divider();
 }
 
 /*
@@ -260,6 +269,7 @@ ul.uk-nav-sub {
 
 .uk-nav-dropdown > li > a {
     color: $nav-dropdown-color;
+    @include hook-nav-dropdown();
 }
 
 /*
@@ -274,6 +284,7 @@ ul.uk-nav-sub {
     color: $nav-dropdown-hover-color;
     /* 2 */
     outline: none;
+    @include hook-nav-dropdown-hover();
 }
 
 /*
@@ -282,6 +293,7 @@ ul.uk-nav-sub {
 
 .uk-nav-dropdown .uk-nav-header {
     color: $nav-dropdown-header-color;
+    @include hook-nav-dropdown-header();
 }
 
 /*
@@ -290,6 +302,7 @@ ul.uk-nav-sub {
 
 .uk-nav-dropdown .uk-nav-divider {
     border-top: $nav-dropdown-divider-border-width solid $nav-dropdown-divider-border;
+    @include hook-nav-dropdown-divider();
 }
 
 /*
@@ -309,6 +322,7 @@ ul.uk-nav-sub {
 
 .uk-nav-navbar > li > a {
     color: $nav-navbar-color;
+    @include hook-nav-navbar();
 }
 
 /*
@@ -323,6 +337,7 @@ ul.uk-nav-sub {
     color: $nav-navbar-hover-color;
     /* 2 */
     outline: none;
+    @include hook-nav-navbar-hover();
 }
 
 /*
@@ -331,6 +346,7 @@ ul.uk-nav-sub {
 
 .uk-nav-navbar .uk-nav-header {
     color: $nav-navbar-header-color;
+    @include hook-nav-navbar-header();
 }
 
 /*
@@ -339,6 +355,7 @@ ul.uk-nav-sub {
 
 .uk-nav-navbar .uk-nav-divider {
     border-top: $nav-navbar-divider-border-width solid $nav-navbar-divider-border;
+    @include hook-nav-navbar-divider();
 }
 
 /*
@@ -359,6 +376,7 @@ ul.uk-nav-sub {
 .uk-nav-offcanvas > li > a {
     color: $nav-offcanvas-color;
     padding: $nav-offcanvas-padding-vertical $nav-offcanvas-padding-horizontal;
+    @include hook-nav-offcanvas();
 }
 
 /*
@@ -375,6 +393,7 @@ html:not(.uk-touch) .uk-nav-offcanvas > li > a:focus { // 1
     color: $nav-offcanvas-hover-color;
     /* 2 */
     outline: none;
+    @include hook-nav-offcanvas-hover();
 }
 
 /*
@@ -384,6 +403,7 @@ html:not(.uk-touch) .uk-nav-offcanvas > li > a:focus { // 1
 html .uk-nav.uk-nav-offcanvas > li.uk-active > a {
     background: $nav-offcanvas-active-background;
     color: $nav-offcanvas-active-color;
+    @include hook-nav-offcanvas-active();
 }
 
 /*
@@ -392,6 +412,7 @@ html .uk-nav.uk-nav-offcanvas > li.uk-active > a {
 
 .uk-nav-offcanvas .uk-nav-header {
     color: $nav-offcanvas-header-color;
+    @include hook-nav-offcanvas-header();
 }
 
 /*
@@ -400,6 +421,7 @@ html .uk-nav.uk-nav-offcanvas > li.uk-active > a {
 
 .uk-nav-offcanvas .uk-nav-divider {
     border-top: $nav-offcanvas-divider-border-width solid $nav-offcanvas-divider-border;
+    @include hook-nav-offcanvas-divider();
 }
 
 /*
@@ -411,3 +433,36 @@ html .uk-nav.uk-nav-offcanvas > li.uk-active > a {
 html:not(.uk-touch) .uk-nav-offcanvas ul a:hover { color: $nav-offcanvas-nested-hover-color; }
 
 
+// Hooks
+// ========================================================================
+
+@include hook-nav-misc();
+
+// @mixin hook-nav-header(){}
+// @mixin hook-nav-divider(){}
+// @mixin hook-nav-sub(){}
+// @mixin hook-nav-parent-icon(){}
+
+// @mixin hook-nav-side(){}
+// @mixin hook-nav-side-hover(){}
+// @mixin hook-nav-side-active(){}
+// @mixin hook-nav-side-header(){}
+// @mixin hook-nav-side-divider(){}
+
+// @mixin hook-nav-dropdown(){}
+// @mixin hook-nav-dropdown-hover(){}
+// @mixin hook-nav-dropdown-header(){}
+// @mixin hook-nav-dropdown-divider(){}
+
+// @mixin hook-nav-navbar(){}
+// @mixin hook-nav-navbar-hover(){}
+// @mixin hook-nav-navbar-header(){}
+// @mixin hook-nav-navbar-divider(){}
+
+// @mixin hook-nav-offcanvas(){}
+// @mixin hook-nav-offcanvas-hover(){}
+// @mixin hook-nav-offcanvas-active(){}
+// @mixin hook-nav-offcanvas-header(){}
+// @mixin hook-nav-offcanvas-divider(){}
+
+// @mixin hook-nav-misc(){}

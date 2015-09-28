@@ -30,6 +30,7 @@ $placeholder-large-padding-vertical:             80px !default;
     border: 1px dashed $placeholder-border;
     background: $placeholder-background;
     color: $placeholder-color;
+    @include hook-placeholder();
 }
 
 /*
@@ -51,4 +52,15 @@ $placeholder-large-padding-vertical:             80px !default;
 .uk-placeholder-large {
     padding-top: $placeholder-large-padding-vertical;
     padding-bottom: $placeholder-large-padding-vertical;
+    @include hook-placeholder-large();
 }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-placeholder-misc();
+
+// @mixin hook-placeholder(){}
+// @mixin hook-placeholder-large(){}
+// @mixin hook-placeholder-misc(){}

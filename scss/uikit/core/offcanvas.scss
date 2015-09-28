@@ -66,12 +66,7 @@ $offcanvas-panel-title-color:                    $offcanvas-panel-link-color !de
     touch-action: none;
     /* 4 */
     background: $offcanvas-background;
-    @media(min-width:$breakpoint-medium){
-        display: block;
-        position: inherit;
-        background: none;
-        .uk-navbar > li:first-child > a{padding-left: 0}
-    }
+    @include hook-offcanvas();
 }
 
 .uk-offcanvas.uk-active { display: block; }
@@ -104,7 +99,7 @@ $offcanvas-panel-title-color:                    $offcanvas-panel-link-color !de
  * 2. Size and style
  * 3. Allow scrolling
  * 4. Side-out transition
- * 5. Deavtivate scroll chaining in IE11
+ * 5. Deactivate scroll chaining in IE11
  */
 
 .uk-offcanvas-bar {
@@ -128,16 +123,7 @@ $offcanvas-panel-title-color:                    $offcanvas-panel-link-color !de
     transition: transform 0.3s ease-in-out;
     /* 5 */
     -ms-scroll-chaining: none;
-    @media(min-width:$breakpoint-medium){
-        position: inherit;
-        top: auto;
-        bottom: auto;left: auto;
-        -webkit-transform: translateX(0%);
-        transform: translateX(0%);
-        width: auto;
-        background: transparent;
-        overflow-y: inherit;
-    }
+    @include hook-offcanvas-bar();
 }
 
 .uk-offcanvas.uk-active .uk-offcanvas-bar.uk-offcanvas-bar-show {
@@ -162,6 +148,7 @@ $offcanvas-panel-title-color:                    $offcanvas-panel-link-color !de
 .uk-offcanvas .uk-panel {
     margin: $offcanvas-panel-margin;
     color: $offcanvas-panel-color;
+    @include hook-offcanvas-panel();
 }
 
 .uk-offcanvas .uk-panel-title { color: $offcanvas-panel-title-color; }
@@ -169,43 +156,13 @@ $offcanvas-panel-title-color:                    $offcanvas-panel-link-color !de
 .uk-offcanvas .uk-panel a:not([class]) { color: $offcanvas-panel-link-color; }
 .uk-offcanvas .uk-panel a:not([class]):hover { color: $offcanvas-panel-link-hover-color; }
 
-.uk-button-offcanvas{
-    @extend .uk-clearfix;
-    display: block;
-    border:none;
-    background: $black;
-    width:76px;
-    margin:0;
-    z-index: 500;
-    padding:28px 22px 29px 22px;
-    &:focus{outline:medium none;}
-    &.uk-hidden-large{
-        display:inline-block !important;
-        @media(min-width:$breakpoint-medium){display:none!important;}
-    }
-    position: relative;
-    transition: all 233ms cubic-bezier(0.5, 0, 0, 1);
 
-    .line {
-      display: block;
-      width: 32px;
-      height: 3px;
-      margin: 0 0 12px;
-      background-color: rgba(255,255,255,.8);
-      transform: translate3d(0, 0, 0);
-      transition: all 333ms cubic-bezier(0.5, 0, 0, 1);
-       &:last-child{ margin-bottom: 0; }
-    }
+// Hooks
+// ========================================================================
 
-    &.checked {
-        .line.first {
-          transform: rotate(-135deg) translateY(-10.5px) translateX(-10.5px);
-        }
-        .line.second{
-          opacity: 0;
-        }
-        .line.third {
-          transform: rotate(135deg) translateY(10.5px) translateX(-10.5px);
-        }
-    }
-}
+@include hook-offcanvas-misc();
+
+// @mixin hook-offcanvas(){}
+// @mixin hook-offcanvas-bar(){}
+// @mixin hook-offcanvas-panel(){}
+// @mixin hook-offcanvas-misc(){}

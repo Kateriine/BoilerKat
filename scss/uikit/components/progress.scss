@@ -33,7 +33,7 @@ $progress-margin-vertical:                       15px !default;
 $progress-background:                            #eee !default;
 
 $progress-bar-background:                        #00a8e6 !default;
-$progress-bar-font-size:                         12 !default;
+$progress-bar-font-size:                         12px !default;
 $progress-bar-color:                             #fff !default;
 
 $progress-bar-success-background:                #8cc14c !default;
@@ -51,7 +51,6 @@ $progress-bar-danger-background:                 #da314b !default;
  */
 
 .uk-progress {
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     height: $progress-height;
     margin-bottom: $progress-margin-vertical;
@@ -87,9 +86,10 @@ $progress-bar-danger-background:                 #da314b !default;
     -webkit-transition: width 0.6s ease;
     transition: width 0.6s ease;
     /* 2 */
-    @include font-size($progress-bar-font-size);
+    font-size: $progress-bar-font-size;
     color: $progress-bar-color;
     text-align: center;
+    @include hook-progress-bar();
 }
 
 
@@ -99,12 +99,14 @@ $progress-bar-danger-background:                 #da314b !default;
 /* Mini */
 .uk-progress-mini {
     height: $progress-mini-height;
+    @include hook-progress-mini();
 }
 
 
 /* Small */
 .uk-progress-small {
     height: $progress-small-height;
+    @include hook-progress-small();
 }
 
 
@@ -113,14 +115,17 @@ $progress-bar-danger-background:                 #da314b !default;
 
 .uk-progress-success .uk-progress-bar {
     background-color: $progress-bar-success-background;
+    @include hook-progress-bar-success();
 }
 
 .uk-progress-warning .uk-progress-bar {
     background-color: $progress-bar-warning-background;
+    @include hook-progress-bar-warning();
 }
 
 .uk-progress-danger .uk-progress-bar {
     background-color: $progress-bar-danger-background;
+    @include hook-progress-bar-danger();
 }
 
 
@@ -151,3 +156,18 @@ $progress-bar-danger-background:                 #da314b !default;
     0% { background-position: 0 0;}
     100% { background-position: 30px 0; }
 }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-progress-misc();
+
+// @mixin hook-progress(){}
+// @mixin hook-progress-bar(){}
+// @mixin hook-progress-mini(){}
+// @mixin hook-progress-small(){}
+// @mixin hook-progress-bar-success(){}
+// @mixin hook-progress-bar-warning(){}
+// @mixin hook-progress-bar-danger(){}
+// @mixin hook-progress-misc(){}

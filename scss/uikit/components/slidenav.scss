@@ -33,7 +33,7 @@
 $slidenav-width:                                 60px !default;
 $slidenav-height:                                $slidenav-width !default;
 $slidenav-color:                                 rgba(50,50,50,0.4) !default;
-$slidenav-font-size:                             60 !default;
+$slidenav-font-size:                             60px !default;
 $slidenav-line-height:                           $slidenav-height !default;
 $slidenav-previous-icon:                         "\f104" !default;
 $slidenav-next-icon:                             "\f105" !default;
@@ -64,15 +64,15 @@ $slidenav-contrast-active-color:                 rgba(255,255,255,0.9) !default;
     /* 1 */
     display: inline-block;
     /* 2 */
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: $slidenav-width;
     height: $slidenav-height;
     /* 3 */
     line-height: $slidenav-line-height;
     color: $slidenav-color;
-    @include font-size($slidenav-font-size);
+    font-size: $slidenav-font-size;
     text-align: center;
+    @include hook-slidenav();
 }
 
 /*
@@ -92,11 +92,13 @@ $slidenav-contrast-active-color:                 rgba(255,255,255,0.9) !default;
     /* 4 */
     color: $slidenav-hover-color;
     cursor: pointer;
+    @include hook-slidenav-hover();
 }
 
 /* Active */
 .uk-slidenav:active {
     color: $slidenav-active-color;
+    @include hook-slidenav-active();
 }
 
 /*
@@ -146,6 +148,7 @@ $slidenav-contrast-active-color:                 rgba(255,255,255,0.9) !default;
 
 .uk-slidenav-contrast {
     color: $slidenav-contrast-color;
+    @include hook-slidenav-contrast();
 }
 
 /*
@@ -156,9 +159,25 @@ $slidenav-contrast-active-color:                 rgba(255,255,255,0.9) !default;
 .uk-slidenav-contrast:hover,
 .uk-slidenav-contrast:focus { // 1
     color: $slidenav-contrast-hover-color;
+    @include hook-slidenav-contrast-hover();
 }
 
 /* Active */
 .uk-slidenav-contrast:active {
     color: $slidenav-contrast-active-color;
+    @include hook-slidenav-contrast-active();
 }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-slidenav-misc();
+
+// @mixin hook-slidenav(){}
+// @mixin hook-slidenav-hover(){}
+// @mixin hook-slidenav-active(){}
+// @mixin hook-slidenav-contrast(){}
+// @mixin hook-slidenav-contrast-hover(){}
+// @mixin hook-slidenav-contrast-active(){}
+// @mixin hook-slidenav-misc(){}

@@ -10,11 +10,12 @@
 //                  `uk-height-*`
 //                  `uk-responsive-*`
 //                  `uk-margin-*`
+//                  `uk-padding-*`
 //                  `uk-border-*`
 //                  `uk-heading-*`
 //                  `uk-link-*`
 //                  `uk-scrollable-*`
-//                  `uk-overflow-container`
+//                  `uk-overflow-*`
 //                  `uk-position-*`
 //                  `uk-display-*`
 //                  `uk-visible-*`
@@ -29,27 +30,27 @@
 // Variables
 // ========================================================================
 
-$utility-container-max-width:                    1200px;
-$utility-container-padding-horizontal:           $gutter;
+$utility-container-max-width:                    980px !default;
+$utility-container-padding-horizontal:           25px !default;
 
 $utility-container-large-max-width:              1200px !default;
-$utility-container-large-padding-horizontal:     $gutter*2;
+$utility-container-large-padding-horizontal:     35px !default;
 
-$utility-align-horizontal:                       $gutter;
-$utility-align-vertical:                         $gutter;
+$utility-align-horizontal:                       15px !default;
+$utility-align-vertical:                         15px !default;
 
 $utility-height-viewport-min-height:             600px !default;
 
-$utility-margin:                                 $gutter;
+$utility-margin:                                 15px !default;
 $utility-margin-small:                           5px !default;
-$utility-margin-large:                           $gutter*2;
+$utility-margin-large:                           50px !default;
 
 $utility-border-rounded:                         5px !default;
 
-$utility-heading-large-small-font-size:          36 !default;
-$utility-heading-large-small-line-height:        1.2 !default;
-$utility-heading-large-font-size:                52 !default;
-$utility-heading-large-line-height:              1.2 !default;
+$utility-heading-large-small-font-size:          36px !default;
+$utility-heading-large-small-line-height:        42px !default;
+$utility-heading-large-font-size:                52px !default;
+$utility-heading-large-line-height:              64px !default;
 
 $utility-link-muted-color:                       #444 !default;
 $utility-link-muted-hover-color:                 #444 !default;
@@ -57,7 +58,7 @@ $utility-link-muted-hover-color:                 #444 !default;
 $utility-scrollable-text-height:                 300px !default;
 
 $utility-scrollable-box-height:                  170px !default;
-$utility-scrollable-box-padding:                 $gutter/2;
+$utility-scrollable-box-padding:                 10px !default;
 $utility-scrollable-box-border:                  #ddd !default;
 $utility-scrollable-box-border-width:            1px !default;
 
@@ -70,25 +71,21 @@ $utility-scrollable-box-border-width:            1px !default;
  ========================================================================== */
 
 .uk-container {
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     max-width: $utility-container-max-width;
     padding: 0 $utility-container-padding-horizontal;
-    &.uk-container-small {
-        max-width: 768px;
-    }
-
-    @media (min-width: $breakpoint-xlarge) {
-        &.uk-container-large {
-            max-width: $utility-container-large-max-width;
-            padding: 0 $utility-container-large-padding-horizontal;
-        }
-
-    }
+    @include hook-container();
 }
 
 /* Large screen and bigger */
+@media (min-width: $breakpoint-xlarge) {
 
+    .uk-container {
+        max-width: $utility-container-large-max-width;
+        padding: 0 $utility-container-large-padding-horizontal;
+    }
+
+}
 
 /*
  * Micro clearfix
@@ -250,10 +247,7 @@ $utility-scrollable-box-border-width:            1px !default;
  * More robust if padding and border are used
  */
 
-[class*='uk-height'] {
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
+[class*='uk-height'] { box-sizing: border-box; }
 
 /*
  * Useful to extend the `html` and `body` element to the full height of the page.
@@ -280,10 +274,7 @@ $utility-scrollable-box-border-width:            1px !default;
  */
 
 .uk-responsive-width,
-.uk-responsive-height {
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
+.uk-responsive-height { box-sizing: border-box; }
 
 /*
  * Responsiveness: Sets a maximum width relative to the parent and auto scales the height
@@ -355,6 +346,18 @@ $utility-scrollable-box-border-width:            1px !default;
 .uk-margin-bottom-remove { margin-bottom: 0 !important; }
 
 
+/* Padding
+ ========================================================================== */
+
+.uk-padding-remove { padding: 0 !important; }
+.uk-padding-top-remove { padding-top: 0 !important; }
+.uk-padding-bottom-remove { padding-bottom: 0 !important; }
+
+.uk-padding-vertical-remove {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
 /* Border
  ========================================================================== */
 
@@ -401,7 +404,9 @@ $utility-scrollable-box-border-width:            1px !default;
 .uk-link-reset,
 .uk-link-reset a,
 .uk-link-reset:hover,
-.uk-link-reset a:hover {
+.uk-link-reset a:hover,
+.uk-link-reset:focus,
+.uk-link-reset a:focus {
     color: inherit;
     text-decoration: none;
 }
@@ -426,7 +431,6 @@ $utility-scrollable-box-border-width:            1px !default;
  */
 
 .uk-scrollable-box {
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     height: $utility-scrollable-box-height;
     padding: $utility-scrollable-box-padding;
@@ -434,6 +438,7 @@ $utility-scrollable-box-border-width:            1px !default;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     resize: both;
+    @include hook-scrollable-box();
 }
 
 .uk-scrollable-box > :last-child { margin-bottom: 0; }
@@ -441,6 +446,8 @@ $utility-scrollable-box-border-width:            1px !default;
 
 /* Overflow
  ========================================================================== */
+
+.uk-overflow-hidden { overflow: hidden; }
 
 /*
  * Enable scrollbars if content is clipped
@@ -508,6 +515,12 @@ $utility-scrollable-box-border-width:            1px !default;
  */
 
 .uk-position-relative { position: relative !important; }
+
+/*
+ * Z-index
+ */
+
+.uk-position-z-index { z-index: 1; }
 
 
 /* Display
@@ -578,3 +591,13 @@ $utility-scrollable-box-border-width:            1px !default;
 /* Hide on touch */
 .uk-touch .uk-hidden-touch,
 .uk-notouch .uk-hidden-notouch { display: none !important; }
+
+
+// Hooks
+// ========================================================================
+
+@include hook-utility-misc();
+
+// @mixin hook-container(){}
+// @mixin hook-scrollable-box(){}
+// @mixin hook-utility-misc(){}
