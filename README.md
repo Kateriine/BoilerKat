@@ -1,9 +1,26 @@
-# KatThemeBase V3.6.0
-Naked WP theme with uikit 2.18 and Starkers Masters
+# KatThemeBase V4.0
+Naked WP theme with uikit 2.21.0 and Starkers Masters
 
 Optional file to create widgets
 
-Better with <a href="http://wp-types.com/" target="_blank">wp-types and views</a> and <a href="https://wordpress.org/plugins/wordpress-seo/" target="_blank">WP-SEO by Yoast</a>.
+Better with
+
+- [wp-types and views](http://wp-types.com/) (Custom fields)
+- [Gravity Forms](http://www.gravityforms.com/) (Forms)
+- [WP Rocket](http://wp-rocket.me/) (Optimization)
+- [WP-SEO by Yoast](https://wordpress.org/plugins/wordpress-seo/) (SEO)
+
+Optional:
+
+- [Posts 2 Posts](https://wordpress.org/plugins/posts-to-posts/) (Relations between posts)
+- [The Repeater Field](https://wordpress.org/plugins/ewww-image-optimizer/) (Custom fields matrix)
+- [EWWW Image Optimizer](https://wordpress.org/plugins/posts-to-posts/) (Image optimisation)
+- [WP-PageNavi](https://wordpress.org/plugins/wp-pagenavi/) (Custom pagination)
+- [Manual Image Crop](https://wordpress.org/plugins/manual-image-crop/) (Images custom crop doesn't work with the resize on the fly function)
+- [Ductile Responsive Video](https://wordpress.org/plugins/ductile-responsive-video/) (Responsive youtube embeds)
+- [WPML](https://wpml.org/) (Translation)
+- [Gravity Forms multilingual](https://wpml.org/documentation/related-projects/gravity-forms-multilingual/) (Multilingual forms)
+- [Black Studio TinyMCE Widget](https://wordpress.org/plugins/black-studio-tinymce-widget/) (WYWIWYG widgets)
 
 ## Base functions:
 
@@ -14,20 +31,22 @@ Better with <a href="http://wp-types.com/" target="_blank">wp-types and views</a
 - Real resize images on the fly (just provide src, width and height)
 Optional functions to uncomment:
 - WPML custom language menu (Works with some scss files listed below) (Plugin to add)
-- Custom map with pronamic (<a href="https://wordpress.org/plugins/pronamic-google-maps/" target="_blank">Plugin to add</a>)
-- Post 2 post connections (<a href="https://wordpress.org/plugins/posts-to-posts/" target="_blank">Plugin to add</a>)
+- Custom map with pronamic ([Plugin to add](https://wordpress.org/plugins/pronamic-google-maps/))
+- Post 2 post connections ([Plugin to add](https://wordpress.org/plugins/posts-to-posts/))
+- SVG support for Wordpress
+
 
 ### In external/shortcodes.php (mainly used in wp-views)
-- Shortcode for icon svgs
+<!-- - Shortcode for icon svgs (to be used in 2 years) :p -->
 - Encrypted email shortcodes
 - Shortcode to create images on the fly
 - Alt image shortcode
 - Theme directory shortcode
-- Increment in views shortcode (<a href="http://wp-types.com/" target="_blank">Plugin to add</a>)
+- Increment in views shortcode ([Plugin to add](http://wp-types.com/))
 - Main site url
-- Add custom conditions in views (<a href="http://wp-types.com/" target="_blank">Plugin to add</a>)
+- Add custom conditions in views ([Plugin to add](http://wp-types.com/))
 - Custom image sizes urls shortcode(to uncomment)
-- wp-pagenavi shortcode support in views (to uncomment) (Works with some scss files listed below) (<a href="https://wordpress.org/plugins/wp-pagenavi/" target="_blank">Plugin to add</a>)
+- wp-pagenavi shortcode support in views (to uncomment) (Works with some scss files listed below) ([Plugin to add](https://wordpress.org/plugins/wp-pagenavi/))
 - custom gallery shortcode
 - custom video gallery
 
@@ -40,7 +59,7 @@ Optional functions to uncomment:
 - Social share buttons
 - Social stats buttons
 
-### In external/gforms.php (<a href="http://www.gravityforms.com/" target="_blank">Plugin to add</a>)
+### In external/gforms.php ([Plugin to add](http://www.gravityforms.com/))
 (First of all, uncomment "require_once( 'external/gforms.php' );" in functions.php)
 
 - tabindex regulation when multiple forms on same page
@@ -65,28 +84,18 @@ Fancybox, social sharing, slick, Video JS, langs, pagenavi to uncomment in style
 - Replacement of font-sizes in px/rem instead of px
 - mixin .btn to manage buttons in scss
 - offcanvas revamped (mobile offcanvas to desktop sidebar)
-- Some additions in grid.scss 
-
-## Notes:
-- Works well with Grunt and Gulp (file has been prepared)
+- Some additions in grid.scss
 
 ## Gulp Support
 
-sudo npm install --save-dev gulp
-sudo npm install --save-dev gulp-util
-sudo npm install --save-dev gulp-watch
-sudo npm install --save-dev gulp-concat
-sudo npm install --save-dev gulp-uglify
-sudo npm install --save-dev gulp-autoprefixer
-sudo npm install --save-dev gulp-sass
-sudo npm install --save-dev gulp-rename
-sudo npm install --save-dev gulp-cheerio
-sudo npm install --save-dev gulp-svgstore
-sudo npm install --save-dev gulp-svgmin
-sudo npm install --save-dev gulp-imagemin
-sudo npm install --save-dev imagemin-pngquant
-sudo npm install --save-dev gulp-cache
+`(sudo) npm install`
 
-## To improve:
+This should install all the dependencies you need.
+origin/master
 
-- Dynamic customisation of widgets
+#When updating UIKIT:
+
+- Files overriding uikit: uikit-hooks and uikit-variables
+- Beware of files to adapt:
+-> buttons.scss
+-> grid.scss
