@@ -40,16 +40,16 @@ function register_shortcodes(){
 * [pic src="http://example.org/wp-content/uploads/2012/03/image.png" width="100" height="100"]
 */
 function pic($atts){
+  global $wpdb;
   extract( shortcode_atts( array(
    'src' => '',
    'width' => '',
    'height' => '',
+   'crop' => ''
   ), $atts ) );
-  $id = $wpdb->get_var($wpdb->prepare("SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $src));
-  $alt=get_post_meta($id , '_wp_attachment_image_alt', true);
-  return '<img src="'.kat_img_resize( $src, $width, $height ).'" alt="'.$alt.'" />';
-}
 
+  return kat_img_resize( $src, $width, $height, $crop );
+}
 
 
 /* Resized images shortcodes example: */
@@ -149,15 +149,15 @@ function gallery_img($attr) {
   foreach ( $attachments as $id => $attachment ) {
 
     $large = wp_get_attachment_image_src( $attachment->ID , 'large' );
-    $th = do_shortcode('[pic src="'.$large[0].'" width="600" height="600" crop="true"]');
-    $alt=get_post_meta($attachment->ID , '_wp_attachment_image_alt', true);
+    $full = wp_get_attachment_image_src( $attachment->ID , 'full' );
+
+    $th = kat_img_resize($full[0],"601", "601", true);
+
     $caption = $attachment->post_excerpt;
     $output .= '<div class="uk-width-small-1-2 uk-width-medium-1-'.$columns.'">';
     $output .= '<a href="';
     $output .= $large[0];
-    $output .= '"  class="fancybox clearfix" title="'.$caption.'" data-fancybox-group="gallery"><img src="' . $th . '" alt="';
-    $output.= $alt;
-    $output.= '"></a></div>';
+    $output .= '"  class="fancybox clearfix" title="'.$caption.'" data-fancybox-group="gallery">'.$th.'</a></div>';
   }
   $output .= '</div></div>';
   return $output;

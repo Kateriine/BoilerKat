@@ -25,31 +25,6 @@ add_action('admin_init', 'add_svg_upload');
 /******************************************************/
 
 /******************/
-/* Custom login */
-/******************/
-function my_login_logo() {
- ?>
-
-    <style type="text/css">
-      body.login{background: #FFF;}
-      .login .button-primary{-webkit-border-radius: 0;-moz-border-radius: 0;-o-border-radius: 0;border-radius: 0; border:none;}
-      .login .button-primary:hover
-    {
-    }
-    .login .button-primary:active
-    {
-    }
-        body.login div#login h1 a {
-            background-image: url(<?php echo get_template_directory_uri(); ?>/images/logo.svg);
-            background-size:auto;
-            width: 100%;
-        }
-
-    </style>
-<?php }
-add_action( 'login_enqueue_scripts', 'my_login_logo' );
-
-/******************/
 /* RSS */
 /******************/
 
@@ -153,7 +128,7 @@ function kat_img_resize( $src, $width, $height, $crop ) {
    $file = str_replace( trailingslashit( $base_url ), '', $src );
    $like = $wpdb->esc_like($file);
    $attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = '_wp_attachment_metadata' AND meta_value LIKE %s LIMIT 1;", '%"' . $like . '"%' ) );
-  $alt=get_post_meta($id , '_wp_attachment_image_alt', true);
+  $alt=get_post_meta($attachment_id , '_wp_attachment_image_alt', true);
 
    // If an attachment record was not found.
    if ( ! $attachment_id ) {
@@ -165,7 +140,6 @@ function kat_img_resize( $src, $width, $height, $crop ) {
      if($crop==true) $c = 'crop';
      else $c = "nocrop";
      //$name = $srcArr[0] . '-'.$c.'-' . $width . 'x' .$height . '.' . $srcArr[1];
-
 
    foreach( $meta['sizes'] as $key => $size ) {
      if ( $size['width'] == $width || $size['height'] == $height ) {
@@ -182,6 +156,7 @@ function kat_img_resize( $src, $width, $height, $crop ) {
    }
    //Miracle solution: if $c-resized-widthxheight size doesn't exist for this media, we create it :)
    $siz = $c .'-resized-'.$width .'x' . $height;
+
    if( $meta['sizes'][$siz]['file'] != '' ){
      $needs_resize = false;
    }
