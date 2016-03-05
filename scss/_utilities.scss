@@ -27,6 +27,21 @@
     padding-bottom: $gutter*3;
   }
 }
+
+.padding-top-large{
+  padding-top:$gutter*2;
+  @media(min-width: $breakpoint-medium){
+    padding-top: $gutter*3;
+  }
+}
+
+.padding-bottom-large{
+  padding-bottom:$gutter*2;
+  @media(min-width: $breakpoint-medium){
+    padding-bottom: $gutter*3;
+  }
+}
+
 .padding-verti-xlarge{
   padding-top:$gutter*2;
   padding-bottom:$gutter*2;
@@ -55,3 +70,24 @@
   clip: rect(0,0,0,0);
   border: 0;
 }
+$colors-list: $black $white $gray $red $orange $yellow $green $blue $purple $pink;
+$colors-names-list: black white gray red orange yellow green blue purple pink;
+
+@each $current-color in $colors-list {
+    $i: index($colors-list, $current-color);
+    .acf-text-#{nth($colors-names-list, $i)} { 
+        color: $current-color;
+        h1, h2, h3, h4, h5, h6, p, ol, ul, a {
+          color: $current-color;
+        }
+    }
+}
+
+@each $current-color in $colors-list {
+    $i: index($colors-list, $current-color);
+    .acf-bg-#{nth($colors-names-list, $i)} { 
+        background: $current-color;
+    }
+}
+
+

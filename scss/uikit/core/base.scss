@@ -131,12 +131,14 @@ a,
     color: $base-link-color;
     text-decoration: $base-link-text-decoration;
     cursor: pointer;
+    @include hook-base-link();
 }
 
 a:hover,
 .uk-link:hover {
     color: $base-link-hover-color;
     text-decoration: $base-link-hover-text-decoration;
+    @include hook-base-link-hover();
 }
 
 
@@ -308,6 +310,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: $base-heading-font-weight;
     color: $base-heading-color;
     text-transform: $base-heading-text-transform;
+    @include hook-base-h();
 }
 
 /*
@@ -401,6 +404,7 @@ hr {
     margin: $base-hr-margin-vertical 0;
     border: 0;
     border-top: $base-hr-border-width solid $base-hr-border;
+    @include hook-base-hr();
 }
 
 
@@ -419,6 +423,7 @@ blockquote {
     font-size: $base-blockquote-font-size;
     line-height: $base-blockquote-line-height;
     font-style: $base-blockquote-font-style;
+    @include hook-base-blockquote();
 }
 
 
@@ -520,12 +525,17 @@ iframe { border: 0; }
 @include hook-base-misc();
 
 // @mixin hook-base-body(){}
+// @mixin hook-base-link(){}
+// @mixin hook-base-link-hover(){}
 // @mixin hook-base-code(){}
+// @mixin hook-base-h(){}
 // @mixin hook-base-h1(){}
 // @mixin hook-base-h2(){}
 // @mixin hook-base-h3(){}
 // @mixin hook-base-h4(){}
 // @mixin hook-base-h5(){}
 // @mixin hook-base-h6(){}
+// @mixin hook-base-hr(){}
+// @mixin hook-base-blockquote(){}
 // @mixin hook-base-pre(){}
 // @mixin hook-base-misc(){}

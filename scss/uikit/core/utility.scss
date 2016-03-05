@@ -468,14 +468,17 @@ $utility-scrollable-box-border-width:            1px !default;
 [class*='uk-position-top'],
 [class*='uk-position-bottom'] { position: absolute !important; }
 
+/* Don't use `width: 100%` because it is wrong if the parent has padding. */
 .uk-position-top {
     top: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
 }
 
 .uk-position-bottom {
     bottom: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
 }
 
 .uk-position-top-left {
@@ -528,11 +531,17 @@ $utility-scrollable-box-border-width:            1px !default;
 
 /*
  * Display
+ * 1. Required if child is a responsive image
  */
 
 .uk-display-block { display: block !important; }
 .uk-display-inline { display: inline !important; }
-.uk-display-inline-block { display: inline-block !important; }
+
+.uk-display-inline-block {
+    display: inline-block !important;
+    /* 1 */
+    max-width: 100%;
+}
 
 /*
  * Visibility

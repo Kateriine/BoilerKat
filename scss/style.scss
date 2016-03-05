@@ -2,9 +2,11 @@
 @import "_variables.scss";
 @import "_uikit-variables.scss";
 @import "_fonts.scss";
+@import "uikit/uikit-mixins.scss";
 @import "_mixins.scss";
 @import "_uikit-hooks.scss";
 @import "uikit/uikit.scss";
+@import "uikit-btn-override";
 @import "_header.scss";
 @import "_sidebar.scss";
 @import "_footer.scss";
@@ -16,7 +18,9 @@
 @import "_companymap.scss";
 @import "_video.scss";
 @import "_fancybox.scss";
-/*@import "_social.scss";
-@import "_slick.scss";
-@import "_langs.scss";
-@import "_pagenavi.scss";*/
+
+// @import "_social.scss";
+// @import "_slick.scss";
+// @import "_langs.scss";
+// @import "_pagenavi.scss";
+// @import "_gforms.scss";

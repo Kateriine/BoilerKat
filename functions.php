@@ -21,6 +21,7 @@
   require_once( 'external/widgets.php' );
   require_once( 'external/gforms.php' );
   require_once( 'external/social.php' );
+  require_once( 'external/acf_custom_functions.php' );
   require_once( 'external/custom.php' );
   require_once( 'external/plugs/class-tgm-plugin-activation.php' );
 
@@ -162,26 +163,44 @@ function adam_register_required_plugins() {
    */
   $plugins = array(
 
-    array(
-      'name'     => 'Types', // The plugin name
-      'slug'     => 'types', // The plugin slug (typically the folder name)
-      'required' => true,
-    ),
-    array(
-      'name'     => 'WP-Views', // The plugin name
-      'slug'     => 'wp-views', // The plugin slug (typically the folder name)
-      'source'   => 'https://wp-types.com/?download=308&user_id=1709&subscription_key=GkRutbktJy', // The plugin source
-      'required' => true,
-    ),
-    array(
+      array(
       'name'     => 'Ductile Responsive Video', // The plugin name
       'slug'     => 'ductile-responsive-video', // The plugin slug (typically the folder name)
       'required' => true,
     ),
     array(
-      'name'     => 'Advanced Custom Fields', // The plugin name
-      'slug'     => 'advanced-custom-fields', // The plugin slug (typically the folder name)
+      'name'     => 'Advanced Custom Fields Pro', // The plugin name
+      'slug'     => 'advanced-custom-fields-pro', // The plugin slug (typically the folder name)
+      'source'   => 'http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9NjkxNjd8dHlwZT1wZXJzb25hbHxkYXRlPTIwMTUtMTEtMTggMTc6MjY6Mzk=', // The plugin source
       'required' => true,
+    ),
+    array(
+      'name'     => 'Advanced Custom Fields Repeater Collapser', // The plugin name
+      'slug'     => 'ACF-Repeater-Collapser-master', // The plugin slug (typically the folder name)
+      'source'   => 'https://github.com/mrwweb/ACF-Repeater-Collapser/archive/master.zip', // The plugin source
+      'external_url' => 'https://github.com/mrwweb/ACF-Repeater-Collapser/archive/master.zip',
+      'required' => false,
+    ),
+    array(
+      'name'     => 'Advanced Custom Fields: Widget Area', // The plugin name
+      'slug'     => 'acf-field-widget-area-master', // The plugin slug (typically the folder name)
+      'source'   => 'https://github.com/lucasstark/acf-field-widget-area/archive/master.zip', // The plugin source
+      'external_url' => 'https://github.com/lucasstark/acf-field-widget-area/',
+      'required' => true,
+    ),
+    array(
+      'name'     => 'Advanced Custom Fields: A Widget', // The plugin name
+      'slug'     => 'acf-field-a-widget-master', // The plugin slug (typically the folder name)
+      'source'   => 'https://github.com/lucasstark/acf-field-a-widget/archive/master.zip', // The plugin source
+      'external_url' => 'https://github.com/lucasstark/acf-field-a-widget/',
+      'required' => true,
+    ),
+    array(
+      'name'     => 'Gravity Forms', // The plugin name
+      'slug'     => 'gravityforms', // The plugin slug (typically the folder name)
+      'source'   => 'http://s3.amazonaws.com/gravityforms/releases/gravityforms_1.9.9.13.zip?AWSAccessKeyId=1603BBK66770VCSCJSG2&Expires=1433494222&Signature=3PEVaC7m5Mxgd7is7Vp3ChX8Wtc%3D', // The plugin source
+      'external_url' => 'http://s3.amazonaws.com/gravityforms/releases/gravityforms_1.9.16.7.zip?AWSAccessKeyId=1603BBK66770VCSCJSG2&Expires=1456397264&Signature=QFZpnnpgusm3zYbMxUxBeb09P9Y%3D',
+      'required' => false,
     ),
     // array(
     //   'name'     => 'Advanced Custom Fields: Repeater Field', // The plugin name
@@ -190,10 +209,14 @@ function adam_register_required_plugins() {
     //   'required' => false,
     // ),
     array(
-      'name'     => 'Advanced Custom Fields Repeater Collapser', // The plugin name
-      'slug'     => 'ACF-Repeater-Collapser-master', // The plugin slug (typically the folder name)
-      'source'   => 'https://github.com/mrwweb/ACF-Repeater-Collapser/archive/master.zip', // The plugin source
-      'external_url' => 'https://github.com/mrwweb/ACF-Repeater-Collapser/archive/master.zip',
+      'name'     => 'Types', // The plugin name
+      'slug'     => 'types', // The plugin slug (typically the folder name)
+      'required' => false,
+    ),
+    array(
+      'name'     => 'WP-Views', // The plugin name
+      'slug'     => 'wp-views', // The plugin slug (typically the folder name)
+      'source'   => 'https://wp-types.com/?download=308&user_id=1709&subscription_key=GkRutbktJy', // The plugin source
       'required' => false,
     ),
     array(
@@ -215,13 +238,6 @@ function adam_register_required_plugins() {
       'slug'     => 'wpml-translation-management', // The plugin slug (typically the folder name)
       'source'   => 'https://wpml.org/fr/?download=6094&user_id=22940&subscription_key=$P$BQlyEef.gRIGD2TrWo18AswYdeeUt', // The plugin source
       'external_url' => 'https://wpml.org/fr/?download=6094&user_id=22940&subscription_key=$P$BQlyEef.gRIGD2TrWo18AswYdeeUt',
-      'required' => false,
-    ),
-    array(
-      'name'     => 'Gravity Forms', // The plugin name
-      'slug'     => 'gravityforms', // The plugin slug (typically the folder name)
-      'source'   => 'http://s3.amazonaws.com/gravityforms/releases/gravityforms_1.9.9.13.zip?AWSAccessKeyId=1603BBK66770VCSCJSG2&Expires=1433494222&Signature=3PEVaC7m5Mxgd7is7Vp3ChX8Wtc%3D', // The plugin source
-      'external_url' => 'http://s3.amazonaws.com/gravityforms/releases/gravityforms_1.9.9.13.zip?AWSAccessKeyId=1603BBK66770VCSCJSG2&Expires=1433494222&Signature=3PEVaC7m5Mxgd7is7Vp3ChX8Wtc%3D',
       'required' => false,
     ),
     array(
@@ -264,8 +280,17 @@ function adam_register_required_plugins() {
       'required' => false,
     ),
     array(
-      'name'     => 'WP Migrate DB', // The plugin name
-      'slug'     => 'wp-migrate-db', // The plugin slug (typically the folder name)
+      'name'     => 'GitHub Updater', // The plugin name
+      'slug'     => 'github-updater', // The plugin slug (typically the folder name)
+      'source'   => 'https://github.com/afragen/github-updater/archive/develop.zip', // The plugin source
+      'external_url' => 'https://github.com/afragen/github-updater',
+      'required' => false,
+    ),
+    array(
+      'name'     => 'WP Sync DB', // The plugin name
+      'slug'     => 'wp-sync-db', // The plugin slug (typically the folder name)
+      'source'   => 'https://github.com/wp-sync-db/wp-sync-db/archive/master.zip', // The plugin source
+      'external_url' => 'https://github.com/wp-sync-db/wp-sync-db',
       'required' => false,
     ),
     array(

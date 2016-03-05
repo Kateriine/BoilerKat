@@ -10,13 +10,17 @@ function gform_tabindexer( $tab_index, $form = false ) {
 }
 
 //populate a value in an input
-add_filter('gform_field_value_rate_name', 'my_custom_population_function');
+
+// add_filter('gform_field_value_rate_name', 'my_custom_population_function');
 function my_custom_population_function($value){
   global $post;
   global $WP_Views;
   return $post->post_title;
 }
-add_filter( 'gform_pre_render_6', 'populate_rates' );
+
+//Fonction d'exemple pour "populate" des données dans un dropdown (par exemple)
+
+//add_filter( 'gform_pre_render_6', 'populate_rates' );
 
 //populate multiple values in a select input
 function populate_rates($form){

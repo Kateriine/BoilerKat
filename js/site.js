@@ -1,7 +1,5 @@
 jQuery(document).ready(function($) {
-
-  $respImg = $('.resp-image');
-  $respImgBg = $('.resp-img-bg');
+(function(){
 
   if ($('.video-js').length != 0) {
     videojs.options.flash.swf = "video-js.swf";
@@ -12,11 +10,32 @@ jQuery(document).ready(function($) {
     document.documentElement.className += ' ie10';
     document.documentElement.className += ' ie';
   }
-  // //Show/hide Offcanvas button effect
 
-  // $('.uk-button-offcanvas').on('click', function(){
-  //   $(this).toggleClass('checked');
-  // })
+  //Social popup
+  
+ //   var popupCenter = function(url, title, w, h) {
+ //   // Fixes dual-screen position                         Most browsers      Firefox
+ //   var dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : screen.left;
+ //   var dualScreenTop = window.screenTop !== undefined ? window.screenTop : screen.top;
+
+ //   var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+ //   var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+ //   var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+ //   var top = ((height / 3) - (h / 3)) + dualScreenTop;
+
+ //   var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+ //   // Puts focus on the newWindow
+ //   if (window.focus) {
+ //     newWindow.focus();
+ //   }
+ // };
+ // $('.popup').on("click",function(e){
+ //   e.preventDefault();
+ //   var $pop = $(this);
+ //   popupCenter($pop.attr('href'), $pop.find('.text').html(), 580, 470);
+ // });
 
   //Table responsive
   if ($('.table-responsive').length !== 0) {
@@ -53,25 +72,9 @@ jQuery(document).ready(function($) {
   function resizeSite() {
 
     /* SRCs */
-    if ($(window).width() > 1024) {
-      $respImgBg.each(function() {
-        $(this).css({
-          'background-image': 'url(' + $(this).attr('data-desk') + ')'
-        });
-      });
-      $respImg.each(function() {
-        $(this).attr('src', $(this).attr('data-desk'));
-      });
-    } else {
-      $respImgBg.each(function() {
-        $(this).css({
-          'background-image': 'url(' + $(this).attr('data-smart') + ')'
-        });
-      });
-      $respImg.each(function() {
-        $(this).attr('src', $(this).attr('data-smart'));
-      });
-    }
+    // if ($(window).width() > 1024) {
+    // } else {
+    // }
   }
 
   (function($, sr) {
@@ -117,5 +120,6 @@ jQuery(document).ready(function($) {
     var is_android = ((nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1) && !(nua.indexOf('Chrome') > -1));
     return is_android;
   });
+});
 
 });

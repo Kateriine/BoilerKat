@@ -6,6 +6,7 @@
 // Sub-objects:     `uk-panel-title`
 //                  `uk-panel-badge`
 //                  `uk-panel-teaser`
+//                  `uk-panel-body`
 //
 // Modifiers:       `uk-panel-box`
 //                  `uk-panel-box-hover`
@@ -87,6 +88,8 @@ $panel-divider-gutter-large:                     35px !default;
 $panel-divider-border:                           #ddd !default;
 $panel-divider-border-width:                     1px !default;
 
+$panel-body-padding:                             $panel-box-padding !default;
+
 
 /* ========================================================================
    Component: Panel
@@ -162,6 +165,12 @@ $panel-divider-border-width:                     1px !default;
 .uk-panel-teaser { margin-bottom: $panel-teaser-margin-bottom; }
 
 
+/* Sub-object: `uk-panel-body`
+ ========================================================================== */
+
+.uk-panel-body { padding: $panel-body-padding; }
+
+
 /* Modifier: `uk-panel-box`
  ========================================================================== */
 
@@ -184,7 +193,7 @@ $panel-divider-border-width:                     1px !default;
     right: $panel-box-badge-right;
 }
 
-.uk-panel-box .uk-panel-teaser {
+.uk-panel-box > .uk-panel-teaser {
     margin-top: $panel-box-teaser-margin;
     margin-left: $panel-box-teaser-margin;
     margin-right: $panel-box-teaser-margin;
@@ -251,7 +260,7 @@ $panel-divider-border-width:                     1px !default;
     right: $panel-hover-badge-right;
 }
 
-.uk-panel-hover .uk-panel-teaser {
+.uk-panel-hover > .uk-panel-teaser {
     margin-top: $panel-hover-teaser-margin;
     margin-left: $panel-hover-teaser-margin;
     margin-right: $panel-hover-teaser-margin;

@@ -24,6 +24,75 @@ add_action('admin_init', 'add_svg_upload');
 /******************* Base functions *******************/
 /******************************************************/
 
+
+/******************/
+/* Custom login */
+/******************/
+function my_login_logo() {
+ ?>
+
+    <style type="text/css">
+      body.login{background: #FFF;}
+      .wp-core-ui .button-primary {
+                background: #2E79B1;
+                border:none;
+                border-radius: 2px;
+                height:40px;
+                box-shadow: none;
+                line-height:38px;
+                -webkit-transition: background .2s ease-in;
+                -moz-transition: background .2s ease-in;
+                transition: background .2s ease-in;
+                text-shadow: none;
+            }
+        .wp-core-ui .button-primary:hover, .wp-core-ui .button-primary:focus,
+            #adminmenu li.menu-top:hover, #adminmenu li.opensub>a.menu-top, #adminmenu li>a.menu-top:focus {
+              background-image: -webkit-linear-gradient(left, #2EA6B1 0%, #2E79B1 100%);
+              background-image: -o-linear-gradient(left, #2EA6B1 0%, #2E79B1 100%);
+              background-image: linear-gradient(to right, #2EA6B1 0%, #2E79B1 100%);
+            }
+        body.login div#login h1 a {
+            background-image: url(<?php echo get_template_directory_uri(); ?>/images/logo.svg);
+            background-size:contain;
+            width: 100%;
+        }
+        .login #backtoblog, .login #nav{
+          padding: 0;
+          margin-top: 20px;
+        }
+        .login #nav {
+          float: left;
+          margin-right: 10px
+        }
+        #backtoblog {float: right;}
+        a {
+            color: #2E79B1;
+            font-weight:bold
+        }
+        .login form .input, .login input[type=text] {
+          height: 50px;
+          -webkit-appearance: none;
+        }
+
+        input[type=text]:focus, input[type=search]:focus, input[type=radio]:focus, input[type=tel]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, input[type=password]:focus, input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, input[type=datetime]:focus, input[type=datetime-local]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, select:focus, textarea:focus,
+        .login form .input:focus, .login form .input:-webkit-autofill, input:-webkit-autofill {
+          border-color: #2E79B1;
+          outline: 0;
+          box-shadow:none;
+          background: #E5F3F5;
+          color: #444;
+        }
+
+        .login #backtoblog a:hover, .login #nav a:hover, .login h1 a:hover,
+        .login #backtoblog a:focus, .login #nav a:focus, .login h1 a:focus  {
+            color: #2E79B1;
+        }
+
+    </style>
+<?php 
+}
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
 /******************/
 /* RSS */
 /******************/
@@ -186,7 +255,7 @@ function kat_img_resize( $src, $width, $height, $crop ) {
    return '<img src="'.esc_url( $src ).'" alt="'.$alt.'" />';
 }
 
-// //add some icon stuff
+// //add some icon stuff >> FOR CIRCA 2017 OR 2018
 // function icon($icon){
 //   return '<svg class="chicon">
 //       <use xlink:href="' .get_stylesheet_directory_uri() . '/images/icons.svg#chicon-'.$icon.'" />
@@ -285,7 +354,9 @@ class Ui_Nav_Menu extends Walker_Nav_Menu {
   }
 }
 
-
+/******************/
+/* SVG UPLOAD ON WP */
+/******************/
 
 function add_svg_upload() {
   add_filter('upload_mimes', 'svg_upload_mimes');
