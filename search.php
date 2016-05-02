@@ -11,7 +11,7 @@
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
 <div class="uk-container uk-container-center">
-  <main role="main">
+  <main>
     <?php if ( have_posts() ): ?>
     <h1>Search Results for '<?php echo get_search_query(); ?>'</h1>
     <div class="uk-grid" data-uk-grid-margin>

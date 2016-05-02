@@ -1,4 +1,4 @@
-/*! UIkit 2.21.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
+/*! UIkit 2.26.2 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
 (function(addon) {
 
     var component;
@@ -43,6 +43,7 @@
 
             // should be more efficient than using $win.scroll(checkscrollposition):
             UI.$doc.on('scrolling.uk.document', function(e, data) {
+                if (!data || !data.dir) return;
                 direction = data.dir.y;
                 checkscrollposition();
             });
@@ -53,7 +54,7 @@
 
                 for (var i = 0; i < sticked.length; i++) {
                     sticked[i].reset(true);
-                    sticked[i].self.computeWrapper();
+                    //sticked[i].self.computeWrapper();
                 }
 
                 checkscrollposition();
@@ -80,17 +81,17 @@
 
         init: function() {
 
-            var wrapper  = UI.$('<div class="uk-sticky-placeholder"></div>'), boundary = this.options.boundary, boundtoparent;
+            var boundary = this.options.boundary, boundtoparent;
 
-            this.wrapper = this.element.css('margin', 0).wrap(wrapper).parent();
-
+            this.wrapper = this.element.wrap('<div class="uk-sticky-placeholder"></div>').parent();
             this.computeWrapper();
+            this.element.css('margin', 0);
 
             if (boundary) {
 
-                if (boundary === true) {
+                if (boundary === true || boundary[0] === '!') {
 
-                    boundary      = this.wrapper.parent();
+                    boundary      = boundary === true ? this.wrapper.parent() : this.wrapper.closest(boundary.substr(1));
                     boundtoparent = true;
 
                 } else if (typeof boundary === "string") {
@@ -105,7 +106,7 @@
                 currentTop    : null,
                 wrapper       : this.wrapper,
                 init          : false,
-                getWidthFrom  : this.options.getWidthFrom || this.wrapper,
+                getWidthFrom  : UI.$(this.options.getWidthFrom || this.wrapper),
                 boundary      : boundary,
                 boundtoparent : boundtoparent,
                 top           : 0,
@@ -133,7 +134,8 @@
 
                     this.top = top;
                 },
-                reset         : function(force) {
+
+                reset: function(force) {
 
                     this.calcTop();
 
@@ -141,6 +143,7 @@
                         this.element.css({"position":"", "top":"", "width":"", "left":"", "margin":"0"});
                         this.element.removeClass([this.options.animation, 'uk-animation-reverse', this.options.clsactive].join(' '));
                         this.element.addClass(this.options.clsinactive);
+                        this.element.trigger('inactive.uk.sticky');
 
                         this.currentTop = null;
                         this.animate    = false;
@@ -234,6 +237,12 @@
                 'float'  : this.element.css('float') != 'none' ? this.element.css('float') : '',
                 'margin' : this.element.css('margin')
             });
+
+            if (this.element.css('position') == 'fixed') {
+                this.element.css({
+                    width: this.sticky.getWidthFrom.length ? this.sticky.getWidthFrom.width() : this.element.width()
+                });
+            }
         }
     });
 
@@ -281,7 +290,7 @@
                     if (sticky.boundtoparent) {
                         containerBottom = documentHeight - (bTop + sticky.boundary.outerHeight()) + parseInt(sticky.boundary.css('padding-bottom'));
                     } else {
-                        containerBottom = documentHeight - bTop - parseInt(sticky.boundary.css('margin-top'));
+                        containerBottom = documentHeight - bTop;
                     }
 
                     newTop = (scrollTop + stickyHeight) > (documentHeight - containerBottom - (sticky.top < 0 ? 0 : sticky.top)) ? (documentHeight - containerBottom) - (scrollTop + stickyHeight) : newTop;
@@ -291,10 +300,9 @@
                 if (sticky.currentTop != newTop) {
 
                     sticky.element.css({
-                        "position" : "fixed",
-                        "top"      : newTop,
-                        "width"    : (typeof sticky.getWidthFrom !== 'undefined') ? UI.$(sticky.getWidthFrom).width() : sticky.element.width(),
-                        "left"     : sticky.wrapper.offset().left
+                        position : "fixed",
+                        top      : newTop,
+                        width    : sticky.getWidthFrom.length ? sticky.getWidthFrom.width() : sticky.element.width()
                     });
 
                     if (!sticky.init) {
@@ -331,6 +339,7 @@
                     }
 
                     sticky.element.addClass(sticky.options.clsactive).removeClass(sticky.options.clsinactive);
+                    sticky.element.trigger('active.uk.sticky');
                     sticky.element.css('margin', '');
 
                     if (sticky.options.animation && sticky.init && !UI.Utils.isInView(sticky.wrapper)) {

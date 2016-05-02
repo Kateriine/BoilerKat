@@ -1520,7 +1520,7 @@
                                 "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
-                                    "width": 25,
+                                    "width": 20,
                                     "class": "",
                                     "id": ""
                                 },
@@ -1537,9 +1537,9 @@
                                     "purple": "Purple",
                                     "pink": "Pink"
                                 },
-                                "default_value": {
-                                    "default": "Default"
-                                },
+                                "default_value": [
+                                    "Default"
+                                ],
                                 "allow_null": 0,
                                 "multiple": 0,
                                 "ui": 0,
@@ -1557,14 +1557,15 @@
                                 "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
-                                    "width": 25,
+                                    "width": 20,
                                     "class": "",
                                     "id": ""
                                 },
                                 "choices": {
                                     "padding-verti-large": "Default",
                                     "padding-top-large": "Top only",
-                                    "padding-bottom-large": "Bottom only"
+                                    "padding-bottom-large": "Bottom only",
+                                    "no-padding": "none"
                                 },
                                 "other_choice": 0,
                                 "save_other_choice": 0,
@@ -1580,7 +1581,7 @@
                                 "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
-                                    "width": 25,
+                                    "width": 20,
                                     "class": "",
                                     "id": ""
                                 },
@@ -1598,6 +1599,22 @@
                                 "layout": "vertical"
                             },
                             {
+                                "key": "field_572320deda20c",
+                                "label": "Full width?",
+                                "name": "full_width",
+                                "type": "true_false",
+                                "instructions": "If you select one slide to show, you can have a full-width slider.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": 20,
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0
+                            },
+                            {
                                 "key": "field_56cc8b325ec9b",
                                 "label": "Animation",
                                 "name": "animation",
@@ -1606,7 +1623,7 @@
                                 "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
-                                    "width": 25,
+                                    "width": 20,
                                     "class": "",
                                     "id": ""
                                 },
@@ -1899,7 +1916,7 @@
                 {
                     "param": "page_template",
                     "operator": "==",
-                    "value": "tpl-full-width.php"
+                    "value": "tpl-page-rows.php"
                 }
             ]
         ],

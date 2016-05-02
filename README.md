@@ -1,6 +1,6 @@
-# Kat theme base V4.0
+# Kat Theme Base V5.0
 
-Naked WP theme with uikit and based on Starkers Masters
+Naked WP theme with uikit 2.26.2 and based on Starkers Masters
 
 Optional file to create widgets
 

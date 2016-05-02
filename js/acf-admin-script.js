@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-
+	$('.types-table-in-meta-box').css('display', 'none');
 	//number of columns for repeater field
 	var $blockCols = $('.acf-field-radio[data-name="number_of_columns"]'),
 		$imgposBlocks = $('.acf-field-radio[data-name="image_position"]'),

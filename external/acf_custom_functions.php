@@ -112,12 +112,13 @@ function get_text_block() {
 	
 		if($parallax) {
 			$bgpar = ' data-uk-parallax="{bg: \'-200\'}"';
+			$bgClass .= ' parallax-container';
 		}
 		if($cols==1) {
 			$contClass=" uk-container-small";
 		}
 		else {
-			$contInnerClass=" uk-column-1-2";			
+			$contInnerClass=" uk-column-medium-1-2";			
 		}
 
 		$html = '<section class="' . $bgClass . $spacingClass . $textClass . '"'.$bgImage.$bgpar.'>';
@@ -415,4 +416,75 @@ function get_related_posts() {
 
 }
 
+function get_slider() {
+	global $post;
+	if( get_row_layout() == 'slider_row' ):
 
+		$idSlider = uniqid();
+
+		$html = '';
+		$nbCols = get_sub_field('number_of_slides_to_show');
+		$spacingClass = ' ' . get_sub_field('spacing');
+		$bgClass = getBgClass(get_sub_field('background_color'));
+		$fullWidth = get_sub_field('full_width');
+		$slideAnim = get_sub_field('animation');
+
+		$contClass = "uk-container uk-container-center";
+		if($fullWidth ==1) {
+			$contClass='';
+		}
+		$html = '<div class="' . $bgClass . $spacingClass . '" data-uk-scrollspy="{cls:\'uk-animation-fade\'}">';
+		$html .= '<div class="' . $contClass .'">';
+
+		if( have_rows('slides') ): 
+
+			$html .= '<div class="slider-'.$idSlider.'">';
+
+			while( have_rows('slides') ): the_row(); 
+				$image = get_sub_field('image');
+				$full = kat_img_resize($image['url'], 1400, 580, 'true');
+				$small = kat_img_resize($image['url'], 601, 400, 'true');
+            		
+				if($nbCols > 1) {
+					$html .= '<div class="slider--similar__slide">';
+			   		$html .= '<div class="image">';
+			   		$html .= $small;
+				}
+				else {
+	   				$html .= '<div class="slider-ad slider-ad--img">';
+			   		$html .= '<div class="image">';		  			
+			   		$html .= $full;
+				}
+	  			$html .= '</div>';
+	   			$html .= '</div>';
+			endwhile;
+			$html .= '</div>';
+		endif;
+
+		$html .= '</div>';
+		$html .= '</div>';
+
+		$html .= '<script>';
+		$html .= 'jQuery(document).ready(function($) {';
+		$html .= "var slider = jQuery('.slider-".$idSlider."');
+				  slider.slick({";
+		if($nbCols > 1) {
+			$html .= "
+			slidesToShow: ".$nbCols.",
+		    centerMode: true,
+		    slidesToScroll: ".$nbCols.",";
+		}
+
+		$html .= "
+					infinite: true,
+				    speed: 500,";
+		
+		$html .= "
+				cssEase: 'linear'
+				  });});";
+		$html .= '</script>';
+
+		return $html;
+	endif;
+
+}

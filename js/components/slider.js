@@ -1,4 +1,4 @@
-/*! UIkit 2.21.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
+/*! UIkit 2.26.2 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
 (function(addon) {
 
     var component;
@@ -38,11 +38,11 @@
 
                 setTimeout(function(){
 
-                    UI.$("[data-uk-slider]", context).each(function(){
+                    UI.$('[data-uk-slider]', context).each(function(){
 
                         var ele = UI.$(this);
 
-                        if (!ele.data("slider")) {
+                        if (!ele.data('slider')) {
                             UI.slider(ele, UI.Utils.options(ele.attr('data-uk-slider')));
                         }
                     });
@@ -58,11 +58,11 @@
             this.container = this.element.find('.uk-slider');
             this.focus     = 0;
 
-            UI.$win.on("resize load", UI.Utils.debounce(function() {
+            UI.$win.on('resize load', UI.Utils.debounce(function() {
                 $this.resize(true);
             }, 100));
 
-            this.on("click.uikit.slider", '[data-uk-slider-item]', function(e) {
+            this.on('click.uk.slider', '[data-uk-slider-item]', function(e) {
 
                 e.preventDefault();
 
@@ -79,11 +79,12 @@
                         $this[item=='next' ? 'next':'previous']();
                         break;
                     default:
-                        $this.updateFocus(parseInt(slide, 10));
+                        $this.updateFocus(parseInt(item, 10));
                 }
             });
 
             this.container.on({
+
                 'touchstart mousedown': function(evt) {
 
                     if (evt.originalEvent && evt.originalEvent.touches) {
@@ -137,6 +138,7 @@
                     delayIdle.threshold = $this.options.threshold;
 
                 },
+
                 mouseenter: function() { if ($this.options.pauseOnHover) $this.hovering = true;  },
                 mouseleave: function() { $this.hovering = false; }
             });
@@ -183,7 +185,7 @@
 
             this.container.css({'min-width': pos, 'min-height': maxheight});
 
-            if (this.options.infinite && pos <= (2*this.vp) && !this.itemsResized) {
+            if (this.options.infinite && (pos <= (2*this.vp) || this.items.length < 5) && !this.itemsResized) {
 
                 // fill with cloned items
                 this.container.children().each(function(idx){
@@ -207,7 +209,7 @@
                 'transform': ''
             });
 
-            this.updateFocus(0);
+            if (focus) this.updateFocus(this.focus);
         },
 
         updatePos: function(pos) {
@@ -269,17 +271,35 @@
 
                                 area += this.items.eq(i).data('width');
 
-                                if (area >= this.vp) {
+                                if (area == this.vp) {
                                     idx = i;
+                                    break;
+                                }
+
+                                if (area > this.vp) {
+                                    idx = (i < this.items.length-1) ? i+1 : i;
                                     break;
                                 }
                             }
 
-                            this.updatePos(this.items.eq(idx).data('left')*-1);
+                            if (area > this.vp) {
+                                this.updatePos((this.container.width() - this.vp) * -1);
+                            } else {
+                                this.updatePos(this.items.eq(idx).data('left')*-1);
+                            }
                         }
                     }
                 }
             }
+
+            // mark elements
+            var left = this.items.eq(idx).data('left');
+
+            this.items.removeClass('uk-slide-before uk-slide-after').each(function(i){
+                if (i!==idx) {
+                    UI.$(this).addClass(UI.$(this).data('left') < left ? 'uk-slide-before':'uk-slide-after');
+                }
+            });
 
             this.focus = idx;
 
@@ -391,7 +411,7 @@
     });
 
     // handle dragging
-    UI.$doc.on('mousemove.uikit.slider touchmove.uikit.slider', function(e) {
+    UI.$doc.on('mousemove.uk.slider touchmove.uk.slider', function(e) {
 
         if (e.originalEvent && e.originalEvent.touches) {
             e = e.originalEvent.touches[0];
@@ -469,7 +489,7 @@
         store.diff    = diff;
     });
 
-    UI.$doc.on('mouseup.uikit.slider touchend.uikit.slider', function(e) {
+    UI.$doc.on('mouseup.uk.slider touchend.uk.slider', function(e) {
 
         if (dragging) {
 

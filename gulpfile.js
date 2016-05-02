@@ -25,6 +25,7 @@ var jsFiles = [
   'js/components/parallax.js', 
   'js/videojs/video.js', 
   'js/fancybox.js', 
+  'js/slick.js', 
   'js/site.js'
   ];
 

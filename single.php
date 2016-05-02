@@ -11,7 +11,7 @@
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
 <div class="uk-container uk-container-center margin-bottom-desktop">
-  <main role="main">
+  <main>
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
     <article class="uk-article uk-article-divider">

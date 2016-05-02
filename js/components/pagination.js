@@ -1,4 +1,4 @@
-/*! UIkit 2.21.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
+/*! UIkit 2.26.2 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
 /*
  * Based on simplePagination - Copyright (c) 2012 Flavius Matis - http://flaviusmatis.github.com/simplePagination.js/ (MIT)
  */
@@ -26,8 +26,8 @@
             items          : 1,
             itemsOnPage    : 1,
             pages          : 0,
-            displayedPages : 3,
-            edges          : 3,
+            displayedPages : 7,
+            edges          : 1,
             currentPage    : 0,
             lblPrev        : false,
             lblNext        : false,
@@ -93,7 +93,7 @@
             this.element.empty();
 
             // Generate Prev link
-            if (o.lblPrev) this._append(o.currentPage - 1, {text: o.lblPrev});
+            if (o.lblPrev) this._append(this.currentPage - 1, {text: o.lblPrev});
 
             // Generate start edges
             if (interval.start > 0 && o.edges > 0) {
@@ -127,7 +127,7 @@
             }
 
             // Generate Next link (unless option is set for at front)
-            if (o.lblNext) this._append(o.currentPage + 1, {text: o.lblNext});
+            if (o.lblNext) this._append(this.currentPage + 1, {text: o.lblNext});
         },
 
         _append: function(pageIndex, opts) {

@@ -3,13 +3,10 @@
     <div class="uk-navbar-brand"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></div>
     <?php bloginfo( 'description' ); ?>
     <div class="uk-float-right">
-       <button class="uk-button-offcanvas uk-visible-small" data-uk-offcanvas="{target:'#offcanvas-1'}">
-         <span class="sr-only">
-        Menu
+       <button class="hamburger hamburger--elastic" type="button" aria-label="Menu" aria-controls="navigation" data-uk-offcanvas="{target:'#offcanvas-1'}">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
         </span>
-        <span class="line first"></span>
-        <span class="line second"></span>
-        <span class="line third"></span>
       </button>
       <div id="offcanvas-1" class="uk-offcanvas">
         <nav class="uk-offcanvas-bar">

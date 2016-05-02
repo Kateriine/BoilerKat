@@ -66,8 +66,10 @@ $grid-divider-border-width:                      1px !default;
 
 .uk-grid {
     display: -ms-flexbox;
+    display: -webkit-box; //Safari Fix
     display: -webkit-flex;
     display: flex;
+
     -ms-flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;

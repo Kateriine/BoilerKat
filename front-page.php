@@ -18,7 +18,7 @@
 <div class="uk-container uk-container-center">
   <div class="uk-grid">
     <div class="uk-width-medium-2-3">
-      <main role="main">
+      <main>
         <?php if ( have_posts() ): ?>
           <?php while ( have_posts() ) : the_post(); ?>
 

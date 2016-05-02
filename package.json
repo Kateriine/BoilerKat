@@ -23,7 +23,10 @@
     "gulp-cache": "^0.2.9",
     "gulp-cheerio": "^0.6.2",
     "gulp-concat": "^2.5.2",
+    "gulp-filter": "^4.0.0",
+    "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.2.1",
+    "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.1",
     "gulp-svgmin": "^1.1.2",
@@ -33,6 +36,7 @@
     "gulp-watch": "^4.2.4",
     "imagemin-pngquant": "^4.1.0",
     "node-notifier": "^4.2.1",
-    "spawn-sync": "^1.0.11"
+    "spawn-sync": "^1.0.11",
+    "video.js": "^5.9.2"
   }
 }

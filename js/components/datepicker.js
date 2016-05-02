@@ -1,4 +1,4 @@
-/*! UIkit 2.21.0 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
+/*! UIkit 2.26.2 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
 (function(addon) {
 
     var component;
@@ -30,7 +30,7 @@
                 months        : ['January','February','March','April','May','June','July','August','September','October','November','December'],
                 weekdays      : ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
             },
-            format: "DD.MM.YYYY",
+            format: "YYYY-MM-DD",
             offsettop: 5,
             maxDate: false,
             minDate: false,
@@ -185,7 +185,7 @@
 
                     if (ele.is('[data-date]')) {
                         active.current = moment(ele.data("date"));
-                        active.element.val(active.current.format(active.options.format)).trigger("change");
+                        active.element.val(active.current.isValid() ? active.current.format(active.options.format) : null).trigger("change");
                         active.hide();
                     } else {
                        active.add((ele.hasClass("uk-datepicker-next") ? 1:-1), "months");
@@ -207,7 +207,7 @@
             var offset = this.element.offset(),
                 css    = {"left": offset.left, "right":""};
 
-            this.current  = initdate ? moment(initdate, this.options.format):moment();
+            this.current  = isNaN(initdate) ? moment(initdate, this.options.format):moment();
             this.initdate = this.current.format("YYYY-MM-DD");
 
             this.update();
