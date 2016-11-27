@@ -2,14 +2,11 @@
 /**
  * Search results page
  *
- * Please see /external/starkers-utilities.php for info on Starkers_Utilities::get_template_parts()
- *
  * @package   WordPress
- * @subpackage  Starkers
- * @since     Starkers 4.0
+ * @subpackage  Adam
  */
 ?>
-<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
+<?php Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
 <div class="uk-container uk-container-center">
   <main>
     <?php if ( have_posts() ): ?>
@@ -35,4 +32,4 @@
     <?php endif; ?>
   </main>
 </div>
-<?php Starkers_Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer' ) ); ?>
+<?php Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer' ) ); ?>

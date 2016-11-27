@@ -1,9 +1,11 @@
 <header class="header">
   <div class="uk-container uk-container-center centered cont-nav">
-    <div class="uk-navbar-brand"><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></div>
+
+    <div class="uk-navbar-brand"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri();?>/images/logo.svg" width="200" height="121" alt="<?php_e('Back to homepage', 'site');?>"></a></div>
+
     <?php bloginfo( 'description' ); ?>
     <div class="uk-float-right">
-       <button class="hamburger hamburger--elastic" type="button" aria-label="Menu" aria-controls="navigation" data-uk-offcanvas="{target:'#offcanvas-1'}">
+       <button class="hamburger hamburger--elastic" type="button" aria-label="Menu" aria-controls="offcanvas-1" data-uk-offcanvas="{target:'#offcanvas-1'}">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>

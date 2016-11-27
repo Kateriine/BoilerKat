@@ -2,7 +2,7 @@
   padding:8px;
   line-height: 28px;
   text-transform: uppercase;
-  @include font-size(36);
+  font-size: 3.6rem;
   ul{
     list-style: none;
     margin:0;
@@ -16,7 +16,7 @@
   }
   a{
     display: inline-block;
-    color: #65666a;
+    color: $gray;
     .uk-icon{
       transition: all .2s ease;
     }
@@ -57,7 +57,7 @@
   }
 
   .like-count .icon{
-    @include font-size(14);
+    font-size: 1.4rem;
   }
   svg{max-width: 100%; max-height: 100%; margin-top:-3px;}
   .fb{
@@ -91,8 +91,8 @@
   padding:0;
   line-height: 28px;
   margin:5px;
-  color:#616161;
-  @include font-size(20);
+  color: $gray;
+  font-size: 2rem;
   text-transform: uppercase;
   @media(min-width:$breakpoint-medium){
     position: absolute;
@@ -179,14 +179,14 @@
   .count{
     text-align: center;
     display: block;
-    color: #616161;
+    color: $gray;
     @include font-size(18);
     font-weight: bold;
     margin-top:10px;
     padding:12px;
     background: $white;
     border-radius:4px;
-    border:1px solid #ccc;
+    border:1px solid $border-color;
     position: relative;
     line-height: 1;
     &:after{
@@ -208,7 +208,7 @@
       display: block;
       width:0;
       height:0;
-      border-top:6px solid #ccc;
+      border-top:6px solid $border-color;
       border-left:6px solid transparent;
       border-right:6px solid transparent;
       border-bottom:6px solid transparent;

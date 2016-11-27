@@ -1,8 +1,8 @@
 // Text, icons, hover states
-$primary-foreground-color: #fff !default;
+$primary-foreground-color: $white !default;
 
 // Control backgrounds (control bar, big play, menus)
-$primary-background-color: #2B333F !default;
+$primary-background-color: $grayDark !default;
 $primary-background-transparency: 0.7 !default;
 
 // Hover states, slider backgrounds

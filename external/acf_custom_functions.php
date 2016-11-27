@@ -307,7 +307,7 @@ function get_gallery_block() {
 			foreach( $images as $image ):
 	 			$html .= '<div class="uk-width-small-1-'.$nbColsSmall.' uk-width-medium-1-'.$nbColsMed.' uk-width-large-1-'.$nbCols.$startAnimClass.'">';
 				$html .= '<a href="' .$image['url'] .'" class="fancybox"  data-fancybox-group="gallery" data-fancybox-title="<h3>'.$image['title'].'</h3>'.$image['caption'].'">';
-				$html .= kat_img_resize($image['url'], 600, 600, true);
+	 				$html .= '<img src="'. resize_crop_img($image['url'], 600, 600). '" width="600" height="600" alt="'.$image['alt'].'">';
 				$html .= '</a>';
 	 			$html .= '</div>';
 			endforeach;
@@ -350,7 +350,7 @@ function get_multiple_text_blocks() {
 				$btnLink = get_sub_field('button_text');
 	 			$html .= '<div class="uk-width-medium-1-'.$nbColsMed.' uk-width-large-1-'.$nbCols.$startAnimClass.'">';
 	 			if($image)
-	 				$html .= '<div class="uk-margin-bottom">'. kat_img_resize($image['url'], 600, 600, true). '</div>';
+	 				$html .= '<div class="uk-margin-bottom"><img src="'. resize_crop_img($image['url'], 600, 600). '" width="600" height="600" alt="'.$image['alt'].'"></div>';
 				$html .= '<div class="">'. $t . '</div>';
 				if($btnText != '' && $btnLink != '') {
 					$html .= '<div class="button-place uk-text-center">';
@@ -399,7 +399,7 @@ function get_related_posts() {
 				setup_postdata( $post ); 
 				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 				if($thumb) {
-					$html .= '<div class="uk-margin-bottom">'. kat_img_resize($thumb[0], 600, 600, true). '</div>';
+	 				$html .= '<div class="uk-margin-bottom"><img src="'. resize_crop_img($thumb['url'], 600, 600). '" width="600" height="600" alt="'.$thumb['alt'].'"></div>';
 				}
 				$t = get_the_excerpt();
 				$html .=  '<h3><a href="' . get_permalink() . '">'.get_the_title().'</a></h3>';
@@ -438,12 +438,12 @@ function get_slider() {
 
 		if( have_rows('slides') ): 
 
-			$html .= '<div class="slider-'.$idSlider.'">';
+			$html .= '<div class="acf-slider" id="slider-'.$idSlider.'" data-slides-to-show="'.$nbCols.'">';
 
 			while( have_rows('slides') ): the_row(); 
 				$image = get_sub_field('image');
-				$full = kat_img_resize($image['url'], 1400, 580, 'true');
-				$small = kat_img_resize($image['url'], 601, 400, 'true');
+				$full = resize_crop_img($image['url'], 1400, 580);
+				$small = resize_crop_img($image['url'], 600, 400);
             		
 				if($nbCols > 1) {
 					$html .= '<div class="slider--similar__slide">';
@@ -464,25 +464,25 @@ function get_slider() {
 		$html .= '</div>';
 		$html .= '</div>';
 
-		$html .= '<script>';
-		$html .= 'jQuery(document).ready(function($) {';
-		$html .= "var slider = jQuery('.slider-".$idSlider."');
-				  slider.slick({";
-		if($nbCols > 1) {
-			$html .= "
-			slidesToShow: ".$nbCols.",
-		    centerMode: true,
-		    slidesToScroll: ".$nbCols.",";
-		}
+		// $html .= '<script>';
+		// $html .= 'jQuery(document).ready(function($) {';
+		// $html .= "var slider = jQuery('.slider-".$idSlider."');
+		// 		  slider.slick({";
+		// if($nbCols > 1) {
+		// 	$html .= "
+		// 	slidesToShow: ".$nbCols.",
+		//     centerMode: true,
+		//     slidesToScroll: ".$nbCols.",";
+		// }
 
-		$html .= "
-					infinite: true,
-				    speed: 500,";
+		// $html .= "
+		// 			infinite: true,
+		// 		    speed: 500,";
 		
-		$html .= "
-				cssEase: 'linear'
-				  });});";
-		$html .= '</script>';
+		// $html .= "
+		// 		cssEase: 'linear'
+		// 		  });});";
+		// $html .= '</script>';
 
 		return $html;
 	endif;

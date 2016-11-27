@@ -1,0 +1,26 @@
+.uk-sticky-placeholder {height: 70px}
+.cont-nav {
+  transition: top .2s ease-in;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 3;
+  width:100%;
+
+  .admin-bar & {
+    @media(min-width:601px) {
+      top: 46px !important;
+    }
+    @media(min-width:783px) {
+      top: 32px !important;
+    }
+  }
+  &.uk-active {
+    z-index: 3;
+    .uk-offcanvas-page & {
+      margin-left: 270px;
+      transition: top .2s ease-in, margin .3s ease-in-out;
+    }
+  }
+
+}

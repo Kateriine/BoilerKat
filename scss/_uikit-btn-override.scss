@@ -1,102 +1,3 @@
-// Name:            Button
-// Description:     Defines styles for buttons
-//
-// Component:       `uk-button`
-//
-// Sub-objects:     `uk-button-group`
-//                  `uk-button-dropdown`
-//
-// Modifiers:       `uk-button-primary`
-//                  `uk-button-success`
-//                  `uk-button-danger`
-//                  `uk-button-link`
-//                  `uk-button-mini`
-//                  `uk-button-small`
-//                  `uk-button-large`
-//
-// States:          `uk-active`
-//
-// Markup:
-//
-// <!-- uk-button-group -->
-// <div class="uk-button-group">
-//     <button class="uk-button"></button>
-//     <button class="uk-button"></button>
-// </div>
-//
-// <!-- uk-button-dropdown -->
-// <div class="uk-button-dropdown" data-uk-dropdown>
-//     <button class="uk-button"></button>
-//     <div class="uk-dropdown uk-dropdown-small">
-//         <ul class="uk-nav uk-nav-dropdown">
-//             <li><a href=""></a></li>
-//         </ul>
-//     </div>
-// </div>
-//
-// ========================================================================
-
-
-// Variables
-// ========================================================================
-
-$button-height:                                  30px !default;
-$button-mini-height:                             20px !default;
-$button-small-height:                            25px !default;
-$button-large-height:                            40px !default;
-
-$button-line-height:                             30px !default;
-$button-mini-line-height:                        20px !default;
-$button-small-line-height:                       25px !default;
-$button-large-line-height:                       40px !default;
-
-$button-mini-font-size:                          11 !default;
-$button-small-font-size:                         12 !default;
-$button-large-font-size:                         16 !default;
-
-$button-padding-horizontal:                      12px !default;
-$button-mini-padding-horizontal:                 6px !default;
-$button-small-padding-horizontal:                10px !default;
-$button-large-padding-horizontal:                15px !default;
-
-$button-font-size:                               14 !default;
-$button-background:                              #eee !default;
-$button-color:                                   #444 !default;
-$button-hover-background:                        #f5f5f5 !default;
-$button-hover-color:                             #444 !default;
-$button-active-background:                       #ddd !default;
-$button-active-color:                            #444 !default;
-
-$button-primary-background:                      #00a8e6 !default;
-$button-primary-color:                           #fff !default;
-$button-primary-hover-background:                #35b3ee !default;
-$button-primary-hover-color:                     #fff !default;
-$button-primary-active-background:               #0091ca !default;
-$button-primary-active-color:                    #fff !default;
-
-$button-success-background:                      #8cc14c !default;
-$button-success-color:                           #fff !default;
-$button-success-hover-background:                #8ec73b !default;
-$button-success-hover-color:                     #fff !default;
-$button-success-active-background:               #72ae41 !default;
-$button-success-active-color:                    #fff !default;
-
-$button-danger-background:                       #da314b !default;
-$button-danger-color:                            #fff !default;
-$button-danger-hover-background:                 #e4354f !default;
-$button-danger-hover-color:                      #fff !default;
-$button-danger-active-background:                #c91032 !default;
-$button-danger-active-color:                     #fff !default;
-
-$button-disabled-background:                     #f5f5f5 !default;
-$button-disabled-color:                          #999 !default;
-
-$button-link-color:                              #07D !default;
-$button-link-hover-color:                        #059 !default;
-$button-link-hover-text-decoration:              underline !default;
-$button-link-disabled-color:                     #999 !default;
-
-
 /* ========================================================================
    Component: Button
  ========================================================================== */
@@ -142,21 +43,28 @@ $button-link-disabled-color:                     #999 !default;
     display: inline-block;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 0 $button-padding-horizontal;
+    padding: $button-padding-horizontal;
     background: $button-background;
     vertical-align: middle;
     /* 8 */
-    line-height: $button-line-height;
-    /* 9 */
-    min-height: $button-height;
-    /* 10 */
-    @include font-size($button-font-size);
+    font-size: $button-font-size;
     /* 11 */
     text-decoration: none;
     text-align: center;
     @include btn($button-color, $button-background);
     &.uk-button-round{
         border-radius: $button-height;
+    }
+
+    select {
+        background: transparent;
+        border: none;
+        color: $button-color;
+        line-height: 1;
+        &:hover, &:focus {
+            background: transparent;
+            color: $button-color;
+        }
     }
 }
 
@@ -187,6 +95,7 @@ $button-link-disabled-color:                     #999 !default;
 
 .uk-button-primary {
     @include btn($button-primary-color, $button-primary-background);
+
 }
 
 /*
@@ -253,30 +162,24 @@ $button-link-disabled-color:                     #999 !default;
  ========================================================================== */
 
 .uk-button-mini {
-    min-height: $button-mini-height;
-    padding: 0 $button-mini-padding-horizontal;
-    line-height: $button-mini-line-height;
-    @include font-size($button-mini-font-size);
+    padding: $button-mini-padding-horizontal;
+    font-size: $button-mini-font-size;
     &.btn-round{
         border-radius: $button-mini-height;
     }
 }
 
 .uk-button-small {
-    min-height: $button-small-height;
-    padding: 0 $button-small-padding-horizontal;
-    line-height: $button-small-line-height;
-    @include font-size($button-small-font-size);
+    padding: $button-small-padding-horizontal;
+    font-size: $button-small-font-size;
     &.btn-round{
         border-radius: $button-small-height;
     }
 }
 
 .uk-button-large {
-    min-height: $button-large-height;
-    padding: 0 $button-large-padding-horizontal;
-    line-height: $button-large-line-height;
-    @include font-size($button-large-font-size);
+    padding: $button-large-padding-horizontal;
+    font-size: $button-large-font-size;
     &.btn-round{
         border-radius: $button-large-height;
     }
@@ -305,12 +208,20 @@ $button-link-disabled-color:                     #999 !default;
     font-size: 0.001px;
     /* 4 */
     white-space: nowrap;
+    &.uk-button-round {
+        > :first-child {
+            border-radius: 30px 0 0 30px;
+        }
+        > :last-child, >div:last-child .uk-button {
+            border-radius: 0 30px 30px 0;
+        }
+    }
 }
 
 .uk-button-group > * { display: inline-block; }
 
 /* 5 */
-.uk-button-group .uk-button { vertical-align: top; }
+.uk-button-group .uk-button { vertical-align: top; font-size:1.6rem;}
 
 
 /* Sub-object: `uk-button-dropdown`

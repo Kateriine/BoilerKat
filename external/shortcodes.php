@@ -13,13 +13,14 @@ function register_shortcodes(){
   // add_shortcode('url-pic-square', 'url_pic_square');
   // add_shortcode('gallery-video', 'gallery_video');
 
-  add_shortcode('incrementor', 'incrementor');
   add_shortcode('site-url', 'site_url');
   add_shortcode('img-alt', 'featImg_alt');
   add_shortcode('gallery', 'gallery_img');
   add_shortcode('hide-email', 'hide_email_shortcode');
   add_shortcode('theme-url', 'get_template_directory_uri');
-  add_shortcode('pic', 'pic' );
+  add_shortcode('crop', 'crop' );
+  add_shortcode('resize', 'resize' );
+  add_shortcode('resize-crop', 'resize_crop' );
   //add_shortcode('icon', 'chicon');
   //add_shortcode('wpv-pagination', 'wpv_pagenavi');
 }
@@ -39,18 +40,38 @@ function register_shortcodes(){
 * Enables the [pic] shortcode, pseudo-TimThumb but creates resized and cropped image files safely from existing media library entries. Usage:
 * [pic src="http://example.org/wp-content/uploads/2012/03/image.png" width="100" height="100"]
 */
-function pic($atts){
+function crop($atts){
   global $wpdb;
   extract( shortcode_atts( array(
    'src' => '',
    'width' => '',
-   'height' => '',
-   'crop' => ''
+   'height' => ''
   ), $atts ) );
 
-  return kat_img_resize( $src, $width, $height, $crop );
+  return crop_img( $src, $width, $height );
 }
 
+function resize($atts){
+  global $wpdb;
+  extract( shortcode_atts( array(
+   'src' => '',
+   'width' => '',
+   'height' => ''
+  ), $atts ) );
+
+  return resize_img( $src, $width, $height );
+}
+
+function resize_crop($atts){
+  global $wpdb;
+  extract( shortcode_atts( array(
+   'src' => '',
+   'width' => '',
+   'height' => ''
+  ), $atts ) );
+
+  return resize_crop_img( $src, $width, $height );
+}
 
 /* Resized images shortcodes example: */
 // function url_pic_square($id) {
@@ -78,12 +99,6 @@ function hide_email_shortcode($atts){
     shortcode_atts( array('email' => ''), $atts )
   );
   return hide_email($email);
-}
-
-/* To count posts in wp-views */
-function incrementor() {
-  static $i = 1;
-  return $i ++;
 }
 
 // Gallery shortcode
@@ -188,42 +203,6 @@ function gallery_img($attr) {
 
 //   return $output;
 // }
-
-/* Add custom filters to wp-views */
-function filter_shortcode($evaluate)
-{
-  global $post;
-  global $WP_Views;
-
-  $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumb');
-  //examples:
-  // $pageBtn = types_render_field("solution-button-text");
-  // $startShow = types_render_field("show-start-date");
-  // $endShow = types_render_field("show-end-date");
-
-  switch ($evaluate){
-    case 'featImg':
-    if($img != '') return '0<1';
-    else return '0>1';
-    break;
-
-    //case 'pageBtn':
-    //if($pageBtn != '') return '0<1';
-    //else return '0>1';
-    //break;
-//
-    //case 'same-date':
-    //if($startShow == $endShow || $endShow==''){
-    //  return '0<1';
-    //}
-    //else return '0>1';
-     // break;
-
-    default:
-    return '0>1';
-    break;
-  }
-}
 
 
 // // Add a custom wp_pagenavi shortcode

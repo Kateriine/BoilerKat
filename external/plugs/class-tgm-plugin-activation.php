@@ -1,4 +1,233 @@
 <?php
+
+/**
+ * Include the TGM_Plugin_Activation class.
+ */
+
+add_action( 'tgmpa_register', 'adam_register_required_plugins' );
+/**
+ * Register the required plugins for this theme.
+ *
+ * In this example, we register two plugins - one included with the TGMPA library
+ * and one from the .org repo.
+ *
+ * The variable passed to tgmpa_register_plugins() should be an array of plugin
+ * arrays.
+ *
+ * This function is hooked into tgmpa_init, which is fired within the
+ * TGM_Plugin_Activation class constructor.
+ */
+function adam_register_required_plugins() {
+
+  /**
+   * Array of plugin arrays. Required keys are name and slug.
+   * If the source is NOT from the .org repo, then source is also required.
+   */
+  $plugins = array(
+
+      array(
+      'name'     => 'Ductile Responsive Video', // The plugin name
+      'slug'     => 'ductile-responsive-video', // The plugin slug (typically the folder name)
+      'required' => true,
+    ),
+    array(
+      'name'     => 'Advanced Custom Fields Pro', // The plugin name
+      'slug'     => 'advanced-custom-fields-pro', // The plugin slug (typically the folder name)
+      'source'   => 'http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9NjkxNjd8dHlwZT1wZXJzb25hbHxkYXRlPTIwMTUtMTEtMTggMTc6MjY6Mzk=', // The plugin source
+      'required' => true,
+    ),
+    array(
+      'name'     => 'Advanced Custom Fields Repeater Collapser', // The plugin name
+      'slug'     => 'ACF-Repeater-Collapser-master', // The plugin slug (typically the folder name)
+      'source'   => 'https://github.com/mrwweb/ACF-Repeater-Collapser/archive/master.zip', // The plugin source
+      'external_url' => 'https://github.com/mrwweb/ACF-Repeater-Collapser/archive/master.zip',
+      'required' => false,
+    ),
+    array(
+      'name'     => 'Advanced Custom Fields: Widget Area', // The plugin name
+      'slug'     => 'acf-field-widget-area-master', // The plugin slug (typically the folder name)
+      'source'   => 'https://github.com/lucasstark/acf-field-widget-area/archive/master.zip', // The plugin source
+      'external_url' => 'https://github.com/lucasstark/acf-field-widget-area/',
+      'required' => true,
+    ),
+    array(
+      'name'     => 'Advanced Custom Fields: A Widget', // The plugin name
+      'slug'     => 'acf-field-a-widget-master', // The plugin slug (typically the folder name)
+      'source'   => 'https://github.com/lucasstark/acf-field-a-widget/archive/master.zip', // The plugin source
+      'external_url' => 'https://github.com/lucasstark/acf-field-a-widget/',
+      'required' => true,
+    ),
+    array(
+      'name'     => 'WP Smush - Image Optimization', // The plugin name
+      'slug'     => 'wp-smushit', // The plugin slug (typically the folder name)
+      'required' => true,
+    ),
+
+    
+    array(
+      'name'     => 'Gravity Forms', // The plugin name
+      'slug'     => 'gravityforms', // The plugin slug (typically the folder name)
+      'source'   => 'http://s3.amazonaws.com/gravityforms/releases/gravityforms_1.9.9.13.zip?AWSAccessKeyId=1603BBK66770VCSCJSG2&Expires=1433494222&Signature=3PEVaC7m5Mxgd7is7Vp3ChX8Wtc%3D', // The plugin source
+      'external_url' => 'http://s3.amazonaws.com/gravityforms/releases/gravityforms_1.9.16.7.zip?AWSAccessKeyId=1603BBK66770VCSCJSG2&Expires=1456397264&Signature=QFZpnnpgusm3zYbMxUxBeb09P9Y%3D',
+      'required' => false,
+    ),
+    array(
+      'name'     => 'Types', // The plugin name
+      'slug'     => 'types', // The plugin slug (typically the folder name)
+      'required' => false,
+    ),
+    array(
+      'name'     => 'WP-Views', // The plugin name
+      'slug'     => 'wp-views', // The plugin slug (typically the folder name)
+      'source'   => 'https://wp-types.com/?download=308&user_id=1709&subscription_key=GkRutbktJy', // The plugin source
+      'required' => false,
+    ),
+     array(
+      'name'     => 'Coming Soon Page & Maintenance Mode by SeedProd', // The plugin name
+      'slug'     => 'coming-soon', // The plugin slug (typically the folder name)
+      'required' => false,
+    ),
+     array(
+      'name'     => 'InfiniteWP Client', // The plugin name
+      'slug'     => 'iwp-client', // The plugin slug (typically the folder name)
+      'required' => false,
+    ),
+     array(
+      'name'     => 'W3 Total Cache', // The plugin name
+      'slug'     => 'w3-total-cache', // The plugin slug (typically the folder name)
+      'required' => false,
+    ),
+    array(
+      'name'     => 'WPML Multilingual CMS', // The plugin name
+      'slug'     => 'sitepress-multilingual-cms', // The plugin slug (typically the folder name)
+      'source'   => 'https://wpml.org/fr/?download=6088&user_id=22940&subscription_key=$P$BQlyEef.gRIGD2TrWo18AswYdeeUt', // The plugin source
+      'external_url' => 'https://wpml.org/fr/?download=6088&user_id=22940&subscription_key=$P$BQlyEef.gRIGD2TrWo18AswYdeeUt',
+      'required' => false,
+    ),
+    array(
+      'name'     => 'WPML String Translation', // The plugin name
+      'slug'     => 'wpml-string-translation', // The plugin slug (typically the folder name)
+      'source'   => 'https://wpml.org/fr/?download=6092&user_id=22940&subscription_key=$P$BQlyEef.gRIGD2TrWo18AswYdeeUt', // The plugin source
+      'external_url' => 'https://wpml.org/fr/?download=6092&user_id=22940&subscription_key=$P$BQlyEef.gRIGD2TrWo18AswYdeeUt',
+      'required' => false,
+    ),
+    array(
+      'name'     => 'WPML Translation Management', // The plugin name
+      'slug'     => 'wpml-translation-management', // The plugin slug (typically the folder name)
+      'source'   => 'https://wpml.org/fr/?download=6094&user_id=22940&subscription_key=$P$BQlyEef.gRIGD2TrWo18AswYdeeUt', // The plugin source
+      'external_url' => 'https://wpml.org/fr/?download=6094&user_id=22940&subscription_key=$P$BQlyEef.gRIGD2TrWo18AswYdeeUt',
+      'required' => false,
+    ),
+    array(
+      'name'     => 'Gravity Forms Multilingual', // The plugin name
+      'slug'     => 'gravityforms-multilingual', // The plugin slug (typically the folder name)
+      'source'   => 'https://wpml.org/fr/?download=8882&user_id=22940&subscription_key=$P$BQlyEef.gRIGD2TrWo18AswYdeeUt', // The plugin source
+      'external_url' => 'https://wpml.org/fr/?download=8882&user_id=22940&subscription_key=$P$BQlyEef.gRIGD2TrWo18AswYdeeUt',
+      'required' => false,
+    ),
+    array(
+      'name'     => 'Yoast SEO', // The plugin name
+      'slug'     => 'wordpress-seo', // The plugin slug (typically the folder name)
+      'required' => false,
+    ),
+    array(
+      'name'     => 'WP Rocket', // The plugin name
+      'slug'     => 'wp-rocket', // The plugin slug (typically the folder name)
+      'source'   => 'http://support.wp-rocket.me/invoicingspadebe/invoicing_at_spade_dot_be/wp-rocket_2.6.1.zip', // The plugin source
+      'external_url' => 'http://support.wp-rocket.me/invoicingspadebe/invoicing_at_spade_dot_be/wp-rocket_2.6.1.zip',
+      'required' => false,
+    ),
+    array(
+      'name'     => 'Posts 2 Posts', // The plugin name
+      'slug'     => 'posts-to-posts', // The plugin slug (typically the folder name)
+      'required' => false,
+    ),
+    array(
+      'name'     => 'Google Analyticator', // The plugin name
+      'slug'     => 'google-analyticator', // The plugin slug (typically the folder name)
+      'required' => false,
+    ),
+    array(
+      'name'     => 'Admin Menu Editor', // The plugin name
+      'slug'     => 'admin-menu-editor', // The plugin slug (typically the folder name)
+      'required' => false,
+    ),
+    array(
+      'name'     => 'WP-PageNavi', // The plugin name
+      'slug'     => 'wp-pageNavi', // The plugin slug (typically the folder name)
+      'required' => false,
+    ),
+    array(
+      'name'     => 'GitHub Updater', // The plugin name
+      'slug'     => 'github-updater', // The plugin slug (typically the folder name)
+      'source'   => 'https://github.com/afragen/github-updater/archive/develop.zip', // The plugin source
+      'external_url' => 'https://github.com/afragen/github-updater',
+      'required' => false,
+    ),
+    array(
+      'name'     => 'WP Sync DB', // The plugin name
+      'slug'     => 'wp-sync-db', // The plugin slug (typically the folder name)
+      'source'   => 'https://github.com/wp-sync-db/wp-sync-db/archive/master.zip', // The plugin source
+      'external_url' => 'https://github.com/wp-sync-db/wp-sync-db',
+      'required' => false,
+    ),
+    array(
+      'name'     => 'MCE Table Buttons', // The plugin name
+      'slug'     => 'mce-table-buttons', // The plugin slug (typically the folder name)
+      'required' => false,
+    ),
+    array(
+      'name'     => 'Gravity Forms: Multiple Form Instances', // The plugin name
+      'slug'     => 'gravity-forms-multiple-form-instances', // The plugin slug (typically the folder name)
+      'required' => false,
+    ),
+    array(
+      'name'     => 'Black Studio TinyMCE Widget', // The plugin name
+      'slug'     => 'black-studio-tinymce-widget', // The plugin slug (typically the folder name)
+      'required' => false,
+    ),
+    array(
+      'name'     => 'Identity Data management from Kat', // The plugin name
+      'slug'     => 'katContact-master', // The plugin slug (typically the folder name)
+      'source'   => 'https://github.com/Kateriine/katContact/archive/master.zip', // The plugin source
+      'external_url' => 'https://github.com/Kateriine/katContact/',
+      'required' => false,
+    ),
+  );
+
+  /** Change this to your theme text domain, used for internationalising strings */
+  $theme_text_domain = 'site';
+
+  /**
+   * Array of configuration settings. Uncomment and amend each line as needed.
+   * If you want the default strings to be available under your own theme domain,
+   * uncomment the strings and domain.
+   * Some of the strings are added into a sprintf, so see the comments at the
+   * end of each line for what each argument will be.
+   */
+  $config = array(
+    /*'domain'       => $theme_text_domain,         // Text domain - likely want to be the same as your theme. */
+    /*'default_path' => '',                         // Default absolute path to pre-packaged plugins */
+    /*'menu'         => 'install-my-theme-plugins', // Menu slug */
+    'strings'        => array(
+      /*'page_title'             => __( 'Install Required Plugins', $theme_text_domain ), // */
+      /*'menu_title'             => __( 'Install Plugins', $theme_text_domain ), // */
+      /*'instructions_install'   => __( 'The %1$s plugin is required for this theme. Click on the big blue button below to install and activate %1$s.', $theme_text_domain ), // %1$s = plugin name */
+      /*'instructions_activate'  => __( 'The %1$s is installed but currently inactive. Please go to the <a href="%2$s">plugin administration page</a> page to activate it.', $theme_text_domain ), // %1$s = plugin name, %2$s = plugins page URL */
+      /*'button'                 => __( 'Install %s Now', $theme_text_domain ), // %1$s = plugin name */
+      /*'installing'             => __( 'Installing Plugin: %s', $theme_text_domain ), // %1$s = plugin name */
+      /*'oops'                   => __( 'Something went wrong with the plugin API.', $theme_text_domain ), // */
+      /*'notice_can_install'     => __( 'This theme requires the %1$s plugin. <a href="%2$s"><strong>Click here to begin the installation process</strong></a>. You may be asked for FTP credentials based on your server setup.', $theme_text_domain ), // %1$s = plugin name, %2$s = TGMPA page URL */
+      /*'notice_cannot_install'  => __( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', $theme_text_domain ), // %1$s = plugin name */
+      /*'notice_can_activate'    => __( 'This theme requires the %1$s plugin. That plugin is currently inactive, so please go to the <a href="%2$s">plugin administration page</a> to activate it.', $theme_text_domain ), // %1$s = plugin name, %2$s = plugins page URL */
+      /*'notice_cannot_activate' => __( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', $theme_text_domain ), // %1$s = plugin name */
+      /*'return'                 => __( 'Return to Required Plugins Installer', $theme_text_domain ), // */
+    ),
+  );
+
+  tgmpa( $plugins, $config );
+
+}
 /**
  * Plugin installation and activation for WordPress themes.
  *

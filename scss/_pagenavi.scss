@@ -10,13 +10,13 @@
     text-align:center;
     margin:2px;
   }
-  .current{background: $brandColor; color:#fff;}
+  .current{background: $primary-color; color:#fff;}
   .page, .nextpostslink, .previouspostslink{
-    border: 1px solid $brandColor;
-    color:$brandColor;
+    border: 1px solid $primary-color;
+    color:$primary-color;
     transition: all, .3s,ease-out;
     &:hover {
-      background: $brandColor;
+      background: $primary-color;
       color:#fff;
       text-decoration: none;
     }
@@ -26,7 +26,7 @@
 
     &:active,
     &.active {
-      background: $brandColor;
+      background: $primary-color;
     }
 
     // Focus state

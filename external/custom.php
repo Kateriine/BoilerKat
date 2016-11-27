@@ -17,13 +17,88 @@ function theme_setup() {
 add_action( 'after_setup_theme', 'theme_setup' );
 //add_action( 'after_setup_theme', 'custom_image_setup' );
 add_action('admin_init', 'add_svg_upload');
+add_action( 'init', 'disable_emojis' );
+add_filter( 'script_loader_src', '_remove_script_version', 15, 1 );
+add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
+
+/**
+ * Disable the emoji's
+ */
+function disable_emojis() {
+  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+  remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+  remove_action( 'wp_print_styles', 'print_emoji_styles' );
+  remove_action( 'admin_print_styles', 'print_emoji_styles' );  
+  remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+  remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );  
+  remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+  add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
+}
+
+function _remove_script_version( $src ){
+$parts = explode( '?ver', $src );
+return $parts[0];
+}
+
+/**
+ * Filter function used to remove the tinymce emoji plugin.
+ * 
+ * @param    array  $plugins  
+ * @return   array             Difference betwen the two arrays
+ */
+function disable_emojis_tinymce( $plugins ) {
+  if ( is_array( $plugins ) ) {
+    return array_diff( $plugins, array( 'wpemoji' ) );
+  } else {
+    return array();
+  }
+}
 
 
+function custom_date() {
+  global $post;
+  if($post->post_type=='event') {
+    $metaStart = get_post_meta( $post->ID, 'wpcf-start-date', true);
+    $metaStartDate = date_i18n('F j, Y', $metaStart );
+    $metaEnd = get_post_meta( $post->ID, 'wpcf-end-date', true);
+    $metaEndDate = date_i18n('F j, Y', $metaEnd);
+
+    if($metaStart != $metaEnd) {
+      if(date_i18n('F', $metaStart ) != date_i18n('F', $metaEnd )) {
+        if(date_i18n('Y', $metaStart ) != date_i18n('Y', $metaEnd )) {
+          $date_tag =  '<div class="uk-article-meta">From '.$metaStartDate.' to '.$metaEndDate.'</div>';
+        }
+        else {
+          $date_tag =  '<div class="uk-article-meta">From '.date_i18n('F j', $metaStart ).' to '.$metaEndDate.'</div>';
+
+        }
+      }
+      else {
+      $date_tag =  '<div class="uk-article-meta">From '.date_i18n('F j', $metaStart ).' to '.$metaEndDate.'</div>';
+      }
+    }
+    else {
+    $date_tag =  '<div class="uk-article-meta">'.$metaStartDate.'</div>';
+    }
+  }
+  elseif($post->post_type=='post') {
+    $date_tag =  '<div class="uk-article-meta">'.get_the_date().'</div>';
+  }
+  else {
+    $date_tag='';
+  }
+  return $date_tag;
+}
 
 /******************************************************/
 /******************* Base functions *******************/
 /******************************************************/
 
+function print_p($arr) {
+  echo '<pre>';
+  print_r($arr);
+  echo '</pre>';
+}
 
 /******************/
 /* Custom login */
@@ -110,7 +185,6 @@ remove_action('wp_head', 'feed_links', 2);
 
 /*
  Reactivate main RSS
- * © Daniel Roch
  */
 function kat_feed_link( $args = array() ) {
   $defaults = array(
@@ -126,6 +200,11 @@ function kat_feed_link( $args = array() ) {
 }
 add_action('wp_head', 'kat_feed_link');
 
+
+// Disable XML RPC
+add_filter( 'xmlrpc_enabled', '__return_false' );
+remove_action( 'wp_head', 'rsd_link' );
+remove_action( 'wp_head', 'wlwmanifest_link' );
 
 /******************/
 /* Image treatment */
@@ -166,93 +245,103 @@ function get_attachment_id_from_src ($image_src) {
 
 }
 
-//creates resized and cropped image files safely from existing media library entries.
-function kat_img_resize( $src, $width, $height, $crop ) {
-   // extract( shortcode_atts( array(
-   //   'src' => '',
-   //   'width' => '',
-   //   'height' => '',
-   //   'crop' => 1
-   // ), $atts ) );
+// Get And Cache Transient example
+// function get_vimeo_thumb($id, $size = 'thumbnail_small')
+// {
+//   if(get_transient('vimeo_' . $size . '_' . $id))
+//   {
+//     $thumb_image = get_transient('vimeo_' . $size . '_' . $id);
+//   }
+//   else
+//   {
+//     $thumb_image = getVimeoVidThumbnailUrl($id);
 
-   global $wpdb;
+//      set_transient('vimeo_' . $size . '_' . $id, $thumb_image, 2629743);
+//   }
+//   //return $thumb_image;
+//   return crop_img($thumb_image, 265, 210);
+  
+// }
 
-   // Sanitize
-   $height = absint( $height );
-   $width = absint( $width );
-   $src = esc_url( strtolower( $src ) );
-   $needs_resize = true;
-   if ( $crop === 'false' ) $crop = false;
-   if ( $crop === 'true' ) $crop = true;
-   $crop = (bool) $crop;
-   $upload_dir = wp_upload_dir();
-   $base_url = strtolower( $upload_dir['baseurl'] );
+function crop_img($img, $w, $h) {
+  $upload_dir = wp_upload_dir();
+  $info = pathinfo($img);
+  $fileN = $info['filename'];
+  $base_dir = strtolower( $upload_dir['basedir'] );
+  $saveUrl = $upload_dir['baseurl'] .'/cropped/'. $fileN . '_' . $w .'x'. $h . '.jpg';
+  $savePath = $base_dir .'/cropped/'. $fileN . '_' . $w .'x'. $h . '.jpg';
 
-   // Let's see if the image belongs to our uploads directory.
-   if ( substr( $src, 0, strlen( $base_url ) ) != $base_url ) {
-     return "Error: external images are not supported.";
-   }
+  if(!is_dir($base_dir .'/cropped/')) {
+    mkdir($base_dir .'/cropped/', 0755, true);
+  }
 
-   // Look the file up in the database.
-   $file = str_replace( trailingslashit( $base_url ), '', $src );
-   $like = $wpdb->esc_like($file);
-   $attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = '_wp_attachment_metadata' AND meta_value LIKE %s LIMIT 1;", '%"' . $like . '"%' ) );
-  $alt=get_post_meta($attachment_id , '_wp_attachment_image_alt', true);
+  if(!file_exists($savePath)) {
+    $imagine = new Imagine\Gd\Imagine();
+    $point = new  Imagine\Image\Point($w/2,$h/2);
+    $box    = new Imagine\Image\Box($w, $h);
+    $imagine->open($img)
+        ->crop($point, $box)
+        ->save($savePath);
+  }
+  return  $saveUrl;
+}
 
-   // If an attachment record was not found.
-   if ( ! $attachment_id ) {
-     return "Error: attachment not found.";
-   }
-   // Look through the attachment meta data for an image that fits our size.
-   $meta = wp_get_attachment_metadata( $attachment_id );
-     $srcArr = explode('.', $src);
-     if($crop==true) $c = 'crop';
-     else $c = "nocrop";
-     //$name = $srcArr[0] . '-'.$c.'-' . $width . 'x' .$height . '.' . $srcArr[1];
+function resize_crop_img($img, $w, $h) {
+  $upload_dir = wp_upload_dir();
+  $info = pathinfo($img);
+  $fileN = $info['filename'];
+  $base_dir = strtolower( $upload_dir['basedir'] );
 
-   foreach( $meta['sizes'] as $key => $size ) {
-     if ( $size['width'] == $width || $size['height'] == $height ) {
+  $saveUrl = $upload_dir['baseurl'] .'/cropped-resized/'. $fileN . '_' . $w .'x'. $h . '.jpg';
+  $savePath = $base_dir .'/cropped-resized/'. $fileN . '_' . $w .'x'. $h . '.jpg';
 
-       $src = str_replace( basename( $src ), $size['file'], $src );
-       $needs_resize = false;
-       break;
-     }
-     //$siz = 'resized-'.$width .'x' . $height;
-     // if($name == $size['file']){
-     //   $needs_resize = false;
-     //   break;
-     // }
-   }
-   //Miracle solution: if $c-resized-widthxheight size doesn't exist for this media, we create it :)
-   $siz = $c .'-resized-'.$width .'x' . $height;
+  if(!is_dir($base_dir .'/cropped-resized/')) {
+    mkdir($base_dir .'/cropped-resized/', 0755, true);
+  }
 
-   if( $meta['sizes'][$siz]['file'] != '' ){
-     $needs_resize = false;
-   }
-   else{
-     $needs_resize = true;
-   }
+  if(!file_exists($savePath)) {
+    $imagine = new Imagine\Gd\Imagine();
+    //$point = new  Imagine\Image\Point($w/2,$h/2);
+    $box    = new Imagine\Image\Box($w, $h);
+    $mode    = Imagine\Image\ImageInterface::THUMBNAIL_OUTBOUND;
+    $imagine->open($img)
+        ->thumbnail($box, $mode)
+        ->save($savePath);
+  }
+  return  $saveUrl;
+}
 
-   // If an image of such size was not found, we can create one.
-   if ( $needs_resize ) {
-     $attached_file = get_attached_file( $attachment_id );
-     $resized = image_make_intermediate_size( $attached_file, $width, $height, $crop );
-     if ( ! is_wp_error( $resized ) ) {
+function resize_img($img, $w, $h) {
+  $upload_dir = wp_upload_dir();
+  $info = pathinfo($img);
+  $fileN = $info['filename'];
+  $base_dir = strtolower( $upload_dir['basedir'] );
 
-       // Let metadata know about our new size.
-       $key = $c.'-resized-'.$width.'x'.$height;
-       $meta['sizes'][$key] = $resized;
-       if($resized) $src = str_replace( basename( $src ), $resized['file'], $src );
-       wp_update_attachment_metadata( $attachment_id, $meta );
+  //CALCULATE NEW SIZE TO CHECK IF FILE EXISTS
+  list($originalWidth, $originalHeight) = getimagesize($img);
+  $widthRatio = $w / $originalWidth;
+  $heightRatio = $h / $originalHeight;
+  $ratio = min($widthRatio, $heightRatio);
+  $newWidth  = round((int)$originalWidth  * $ratio);
+  $newHeight = round((int)$originalHeight * $ratio);
+  $saveUrl = $upload_dir['baseurl'] .'/resized/'. $fileN . '_' . $newWidth .'x'. $newHeight . '.jpg';
+  $savePath = $base_dir .'/resized/'. $fileN . '_' . $newWidth .'x'. $newHeight . '.jpg';
 
-       // Record in backup sizes so everything's cleaned up when attachment is deleted.
-       $backup_sizes = get_post_meta( $attachment_id, '_wp_attachment_backup_sizes', true );
-       if ( ! is_array( $backup_sizes ) ) $backup_sizes = array();
-       $backup_sizes[$key] = $resized;
-       update_post_meta( $attachment_id, '_wp_attachment_backup_sizes', $backup_sizes );
-     }
-   }
-   return '<img src="'.esc_url( $src ).'" alt="'.$alt.'" />';
+  if(!is_dir($base_dir .'/resized/')) {
+    mkdir($base_dir .'/resized/', 0755, true);
+  }
+
+  if(!file_exists($savePath)) {
+    $imagine = new Imagine\Gd\Imagine();
+    $box    = new Imagine\Image\Box($w, $h);
+    $mode    = Imagine\Image\ImageInterface::THUMBNAIL_INSET;
+
+
+    $imagine->open($img)
+        ->thumbnail($box, $mode)
+        ->save($savePath);
+  }
+  return  $saveUrl;
 }
 
 // //add some icon stuff >> FOR CIRCA 2017 OR 2018

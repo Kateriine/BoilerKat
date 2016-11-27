@@ -4,12 +4,11 @@
  *
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
- * handled by a callback to starkers_comment() which is
+ * handled by a callback to theme_comment() which is
  * located in the functions.php file.
  *
  * @package   WordPress
- * @subpackage  Starkers
- * @since     Starkers 4.0
+ * @subpackage  Adam
  */
 ?>
 <div id="comments">
@@ -33,7 +32,7 @@
   <h2><?php comments_number(); ?></h2>
 
   <ul  class="uk-comment-list">
-    <?php wp_list_comments( array( 'callback' => 'starkers_comment' ) ); ?>
+    <?php wp_list_comments( array( 'callback' => 'theme_comment' ) ); ?>
   </ul>
 
   <?php

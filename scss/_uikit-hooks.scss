@@ -1,13 +1,4 @@
-.uk-grid {
-    display: -ms-flexbox;
-    display: -webkit-box; //Safari Fix
-    display: -webkit-flex;
-    display: flex;
 
-    -ms-flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
 // Alerts
 // ========================================================================
 
@@ -26,13 +17,10 @@
 // ========================================================================
 
 @mixin hook-article-title(){
-  @include font-size($article-title-font-size);
 }
 @mixin hook-article-meta(){
-  @include font-size($article-meta-font-size);
 }
 @mixin hook-article-lead(){
-  @include font-size($article-lead-font-size);
 }
 @mixin hook-article-divider(){}
 @mixin hook-article-misc(){}
@@ -42,7 +30,6 @@
 // ========================================================================
 
 @mixin hook-badge(){
-  @include font-size($badge-font-size);
 }
 @mixin hook-badge-success(){}
 @mixin hook-badge-warning(){}
@@ -59,37 +46,37 @@
 }
 @mixin hook-base-code(){}
 @mixin hook-base-h1(){
-  @include font-size($base-h1-font-size);
+  color: $base-heading-color;
   a {
     color: inherit;
   }
 }
 @mixin hook-base-h2(){
-  @include font-size($base-h2-font-size);
+  color: $base-heading-color;
   a {
     color: inherit;
   }
 }
 @mixin hook-base-h3(){
-  @include font-size($base-h3-font-size);
+  color: $base-heading-color;
   a {
     color: inherit;
   }
 }
 @mixin hook-base-h4(){
-  @include font-size($base-h4-font-size);
+  color: $base-heading-color;
   a {
     color: inherit;
   }
 }
 @mixin hook-base-h5(){
-  @include font-size($base-h5-font-size);
+  color: $base-heading-color;
   a {
     color: inherit;
   }
 }
 @mixin hook-base-h6(){
-  @include font-size($base-h6-font-size);
+  color: $base-heading-color;
   a {
     color: inherit;
   }
@@ -102,10 +89,9 @@
   }
 
   body {
-    @include font-size($base-body-font-size);
+    font-size: $base-body-font-size;
   }
 
-  blockquote {@include font-size($base-blockquote-font-size);}
 }
 
 
@@ -123,7 +109,6 @@
 // ========================================================================
 
 @mixin hook-breadcrumb(){
-  @include font-size($breadcrumb-font-size);
 }
 @mixin hook-breadcrumb-divider(){}
 @mixin hook-breadcrumb-misc(){}
@@ -150,10 +135,8 @@
 @mixin hook-comment-header(){}
 @mixin hook-comment-avatar(){}
 @mixin hook-comment-title(){
-  @include font-size($comment-title-font-size);
 }
 @mixin hook-comment-meta(){
-  @include font-size($comment-meta-font-size);
 }
 @mixin hook-comment-body(){}
 @mixin hook-comment-primary(){}
@@ -216,7 +199,6 @@
 
 
 @mixin hook-dropdown(){
-  @include font-size($dropdown-font-size);
 }
 @mixin hook-dropdown-navbar(){}
 @mixin hook-dropdown-misc(){}
@@ -237,7 +219,6 @@
 @mixin hook-form-focus(){}
 @mixin hook-form-disabled(){}
 @mixin hook-form-legend(){
-  @include font-size($form-legend-font-size);
 }
 @mixin hook-form-danger(){}
 @mixin hook-form-success(){}
@@ -329,7 +310,6 @@
 // ========================================================================
 
 @mixin hook-nav-header(){
-  @include font-size($nav-header-font-size);
 }
 @mixin hook-nav-divider(){}
 @mixin hook-nav-sub(){}
@@ -364,7 +344,6 @@
 
 @mixin hook-navbar(){}
 @mixin hook-navbar-nav(){
-  @include font-size($navbar-nav-font-size);
 }
 @mixin hook-navbar-nav-hover(){}
 @mixin hook-navbar-nav-onclick(){}
@@ -400,48 +379,8 @@
 }
 @mixin hook-offcanvas-panel(){}
 @mixin hook-offcanvas-misc(){
-  // .uk-button-offcanvas{
-  //   @extend .uk-clearfix;
-  //   display: block;
-  //   border:none;
-  //   background: $black;
-  //   width:76px;
-  //   margin:0;
-  //   z-index: 500;
-  //   padding:28px 22px 29px 22px;
-  //   &:focus{outline:medium none;}
-  //   &.uk-hidden-large{
-  //     display:inline-block !important;
-  //     @media(min-width:$breakpoint-medium){display:none!important;}
-  //   }
-  //   position: relative;
-  //   transition: all 233ms cubic-bezier(0.5, 0, 0, 1);
 
-  //   .line {
-  //     display: block;
-  //     width: 32px;
-  //     height: 3px;
-  //     margin: 0 0 12px;
-  //     background-color: rgba(255,255,255,.8);
-  //     transform: translate3d(0, 0, 0);
-  //     transition: all 333ms cubic-bezier(0.5, 0, 0, 1);
-  //      &:last-child{ margin-bottom: 0; }
-  //   }
-  // }
 }
-
-// .uk-offcanvas-page .uk-button-offcanvas {
-//   .line.first {
-//     transform: rotate(-135deg) translateY(-7.5px) translateX(-8.5px);
-//   }
-//   .line.second{
-//     opacity: 0;
-//   }
-//   .line.third {
-//     transform: rotate(135deg) translateY(7.5px) translateX(-8.5px);
-//   }
-// }
-
 
 // Overlay
 // ========================================================================
@@ -474,7 +413,6 @@
 // ========================================================================
 
 @mixin hook-panel-title(){
-  @include font-size($panel-title-font-size);
 }
 @mixin hook-panel-badge(){}
 @mixin hook-panel-box(){}
@@ -536,11 +474,9 @@
 
 @mixin hook-text-misc(){
   .uk-text-small {
-    @include font-size($text-small-font-size);
   }
 
   .uk-text-large {
-    @include font-size($text-large-font-size);
   }
 }
 

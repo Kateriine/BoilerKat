@@ -13,16 +13,34 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     pngquant = require('imagemin-pngquant'),
     rename = require('gulp-rename'),
+    cheerio = require('gulp-cheerio'),
     svgstore = require('gulp-svgstore'),
     svgmin = require('gulp-svgmin'),
     notification = require('node-notifier'),
-    gutil = require('gulp-util');
+    gutil = require('gulp-util'),
+    through2 = require('through2'),
+    svgSymbols = require('gulp-svg-symbols');
 
 //JS
 var jsFiles = [
-  'js/uikit.js', 
-  'js/components/form-select.js',
+  'js/core/core.js', 
+  'js/core/touch.js',
+  'js/core/utility.js',
+  'js/core/smooth-scroll.js',
+  'js/core/scrollspy.js', 
+  'js/core/toggle.js',
+  'js/core/alert.js', 
+  'js/core/button.js', 
+  'js/core/dropdown.js', 
+  'js/core/grid.js', 
+  'js/core/modal.js', 
+  'js/core/nav.js', 
+  'js/core/offcanvas.js', 
+  'js/core/switcher.js',
+  'js/core/tab.js',
+  'js/core/cover.js', 
   'js/components/parallax.js', 
+  'js/svgxuse.min.js',
   'js/videojs/video.js', 
   'js/fancybox.js', 
   'js/slick.js', 
@@ -74,50 +92,42 @@ gulp.task('imagemin', function() {
     .pipe(gulp.dest('images'))
 });
 
+//SVG 
+gulp.task('svgmin', function () {
+    return gulp
+        .src('images/icons/*.svg')
+        .pipe(svgmin())
+        .pipe(gulp.dest('images/iconsmin'));
+});
+
 // SVG
-gulp.task('svgsymbol', function () {
-
-  var cssFilter = filter('**/*.css', { restore: true })
-  var svgFilter = filter('**/*.svg', { restore: true })
-
-  return gulp.src('images/icons/*.svg')
-    .pipe( plumber() )
-    .pipe( svgmin() )
-    .pipe( require('through2').obj(function( file, enc, cb ) { // clean the mess up
-      var fileString = file.contents.toString()
-
-      _.each([
-        /<title>.*<\/title>/gi,
-        /<desc>.*<\/desc>/gi,
-        /<!--.*-->/gi,
-        /<defs>.*<\/defs>/gi,
-        / +sketch:type=\"MSShapeGroup\"/gi,
-        / +sketch:type=\"MSPage\"/gi,
-        / +sketch:type=\"MSLayerGroup\"/gi
-      ], function( regex ) {
-        fileString = fileString.replace(regex, '')
-      })
-
-      file.contents = new Buffer( fileString )
-      this.push( file )
-
-      cb()
-    }) )
-    .pipe(
-      require('gulp-svg-symbols')({
-        id: 'ug-Svg--%f',
-        className: '.ug-Svg--%f',
-        fontSize: 20
-      })
-    )
-    .pipe( cssFilter )
-    .pipe( rename('_svg-symbols.scss') )
-    .pipe( gulp.dest('scss/') ) // save css
-    .pipe( cssFilter.restore )
-    .pipe( svgFilter )
-    .pipe( require('gulp-rename')('svg-symbols.svg') )
-    .pipe( gulp.dest('parts/shared/') ) // save template
-
+gulp.task('svgSymbol', function () {
+    return gulp
+        .src('images/iconsmin/*.svg')
+        .pipe(rename({prefix: 'chicon-'}))
+        .pipe(svgstore({'inlineSvg':true}))
+        .pipe(cheerio(function ($) {
+                $('svg').attr({
+                    'version': '1.1',
+                    'xmlns:xlink': 'http://www.w3.org/1999/xlink',
+                    'xml:space': 'preserve'
+                });
+                $('path').attr({
+                    'fill': 'currentColor'
+                });
+                $('polygon').attr({
+                    'fill': 'currentColor'
+                });
+                $('circle').attr({
+                    'fill': 'currentColor'
+                });
+                $('rect').attr({
+                    'fill': 'currentColor'
+                });
+        
+        }))
+        .pipe(rename('icons.svg'))
+        .pipe(gulp.dest('images'));
 });
 
 // Watching assets
@@ -137,4 +147,4 @@ gulp.task('img', ['imagemin']);
 
 // Converts a bunch of SVG files to a single svg file containing each one as a symbol.
 // See https://github.com/Hiswe/gulp-svg-symbols/
-gulp.task('svg', ['svgsymbol']);
+gulp.task('svg', ['svgmin', 'svgSymbol']);

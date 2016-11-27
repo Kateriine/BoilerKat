@@ -1,6 +1,6 @@
-# Kat Theme Base V5.0
+# Kat theme V5.0
 
-Naked WP theme with uikit 2.26.2 and based on Starkers Masters
+Naked WP theme with uikit 2.27.2 and based on Starkers Masters
 
 Optional file to create widgets
 
@@ -97,16 +97,19 @@ FYI: the files overriding uikit are `uikit-hooks.scss` and `uikit-variables.scss
 
 This theme works better with:
 
-- [WP-Types and Views](http://wp-types.com/) (Custom fields)
-- [Gravity Forms](http://www.gravityforms.com/) (Forms)
-- [WP Rocket](http://wp-rocket.me/) (Optimization)
+- [ACF Pro](http://wp-types.com/) (Custom fields)
+- [Advanced Custom Fields: Widget Area](https://github.com/lucasstark/acf-field-widget-area/)
+- [Advanced Custom Fields: A Widget](https://github.com/lucasstark/acf-field-a-widget)
 - [WP-SEO by Yoast](https://wordpress.org/plugins/wordpress-seo/) (SEO)
+- [WP-Smush](https://fr-be.wordpress.org/plugins/wp-smushit/) (Img Optimization)
 
 *Optionally*:
 
+- [Gravity Forms](http://www.gravityforms.com/) (Forms)
+- [WP-Types and Views](http://wp-types.com/) (Custom fields)
+- [Coming Soon Page & Maintenance Mode by SeedProd](https://tah.wordpress.org/plugins/coming-soon/)
+- [W3 Total Cache](https://srd.wordpress.org/plugins/w3-total-cache/) (Optimization)
 - [Posts 2 Posts](https://wordpress.org/plugins/posts-to-posts/) (Relations between posts)
-- [The Repeater Field](https://wordpress.org/plugins/ewww-image-optimizer/) (Custom fields matrix)
-- [EWWW Image Optimizer](https://wordpress.org/plugins/posts-to-posts/) (Image optimisation)
 - [WP-PageNavi](https://wordpress.org/plugins/wp-pagenavi/) (Custom pagination)
 - [Manual Image Crop](https://wordpress.org/plugins/manual-image-crop/) (Images custom crop doesn't work with the resize on the fly function)
 - [Ductile Responsive Video](https://wordpress.org/plugins/ductile-responsive-video/) (Responsive youtube embeds)

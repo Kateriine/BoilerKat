@@ -29,6 +29,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.1",
+    "gulp-svg-symbols": "^2.0.0",
     "gulp-svgmin": "^1.1.2",
     "gulp-svgstore": "^5.0.2",
     "gulp-uglify": "^1.2.0",
@@ -37,6 +38,7 @@
     "imagemin-pngquant": "^4.1.0",
     "node-notifier": "^4.2.1",
     "spawn-sync": "^1.0.11",
+    "through2": "^2.0.1",
     "video.js": "^5.9.2"
   }
 }

@@ -1,3 +1,44 @@
 .image img{
 	width:100%;
 }
+
+
+.androidstock {
+  .android-hidden {
+    display: none !important;
+  }
+  .uk-grid, .uk-grid-match > * {
+    display: block !important;
+    flex-wrap: auto !important;
+  }
+
+  .margin-bottom-android {margin-bottom: 20px !important}
+
+  [class*='uk-animation-'] {
+        -webkit-animation-duration: 0 !important;
+        animation-duration: 0 !important;
+        -webkit-animation-timing-function: none !important;
+        animation-timing-function: none !important;
+        -webkit-animation-fill-mode: none !important;
+        animation-fill-mode: none !important;
+    -webkit-animation-name: none !important;
+    animation-name:!important;
+  }
+
+  [data-uk-scrollspy*='uk-animation-']:not([data-uk-scrollspy*='target']) { opacity: 1; }
+}
+
+.margin-bottom-ios {
+  @media(max-width:321px) {
+    margin-bottom: 20px !important;
+  }
+}
+
+@media all and (-ms-high-contrast:none){
+  .android-hidden {
+    display: none !important;
+  }
+
+  .margin-bottom-android {margin-bottom: 20px !important}
+}
+

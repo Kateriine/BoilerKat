@@ -95,8 +95,8 @@
 
     defaults: {
       theme   : 'default',      // 'default', dark', 'light'
-      padding   : 15,         // space inside box, around content
-      margin  : [30, 55, 30, 55],   // space between viewport and the box
+      padding   : 10,         // space inside box, around content
+      margin  : [15, 10, 15, 10],   // space between viewport and the box
       loop    : true,         // Continuous gallery item loop
 
       arrows  : true,
@@ -118,9 +118,9 @@
       helpers : {},         // list of enabled helpers
 
       // Dimensions
-      width     : 800,
+      width     : 1200,
       height    : 450,
-      minWidth  : 100,
+      minWidth  : 120,
       minHeight   : 100,
       maxWidth  : 99999,
       maxHeight   : 99999,
@@ -377,7 +377,7 @@
         }
 
         if (items.length < 2) {
-          defaults.margin = 30;
+          defaults.margin = 5;
         }
 
         item = $.extend(true, {}, defaults, item);
@@ -1035,7 +1035,7 @@
         closeBtn   : true,
         minWidth   : 0,
         minHeight  : 0,
-        padding  : [15, 15, 15, 15],
+        padding  : [10, 10, 10, 10],
         scrolling  : 'visible',
         hasError   : type,
         content  : F._translate( F.coming.tpl.error )
