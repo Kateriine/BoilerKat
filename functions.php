@@ -24,7 +24,7 @@
   require_once( 'external/acf_custom_functions.php' );
   require_once( 'external/custom.php' );
   require_once( 'external/plugs/class-tgm-plugin-activation.php' );
-  require 'external/vendor/autoload.php';
+  require 'image_editor_extend.php';
 
 
   // register_nav_menus(array('primary' => 'Primary Navigation'));

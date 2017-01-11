@@ -1,4 +1,4 @@
-# Kat theme V5.0
+# Adam V5.0
 
 Naked WP theme with uikit 2.27.2 and based on Starkers Masters
 
