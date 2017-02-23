@@ -1,4 +1,4 @@
-# Adam V5.0
+# Boilerkat V4.2
 
 Naked WP theme with uikit 2.27.2 and based on Starkers Masters
 
@@ -24,7 +24,7 @@ The following features are located in `external/svg_upload.php`.
 - SVG support for WordPress
 
 The following features are located in `external/acf_custom_functions.php`.
-- functions to use with tpl-page-rows.php. If you wish to use it, install acf pro and import the file acf-custo-fields.json
+- functions to use with tpl-page-rows.php. If you wish to use it, install acf pro and import the file acf-custom-fields.json
 
 
 The following features are located in `external/shortcodes.php` (mainly used in wp-views).
@@ -61,6 +61,9 @@ In order to use this, you have to uncomment `require_once( 'external/gforms.php'
 - populate a simple value in an input
 - populate multiple values in a select input
 
+Note: if you use W3 toal cache, feel free to use w3_total_cache_config.json
+
+
 ## JS
 
 - Fancybox
@@ -68,14 +71,13 @@ In order to use this, you have to uncomment `require_once( 'external/gforms.php'
 - Slick slider
 - Video JS (check scss files)
 - Smartresize (you can change the mobile limit size)
-- Responsive pics management (the Drupal way): change src according to screen size (to be implemented in theme)
 
 
-Note: *When adding JS features, don't forget to adjust the gulpfile accordingly.*
+Note: *When adding/removing JS features, don't forget to adjust the gulpfile accordingly.*
 
 ## CSS
 
-We use [uikit](https://github.com/uikit/uikit) - Version 2.24.3 (December 18, 2015), see [Changelog](https://github.com/uikit/uikit/blob/develop/CHANGELOG.md)
+We use [uikit](https://github.com/uikit/uikit) - Version 2.27.2, see [Changelog](https://github.com/uikit/uikit/blob/develop/CHANGELOG.md)
 
 There are some scss files to customize the features below, check `adam/scss/style.scss`:
 
