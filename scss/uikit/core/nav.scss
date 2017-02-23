@@ -429,8 +429,8 @@ html .uk-nav.uk-nav-offcanvas > li.uk-active > a {
  * No hover on touch devices because it behaves buggy in fixed offcanvas
  */
 
-.uk-nav-offcanvas ul a { color: $nav-offcanvas-nested-color; }
-html:not(.uk-touch) .uk-nav-offcanvas ul a:hover { color: $nav-offcanvas-nested-hover-color; }
+.uk-nav-offcanvas ul a { color: $navbar-nav-color; }
+html:not(.uk-touch) .uk-nav-offcanvas ul a:hover { color: $navbar-nav-hover-color; }
 
 
 // Hooks

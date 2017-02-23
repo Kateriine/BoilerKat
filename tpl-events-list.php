@@ -11,8 +11,8 @@
 <?php
 
 
- $today = strtotime(date('Y-m-d', current_time('timestamp')));
-
+// $today = strtotime(date('Y-m-d', current_time('timestamp')));
+$today = current_time('Ymd');
 $args = array(
 
   //Type & Status Parameters
@@ -22,14 +22,14 @@ $args = array(
     ),
   'meta_query' => array(
       array(
-        'key' => 'wpcf-end-date',
+        'key' => 'end-date',
         'compare'=>'>=',
         'value' => $today,
         'type' => 'numeric',
       )
     ),
-  'meta_key' => 'wpcf-start-date',
-  'meta_key' => 'wpcf-end-date',
+  'meta_key' => 'start-date',
+  'meta_key' => 'end-date',
   'orderby' => 'meta_value_num',
   'order' => 'ASC'
 );
@@ -44,7 +44,9 @@ if($query->have_posts()) { ?>
       <div class="uk-width-medium-1-3">
         <article class="uk-article">
           <h2 class="uk-article-title"><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-          <?php echo custom_date();?>
+          <div class="uk-article-meta">
+            <?php echo custom_date();?>
+          </div>
           <?php the_content(); ?>
         </article>
       </div>

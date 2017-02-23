@@ -16,7 +16,6 @@ function theme_setup() {
 }
 add_action( 'after_setup_theme', 'theme_setup' );
 //add_action( 'after_setup_theme', 'custom_image_setup' );
-add_action('admin_init', 'add_svg_upload');
 add_action( 'init', 'disable_emojis' );
 add_filter( 'script_loader_src', '_remove_script_version', 15, 1 );
 add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
@@ -54,35 +53,33 @@ function disable_emojis_tinymce( $plugins ) {
   }
 }
 
-
 function custom_date() {
   global $post;
   if($post->post_type=='event') {
-    $metaStart = get_post_meta( $post->ID, 'wpcf-start-date', true);
+    $metaStart = strtotime(get_field( 'start_date'));
     $metaStartDate = date_i18n('F j, Y', $metaStart );
-    $metaEnd = get_post_meta( $post->ID, 'wpcf-end-date', true);
+    $metaEnd = strtotime(get_field( 'end_date'));
     $metaEndDate = date_i18n('F j, Y', $metaEnd);
-
     if($metaStart != $metaEnd) {
       if(date_i18n('F', $metaStart ) != date_i18n('F', $metaEnd )) {
         if(date_i18n('Y', $metaStart ) != date_i18n('Y', $metaEnd )) {
-          $date_tag =  '<div class="uk-article-meta">From '.$metaStartDate.' to '.$metaEndDate.'</div>';
+          $date_tag =  'From '.$metaStartDate.' to '.$metaEndDate;
         }
         else {
-          $date_tag =  '<div class="uk-article-meta">From '.date_i18n('F j', $metaStart ).' to '.$metaEndDate.'</div>';
+          $date_tag =  'From '.date_i18n('j F', $metaStart ).' to '.$metaEndDate;
 
         }
       }
       else {
-      $date_tag =  '<div class="uk-article-meta">From '.date_i18n('F j', $metaStart ).' to '.$metaEndDate.'</div>';
+      $date_tag =  'From '.date_i18n('j F', $metaStart ).' to '.$metaEndDate;
       }
     }
     else {
-    $date_tag =  '<div class="uk-article-meta">'.$metaStartDate.'</div>';
+    $date_tag =  ''.$metaStartDate;
     }
   }
   elseif($post->post_type=='post') {
-    $date_tag =  '<div class="uk-article-meta">'.get_the_date().'</div>';
+    $date_tag =  ''.get_the_date();
   }
   else {
     $date_tag='';
@@ -244,6 +241,12 @@ function get_attachment_id_from_src ($image_src) {
   return $id;
 
 }
+function get_alt_from_src ($image_src) {
+  $thumb_id = get_attachment_id_from_src ($image_src);
+
+  $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+  if(count($alt)) return $alt;
+}
 
 // Get And Cache Transient example
 // function get_vimeo_thumb($id, $size = 'thumbnail_small')
@@ -262,87 +265,6 @@ function get_attachment_id_from_src ($image_src) {
 //   return crop_img($thumb_image, 265, 210);
   
 // }
-
-function crop_img($img, $w, $h) {
-  $upload_dir = wp_upload_dir();
-  $info = pathinfo($img);
-  $fileN = $info['filename'];
-  $base_dir = strtolower( $upload_dir['basedir'] );
-  $saveUrl = $upload_dir['baseurl'] .'/cropped/'. $fileN . '_' . $w .'x'. $h . '.jpg';
-  $savePath = $base_dir .'/cropped/'. $fileN . '_' . $w .'x'. $h . '.jpg';
-
-  if(!is_dir($base_dir .'/cropped/')) {
-    mkdir($base_dir .'/cropped/', 0755, true);
-  }
-
-  if(!file_exists($savePath)) {
-    $imagine = new Imagine\Gd\Imagine();
-    $point = new  Imagine\Image\Point($w/2,$h/2);
-    $box    = new Imagine\Image\Box($w, $h);
-    $imagine->open($img)
-        ->crop($point, $box)
-        ->save($savePath);
-  }
-  return  $saveUrl;
-}
-
-function resize_crop_img($img, $w, $h) {
-  $upload_dir = wp_upload_dir();
-  $info = pathinfo($img);
-  $fileN = $info['filename'];
-  $base_dir = strtolower( $upload_dir['basedir'] );
-
-  $saveUrl = $upload_dir['baseurl'] .'/cropped-resized/'. $fileN . '_' . $w .'x'. $h . '.jpg';
-  $savePath = $base_dir .'/cropped-resized/'. $fileN . '_' . $w .'x'. $h . '.jpg';
-
-  if(!is_dir($base_dir .'/cropped-resized/')) {
-    mkdir($base_dir .'/cropped-resized/', 0755, true);
-  }
-
-  if(!file_exists($savePath)) {
-    $imagine = new Imagine\Gd\Imagine();
-    //$point = new  Imagine\Image\Point($w/2,$h/2);
-    $box    = new Imagine\Image\Box($w, $h);
-    $mode    = Imagine\Image\ImageInterface::THUMBNAIL_OUTBOUND;
-    $imagine->open($img)
-        ->thumbnail($box, $mode)
-        ->save($savePath);
-  }
-  return  $saveUrl;
-}
-
-function resize_img($img, $w, $h) {
-  $upload_dir = wp_upload_dir();
-  $info = pathinfo($img);
-  $fileN = $info['filename'];
-  $base_dir = strtolower( $upload_dir['basedir'] );
-
-  //CALCULATE NEW SIZE TO CHECK IF FILE EXISTS
-  list($originalWidth, $originalHeight) = getimagesize($img);
-  $widthRatio = $w / $originalWidth;
-  $heightRatio = $h / $originalHeight;
-  $ratio = min($widthRatio, $heightRatio);
-  $newWidth  = round((int)$originalWidth  * $ratio);
-  $newHeight = round((int)$originalHeight * $ratio);
-  $saveUrl = $upload_dir['baseurl'] .'/resized/'. $fileN . '_' . $newWidth .'x'. $newHeight . '.jpg';
-  $savePath = $base_dir .'/resized/'. $fileN . '_' . $newWidth .'x'. $newHeight . '.jpg';
-
-  if(!is_dir($base_dir .'/resized/')) {
-    mkdir($base_dir .'/resized/', 0755, true);
-  }
-
-  if(!file_exists($savePath)) {
-    $imagine = new Imagine\Gd\Imagine();
-    $box    = new Imagine\Image\Box($w, $h);
-    $mode    = Imagine\Image\ImageInterface::THUMBNAIL_INSET;
-
-
-    $imagine->open($img)
-        ->thumbnail($box, $mode)
-        ->save($savePath);
-  }
-  return  $saveUrl;
-}
 
 // //add some icon stuff >> FOR CIRCA 2017 OR 2018
 // function icon($icon){
@@ -428,7 +350,7 @@ class Ui_Nav_Menu extends Walker_Nav_Menu {
     $attributes .= ! empty( $item->xfn )    ? ' rel="'  . esc_attr( $item->xfn    ) .'"' : '';
     $attributes .= ! empty( $item->url )    ? ' href="'   . esc_attr( $item->url    ) .'"' : '';
     $attributes .= ' class="menu-link ' . ( $depth > 0 ? 'sub-menu-link' : 'main-menu-link' ) . '"';
-
+    $args = (object) $args;
     $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
       $args->before,
       $attributes,
@@ -440,60 +362,6 @@ class Ui_Nav_Menu extends Walker_Nav_Menu {
 
     // build html
     $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-  }
-}
-
-/******************/
-/* SVG UPLOAD ON WP */
-/******************/
-
-function add_svg_upload() {
-  add_filter('upload_mimes', 'svg_upload_mimes');
-  ob_start();
-
-  add_action('shutdown', function() {
-      $final = '';
-      $ob_levels = count(ob_get_level());
-      for ($i = 0; $i < $ob_levels; $i++) {
-          $final .= ob_get_clean();
-      }
-      echo apply_filters('final_output', $final);
-  }, 0);
-  add_filter('final_output', function($content) {
-    $content = str_replace('<# } else if ( \'image\' === data.type && data.sizes && data.sizes.full ) { #>',
-        '<# } else if ( \'svg+xml\' === data.subtype ) { #>
-        <img class="details-image" src="{{ data.url }}" draggable="false" />
-        <# } else if ( \'image\' === data.type && data.sizes && data.sizes.full ) { #>',
-        $content
-    );
-    $content = str_replace(
-      '<# } else if ( \'image\' === data.type && data.sizes ) { #>',
-        '<# } else if ( \'svg+xml\' === data.subtype ) { #>
-        <div class="centered">
-          <img src="{{ data.url }}" class="thumbnail" draggable="false" />
-        </div>
-      <# } else if ( \'image\' === data.type && data.sizes ) { #>',
-        $content
-    );
-    return $content;
-  });
-}
-function svg_upload_mimes($existing_mimes=array()){
-  $existing_mimes['svg'] = 'image/svg+xml';
-  return $existing_mimes;
-}
-
-function svgImg($size='full'){
-  global $post;
-  $id = $post->ID;
-
-  if ( has_post_thumbnail($id)) {
-      $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), $size);
-      $imgURL = $image_url[0];
-
-      $thumb_id = get_post_thumbnail_id($post->ID);
-      $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
-      return '<img src="' . $imgURL . '" alt="'.$alt.'" class="style-svg">';
   }
 }
 

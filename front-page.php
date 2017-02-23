@@ -11,7 +11,8 @@
  */
 ?>
 <?php Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
-
+<?php echo display_social_share();?>
+<?php echo display_map();?>
 <div class="uk-container uk-container-center">
   <div class="uk-grid">
     <div class="uk-width-medium-2-3">

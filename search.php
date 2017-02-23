@@ -11,18 +11,18 @@
   <main>
     <?php if ( have_posts() ): ?>
     <h1>Search Results for '<?php echo get_search_query(); ?>'</h1>
-    <div class="uk-grid" data-uk-grid-margin>
+    <div class="uk-grid" data-uk-grid-match data-uk-grid-margin>
 
     <?php while ( have_posts() ) : the_post(); ?>
       <div class="uk-width-medium-1-3">
         <article class="uk-article">
           <header>
-             <h2 class="uk-article-title"><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-          </header>
-          <div class="uk-article-meta">
-           <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date(); ?> <?php the_time(); ?></time> <?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?>
+            <h2 class="uk-article-title"><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>      
+            <div class="uk-article-meta">
+              <?php echo custom_date();?>
+            </div>
+          </header>   
           <?php the_content(); ?>
-          </div>
         </article>
       </div>
     <?php endwhile; ?>

@@ -1,5 +1,5 @@
 {
-    "version": "0.9.5.1",
+    "version": "0.9.5.2",
     "cluster.messagebus.debug": false,
     "cluster.messagebus.enabled": false,
     "cluster.messagebus.sns.region": "",
@@ -8,7 +8,7 @@
     "cluster.messagebus.sns.topic_arn": "",
     "dbcache.configuration_overloaded": false,
     "dbcache.debug": "0",
-    "dbcache.enabled": "1",
+    "dbcache.enabled": "0",
     "dbcache.engine": "file",
     "dbcache.file.gc": 3600,
     "dbcache.file.locking": false,
@@ -62,6 +62,8 @@
     "objectcache.configuration_overloaded": false,
     "objectcache.enabled": "1",
     "objectcache.debug": "0",
+    "objectcache.enabled_for_wp_admin": true,
+    "objectcache.fallback_transients": true,
     "objectcache.engine": "file",
     "objectcache.file.gc": 3600,
     "objectcache.file.locking": false,
@@ -120,7 +122,7 @@
     ],
     "pgcache.redis.password": "",
     "pgcache.redis.dbid": 0,
-    "pgcache.cache.query": false,
+    "pgcache.cache.query": true,
     "pgcache.cache.home": "1",
     "pgcache.cache.feed": "0",
     "pgcache.cache.nginx_handle_xml": false,
@@ -161,8 +163,7 @@
     ],
     "pgcache.reject.uri": [
         "wp-.*\\.php",
-        "index\\.php",
-        "sitemap_index.xml"
+        "index\\.php"
     ],
     "pgcache.reject.ua": [
         ""
@@ -195,7 +196,7 @@
     "pgcache.prime.enabled": "0",
     "pgcache.prime.interval": "900",
     "pgcache.prime.limit": "10",
-    "pgcache.prime.sitemap": "sitemap_index.xml",
+    "pgcache.prime.sitemap": "",
     "pgcache.prime.post.enabled": "0",
     "stats.enabled": "0",
     "minify.configuration_overloaded": false,
@@ -232,41 +233,35 @@
     "minify.html.enable": "1",
     "minify.html.engine": "html",
     "minify.html.reject.feed": "0",
-    "minify.html.inline.css": "0",
+    "minify.html.inline.css": "1",
     "minify.html.inline.js": "0",
-    "minify.html.strip.crlf": "0",
+    "minify.html.strip.crlf": "1",
     "minify.html.comments.ignore": [
         "google_ad_",
         "RSPEAK_"
     ],
+    "minify.css.combine": "0",
     "minify.css.enable": "1",
     "minify.css.engine": "css",
-    "minify.css.combine": "0",
-    "minify.css.strip.comments": "0",
-    "minify.css.strip.crlf": "0",
+    "minify.css.http2push": "0",
+    "minify.css.strip.comments": "1",
+    "minify.css.strip.crlf": "1",
     "minify.css.embed": false,
     "minify.css.imports": "",
-    "minify.css.groups": {
-        "718e4": {
-            "default": {
-                "include": {
-                    "files": [
-                        "wp-content\/themes\/adam\/css\/style.css"
-                    ]
-                }
-            }
-        }
-    },
+    "minify.css.groups": [
+
+    ],
+    "minify.js.http2push": "0",
     "minify.js.enable": "1",
     "minify.js.engine": "js",
     "minify.js.combine.header": "0",
     "minify.js.header.embed_type": "blocking",
     "minify.js.combine.body": "0",
-    "minify.js.body.embed_type": "nb-defer",
+    "minify.js.body.embed_type": "blocking",
     "minify.js.combine.footer": "0",
-    "minify.js.footer.embed_type": "blocking",
-    "minify.js.strip.comments": "0",
-    "minify.js.strip.crlf": "0",
+    "minify.js.footer.embed_type": "nb-defer",
+    "minify.js.strip.comments": "1",
+    "minify.js.strip.crlf": "1",
     "minify.js.groups": {
         "718e4": {
             "default": {
@@ -279,6 +274,14 @@
                 },
                 "include-footer": {
                     "files": [
+                        "wp-includes\/js\/jquery\/ui\/core.min.js",
+                        "wp-includes\/js\/jquery\/ui\/datepicker.min.js",
+                        "wp-includes\/js\/mediaelement\/mediaelement-and-player.min.js",
+                        "wp-includes\/js\/mediaelement\/wp-mediaelement.min.js",
+                        "wp-includes\/js\/underscore.min.js",
+                        "wp-includes\/js\/wp-util.min.js",
+                        "wp-includes\/js\/backbone.min.js",
+                        "wp-includes\/js\/mediaelement\/wp-playlist.min.js",
                         "wp-includes\/js\/wp-embed.min.js",
                         "wp-content\/themes\/adam\/js\/build\/main.min.js"
                     ]
@@ -322,10 +325,14 @@
         ""
     ],
     "minify.reject.uri": [
-        "sitemap_index.xml"
+        "\/amp",
+        "\/?amp",
+        "([a-z0-9_\\-]+)?amp",
+        "[a-z0-9_\\-]+amp\/",
+        "[a-z0-9_\\-]+amp"
     ],
     "minify.reject.files.js": [
-        "wp-includes\/js\/wp-embed.min.js"
+        ""
     ],
     "minify.reject.files.css": [
         ""
@@ -333,6 +340,7 @@
     "minify.cache.files": [
         "https:\/\/ajax.googleapis.com"
     ],
+    "minify.cache.files_regexp": false,
     "cdn.configuration_overloaded": false,
     "cdn.enabled": "0",
     "cdn.debug": false,
@@ -502,7 +510,7 @@
     ],
     "cdn.reject.ssl": false,
     "varnish.configuration_overloaded": false,
-    "varnish.enabled": "1",
+    "varnish.enabled": "0",
     "varnish.debug": "0",
     "varnish.servers": [
         ""
@@ -518,35 +526,35 @@
     ],
     "browsercache.cssjs.last_modified": true,
     "browsercache.cssjs.compression": true,
-    "browsercache.cssjs.expires": true,
+    "browsercache.cssjs.expires": false,
     "browsercache.cssjs.lifetime": 31536000,
     "browsercache.cssjs.nocookies": false,
-    "browsercache.cssjs.cache.control": true,
+    "browsercache.cssjs.cache.control": false,
     "browsercache.cssjs.cache.policy": "cache_public_maxage",
-    "browsercache.cssjs.etag": true,
+    "browsercache.cssjs.etag": false,
     "browsercache.cssjs.w3tc": false,
     "browsercache.cssjs.replace": false,
     "browsercache.html.compression": true,
     "browsercache.html.last_modified": true,
-    "browsercache.html.expires": true,
+    "browsercache.html.expires": false,
     "browsercache.html.lifetime": 3600,
-    "browsercache.html.cache.control": true,
+    "browsercache.html.cache.control": false,
     "browsercache.html.cache.policy": "cache_public_maxage",
     "browsercache.html.etag": false,
     "browsercache.html.w3tc": false,
     "browsercache.html.replace": false,
     "browsercache.other.last_modified": true,
     "browsercache.other.compression": true,
-    "browsercache.other.expires": true,
+    "browsercache.other.expires": false,
     "browsercache.other.lifetime": 31536000,
     "browsercache.other.nocookies": false,
-    "browsercache.other.cache.control": true,
+    "browsercache.other.cache.control": false,
     "browsercache.other.cache.policy": "cache_public_maxage",
     "browsercache.other.etag": false,
     "browsercache.other.w3tc": false,
     "browsercache.other.replace": false,
     "browsercache.replace.exceptions": [
-        ""
+
     ],
     "mobile.configuration_overloaded": false,
     "mobile.enabled": false,
@@ -740,11 +748,11 @@
     "common.support": "",
     "common.track_usage": "0",
     "common.tweeted": false,
-    "config.check": "1",
+    "config.check": "0",
     "config.path": "",
     "widget.latest.items": 3,
     "widget.latest_news.items": 5,
-    "widget.pagespeed.enabled": "1",
+    "widget.pagespeed.enabled": "0",
     "widget.pagespeed.key": "",
     "widget.pagespeed.show_in_admin_bar": "0",
     "timelimit.email_send": 180,
@@ -759,15 +767,16 @@
     "timelimit.cdn_container_create": 300,
     "timelimit.domain_rename": 120,
     "timelimit.minify_recommendations": 600,
-    "common.instance_id": 356881309,
+    "common.instance_id": 899229916,
     "common.force_master": true,
     "extensions.active": {
+        "fragmentcache": "w3-total-cache\/Extension_FragmentCache_Plugin.php",
         "newrelic": "w3-total-cache\/Extension_NewRelic_Plugin.php",
-        "fragmentcache": "w3-total-cache\/Extension_FragmentCache_Plugin.php"
+        "wordpress-seo": "w3-total-cache\/Extension_WordPressSeo_Plugin.php"
     },
-    "extensions.active_frontend": [
-
-    ],
+    "extensions.active_frontend": {
+        "wordpress-seo": "*"
+    },
     "plugin.license_key": "",
     "plugin.type": "",
     "dbcache.memcached.persistant": true,
@@ -783,7 +792,7 @@
     "minify.memcached.persistant": true,
     "cdn.import.external": false,
     "cdncache.enabled": false,
-    "browsercache.timestamp": "1473747760",
+    "browsercache.timestamp": "1468489533",
     "common.install": 0,
     "notes.wp_content_changed_perms": true,
     "notes.wp_content_perms": true,
@@ -792,13 +801,13 @@
     "notes.plugins_updated": false,
     "notes.cdn_upload": false,
     "notes.cdn_reupload": false,
-    "notes.need_empty_pgcache": false,
+    "notes.need_empty_pgcache": true,
     "notes.need_empty_minify": false,
     "notes.need_empty_objectcache": false,
     "notes.root_rules": true,
     "notes.rules": true,
     "notes.pgcache_rules_wpsc": true,
-    "notes.support_us": false,
+    "notes.support_us": true,
     "notes.no_curl": true,
     "notes.no_zlib": true,
     "notes.zlib_output_compression": true,

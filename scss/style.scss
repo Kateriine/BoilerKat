@@ -1,15 +1,4 @@
 
-/*
-██████╗  ██████╗ ██╗██╗     ███████╗██████╗ ██╗  ██╗ █████╗ ████████╗
-██╔══██╗██╔═══██╗██║██║     ██╔════╝██╔══██╗██║ ██╔╝██╔══██╗╚══██╔══╝
-██████╔╝██║   ██║██║██║     █████╗  ██████╔╝█████╔╝ ███████║   ██║   
-██╔══██╗██║   ██║██║██║     ██╔══╝  ██╔══██╗██╔═██╗ ██╔══██║   ██║   
-██████╔╝╚██████╔╝██║███████╗███████╗██║  ██║██║  ██╗██║  ██║   ██║   
-╚═════╝  ╚═════╝ ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   
-Author: 		Kat
-Author URI: 	https://catherinearnould.com/
-Tags:
-*/
 @import "_variables.scss";
 @import "_uikit-variables.scss";
 @import "_fonts.scss";
@@ -32,7 +21,7 @@ Tags:
 @import "_acf_fields.scss";
 @import "hamburgers/_hamburgers.scss";
 
-// @import "_social.scss";
+@import "_social.scss";
 @import "_slick.scss";
 // @import "_langs.scss";
 // @import "_pagenavi.scss";

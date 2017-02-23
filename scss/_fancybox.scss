@@ -160,7 +160,7 @@ a.fancybox-nav {
 }
 
 a.fancybox-prev {
-  left: -20px;
+  left: 0;
   opacity:.5;
 
   &:before {
@@ -182,10 +182,13 @@ a.fancybox-prev {
   &:hover{
     opacity:1
   }
+  @include desk {
+    left: -20px;
+  }
 }
 
 a.fancybox-next {
-  right: -20px;
+  right: 0;
   opacity:.5;
   transition: opacity .2s ease-in;
   &:before {
@@ -205,6 +208,9 @@ a.fancybox-next {
   }
   &:hover{
     opacity:1
+  }
+  @include desk {
+    right: -20px;
   }
 }
 

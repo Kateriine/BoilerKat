@@ -98,7 +98,9 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
     margin: 0;
     padding: 0;
     list-style: none;
-    float: left;
+    @include desk {
+        float: left;
+    }
 }
 
 /*
@@ -106,9 +108,11 @@ $navbar-toggle-icon-alt:                         "\f002" !default;
  */
 
 .uk-navbar-nav > li {
-    float: left;
     /* 1 */
     position: relative;
+    @include desk {
+        float: left;
+    }
 }
 
 /*

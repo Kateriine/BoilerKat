@@ -305,9 +305,10 @@ function get_gallery_block() {
 		if( $images ):
 			$html .=  '<div class="uk-grid uk-grid-match" data-uk-grid-match data-uk-grid-margin'.$textAnim.'>';
 			foreach( $images as $image ):
+				$url = $image['url'];
 	 			$html .= '<div class="uk-width-small-1-'.$nbColsSmall.' uk-width-medium-1-'.$nbColsMed.' uk-width-large-1-'.$nbCols.$startAnimClass.'">';
 				$html .= '<a href="' .$image['url'] .'" class="fancybox"  data-fancybox-group="gallery" data-fancybox-title="<h3>'.$image['title'].'</h3>'.$image['caption'].'">';
-	 				$html .= '<img src="'. resize_crop_img($image['url'], 600, 600). '" width="600" height="600" alt="'.$image['alt'].'">';
+	 				$html .= '<img src="'. resize_crop_img($url, 600, 600, true). '" width="600" height="600" alt="'.$image['alt'].'">';
 				$html .= '</a>';
 	 			$html .= '</div>';
 			endforeach;

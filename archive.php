@@ -31,8 +31,9 @@
         <header>
            <h2 class="uk-article-title"><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
          </header>
-        
-        <?php echo custom_date();?>
+        <div class="uk-article-meta">
+          <?php echo custom_date();?>
+        </div>
         <?php the_content(); ?>
       </article>
     </div>

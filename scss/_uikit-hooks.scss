@@ -355,7 +355,15 @@
 // ========================================================================
 
 @mixin hook-offcanvas(){
-  @media(min-width:$breakpoint-medium){
+  .uk-dropdown {
+    @media(max-width: $breakpoint-medium-max) {
+      position: static;
+      display: block;
+      width: 100%;
+      opacity: 1 !important;
+    }
+  }
+  @include desk{
     display: block;
     position: inherit;
     background: none;
@@ -366,7 +374,7 @@
   }
 }
 @mixin hook-offcanvas-bar(){
-  @media(min-width:$breakpoint-medium){
+  @include desk{
     position: inherit;
     top: auto;
     bottom: auto;left: auto;

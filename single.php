@@ -14,8 +14,10 @@
     <article class="uk-article uk-article-divider">
       <header class="uk-article-title">
          <h1><?php the_title(); ?></h1>
+         <div class="uk-article-meta">
+          <?php echo custom_date();?>
+        </div>
       </header>
-       <?php echo custom_date();?>
       <?php the_content(); ?>
       <footer>
         <?php if ( get_the_author_meta( 'description' ) ) : ?>

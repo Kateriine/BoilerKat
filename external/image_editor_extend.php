@@ -34,24 +34,27 @@ function add_image_filters_editors( $editors ) {
 
 add_filter( 'wp_image_editors', 'add_image_filters_editors' );
 
-function grayscale_img($img, $w, $h, $crop=true) {
-  $upload_dir = wp_upload_dir();
+function grayscale_img($img='', $w, $h, $crop=true) {
+  if($img == '') 
+    return;
 
+  $upload_dir = wp_upload_dir();
   $info = pathinfo($img);
-  $origBasePath = str_replace(site_url(), $_SERVER['DOCUMENT_ROOT'], $info['dirname']);
-  $fileN = $info['filename'];
-  $pathOrig = $origBasePath.'/'.$info['basename'];
+  $origBasePath = str_replace(site_url() , $_SERVER['DOCUMENT_ROOT'], $info['dirname']);
+  $origBasePath = str_replace('//' , '/', $origBasePath);
+  $fileN = wp_basename( $img );
+  $pathOrig = $origBasePath.'/'.$fileN;
   $base_dir = strtolower( $upload_dir['basedir'] );
 
-  $saveUrl = $upload_dir['baseurl'] .'/grayscale/'. $fileN . '_' . $w .'x'. $h . '.'. $info['extension'];
-  $savePath = $base_dir .'/grayscale/'. $fileN . '_' . $w .'x'. $h . '.'. $info['extension'];
+  $saveUrl = $upload_dir['baseurl'] .'/grayscale/'. $fileN . '_' . $w .'x'. $h . '.'. strtolower($info['extension']);
+  $savePath = $base_dir .'/grayscale/'. $fileN . '_' . $w .'x'. $h . '.'. strtolower($info['extension']);
   $origSize = getimagesize($img);
 
   if(!is_dir($base_dir .'/grayscale/')) {
     mkdir($base_dir .'/grayscale/', 0755, true);
   }
 
-  if(!file_exists($savePath) ) {
+  if(!file_exists($savePath) && file_exists($pathOrig) ) {
     $editor = wp_get_image_editor($pathOrig);
     if ( is_wp_error( $editor ) )
       return $editor;
@@ -70,25 +73,29 @@ function grayscale_img($img, $w, $h, $crop=true) {
     return  $saveUrl;
 }
 
-function resize_crop_img($img, $w, $h, $crop=true) {
+function resize_crop_img($img='', $w, $h, $crop=true) {
+  if($img == '') 
+    return;
   $upload_dir = wp_upload_dir();
-
   $info = pathinfo($img);
-  $origBasePath = str_replace(site_url(), $_SERVER['DOCUMENT_ROOT'], $info['dirname']);
-  $fileN = $info['filename'];
-  $pathOrig = $origBasePath.'/'.$info['basename'];
+  $origBasePath = str_replace(site_url() , $_SERVER['DOCUMENT_ROOT'], $info['dirname']);
+  $origBasePath = str_replace('//' , '/', $origBasePath);
+  $fileN = wp_basename( $img );
+  $pathOrig = $origBasePath.'/'.$fileN;
+ 
   $base_dir = strtolower( $upload_dir['basedir'] );
+
   $origSize = getimagesize($img);
   
 
-  $saveUrl = $upload_dir['baseurl'] .'/cropped-resized/'. $fileN . '_' . $w .'x'. $h . '.'. $info['extension'];
-  $savePath = $base_dir .'/cropped-resized/'. $fileN . '_' . $w .'x'. $h . '.'. $info['extension'];
+  $saveUrl = $upload_dir['baseurl'] .'/cropped-resized/'. $fileN . '_' . $w .'x'. $h . '.'. strtolower($info['extension']);
+  $savePath = $base_dir .'/cropped-resized/'. $fileN . '_' . $w .'x'. $h . '.'. strtolower($info['extension']);
 
   if(!is_dir($base_dir .'/cropped-resized/')) {
     mkdir($base_dir .'/cropped-resized/', 0755, true);
   }
 
-  if(!file_exists($savePath)) {
+  if(!file_exists($savePath) && file_exists($pathOrig) ) {
     $editor = wp_get_image_editor( $pathOrig);
     if ( is_wp_error( $editor ) )
       return $editor;

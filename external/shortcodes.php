@@ -18,8 +18,6 @@ function register_shortcodes(){
   add_shortcode('gallery', 'gallery_img');
   add_shortcode('hide-email', 'hide_email_shortcode');
   add_shortcode('theme-url', 'get_template_directory_uri');
-  add_shortcode('crop', 'crop' );
-  add_shortcode('resize', 'resize' );
   add_shortcode('resize-crop', 'resize_crop' );
   //add_shortcode('icon', 'chicon');
   //add_shortcode('wpv-pagination', 'wpv_pagenavi');
@@ -40,37 +38,18 @@ function register_shortcodes(){
 * Enables the [pic] shortcode, pseudo-TimThumb but creates resized and cropped image files safely from existing media library entries. Usage:
 * [pic src="http://example.org/wp-content/uploads/2012/03/image.png" width="100" height="100"]
 */
-function crop($atts){
-  global $wpdb;
-  extract( shortcode_atts( array(
-   'src' => '',
-   'width' => '',
-   'height' => ''
-  ), $atts ) );
 
-  return crop_img( $src, $width, $height );
-}
-
-function resize($atts){
-  global $wpdb;
-  extract( shortcode_atts( array(
-   'src' => '',
-   'width' => '',
-   'height' => ''
-  ), $atts ) );
-
-  return resize_img( $src, $width, $height );
-}
 
 function resize_crop($atts){
   global $wpdb;
   extract( shortcode_atts( array(
    'src' => '',
    'width' => '',
-   'height' => ''
+   'height' => '',
+   'crop' => true
   ), $atts ) );
 
-  return resize_crop_img( $src, $width, $height );
+  return '<img src="' . resize_crop_img( $src, $width, $height ) . '" width="'. $width .'" height="'. $height .'" alt="" />';
 }
 
 /* Resized images shortcodes example: */
@@ -165,14 +144,14 @@ function gallery_img($attr) {
 
     $large = wp_get_attachment_image_src( $attachment->ID , 'large' );
     $full = wp_get_attachment_image_src( $attachment->ID , 'full' );
-
-    $th = kat_img_resize($full[0],"601", "601", true);
+    $alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
+    $th = resize_crop_img($full[0],"600", "600", true);
 
     $caption = $attachment->post_excerpt;
     $output .= '<div class="uk-width-small-1-2 uk-width-medium-1-'.$columns.'">';
     $output .= '<a href="';
     $output .= $large[0];
-    $output .= '"  class="fancybox clearfix" title="'.$caption.'" data-fancybox-group="gallery">'.$th.'</a></div>';
+    $output .= '"  class="fancybox clearfix" title="'.$caption.'" data-fancybox-group="gallery"><img src="'.$th.'" width="600" height="600" alt="'.$alt.'" /></a></div>';
   }
   $output .= '</div></div>';
   return $output;
@@ -225,6 +204,5 @@ function gallery_img($attr) {
 // }
 
 
-/// C'est nul
 
   ?>

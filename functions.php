@@ -20,11 +20,12 @@
   require_once( 'external/sidebars.php' );
   require_once( 'external/widgets.php' );
   require_once( 'external/gforms.php' );
-  require_once( 'external/social.php' );
   require_once( 'external/acf_custom_functions.php' );
   require_once( 'external/custom.php' );
   require_once( 'external/plugs/class-tgm-plugin-activation.php' );
-  require 'image_editor_extend.php';
+  require_once( 'external/image_editor_extend.php' );
+  require_once( 'external/cpt.php' );
+  require_once( 'external/svg_upload.php' );
 
 
   // register_nav_menus(array('primary' => 'Primary Navigation'));

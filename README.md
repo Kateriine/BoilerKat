@@ -11,13 +11,20 @@ The following features are located in `external/custom.php`.
 - Custom image sizes (you can change the sizes, add more)
 - Encrypted email
 - Add current page class to menu in almost every case
-- Real resize images on the fly (just provide src, width and height)
 
 Optional functions to uncomment:
 - [WPML](https://wpml.org/) custom language menu
 - Custom map with [Pronamic](https://wordpress.org/plugins/pronamic-google-maps/)
 - [Post 2 post connections](https://wordpress.org/plugins/posts-to-posts/)
+
+The following features are located in `external/image_editor_extend.php`.
+- Real resize images on the fly (just provide src, width and height)
+
+The following features are located in `external/svg_upload.php`.
 - SVG support for WordPress
+
+The following features are located in `external/acf_custom_functions.php`.
+- functions to use with tpl-page-rows.php. If you wish to use it, install acf pro and import the file acf-custo-fields.json
 
 
 The following features are located in `external/shortcodes.php` (mainly used in wp-views).
@@ -83,7 +90,7 @@ There are some scss files to customize the features below, check `adam/scss/styl
 
 - SCSS files are located [here](https://github.com/uikit/bower-uikit)
 - Copy the content of the `scss` folder into `adam/scss/uikit/`
-- You're good to go!
+- You're good to go! (Just be careful if upgrading from v2 to V3, some changes might be huge)
 
 FYI: the files overriding uikit are `uikit-hooks.scss` and `uikit-variables.scss` located in the `scss`folder.
 
@@ -116,3 +123,26 @@ This theme works better with:
 - [WPML](https://wpml.org/) (Translation)
 - [Gravity Forms multilingual](https://wpml.org/documentation/related-projects/gravity-forms-multilingual/) (Multilingual forms)
 - [Black Studio TinyMCE Widget](https://wordpress.org/plugins/black-studio-tinymce-widget/) (WYWIWYG widgets)
+
+# Templates 
+
+* 404.php
+* archive.php
+* comments.php
+* front-page.php
+* index.php
+* page.php
+* search.php
+* single.php
+* styleguide.php : to overview styles
+* tpl-events-list.php
+* tpl-page-rows.php
+
+# Useful files
+
+w3_total_cache_config.json: base config for W3 total cache
+
+acf-custom-fields.json: custom fields for page-with-rows
+
+
+

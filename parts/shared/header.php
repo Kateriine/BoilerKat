@@ -1,7 +1,11 @@
 <header class="header">
   <div class="uk-container uk-container-center centered cont-nav">
 
-    <div class="uk-navbar-brand"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri();?>/images/logo.svg" width="200" height="121" alt="<?php_e('Back to homepage', 'site');?>"></a></div>
+    <div class="uk-navbar-brand">
+      <a href="<?php echo home_url(); ?>">
+        <img src="<?php echo get_stylesheet_directory_uri();?>/images/logo.svg" width="200" height="121" alt="<?php _e('Back to homepage', 'site');?>">
+      </a>
+    </div>
 
     <?php bloginfo( 'description' ); ?>
     <div class="uk-float-right">
